@@ -105,19 +105,11 @@ var TEXTBOOK_READER = {
       html += '<div style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:20px;">435 教材系列</div>';
       html += '<div style="position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:64px;color:rgba(255,255,255,0.08);font-weight:800;">' + subj.icon + '</div>';
 
-      // 年级标记
-      var availableCount = 0;
+      // 年级标记（用预设总数，因为已知12个年级全有数据）
+      var gradeLessonCounts = {L1:101,L2:60,L3:60,L4:64,L5:60,L6:60,L7:49,L8:58,L9:59,L10:58,L11:59,L12:60};
+      var availableCount = subj.grades.length;
       var totalCount = 0;
-      for (var g = 0; g < subj.grades.length; g++) {
-        var gk = subj.grades[g];
-        if (this._loadedGrades[gk]) {
-          var dk = 'TEXTBOOK_' + gk;
-          if (typeof TEXTBOOK_DATA !== 'undefined' && TEXTBOOK_DATA[dk] && TEXTBOOK_DATA[dk].length > 0) {
-            availableCount++;
-            totalCount += TEXTBOOK_DATA[dk].length;
-          }
-        }
-      }
+      for (var g = 0; g < subj.grades.length; g++) totalCount += (gradeLessonCounts[subj.grades[g]] || 0);
       html += '<div style="font-size:11px;color:rgba(255,255,255,0.6);">' + availableCount + '个年级 · ' + totalCount + '课时</div>';
       html += '</div>';
     }
@@ -139,35 +131,33 @@ var TEXTBOOK_READER = {
     html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">';
     var gradeColors = ['#5AC8FA','#FF9500','#34C759','#AF52DE','#FF3B30','#FF9F0A','#00C7BE','#5AC8FA','#FF9500','#34C759','#AF52DE','#FF3B30'];
     var gradeNames = ['一年级','二年级','三年级','四年级','五年级','六年级','初一','初二','初三','高一','高二','高三'];
+    /* 预设：所有年级都有数据（从Word文档提取确认） */
+    var gradeLessonCounts = {L1:101,L2:60,L3:60,L4:64,L5:60,L6:60,L7:49,L8:58,L9:59,L10:58,L11:59,L12:60};
 
     for (var g = 0; g < subj.grades.length; g++) {
       var gkey = subj.grades[g];
-      var hasContent = this._loadedGrades[gkey] && this._getData(gkey).length > 0;
       var isLoading = !!this._loadingQueue[gkey];
+      var isLoaded = this._loadedGrades[gkey];
       var gNum = parseInt(gkey.replace('L',''));
       var color = gradeColors[gNum-1] || '#5AC8FA';
       var gName = gradeNames[gNum-1] || gkey;
+      var lessonCount = isLoaded ? this._getData(gkey).length : (gradeLessonCounts[gkey] || '?');
 
       if (isLoading) {
         // 加载中
-        html += '<div style="background:var(--card-bg);border-radius:14px;padding:18px 16px;opacity:0.6;cursor:wait;">';
-        html += '<div style="font-size:22px;font-weight:800;color:var(--text-muted);">' + gkey + '</div>';
-        html += '<div style="font-size:12px;color:var(--text-muted);margin-top:4px;">' + gName + '</div>';
-        html += '<div style="font-size:11px;color:var(--accent);margin-top:20px;">⏳ 加载中...</div>';
+        html += '<div style="background:linear-gradient(135deg,' + color + ',rgba(0,0,0,0.4));border-radius:14px;padding:18px 16px;opacity:0.6;cursor:wait;position:relative;overflow:hidden;">';
+        html += '<div style="position:absolute;top:0;left:0;width:4px;height:100%;background:rgba(255,255,255,0.3);"></div>';
+        html += '<div style="font-size:22px;font-weight:800;color:#fff;">' + gkey + '</div>';
+        html += '<div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:4px;">' + gName + '</div>';
+        html += '<div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:20px;">⏳ 加载中...</div>';
         html += '</div>';
-      } else if (hasContent) {
+      } else {
+        // 所有年级都显示为可用（彩色卡片），点击后才懒加载数据
         html += '<div onclick="TEXTBOOK_READER._onGradeClick(\'' + gkey + '\')" style="background:linear-gradient(135deg,' + color + ',rgba(0,0,0,0.4));border-radius:14px;padding:18px 16px;cursor:pointer;position:relative;overflow:hidden;">';
         html += '<div style="position:absolute;top:0;left:0;width:4px;height:100%;background:rgba(255,255,255,0.3);"></div>';
         html += '<div style="font-size:22px;font-weight:800;color:#fff;">' + gkey + '</div>';
         html += '<div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:4px;">' + gName + '</div>';
-        html += '<div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:20px;">' + this._getData(gkey).length + '课时</div>';
-        html += '</div>';
-      } else {
-        // 未加载或空数据：点击时触发加载
-        html += '<div onclick="TEXTBOOK_READER._onGradeClick(\'' + gkey + '\')" style="background:var(--card-bg);border-radius:14px;padding:18px 16px;cursor:pointer;opacity:0.5;">';
-        html += '<div style="font-size:22px;font-weight:800;color:var(--text-muted);">' + gkey + '</div>';
-        html += '<div style="font-size:12px;color:var(--text-muted);margin-top:4px;">' + gName + '</div>';
-        html += '<div style="font-size:11px;color:var(--text-muted);margin-top:20px;">点击加载</div>';
+        html += '<div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:20px;">' + lessonCount + '课时</div>';
         html += '</div>';
       }
     }
