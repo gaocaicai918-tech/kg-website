@@ -700,7 +700,7 @@ const DIAGNOSE = {
 {id:'l8-cmb-06',level:2,type:'变式探测',stem:'4个人站成一排，甲必须站在中间，有几种排法？',options:['A.6种','B.12种','C.24种','D.3种'],answer:0,tags:{knowledge:'排列应用',skill_level:'应用',error_type:'条件排列错',cognitive_load:'中',trap_type:'先固定甲，剩余3人排列'},hint:'甲固定，剩余3人任意排=3!=6种'},
 {id:'l8-cmb-07',level:2,type:'变式探测',stem:'(1+x)⁵展开式中x²的系数是？',options:['A.10','B.5','C.15','D.20'],answer:0,tags:{knowledge:'二项式展开',skill_level:'应用',error_type:'系数计算错',cognitive_load:'中',trap_type:'C(5,2)=10'},hint:'C(5,2)=5×4/2=10'},
 {id:'l8-cmb-08',level:2,type:'变式探测',stem:'从4男3女中选3人，要求至少1女，有几种选法？',options:['A.31种','B.35种','C.24种','D.20种'],answer:0,tags:{knowledge:'组合综合',skill_level:'应用',error_type:'多算或少算',cognitive_load:'中',trap_type:'总数-全是男生'},hint:'C(7,3)-C(4,3)=35-4=31种'},
-{id:'l8-cmb-09',level:3,type:'迁移探测',stem:'5个不同的礼物分给3个小朋友，每人至少1个，有几种分法？',options:['A.150种','B.120种','C.180种','D.210种'],answer:0,tags:{knowledge:'分组分配',skill_level:'分析',error_type:'分组重复计数',cognitive_load:'高',trap_type:'先分再配'},hint:'可能的分组(3,1,1)和(2,2,1)。(3,1,1)=C(5,3)×2!=20×6=120'},/此处应有更多内容/
+{id:'l8-cmb-09',level:3,type:'迁移探测',stem:'5个不同的礼物分给3个小朋友，每人至少1个，有几种分法？',options:['A.150种','B.120种','C.180种','D.210种'],answer:0,tags:{knowledge:'分组分配',skill_level:'分析',error_type:'分组重复计数',cognitive_load:'高',trap_type:'先分再配'},hint:'可能的分组(3,1,1)和(2,2,1)。(3,1,1)=C(5,3)×2!=20×6=120'},
 {id:'l8-cmb-10',level:3,type:'迁移探测',stem:'(2x-1)⁵展开式中x³的系数？',options:['A.80','B.-80','C.40','D.-40'],answer:0,tags:{knowledge:'二项式综合',skill_level:'分析',error_type:'符号与系数错',cognitive_load:'高',trap_type:'C(5,3)(2x)³(-1)²=10×8=80'},hint:'T₃=C(5,3)(2x)³(-1)²=10×8x³=80x³'}
 ]},
 'l8-line-circle':{name:'直线与圆',grade:'L9',questions:[
@@ -748,7 +748,7 @@ const DIAGNOSE = {
 {id:'l9-con-06',level:2,type:'变式探测',stem:'双曲线x²/4-y²/5=1的焦距？',options:['A.6','B.4','C.5','D.2√5'],answer:0,tags:{knowledge:'双曲线焦距',skill_level:'应用',error_type:'c²算错',cognitive_load:'中',trap_type:'c=√(4+5)=3'},hint:'c²=a²+b²=4+5=9，c=3，焦距2c=6'},
 {id:'l9-con-07',level:2,type:'变式探测',stem:'抛物线y²=4x上一点P到焦点距离是5，则P的横坐标x=?',options:['A.4','B.3','C.5','D.6'],answer:0,tags:{knowledge:'抛物线定义',skill_level:'应用',error_type:'定义理解错',cognitive_load:'中',trap_type:'PF=x+p/2'},hint:'P到焦点距离=到准线距离=x+1=5，x=4'},
 {id:'l9-con-08',level:2,type:'变式探测',stem:'椭圆x²/9+y²/5=1的离心率是？',options:['A.2/3','B.√5/3','C.3/2','D.1/3'],answer:0,tags:{knowledge:'椭圆离心率',skill_level:'应用',error_type:'公式记错',cognitive_load:'中',trap_type:'c=√(9-5)=2'},hint:'e=c/a=2/3'},
-{id:'l9-con-09',level:3,type:'迁移探测',stem:'椭圆x²/16+y²/12=1内一点M(2,1)为中点的弦所在直线方程是？',options:['A.3x+4y-10=0','B.3x-4y-2=0','C.4x+3y-11=0','D.2x+y-5=0'],answer:0,tags:{knowledge:'中点弦',skill_level:'分析',error_type:'点差法使用错',cognitive_load:'高',trap_type:'用点差法求斜率'},hint:'点差法得(x₁²-x₂²)/16+(y₁²-y₂²)/12=0，(x₁+x₂)/16+(y₁+y₂)/12·k=0，4/16+2k/12=0,k=-3/2'},/注意这里k算的是斜率/
+{id:'l9-con-09',level:3,type:'迁移探测',stem:'椭圆x²/16+y²/12=1内一点M(2,1)为中点的弦所在直线方程是？',options:['A.3x+4y-10=0','B.3x-4y-2=0','C.4x+3y-11=0','D.2x+y-5=0'],answer:0,tags:{knowledge:'中点弦',skill_level:'分析',error_type:'点差法使用错',cognitive_load:'高',trap_type:'用点差法求斜率'},hint:'点差法得(x₁²-x₂²)/16+(y₁²-y₂²)/12=0，(x₁+x₂)/16+(y₁+y₂)/12·k=0，4/16+2k/12=0,k=-3/2'},
 {id:'l9-con-10',level:3,type:'迁移探测',stem:'双曲线x²/4-y²/5=1的右焦点到渐近线距离是？',options:['A.√5','B.2','C.3','D.4'],answer:0,tags:{knowledge:'双曲线综合',skill_level:'分析',error_type:'公式应用错',cognitive_load:'高',trap_type:'右焦点(3,0)到渐近线y=(√5/2)x距离'},hint:'c=3，渐近线√5x/2-y=0，d=|(3√5/2)-0|/√(5/4+1)=3√5/2·2/3=√5'}
 ]},
 'l10-probability':{name:'概率',grade:'L10',questions:[
@@ -889,9 +889,9 @@ const DIAGNOSE = {
 {id:'l11-lim-10',level:3,type:'迁移探测',stem:'lim(x→0)(sin2x)/(3x)=?',options:['A.2/3','B.1','C.0','D.∞'],answer:0,tags:{knowledge:'极限综合',skill_level:'分析',error_type:'变量替换错',cognitive_load:'高',trap_type:'sin2x~2x'},hint:'sin2x~2x，2x/(3x)=2/3'}
 ]},
 'l11-derivative':{name:'导数',grade:'L11',questions:[
-{id:'l11-der-01',level:1,type:'基础探测',stem:'f(x)=x²，f'(2)=?',options:['A.4','B.2','C.8','D.0'],answer:0,tags:{knowledge:'导数计算',skill_level:'记忆',error_type:'导数公式错',cognitive_load:'低',trap_type:'f'(x)=2x'},hint:'f'(x)=2x，f'(2)=4'},
-{id:'l11-der-02',level:1,type:'基础探测',stem:'(sinx)'=?',options:['A.cosx','B.-cosx','C.-sinx','D.sinx'],answer:0,tags:{knowledge:'基本导数公式',skill_level:'记忆',error_type:'公式记错',cognitive_load:'低',trap_type:'sinx的导数是cosx'},hint:'(sinx)'=cosx'},
-{id:'l11-der-10',level:3,type:'迁移探测',stem:'f(x)=x³-3x的极小值',options:['A.-2','B.2','C.0','D.4'],answer:0,tags:{knowledge:'极值',skill_level:'分析',error_type:'极值判定错',cognitive_load:'高',trap_type:'f'(x)=3x²-3'},hint:'x=±1，f''(1)>0极小，f(1)=-2'}
+{id:'l11-der-01',level:1,type:'基础探测',stem:'f(x)′=x²，f′(2)=?',options:['A.4','B.2','C.8','D.0'],answer:0,tags:{knowledge:'导数计算',skill_level:'记忆',error_type:'导数公式错',cognitive_load:'低',trap_type:'f′(x)′=2x'},hint:'f′(x)′=2x，f′(2)=4'},
+{id:'l11-der-02',level:1,type:'基础探测',stem:'(sinx)′=?',options:['A.cosx','B.-cosx','C.-sinx','D.sinx'],answer:0,tags:{knowledge:'基本导数公式',skill_level:'记忆',error_type:'公式记错',cognitive_load:'低',trap_type:'sinx的导数是cosx'},hint:'(sinx)′=cosx'},
+{id:'l11-der-10',level:3,type:'迁移探测',stem:'f(x)′=x³-3x的极小值',options:['A.-2','B.2','C.0','D.4'],answer:0,tags:{knowledge:'极值',skill_level:'分析',error_type:'极值判定错',cognitive_load:'高',trap_type:'f′(x)′=3x²-3'},hint:'x=±1，f′′(1)>0极小，f(1)=-2'}
 ]},
 'l11-integral':{name:'积分',grade:'L11',questions:[
 {id:'l11-int-01',level:1,type:'基础探测',stem:'∫x²dx=?',options:['A.x³/3+C','B.x³+C','C.2x+C','D.x²/2+C'],answer:0,tags:{knowledge:'不定积分公式',skill_level:'记忆',error_type:'公式记错',cognitive_load:'低',trap_type:'幂函数积分'},hint:'∫xⁿd⁡dx=x^(n+1)/(n+1)+C'},
@@ -900,7 +900,7 @@ const DIAGNOSE = {
 ]},
 'l12-review':{name:'高三综合复习',grade:'L12',questions:[
 {id:'l12-rv-01',level:1,type:'基础探测',stem:'A={x|x²-3x+2=0}，A=?',options:['A.{1,2}','B.{1}','C.{2}','D.∅'],answer:0,tags:{knowledge:'集合',skill_level:'记忆',error_type:'解方程错',cognitive_load:'低',trap_type:'x=1或2'},hint:'x=1或2'},
-{id:'l12-rv-02',level:1,type:'基础探测',stem:'f(x)=√(x-2)的定义域',options:['A.[2,+∞)','B.(2,+∞)','C.(-∞,2]','D.R'],answer:0,tags:{knowledge:'定义域',skill_level:'记忆',error_type:'被开方数条件',cognitive_load:'低',trap_type:'x-2≥0'},hint:'x-2≥0，x≥2'},
+{id:'l12-rv-02',level:1,type:'基础探测',stem:'f(x)′=√(x-2)的定义域',options:['A.[2,+∞)','B.(2,+∞)','C.(-∞,2]','D.R'],answer:0,tags:{knowledge:'定义域',skill_level:'记忆',error_type:'被开方数条件',cognitive_load:'低',trap_type:'x-2≥0'},hint:'x-2≥0，x≥2'},
 {id:'l12-rv-10',level:3,type:'迁移探测',stem:'椭圆x²/9+y²/4=1上P到两焦点距离和',options:['A.6','B.4','C.9','D.2√5'],answer:0,tags:{knowledge:'椭圆定义',skill_level:'分析',error_type:'定义遗忘',cognitive_load:'高',trap_type:'2a=6'},hint:'2a=6'}
 ]},
 'l2-measure':{name:'周长与测量',grade:'L2',questions:[
@@ -1011,7 +1011,6 @@ const DIAGNOSE = {
 {id:'l3-thk-09',level:3,type:'迁移探测',stem:'一根绳子对折3次,这时每段2米,绳子原长?',options:['A.16米','B.8米','C.12米','D.24米'],answer:0,tags:{knowledge:'对折问题',skill_level:'分析',error_type:'对折理解错',cognitive_load:'高',trap_type:'对折3次分成8段'},hint:'2×2×2×2=16米'},
 {id:'l3-thk-10',level:3,type:'迁移探测',stem:'用火柴棒摆正方形:1个要4根,2个要7根,3个要10根,摆10个要几根?',options:['A.31根','B.40根','C.22根','D.34根'],answer:0,tags:{knowledge:'图形规律',skill_level:'分析',error_type:'规律归纳错',cognitive_load:'高',trap_type:'3n+1=31'},hint:'每次加3,4+3×(10-1)=31根。'}
 ]}
-  },
   },
 
   /* ═══════════ 诊断算法 ═══════════ */
