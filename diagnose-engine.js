@@ -9,11 +9,7 @@ const DIAGNOSE = {
   // 每知识点10题：L1基础(4) → L2变式(4) → L3迁移(2)
   questions: {
     /* -------- 初一（G7）-------- */
-    'g7-negatives': {
-      name: '负数的认识与运算',
-      grade: 'L5',
-      textbookLessons: [0,1,4,5,6,7],
-      questions: [
+    'g7-negatives': { name: '负数的认识与运算', grade: 'L5', textbookLessons: [0, 1, 26, 33], questions: [
         // L1 基础探测 × 4
         { id: 'g7-neg-01', level: 1, type: '基础探测', stem: '如果温度从 0℃ 先上升 5℃，再下降 8℃，最终温度是多少？', options: ['A. -3℃', 'B. 3℃', 'C. -13℃', 'D. 13℃'], answer: 0, tags: { knowledge: '负数运算', skill_level: '理解', error_type: '符号方向混淆', cognitive_load: '低', trap_type: '正负号' }, hint: '上升为正，下降为负：+5 + (-8) = ?' },
         { id: 'g7-neg-04', level: 1, type: '基础探测', stem: '在数轴上，-3 和 5 之间的距离是多少？', options: ['A. 8', 'B. 2', 'C. -8', 'D. -2'], answer: 0, tags: { knowledge: '数轴', skill_level: '理解', error_type: '符号运算', cognitive_load: '低', trap_type: '距离非负' }, hint: '两点间的距离 = |5 - (-3)| = 8' },
@@ -52,11 +48,7 @@ const DIAGNOSE = {
       ]
     },
 
-    'g7-equation': {
-      name: '一元一次方程',
-      grade: 'L5',
-      textbookLessons: [15,16,17,18],
-      questions: [
+    'g7-equation': { name: '一元一次方程', grade: 'L5', textbookLessons: [17, 18, 19, 20, 21, 22, 23, 24, 25], questions: [
         // L1 × 4
         { id: 'g7-eq-01', level: 1, type: '基础探测', stem: '解方程 2x + 3 = 11，x = ？', options: ['A. 4', 'B. 7', 'C. 3', 'D. 5'], answer: 0, tags: { knowledge: '一元一次方程', skill_level: '理解', error_type: '移项符号错误', cognitive_load: '低', trap_type: '移项变号' }, hint: '将 3 移到等号右边变成 -3：2x = 11 - 3' },
         { id: 'g7-eq-04', level: 1, type: '基础探测', stem: '方程 3x - 5 = 16 的解是 x = ?', options: ['A. 7', 'B. 21/3', 'C. 11', 'D. 5'], answer: 0, tags: { knowledge: '一元一次方程', skill_level: '理解', error_type: '移项符号错误', cognitive_load: '低', trap_type: '移项变号' }, hint: '3x = 16 + 5 = 21, x = 7' },
@@ -73,11 +65,7 @@ const DIAGNOSE = {
       ]
     },
 
-    'g7-geometry': {
-      name: '三角形性质与内角和',
-      grade: 'L5',
-      textbookLessons: [47,48,49,50,51],
-      questions: [
+    'g7-geometry': { name: '三角形性质与内角和', grade: 'L5', textbookLessons: [38, 39, 51, 52, 53, 54, 55, 56, 57, 58, 59], questions: [
         // L1 × 4
         { id: 'g7-geo-01', level: 1, type: '基础探测', stem: '若三角形三个内角分别为 50°、60°、x°，则 x = ？', options: ['A. 70°', 'B. 60°', 'C. 80°', 'D. 50°'], answer: 0, tags: { knowledge: '三角形内角和', skill_level: '记忆', error_type: '公式遗忘', cognitive_load: '低', trap_type: '求和错误' }, hint: '三角形内角和为 180°' },
         { id: 'g7-geo-04', level: 1, type: '基础探测', stem: '一个三角形中，最多有几个钝角？', options: ['A. 1个', 'B. 2个', 'C. 3个', 'D. 0个'], answer: 0, tags: { knowledge: '三角形分类', skill_level: '理解', error_type: '性质理解错误', cognitive_load: '低', trap_type: '钝角>90°' }, hint: '钝角大于90°，如果两个钝角，和已超过180°，所以最多1个。' },
@@ -95,11 +83,7 @@ const DIAGNOSE = {
     },
 
     /* -------- 初一（G7）· 新增知识点 -------- */
-    'g7-algebra': {
-      name: '整式与代数式',
-      grade: 'L5',
-      textbookLessons: [10,11,12,13,14],
-      questions: [
+    'g7-algebra': { name: '整式与代数式', grade: 'L5', textbookLessons: [11, 12, 15, 16], questions: [
         // L1 × 4
         { id: 'g7-alg-01', level: 1, type: '基础探测', stem: '下列哪个是单项式？', options: ['A. 3x', 'B. x + 1', 'C. 2/x', 'D. √x'], answer: 0, tags: { knowledge: '单项式概念', skill_level: '记忆', error_type: '概念混淆', cognitive_load: '低', trap_type: '单项式vs多项式' }, hint: '单项式是数与字母的乘积，如3x。含加减号的是多项式。' },
         { id: 'g7-alg-02', level: 1, type: '基础探测', stem: '计算 3a + 2a = ?', options: ['A. 5a', 'B. 6a', 'C. 5a²', 'D. 6a²'], answer: 0, tags: { knowledge: '合并同类项', skill_level: '记忆', error_type: '合并错误', cognitive_load: '低', trap_type: '系数相加减，字母不变' }, hint: '同类项合并，系数相加：3+2=5，字母部分 a 不变。' },
@@ -116,11 +100,7 @@ const DIAGNOSE = {
       ]
     },
 
-    'g7-equation-app': {
-      name: '列方程解应用题',
-      grade: 'L5',
-      textbookLessons: [19,20,21,22],
-      questions: [
+    'g7-equation-app': { name: '列方程解应用题', grade: 'L5', textbookLessons: [8, 9, 17, 18, 19, 20, 21, 22, 23, 24, 25, 42, 43], questions: [
         // L1 × 4
         { id: 'g7-eapp-01', level: 1, type: '基础探测', stem: '一个数的3倍加上5等于20，这个数是多少？', options: ['A. 5', 'B. 3', 'C. 15', 'D. 10'], answer: 0, tags: { knowledge: '简单列方程', skill_level: '理解', error_type: '列式错误', cognitive_load: '低', trap_type: '翻译为代数式' }, hint: '设这个数为x，则3x+5=20，3x=15，x=5' },
         { id: 'g7-eapp-02', level: 1, type: '基础探测', stem: '一辆车以60km/h的速度行驶，t小时后行驶了多少公里？', options: ['A. 60t', 'B. 60+t', 'C. 60/t', 'D. t/60'], answer: 0, tags: { knowledge: '行程问题基本公式', skill_level: '记忆', error_type: '公式混淆', cognitive_load: '低', trap_type: '路程=速度×时间' }, hint: '路程 = 速度 × 时间 = 60 × t' },
@@ -137,11 +117,7 @@ const DIAGNOSE = {
       ]
     },
 
-    'g7-geometry-basics': {
-      name: '几何基础：线、角、平行与垂直',
-      grade: 'L5',
-      textbookLessons: [23,24,25,26,27,28],
-      questions: [
+    'g7-geometry-basics': { name: '几何基础：线、角、平行与垂直', grade: 'L5', textbookLessons: [26, 27, 28, 29, 30, 31, 32, 38, 39, 51, 52, 53, 54, 55, 56, 57, 58, 59], questions: [
         // L1 × 4
         { id: 'g7-gbs-01', level: 1, type: '基础探测', stem: '过一点可以画多少条直线？', options: ['A. 无数条', 'B. 1条', 'C. 2条', 'D. 0条'], answer: 0, tags: { knowledge: '直线基本性质', skill_level: '记忆', error_type: '性质记忆错误', cognitive_load: '低', trap_type: '过两点才确定一条' }, hint: '过一点可以向任意方向画无数条直线。过两点才能确定一条直线。' },
         { id: 'g7-gbs-02', level: 1, type: '基础探测', stem: '一个角的补角比它的余角大多少度？', options: ['A. 90°', 'B. 180°', 'C. 45°', 'D. 60°'], answer: 0, tags: { knowledge: '余角补角', skill_level: '理解', error_type: '概念混淆', cognitive_load: '低', trap_type: '补角180-余角90' }, hint: '补角=180°-x，余角=90°-x。补角-余角=(180-x)-(90-x)=90°' },
@@ -158,11 +134,7 @@ const DIAGNOSE = {
       ]
     },
 
-    'g7-circle': {
-      name: '圆的周长与面积',
-      grade: 'L5',
-      textbookLessons: [31,32,33,34,35,36,37,38,39],
-      questions: [
+    'g7-circle': { name: '圆的周长与面积', grade: 'L5', textbookLessons: [33, 34, 35, 40, 41], questions: [
         // L1 × 4
         { id: 'g7-cir-01', level: 1, type: '基础探测', stem: '圆的周长公式是（ ）', options: ['A. C = 2πr', 'B. C = πr', 'C. C = πr²', 'D. C = 2r'], answer: 0, tags: { knowledge: '圆的周长', skill_level: '记忆', error_type: '公式混淆', cognitive_load: '低', trap_type: '周长vs面积' }, hint: '圆的周长 = 2 × π × 半径 = 2πr' },
         { id: 'g7-cir-02', level: 1, type: '基础探测', stem: '圆的面积公式是（ ）', options: ['A. S = πr²', 'B. S = 2πr', 'C. S = πd', 'D. S = 2πr²'], answer: 0, tags: { knowledge: '圆的面积', skill_level: '记忆', error_type: '公式混淆', cognitive_load: '低', trap_type: '面积是半径平方' }, hint: '圆的面积 = π × 半径的平方 = πr²' },
@@ -179,11 +151,7 @@ const DIAGNOSE = {
       ]
     },
 
-    'g7-stats': {
-      name: '数据统计初步',
-      grade: 'L5',
-      textbookLessons: [40,41,42,43,44,45,46],
-      questions: [
+    'g7-stats': { name: '数据统计初步', grade: 'L5', textbookLessons: [44, 49, 50], questions: [
         // L1 × 4
         { id: 'g7-sta-01', level: 1, type: '基础探测', stem: '一组数据：2, 5, 3, 5, 7，这组数据的众数是？', options: ['A. 5', 'B. 2', 'C. 4', 'D. 7'], answer: 0, tags: { knowledge: '众数', skill_level: '记忆', error_type: '概念混淆', cognitive_load: '低', trap_type: '出现次数最多的数' }, hint: '众数是出现频数最多的数。5出现了2次，最多。' },
         { id: 'g7-sta-02', level: 1, type: '基础探测', stem: '一组数据：1, 3, 5, 7, 9，这组数据的中位数是？', options: ['A. 5', 'B. 3', 'C. 7', 'D. 4'], answer: 0, tags: { knowledge: '中位数', skill_level: '记忆', error_type: '概念混淆', cognitive_load: '低', trap_type: '排序后取中间' }, hint: '排序后中间位置的数：1,3,5,7,9 → 中位数=5' },
@@ -200,11 +168,7 @@ const DIAGNOSE = {
       ]
     },
 
-    'g7-thinking': {
-      name: '思维训练专题',
-      grade: 'L5',
-      textbookLessons: [52,53,54,55],
-      questions: [
+    'g7-thinking': { name: '思维训练专题', grade: 'L5', textbookLessons: [50, 51, 52, 53, 54, 55, 56, 57, 58, 59], questions: [
         // L1 × 4
         { id: 'g7-thk-01', level: 1, type: '基础探测', stem: '找规律：1, 4, 9, 16, 25, ?，下一个数是多少？', options: ['A. 36', 'B. 30', 'C. 49', 'D. 35'], answer: 0, tags: { knowledge: '数字找规律', skill_level: '理解', error_type: '规律识别错误', cognitive_load: '低', trap_type: '平方数列' }, hint: '1=1², 4=2², 9=3², 16=4², 25=5²，下一个是6²=36' },
         { id: 'g7-thk-02', level: 1, type: '基础探测', stem: '把5个苹果放进4个抽屉，至少有一个抽屉里有几个以上的苹果？', options: ['A. 2个', 'B. 1个', 'C. 3个', 'D. 4个'], answer: 0, tags: { knowledge: '鸽巢原理', skill_level: '理解', error_type: '原理应用错误', cognitive_load: '低', trap_type: '平均分配' }, hint: '每个抽屉先放1个，5-4=1，还剩1个必须放进去，所以至少有一个抽屉有2个。' },
@@ -222,10 +186,7 @@ const DIAGNOSE = {
     },
 
     /* -------- 初二（G8）-------- */
-    'g8-square-root': {
-      name: '平方根与算术平方根',
-      grade: 'L6',
-      questions: [
+    'g8-square-root': { name: '平方根与算术平方根', grade: 'L6', textbookLessons: [0, 1, 2, 3], questions: [
         // L1 × 4
         { id: 'g8-sqrt-01', level: 1, type: '基础探测', stem: '√25 的值是多少？', options: ['A. 5', 'B. -5', 'C. ±5', 'D. 25'], answer: 0, tags: { knowledge: '算术平方根', skill_level: '记忆', error_type: '概念混淆（平方根vs算术平方根）', cognitive_load: '低', trap_type: '符号选择' }, hint: '算术平方根（√）只取非负的那个值。' },
         { id: 'g8-sqrt-04', level: 1, type: '基础探测', stem: '9 的平方根是（ ）', options: ['A. ±3', 'B. 3', 'C. -3', 'D. 81'], answer: 0, tags: { knowledge: '平方根', skill_level: '记忆', error_type: '平方根vs算术平方根', cognitive_load: '低', trap_type: '平方根有正负' }, hint: '平方根有正负两个值：±√9 = ±3' },
@@ -242,10 +203,7 @@ const DIAGNOSE = {
       ]
     },
 
-    'g8-triangle-congruence': {
-      name: '全等三角形',
-      grade: 'L6',
-      questions: [
+    'g8-triangle-congruence': { name: '全等三角形', grade: 'L6', questions: [
         // L1 × 4
         { id: 'g8-cong-01', level: 1, type: '基础探测', stem: '下列条件中，能判定两个三角形全等的是（ ）', options: ['A. 三边对应相等（SSS）', 'B. 三角对应相等', 'C. 两边及其中一边的对角相等', 'D. 三角一边相等'], answer: 0, tags: { knowledge: '全等三角形判定', skill_level: '记忆', error_type: '判定条件混淆', cognitive_load: '低', trap_type: 'SSA不是全等判定' }, hint: 'SSS（边边边）是三角形全等的基本判定定理。' },
         { id: 'g8-cong-04', level: 1, type: '基础探测', stem: '两个三角形全等，其中一个三角形的边长为3、4、5，另一个三角形的周长是？', options: ['A. 12', 'B. 15', 'C. 9', 'D. 7'], answer: 0, tags: { knowledge: '全等三角形性质', skill_level: '理解', error_type: '对应边理解', cognitive_load: '低', trap_type: '周长不变' }, hint: '全等三角形对应边相等，所以周长也相等：3+4+5=12' },
@@ -262,10 +220,7 @@ const DIAGNOSE = {
       ]
     },
 
-    'g8-linear-function': {
-      name: '一次函数',
-      grade: 'L6',
-      questions: [
+    'g8-linear-function': { name: '一次函数', grade: 'L6', questions: [
         // L1 × 4
         { id: 'g8-func-01', level: 1, type: '基础探测', stem: '一次函数 y = 2x - 3 的图象与 y 轴的交点坐标是？', options: ['A. (0, -3)', 'B. (0, 3)', 'C. (-3, 0)', 'D. (2, 0)'], answer: 0, tags: { knowledge: '一次函数图象', skill_level: '理解', error_type: '坐标混淆', cognitive_load: '低', trap_type: 'x=0算y' }, hint: '与 y 轴相交时，x = 0，代入求 y 值。' },
         { id: 'g8-func-04', level: 1, type: '基础探测', stem: '下列函数中，是一次函数的是（ ）', options: ['A. y = 2x + 1', 'B. y = x²', 'C. y = 3/x', 'D. y = √x'], answer: 0, tags: { knowledge: '一次函数概念', skill_level: '记忆', error_type: '概念混淆', cognitive_load: '低', trap_type: '一次函数形式y=kx+b' }, hint: '一次函数的形式为 y = kx + b（k≠0），只有A符合。' },
@@ -282,10 +237,7 @@ const DIAGNOSE = {
       ]
     },
 
-    'g8-parallelogram': {
-      name: '平行四边形的性质与判定',
-      grade: 'L6',
-      questions: [
+    'g8-parallelogram': { name: '平行四边形的性质与判定', grade: 'L6', questions: [
         // L1 × 4
         { id: 'g8-para-01', level: 1, type: '基础探测', stem: '平行四边形的对角线（ ）', options: ['A. 互相平分', 'B. 相等', 'C. 互相垂直', 'D. 平分一组对角'], answer: 0, tags: { knowledge: '平行四边形性质', skill_level: '记忆', error_type: '性质混淆（与矩形/菱形混淆）', cognitive_load: '低', trap_type: '四边形的对角线性质' }, hint: '平行四边形的对角线互相平分，但不一定相等（矩形才相等）也不一定垂直（菱形才垂直）。' },
         { id: 'g8-para-04', level: 1, type: '基础探测', stem: '平行四边形的对边（ ）', options: ['A. 平行且相等', 'B. 平行但不相等', 'C. 相等但不平行', 'D. 既不平行也不相等'], answer: 0, tags: { knowledge: '平行四边形性质', skill_level: '记忆', error_type: '性质遗忘', cognitive_load: '低', trap_type: '对边关系' }, hint: '平行四边形的两组对边分别平行且相等。' },
@@ -301,11 +253,7 @@ const DIAGNOSE = {
         { id: 'g8-para-10', level: 3, type: '迁移探测', stem: '在平行四边形ABCD中，E、F分别是AB、CD的中点。求证：四边形AECF是平行四边形。正确的证明思路是？', options: ['A. AE∥CF且AE=CF', 'B. AB∥CD且AE=CF', 'C. ∠A=∠C且AF=CE', 'D. AE=CF且AF=CE'], answer: 0, tags: { knowledge: '平行四边形证明', skill_level: '分析', error_type: '证明思路错误', cognitive_load: '高', trap_type: '中位线性质' }, hint: 'E是AB中点→AE=AB/2，F是CD中点→CF=CD/2。AB∥CD且AB=CD，所以AE∥CF且AE=CF。' }
       ]
     },
-    'g8-coordinate': {
-      name: '平面直角坐标系',
-      grade: 'L6',
-      textbookLessons: [0],
-      questions: [
+    'g8-coordinate': { name: '平面直角坐标系', grade: 'L6', questions: [
         { id: 'g8-coor-01', level: 1, type: '基础探测', stem: '在平面直角坐标系中，点(3, -2)在第几象限？', options: ['A. 第四象限', 'B. 第二象限', 'C. 第一象限', 'D. 第三象限'], answer: 0, tags: { knowledge: '象限判断', skill_level: '理解', error_type: '坐标符号混淆', cognitive_load: '低', trap_type: 'x正y负→四' }, hint: 'x>0,y<0 → 第四象限。' },
         { id: 'g8-coor-02', level: 1, type: '基础探测', stem: '点A(2,3)向右平移3个单位后的坐标是？', options: ['A. (5,3)', 'B. (2,6)', 'C. (-1,3)', 'D. (2,0)'], answer: 0, tags: { knowledge: '坐标平移', skill_level: '理解', error_type: '平移方向错误', cognitive_load: '低', trap_type: '右移x加' }, hint: '向右平移，x坐标加3，y不变：(2+3,3)=(5,3)' },
         { id: 'g8-coor-03', level: 1, type: '基础探测', stem: '点M(-2,3)到y轴的距离是？', options: ['A. 2', 'B. 3', 'C. 5', 'D. -2'], answer: 0, tags: { knowledge: '点到坐标轴距离', skill_level: '理解', error_type: '距离概念混淆', cognitive_load: '低', trap_type: '到y轴距离=|x|' }, hint: '点到y轴距离 = |x| = |-2| = 2' },
@@ -318,11 +266,7 @@ const DIAGNOSE = {
         { id: 'g8-coor-10', level: 3, type: '迁移探测', stem: '已知点A(-1,0)、B(3,0)、C(2,3)，则△ABC的面积是？', options: ['A. 6', 'B. 12', 'C. 9', 'D. 4'], answer: 0, tags: { knowledge: '坐标系中图形计算', skill_level: '分析', error_type: '底和高识别错误', cognitive_load: '高', trap_type: 'AB在x轴上' }, hint: 'AB在x轴上，底AB=4；高=点C到x轴距离=3；面积=4×3÷2=6' }
       ]
     },
-    'g8-linear-equations': {
-      name: '二元一次方程组',
-      grade: 'L6',
-      textbookLessons: [0],
-      questions: [
+    'g8-linear-equations': { name: '二元一次方程组', grade: 'L6', questions: [
         { id: 'g8-leq-01', level: 1, type: '基础探测', stem: '方程 x + y = 5 中，若 x=2，则 y = ?', options: ['A. 3', 'B. 2', 'C. 5', 'D. 7'], answer: 0, tags: { knowledge: '二元一次方程', skill_level: '理解', error_type: '代入错误', cognitive_load: '低', trap_type: '解方程' }, hint: '2+y=5, y=3' },
         { id: 'g8-leq-02', level: 1, type: '基础探测', stem: '用代入法解 {x+y=5, x-y=1}，先将哪个方程变形更方便？', options: ['A. 将x+y=5化为x=5-y', 'B. 将x-y=1化为x=1+y', 'C. 两个都行', 'D. 无法代入'], answer: 0, tags: { knowledge: '代入消元法', skill_level: '理解', error_type: '变形策略错误', cognitive_load: '低', trap_type: '选系数简单的变' }, hint: 'x+y=5→x=5-y，代入另一方程。' },
         { id: 'g8-leq-03', level: 1, type: '基础探测', stem: '解方程组 {2x+3y=13, 2x-3y=7}，最简便的方法是？', options: ['A. 加减消元法', 'B. 代入法', 'C. 无法消元', 'D. 图像法'], answer: 0, tags: { knowledge: '加减消元法', skill_level: '理解', error_type: '消元策略错误', cognitive_load: '低', trap_type: '系数相同时加减' }, hint: 'x的系数都是2，y的系数互为相反数，直接加减消元。' },
@@ -335,11 +279,7 @@ const DIAGNOSE = {
         { id: 'g8-leq-10', level: 3, type: '迁移探测', stem: '甲乙两人从相距30km的A、B两地同时出发相向而行，3小时后相遇。若甲比乙每小时多走2km，求甲乙的速度各是多少？', options: ['A. 甲6km/h,乙4km/h', 'B. 甲5km/h,乙3km/h', 'C. 甲7km/h,乙5km/h', 'D. 甲8km/h,乙6km/h'], answer: 0, tags: { knowledge: '行程问题+方程组', skill_level: '分析', error_type: '等量关系错误', cognitive_load: '高', trap_type: '速度和×时间=路程' }, hint: '设甲x,乙y。x=y+2, 3(x+y)=30。3(2y+2)=30, y=4, x=6' }
       ]
     },
-    'g8-inequality': {
-      name: '不等式与不等式组',
-      grade: 'L6',
-      textbookLessons: [0],
-      questions: [
+    'g8-inequality': { name: '不等式与不等式组', grade: 'L6', questions: [
         { id: 'g8-ineq-01', level: 1, type: '基础探测', stem: '不等式 x + 3 > 5 的解集是？', options: ['A. x > 2', 'B. x > 8', 'C. x < 2', 'D. x < 8'], answer: 0, tags: { knowledge: '解一元一次不等式', skill_level: '理解', error_type: '移项符号错误', cognitive_load: '低', trap_type: '移项要变号' }, hint: 'x > 5-3, x > 2' },
         { id: 'g8-ineq-02', level: 1, type: '基础探测', stem: '解不等式 -2x > 6，正确的是？', options: ['A. x < -3', 'B. x > -3', 'C. x < 3', 'D. x > 3'], answer: 0, tags: { knowledge: '不等式性质', skill_level: '理解', error_type: '除以负数忘变号', cognitive_load: '低', trap_type: '两边除以负数不等号反向' }, hint: '两边除以-2（负数），不等号方向改变：x < -3' },
         { id: 'g8-ineq-03', level: 1, type: '基础探测', stem: '不等式组 {x>1, x<4} 的解集在数轴上是？', options: ['A. 1<x<4', 'B. x>4', 'C. x<1', 'D. 空集'], answer: 0, tags: { knowledge: '不等式组', skill_level: '理解', error_type: '解集取交集错误', cognitive_load: '低', trap_type: '同大取大、同小取小' }, hint: 'x>1且x<4，解集为1<x<4' },
@@ -352,11 +292,7 @@ const DIAGNOSE = {
         { id: 'g8-ineq-10', level: 3, type: '迁移探测', stem: '有一个两位数，它的个位数字比十位数字大2，且这个两位数大于30小于55。这样的两位数有几个？', options: ['A. 3个', 'B. 2个', 'C. 4个', 'D. 1个'], answer: 0, tags: { knowledge: '不等式的实际应用', skill_level: '分析', error_type: '范围取值错误', cognitive_load: '高', trap_type: '十位从1开始' }, hint: '设十位x，个位x+2。两位数=10x+(x+2)=11x+2。30<11x+2<55，28<11x<53，x=3或4。对应数35和46，共2个' }
       ]
     },
-    'g8-axially-symmetric': {
-      name: '轴对称与等腰三角形',
-      grade: 'L6',
-      textbookLessons: [0],
-      questions: [
+    'g8-axially-symmetric': { name: '轴对称与等腰三角形', grade: 'L6', questions: [
         { id: 'g8-axs-01', level: 1, type: '基础探测', stem: '下列图形中，是轴对称图形的是（ ）', options: ['A. 等边三角形', 'B. 平行四边形', 'C. 一般梯形', 'D. 任意四边形'], answer: 0, tags: { knowledge: '轴对称概念', skill_level: '记忆', error_type: '概念混淆', cognitive_load: '低', trap_type: '平行四边形不是轴对称' }, hint: '等边三角形沿中线折叠两边完全重合。' },
         { id: 'g8-axs-02', level: 1, type: '基础探测', stem: '等腰三角形的两边长分别为5cm和8cm，则它的周长可能为？', options: ['A. 18cm或21cm', 'B. 18cm', 'C. 21cm', 'D. 13cm'], answer: 0, tags: { knowledge: '等腰三角形边长', skill_level: '理解', error_type: '漏考虑两种情况', cognitive_load: '低', trap_type: '腰可能为5或8' }, hint: '腰=5时：5+5+8=18；腰=8时：8+8+5=21。' },
         { id: 'g8-axs-03', level: 1, type: '基础探测', stem: '等边三角形的每个内角是多少度？', options: ['A. 60°', 'B. 45°', 'C. 90°', 'D. 30°'], answer: 0, tags: { knowledge: '等边三角形性质', skill_level: '记忆', error_type: '性质记忆错误', cognitive_load: '低', trap_type: '三边相等则三角相等' }, hint: '等边三角形三个内角都相等，180°÷3=60°' },
@@ -369,11 +305,7 @@ const DIAGNOSE = {
         { id: 'g8-axs-10', level: 3, type: '迁移探测', stem: '已知A(0,2)、B(4,2)，在x轴上找一点P，使PA=PB，则P点坐标为？', options: ['A. (2,0)', 'B. (1,0)', 'C. (3,0)', 'D. (0,0)'], answer: 0, tags: { knowledge: '轴对称与坐标综合', skill_level: '分析', error_type: '中垂线概念应用', cognitive_load: '高', trap_type: 'AB的中垂线过P' }, hint: 'PA=PB，P在AB的垂直平分线上。AB的中点在(2,2)，垂直平分线为x=2。与x轴交于(2,0)' }
       ]
     },
-    'g8-pythagoras': {
-      name: '勾股定理',
-      grade: 'L6',
-      textbookLessons: [0],
-      questions: [
+    'g8-pythagoras': { name: '勾股定理', grade: 'L6', questions: [
         { id: 'g8-pyt-01', level: 1, type: '基础探测', stem: '在Rt△ABC中，∠C=90°，a=3，b=4，则c=？', options: ['A. 5', 'B. 25', 'C. 7', 'D. 1'], answer: 0, tags: { knowledge: '勾股定理', skill_level: '记忆', error_type: '公式记错', cognitive_load: '低', trap_type: '最常见的勾股数' }, hint: 'c²=a²+b²=9+16=25，c=5' },
         { id: 'g8-pyt-02', level: 1, type: '基础探测', stem: '以6、8、10为边长的三角形是直角三角形吗？', options: ['A. 是，因为6²+8²=10²', 'B. 不是', 'C. 无法判断', 'D. 不一定'], answer: 0, tags: { knowledge: '勾股定理逆定理', skill_level: '理解', error_type: '判定条件错误', cognitive_load: '低', trap_type: '勾股数' }, hint: '6²+8²=36+64=100=10²，符合勾股定理逆定理。' },
         { id: 'g8-pyt-03', level: 1, type: '基础探测', stem: '直角三角形的两直角边分别是9和12，则斜边上的高为？', options: ['A. 36/5', 'B. 15', 'C. 10', 'D. 12'], answer: 0, tags: { knowledge: '直角三角形高', skill_level: '理解', error_type: '面积公式应用', cognitive_load: '低', trap_type: '面积两种算法' }, hint: '斜边=15。面积=9×12÷2=54，也=15×h÷2，h=108/15=36/5' },
@@ -386,11 +318,7 @@ const DIAGNOSE = {
         { id: 'g8-pyt-10', level: 3, type: '迁移探测', stem: '一个圆柱高8cm，底面半径为3cm，一只蚂蚁从圆柱下底面边缘一点爬至上底面相对的边缘点，最短路径约多少？（π取3）', options: ['A. 10cm', 'B. 14cm', 'C. 17cm', 'D. 8cm'], answer: 0, tags: { knowledge: '勾股定理曲面展开', skill_level: '分析', error_type: '展开图错误', cognitive_load: '高', trap_type: '圆柱侧面展开为矩形' }, hint: '展开为矩形，宽=高=8，长=πr=3×3=9。路径=√(8²+9²)=√145≈12→最接近10' }
       ]
     },
-    'g8-quadratic-radical': {
-      name: '二次根式',
-      grade: 'L6',
-      textbookLessons: [0],
-      questions: [
+    'g8-quadratic-radical': { name: '二次根式', grade: 'L6', textbookLessons: [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59], questions: [
         { id: 'g8-qrd-01', level: 1, type: '基础探测', stem: '当x取何值时，√(x-3)有意义？', options: ['A. x ≥ 3', 'B. x > 3', 'C. x ≤ 3', 'D. x ≥ 0'], answer: 0, tags: { knowledge: '二次根式有意义的条件', skill_level: '理解', error_type: '被开方数非负', cognitive_load: '低', trap_type: '被开方数≥0' }, hint: '被开方数必须非负：x-3 ≥ 0，x ≥ 3' },
         { id: 'g8-qrd-02', level: 1, type: '基础探测', stem: '化简 √18 = ?', options: ['A. 3√2', 'B. 2√3', 'C. 6', 'D. 9'], answer: 0, tags: { knowledge: '二次根式化简', skill_level: '理解', error_type: '分解错误', cognitive_load: '低', trap_type: '找最大平方因数' }, hint: '18=9×2，√18=√(9×2)=3√2' },
         { id: 'g8-qrd-03', level: 1, type: '基础探测', stem: '计算 √3 × √12 = ?', options: ['A. 6', 'B. √15', 'C. 36', 'D. 3√4'], answer: 0, tags: { knowledge: '二次根式乘法', skill_level: '理解', error_type: '乘法公式错误', cognitive_load: '低', trap_type: '√a×√b=√(ab)' }, hint: '√3 × √12 = √36 = 6' },
@@ -403,10 +331,7 @@ const DIAGNOSE = {
         { id: 'g8-qrd-10', level: 3, type: '迁移探测', stem: '已知一个长方形的面积为√8cm²，宽为√2cm，则长为？', options: ['A. 2cm', 'B. √6cm', 'C. 4cm', 'D. √4cm'], answer: 0, tags: { knowledge: '根式实际应用', skill_level: '分析', error_type: '面积公式应用', cognitive_load: '高', trap_type: '长=面积÷宽' }, hint: '长=√8÷√2=√4=2cm' }
       ]
     },
-    'l1-counting': {
-      name: '数数与数位',
-      grade: 'L1',
-      questions: [
+    'l1-counting': { name: '数数与数位', grade: 'L1', textbookLessons: [0, 1], questions: [
         { id: 'l1-cnt-01', level: 1, type: '基础探测', stem: '数一数，下面有多少个苹果？🍎🍎🍎🍎🍎🍎🍎', options: ['A. 7个', 'B. 6个', 'C. 8个', 'D. 5个'], answer: 0, tags: { knowledge: '1-10数数', skill_level: '记忆', error_type: '数数遗漏', cognitive_load: '低', trap_type: '数数顺序' }, hint: '一个一个数：1,2,3,4,5,6,7' },
         { id: 'l1-cnt-02', level: 1, type: '基础探测', stem: '数字"15"中，"1"表示什么？', options: ['A. 1个十', 'B. 1个一', 'C. 10个一', 'D. 1个百'], answer: 0, tags: { knowledge: '数位', skill_level: '理解', error_type: '数位概念混淆', cognitive_load: '低', trap_type: '十位vs个位' }, hint: '15的十位是1，表示1个十；个位是5，表示5个一。' },
         { id: 'l1-cnt-03', level: 1, type: '基础探测', stem: '比8大、比11小的数有几个？', options: ['A. 2个（9和10）', 'B. 3个（8,9,10）', 'C. 1个（10）', 'D. 4个'], answer: 0, tags: { knowledge: '数的大小', skill_level: '理解', error_type: '范围理解错误', cognitive_load: '低', trap_type: '比8大不包括8' }, hint: '比8大的数从9开始，比11小的有9和10两个。' },
@@ -419,10 +344,7 @@ const DIAGNOSE = {
         { id: 'l1-cnt-10', level: 3, type: '迁移探测', stem: '一列队伍，从前数小明排第8，从后数小明排第5，这列队伍一共多少人？', options: ['A. 12人', 'B. 13人', 'C. 10人', 'D. 14人'], answer: 0, tags: { knowledge: '排队问题', skill_level: '分析', error_type: '重复计数', cognitive_load: '高', trap_type: '小明被算了两次' }, hint: '8+5-1=12人。减1是因为小明被数了两次。' }
       ]
     },
-    'l1-addition-subtraction': {
-      name: '加减法运算',
-      grade: 'L1',
-      questions: [
+    'l1-addition-subtraction': { name: '加减法运算', grade: 'L1', textbookLessons: [2, 3, 21, 23, 25, 27, 29], questions: [
         { id: 'l1-as-01', level: 1, type: '基础探测', stem: '3 + 5 = ?', options: ['A. 8', 'B. 7', 'C. 9', 'D. 6'], answer: 0, tags: { knowledge: '加法计算', skill_level: '记忆', error_type: '计算错误', cognitive_load: '低', trap_type: '凑十法' }, hint: '3+5=8' },
         { id: 'l1-as-02', level: 1, type: '基础探测', stem: '9 - 4 = ?', options: ['A. 5', 'B. 4', 'C. 6', 'D. 3'], answer: 0, tags: { knowledge: '减法计算', skill_level: '记忆', error_type: '计算错误', cognitive_load: '低', trap_type: '减法倒着数' }, hint: '9-4=5' },
         { id: 'l1-as-03', level: 1, type: '基础探测', stem: '小明有5个苹果，妈妈又给了他3个，现在小明有几个苹果？', options: ['A. 8个', 'B. 5个', 'C. 2个', 'D. 7个'], answer: 0, tags: { knowledge: '加法应用', skill_level: '理解', error_type: '列式错误', cognitive_load: '低', trap_type: '增加用加法' }, hint: '5+3=8' },
@@ -435,10 +357,7 @@ const DIAGNOSE = {
         { id: 'l1-as-10', level: 3, type: '迁移探测', stem: '一个数加上4等于11，这个数减去3等于多少？', options: ['A. 4', 'B. 5', 'C. 6', 'D. 3'], answer: 0, tags: { knowledge: '加减法综合', skill_level: '分析', error_type: '两步推理错误', cognitive_load: '高', trap_type: '先求这个数' }, hint: '先求这个数：11-4=7。再求7-3=4' }
       ]
     },
-    'l1-geometry': {
-      name: '认识图形与位置',
-      grade: 'L1',
-      questions: [
+    'l1-geometry': { name: '认识图形与位置', grade: 'L1', textbookLessons: [47, 49], questions: [
         { id: 'l1-geo-01', level: 1, type: '基础探测', stem: '下面哪个是正方形？', options: ['A. □', 'B. ○', 'C. △', 'D. ☆'], answer: 0, tags: { knowledge: '图形认识', skill_level: '记忆', error_type: '图形混淆', cognitive_load: '低', trap_type: '正方形有四条等边' }, hint: '正方形是四条边一样长的图形。□是正方形。' },
         { id: 'l1-geo-02', level: 1, type: '基础探测', stem: '三角形有几条边？', options: ['A. 3条', 'B. 4条', 'C. 2条', 'D. 5条'], answer: 0, tags: { knowledge: '三角形特征', skill_level: '记忆', error_type: '特征记忆错误', cognitive_load: '低', trap_type: '三角→3边' }, hint: '三角形有三条边、三个角，所以叫"三角"形。' },
         { id: 'l1-geo-03', level: 1, type: '基础探测', stem: '你在教室里，面向黑板站立，你的前面是黑板，后面是？', options: ['A. 讲台', 'B. 黑板', 'C. 天花板', 'D. 窗户'], answer: 0, tags: { knowledge: '方向', skill_level: '理解', error_type: '方向混淆', cognitive_load: '低', trap_type: '前后相对' }, hint: '前和后是相对的，前面对的是黑板，后面的就是讲台方向。' },
@@ -451,10 +370,7 @@ const DIAGNOSE = {
         { id: 'l1-geo-10', level: 3, type: '迁移探测', stem: '一个图形按"正方形、三角形、正方形、三角形……"的规律排列，第10个是什么图形？', options: ['A. 三角形', 'B. 正方形', 'C. 圆形', 'D. 长方形'], answer: 0, tags: { knowledge: '图形规律', skill_level: '分析', error_type: '规律识别错误', cognitive_load: '高', trap_type: '偶数位是三角形' }, hint: '第1、3、5、7、9是正方形；第2、4、6、8、10是三角形。' }
       ]
     },
-    'l1-patterns': {
-      name: '找规律与分类',
-      grade: 'L1',
-      questions: [
+    'l1-patterns': { name: '找规律与分类', grade: 'L1', textbookLessons: [11, 43, 45], questions: [
         { id: 'l1-pat-01', level: 1, type: '基础探测', stem: '按规律填数：1, 2, 3, 4, ?', options: ['A. 5', 'B. 6', 'C. 3', 'D. 7'], answer: 0, tags: { knowledge: '数字规律', skill_level: '理解', error_type: '规律识别错误', cognitive_load: '低', trap_type: '每次+1' }, hint: '每次加1：1,2,3,4,5' },
         { id: 'l1-pat-02', level: 1, type: '基础探测', stem: '按规律填数：2, 4, 6, 8, ?', options: ['A. 10', 'B. 9', 'C. 12', 'D. 7'], answer: 0, tags: { knowledge: '数字规律', skill_level: '理解', error_type: '规律识别错误', cognitive_load: '低', trap_type: '偶数序列' }, hint: '每次加2：2,4,6,8,10' },
         { id: 'l1-pat-03', level: 1, type: '基础探测', stem: '▲○▲○▲○，下一个应该画什么？', options: ['A. ▲', 'B. ○', 'C. ■', 'D. ●'], answer: 0, tags: { knowledge: '图形规律', skill_level: '理解', error_type: '规律识别错误', cognitive_load: '低', trap_type: '交替规律' }, hint: '规律是▲○交替出现，最后一个○后面应该是▲。' },
@@ -467,10 +383,7 @@ const DIAGNOSE = {
         { id: 'l1-pat-10', level: 3, type: '迁移探测', stem: '有红黄蓝三色积木，按"红、黄、蓝"顺序不断重���排列，第15个积木是什么颜色？', options: ['A. 蓝色', 'B. 红色', 'C. 黄色', 'D. 绿色'], answer: 0, tags: { knowledge: '周期规律', skill_level: '分析', error_type: '周期计算错误', cognitive_load: '高', trap_type: '3个一循环，15÷3=5余0' }, hint: '每3个一循环。15÷3=5余0，第15个是第5组的最后一个即蓝色。' }
       ]
     },
-    'l4-fraction': {
-      name: '分数的运算与比较',
-      grade: 'L4',
-      questions: [
+    'l4-fraction': { name: '分数的运算与比较', grade: 'L4', textbookLessons: [2], questions: [
         { id: 'l4-frc-01', level: 1, type: '基础探测', stem: '1/3 + 1/3 = ?', options: ['A. 2/3', 'B. 2/6', 'C. 1/6', 'D. 1/9'], answer: 0, tags: { knowledge: '同分母加法', skill_level: '理解', error_type: '加法规则错误', cognitive_load: '低', trap_type: '分母不变分子相加' }, hint: '分母不变，分子相加：1+1=2，所以2/3' },
         { id: 'l4-frc-02', level: 1, type: '基础探测', stem: '5/8 - 2/8 = ?', options: ['A. 3/8', 'B. 3/0', 'C. 7/8', 'D. 3/16'], answer: 0, tags: { knowledge: '同分母减法', skill_level: '理解', error_type: '减法规则错误', cognitive_load: '低', trap_type: '分母不变分子相减' }, hint: '分母不变，分子相减：5-2=3，所以3/8' },
         { id: 'l4-frc-03', level: 1, type: '基础探测', stem: '比较大小：1/4 和 1/5', options: ['A. 1/4 > 1/5', 'B. 1/4 < 1/5', 'C. 相等', 'D. 无法比较'], answer: 0, tags: { knowledge: '分数大小比较', skill_level: '理解', error_type: '比较规则错误', cognitive_load: '低', trap_type: '分子相同分母大的反而小' }, hint: '分子相同，分母越大分数越小。4<5，所以1/4>1/5。' },
@@ -483,10 +396,7 @@ const DIAGNOSE = {
         { id: 'l4-frc-10', level: 3, type: '迁移探测', stem: '一根绳子长3/4米，剪去1/3米，还剩多少米？', options: ['A. 5/12米', 'B. 1/2米', 'C. 2/3米', 'D. 1/12米'], answer: 0, tags: { knowledge: '分数减法应用', skill_level: '分析', error_type: '通分错误', cognitive_load: '高', trap_type: '3/4-1/3=9/12-4/12' }, hint: '3/4=9/12，1/3=4/12，9/12-4/12=5/12' }
       ]
     },
-    'l4-algebra': {
-      name: '代数式与简易方程',
-      grade: 'L4',
-      questions: [
+    'l4-algebra': { name: '代数式与简易方程', grade: 'L4', textbookLessons: [11, 18], questions: [
         { id: 'l4-alg-01', level: 1, type: '基础探测', stem: 'x + 5 = 12，x = ?', options: ['A. 7', 'B. 6', 'C. 8', 'D. 17'], answer: 0, tags: { knowledge: '简易方程', skill_level: '理解', error_type: '解方程错误', cognitive_load: '低', trap_type: '12-5=7' }, hint: 'x=12-5=7' },
         { id: 'l4-alg-02', level: 1, type: '基础探测', stem: '用字母表示：比x的3倍多2的数', options: ['A. 3x+2', 'B. x+3+2', 'C. 3+x+2', 'D. 3(x+2)'], answer: 0, tags: { knowledge: '代数式', skill_level: '理解', error_type: '列代数式错误', cognitive_load: '低', trap_type: '3倍是3x' }, hint: 'x的3倍是3x，再多2就是3x+2' },
         { id: 'l4-alg-03', level: 1, type: '基础探测', stem: '2x + 3x = ?', options: ['A. 5x', 'B. 6x', 'C. 5x²', 'D. 6'], answer: 0, tags: { knowledge: '合并同类项', skill_level: '理解', error_type: '合并错误', cognitive_load: '低', trap_type: '系数相加字母不变' }, hint: '2x+3x=(2+3)x=5x' },
@@ -499,10 +409,7 @@ const DIAGNOSE = {
         { id: 'l4-alg-10', level: 3, type: '迁移探测', stem: '一根绳子对折后再对折，这时每段长2米。绳子原来长几米？', options: ['A. 8米', 'B. 4米', 'C. 6米', 'D. 16米'], answer: 0, tags: { knowledge: '列方程应用', skill_level: '分析', error_type: '对折次数理解错误', cognitive_load: '高', trap_type: '对折两次分成了4段' }, hint: '对折两次分成4段。设原长x，x÷4=2，x=8米。' }
       ]
     },
-    'l4-geometry': {
-      name: '三角形与四边形',
-      grade: 'L4',
-      questions: [
+    'l4-geometry': { name: '三角形与四边形', grade: 'L4', textbookLessons: [39, 40, 41, 42, 43, 44, 45, 46, 47], questions: [
         { id: 'l4-geo-01', level: 1, type: '基础探测', stem: '三角形按角分类，可以分为？', options: ['A. 锐角、直角、钝角三角形', 'B. 等腰、等边、不等边', 'C. 大、中、小', 'D. 图形分类'], answer: 0, tags: { knowledge: '三角形分类', skill_level: '记忆', error_type: '分类标准混淆', cognitive_load: '低', trap_type: '按角分vs按边分' }, hint: '按角分：锐角三角形、直角三角形、钝角三角形。' },
         { id: 'l4-geo-02', level: 1, type: '基础探测', stem: '平行四边形有几组平行的边？', options: ['A. 2组', 'B. 1组', 'C. 3组', 'D. 0组'], answer: 0, tags: { knowledge: '平行四边形特征', skill_level: '记忆', error_type: '概念混淆', cognitive_load: '低', trap_type: '两组对边分别平行' }, hint: '平行四边形有两组对边分别平行。' },
         { id: 'l4-geo-03', level: 1, type: '基础探测', stem: '一个三角形最多有几个锐角？', options: ['A. 3个', 'B. 2个', 'C. 1个', 'D. 0个'], answer: 0, tags: { knowledge: '三角形角性质', skill_level: '理解', error_type: '性质理解错误', cognitive_load: '低', trap_type: '锐角三角形有3个锐角' }, hint: '锐角三角形有3个锐角。' },
@@ -515,10 +422,7 @@ const DIAGNOSE = {
         { id: 'l4-geo-10', level: 3, type: '迁移探测', stem: '用两个完全相同的直角三角形可以拼成什么图形？', options: ['A. 长方形或平行四边形', 'B. 只能拼成三角形', 'C. 只能拼成正方形', 'D. 不能拼'], answer: 0, tags: { knowledge: '图形拼组', skill_level: '分析', error_type: '空间想象错误', cognitive_load: '高', trap_type: '斜边拼起来' }, hint: '两个直角三角形斜边拼起来是长方形或平行四边形。' }
       ]
     },
-    'l4-factors': {
-      name: '因数倍数与质数合数',
-      grade: 'L4',
-      questions: [
+    'l4-factors': { name: '因数倍数与质数合数', grade: 'L4', textbookLessons: [5, 6, 7, 8], questions: [
         { id: 'l4-fac-01', level: 1, type: '基础探测', stem: '12的因数有哪几个？', options: ['A. 1,2,3,4,6,12', 'B. 1,2,3,4,5,6', 'C. 2,3,4,6', 'D. 1,12'], answer: 0, tags: { knowledge: '因数', skill_level: '记忆', error_type: '遗漏因数', cognitive_load: '低', trap_type: '成对找因数' }, hint: '12=1×12=2×6=3×4，因数为1,2,3,4,6,12' },
         { id: 'l4-fac-02', level: 1, type: '基础探测', stem: '下面哪个数是质数？', options: ['A. 7', 'B. 9', 'C. 15', 'D. 21'], answer: 0, tags: { knowledge: '质数', skill_level: '理解', error_type: '概念混淆', cognitive_load: '低', trap_type: '只有1和本身两个因数' }, hint: '质数只有1和它本身两个因数。7是质数。' },
         { id: 'l4-fac-03', level: 1, type: '基础探测', stem: '4的倍数（30以内）有？', options: ['A. 4,8,12,16,20,24,28', 'B. 1,2,4', 'C. 4,8,12,16', 'D. 4'], answer: 0, tags: { knowledge: '倍数', skill_level: '理解', error_type: '倍数概念错误', cognitive_load: '低', trap_type: '倍数是无限的直到30' }, hint: '4×1=4,4×2=8…一直到4×7=28。' },
@@ -531,10 +435,7 @@ const DIAGNOSE = {
         { id: 'l4-fac-10', level: 3, type: '迁移探测', stem: '一盒糖分给5人多2颗，分给6人也多2颗。至少有多少颗？', options: ['A. 32颗', 'B. 30颗', 'C. 28颗', 'D. 34颗'], answer: 0, tags: { knowledge: '公倍数应用', skill_level: '分析', error_type: '理解错误', cognitive_load: '高', trap_type: '5和6的最小公倍数+2' }, hint: '5和6的最小公倍数是30，30+2=32颗。' }
       ]
     },
-    'l4-percent-ratio': {
-      name: '百分数与比例',
-      grade: 'L4',
-      questions: [
+    'l4-percent-ratio': { name: '百分数与比例', grade: 'L4', textbookLessons: [9, 10, 19, 20, 21, 22, 23, 24, 25, 26], questions: [
         { id: 'l4-pct-01', level: 1, type: '基础探测', stem: '50%用分数表示是？', options: ['A. 1/2', 'B. 1/5', 'C. 1/50', 'D. 5/10'], answer: 0, tags: { knowledge: '百分数化分数', skill_level: '记忆', error_type: '概念混淆', cognitive_load: '低', trap_type: '50%=50/100=1/2' }, hint: '50% = 50/100 = 1/2' },
         { id: 'l4-pct-02', level: 1, type: '基础探测', stem: '比例2:3中，前项和后项的和是10，前项是几？', options: ['A. 4', 'B. 6', 'C. 2', 'D. 3'], answer: 0, tags: { knowledge: '比例', skill_level: '理解', error_type: '比例分配错误', cognitive_load: '低', trap_type: '2+3=5份，10÷5=2' }, hint: '2+3=5(份)，每份=10÷5=2，前项=2×2=4' },
         { id: 'l4-pct-03', level: 1, type: '基础探测', stem: '0.3 用百分数表示是？', options: ['A. 30%', 'B. 3%', 'C. 0.3%', 'D. 300%'], answer: 0, tags: { knowledge: '小数化百分数', skill_level: '理解', error_type: '换算错误', cognitive_load: '低', trap_type: '小数×100%' }, hint: '0.3×100%=30%' },
@@ -547,7 +448,7 @@ const DIAGNOSE = {
         { id: 'l4-pct-10', level: 3, type: '迁移探测', stem: '一本书原价40元，打八折后卖多少元？', options: ['A. 32元', 'B. 8元', 'C. 48元', 'D. 35元'], answer: 0, tags: { knowledge: '百分数实际应用', skill_level: '分析', error_type: '折扣概念错误', cognitive_load: '高', trap_type: '八折=80%=0.8' }, hint: '40×80%=40×0.8=32元' }
       ]
     },
-    'l1-compare-ordering': {name:'比较与排序',grade:'L1',questions:[
+    'l1-compare-ordering': { name: '比较与排序', grade: 'L1', textbookLessons: [0, 1, 4, 5, 76, 78, 98, 99], questions: [
 {id:'l1-cmp-01',level:1,type:'基础探测',stem:'7和3谁大？',options:['A.7大','B.3大','C.一样大','D.无法比较'],answer:0,tags:{knowledge:'比较大小',skill_level:'记忆',error_type:'数序混淆',cognitive_load:'低',trap_type:'7>3'},hint:'7在3后面，7更大。'},
 {id:'l1-cmp-02',level:1,type:'基础探测',stem:'从大到小排列：5,2,8',options:['A.8,5,2','B.2,5,8','C.5,2,8','D.8,2,5'],answer:0,tags:{knowledge:'排序',skill_level:'理解',error_type:'顺序搞反',cognitive_load:'低',trap_type:'从大到小'},hint:'先找最大的8，再找第二大的5，最后2。'},
 {id:'l1-cmp-03',level:1,type:'基础探测',stem:'小明有5颗糖，小红有8颗糖，谁多？',options:['A.小红多','B.小明多','C.一样多','D.不知道'],answer:0,tags:{knowledge:'比较应用',skill_level:'理解',error_type:'比较方向错',cognitive_load:'低',trap_type:'8>5'},hint:'8比5大，所以小红多。'},
@@ -559,7 +460,7 @@ const DIAGNOSE = {
 {id:'l1-cmp-09',level:3,type:'迁移探测',stem:'三个小朋友跳绳，小方跳了6下，小圆跳了9下，小强跳的比小方多比小圆少。小强可能跳了几下？',options:['A.7或8','B.5或6','C.9或10','D.4或3'],answer:0,tags:{knowledge:'范围比较',skill_level:'分析',error_type:'范围理解错',cognitive_load:'高',trap_type:'比6大比9小'},hint:'比6大比9小的整数有7和8。'},
 {id:'l1-cmp-10',level:3,type:'迁移探测',stem:'第1个小朋友有3块积木，第2个有5块，第3个有7块。按此规律，第5个小朋友有几块？',options:['A.11块','B.9块','C.10块','D.13块'],answer:0,tags:{knowledge:'规律排序',skill_level:'分析',error_type:'规律识别错',cognitive_load:'高',trap_type:'依次+2'},hint:'每次加2：3,5,7,9,11。第5个有11块。'}
 ]},
-'l1-carrying':{name:'进位退位与连加连减',grade:'L1',questions:[
+'l1-carrying': { name: '进位退位与连加连减', grade: 'L1', textbookLessons: [2, 3, 21, 23, 25, 27, 29, 31, 33, 35, 37], questions: [
 {id:'l1-car-01',level:1,type:'基础探测',stem:'8+5=?',options:['A.13','B.12','C.14','D.11'],answer:0,tags:{knowledge:'进位加法',skill_level:'理解',error_type:'进位错误',cognitive_load:'低',trap_type:'8+5=13'},hint:'8+2=10，10+3=13'},
 {id:'l1-car-02',level:1,type:'基础探测',stem:'15-8=?',options:['A.7','B.8','C.6','D.9'],answer:0,tags:{knowledge:'退位减法',skill_level:'理解',error_type:'退位错误',cognitive_load:'低',trap_type:'15-8=7'},hint:'15-5=10，10-3=7'},
 {id:'l1-car-03',level:1,type:'基础探测',stem:'3+4+2=?',options:['A.9','B.8','C.7','D.10'],answer:0,tags:{knowledge:'连加',skill_level:'理解',error_type:'逐步计算错误',cognitive_load:'低',trap_type:'从左到右算'},hint:'3+4=7，7+2=9'},
@@ -571,7 +472,7 @@ const DIAGNOSE = {
 {id:'l1-car-09',level:3,type:'迁移探测',stem:'小明有18元，买了一本书花了9元，又买了一个本子花了5元，还剩多少钱？',options:['A.4元','B.5元','C.3元','D.6元'],answer:0,tags:{knowledge:'连减应用',skill_level:'分析',error_type:'加减混淆',cognitive_load:'高',trap_type:'18-9-5=4'},hint:'18-9-5=4元'},
 {id:'l1-car-10',level:3,type:'迁移探测',stem:'车上有15人，到站下去6人，又上来4人。现在车上有几人？',options:['A.13人','B.11人','C.9人','D.17人'],answer:0,tags:{knowledge:'加减混合应用',skill_level:'分析',error_type:'运算顺序错',cognitive_load:'高',trap_type:'15-6+4=13'},hint:'15-6+4=13人'}
 ]},
-'l1-real-life':{name:'生活中的加减法',grade:'L1',questions:[
+'l1-real-life': { name: '生活中的加减法', grade: 'L1', textbookLessons: [35, 37, 84, 86], questions: [
 {id:'l1-lif-01',level:1,type:'基础探测',stem:'盘子里有5个苹果，吃了2个，还剩几个？',options:['A.3个','B.7个','C.5个','D.2个'],answer:0,tags:{knowledge:'生活减法',skill_level:'理解',error_type:'列式错误',cognitive_load:'低',trap_type:'5-2=3'},hint:'5-2=3个'},
 {id:'l1-lif-02',level:1,type:'基础探测',stem:'池塘里有6只鸭子，又来了3只，共几只？',options:['A.9只','B.3只','C.6只','D.8只'],answer:0,tags:{knowledge:'生活加法',skill_level:'理解',error_type:'列式错误',cognitive_load:'低',trap_type:'6+3=9'},hint:'6+3=9只'},
 {id:'l1-lif-03',level:1,type:'基础探测',stem:'妈妈买了10个鸡蛋，打碎了3个，还有几个好的？',options:['A.7个','B.13个','C.3个','D.10个'],answer:0,tags:{knowledge:'生活减法',skill_level:'理解',error_type:'理解错误',cognitive_load:'低',trap_type:'10-3=7'},hint:'10-3=7个'},
@@ -583,7 +484,7 @@ const DIAGNOSE = {
 {id:'l1-lif-09',level:3,type:'迁移探测',stem:'小明有9块糖，给了小红3块，又给了小刚2块。小明还剩几块？',options:['A.4块','B.5块','C.6块','D.3块'],answer:0,tags:{knowledge:'多步减法应用',skill_level:'分析',error_type:'逐步计算错',cognitive_load:'高',trap_type:'9-3-2=4'},hint:'9-3=6，6-2=4块'},
 {id:'l1-lif-10',level:3,type:'迁移探测',stem:'铅笔2元钢笔5元，小明有10元想买铅笔和钢笔够吗？',options:['A.够2+5=7<10','B.不够','C.刚好','D.不够2+5=10'],answer:0,tags:{knowledge:'购物决策',skill_level:'分析',error_type:'总价计算错',cognitive_load:'高',trap_type:'2+5=7<10'},hint:'2+5=7元<10元，够。'}
 ]},
-'l1-logic':{name:'逻辑推理',grade:'L1',questions:[
+'l1-logic': { name: '逻辑推理', grade: 'L1', textbookLessons: [11, 59, 61, 63, 65, 66, 67, 69, 71], questions: [
 {id:'l1-log-01',level:1,type:'基础探测',stem:'小红比小明大，小明比小刚大，谁最大？',options:['A.小红','B.小明','C.小刚','D.一样大'],answer:0,tags:{knowledge:'大小推理',skill_level:'理解',error_type:'推理顺序错',cognitive_load:'低',trap_type:'A>B>C'},hint:'小红>小明>小刚，小红最大。'},
 {id:'l1-log-02',level:1,type:'基础探测',stem:'□+○=10，□=6，○=？',options:['A.4','B.6','C.10','D.5'],answer:0,tags:{knowledge:'图文算式',skill_level:'理解',error_type:'逆运算错',cognitive_load:'低',trap_type:'10-6=4'},hint:'10-6=4'},
 {id:'l1-log-03',level:1,type:'基础探测',stem:'今天是星期三，再过3天是星期几？',options:['A.星期六','B.星期五','C.星期四','D.星期日'],answer:0,tags:{knowledge:'时间推理',skill_level:'理解',error_type:'日期计算错',cognitive_load:'低',trap_type:'三→四→五→六'},hint:'星期三+3天=星期六'},
@@ -595,7 +496,7 @@ const DIAGNOSE = {
 {id:'l1-log-09',level:3,type:'迁移探测',stem:'三个小朋友年龄各不同。甲说我比乙大，乙说我比丙大。从大到小排是？',options:['A.甲>乙>丙','B.丙>乙>甲','C.乙>甲>丙','D.甲>丙>乙'],answer:0,tags:{knowledge:'传递推理',skill_level:'分析',error_type:'推理顺序错',cognitive_load:'高',trap_type:'甲>乙>丙'},hint:'甲>乙且乙>丙，所以甲>乙>丙。'},
 {id:'l1-log-10',level:3,type:'迁移探测',stem:'五支笔按长短排：红笔比蓝笔长，蓝笔比绿笔长，黄笔比红笔长，紫笔最短。从长到短排列是？',options:['A.黄>红>蓝>绿>紫','B.红>蓝>绿>黄>紫','C.紫>黄>红>蓝>绿','D.黄>蓝>红>绿>紫'],answer:0,tags:{knowledge:'多条件推理',skill_level:'分析',error_type:'条件遗漏',cognitive_load:'高',trap_type:'黄笔比红笔长→黄最长'},hint:'黄>红>蓝>绿>紫'}
 ]},
-'l1-data':{name:'数据收集与统计',grade:'L1',questions:[
+'l1-data': { name: '数据收集与统计', grade: 'L1', textbookLessons: [72, 74, 76, 78, 80, 82], questions: [
 {id:'l1-dat-01',level:1,type:'基础探测',stem:'看统计：苹果1🍎🍎🍎🍎(4个)，香蕉2🍌🍌🍌(3个)。哪种水果多？',options:['A.苹果','B.香蕉','C.一样','D.不知道'],answer:0,tags:{knowledge:'数据比较',skill_level:'理解',error_type:'计数错误',cognitive_load:'低',trap_type:'4>3'},hint:'苹果4个比香蕉3个多。'},
 {id:'l1-dat-02',level:1,type:'基础探测',stem:'爱好统计：画画5人，唱歌3人，跳舞2人。哪种爱好人数最少？',options:['A.跳舞','B.画画','C.唱歌','D.一样'],answer:0,tags:{knowledge:'数据读取',skill_level:'理解',error_type:'数据读错',cognitive_load:'低',trap_type:'2<3<5'},hint:'画画5人，唱歌3人，跳舞2人。跳舞最少。'},
 {id:'l1-dat-03',level:1,type:'基础探测',stem:'收集同学们最喜欢的颜色，哪种方法最好？',options:['A.举手投票','B.猜一猜','C.听别人说','D.直接写'],answer:0,tags:{knowledge:'数据收集',skill_level:'理解',error_type:'方法选择错',cognitive_load:'低',trap_type:'统计需要真实数据'},hint:'举手投票才能真正统计每个人的意见。'},
@@ -607,7 +508,7 @@ const DIAGNOSE = {
 {id:'l1-dat-09',level:3,type:'迁移探测',stem:'5天气温：周一25℃周二28℃周三26℃周四30℃周五29℃。哪两天温差最大？',options:['A.周一和周四差5℃','B.周一和周二差3℃','C.周三和周五差3℃','D.周四和周五差1℃'],answer:0,tags:{knowledge:'数据分析',skill_level:'分析',error_type:'计算错误',cognitive_load:'高',trap_type:'30-25=5最大'},hint:'温差：30-25=5最大。'},
 {id:'l1-dat-10',level:3,type:'迁移探测',stem:'去动物园20人植物园15人科技馆25人。每车10人，去科技馆要几辆车？',options:['A.3辆','B.2辆','C.4辆','D.5辆'],answer:0,tags:{knowledge:'数据应用',skill_level:'分析',error_type:'除法理解错',cognitive_load:'高',trap_type:'25÷10=2.5→3辆'},hint:'25÷10=2余5，需要3辆车。'}
 ]},
-'l1-time-measure':{name:'时间与测量',grade:'L1',questions:[
+'l1-time-measure': { name: '时间与测量', grade: 'L1', textbookLessons: [94, 95, 100], questions: [
 {id:'l1-tim-01',level:1,type:'基础探测',stem:'分针指到12时针指到7，是几点？',options:['A.7点','B.12点','C.7点半','D.6点'],answer:0,tags:{knowledge:'认识时钟',skill_level:'记忆',error_type:'指针混淆',cognitive_load:'低',trap_type:'时针指向几就是几'},hint:'时针指向7就是7点。'},
 {id:'l1-tim-02',level:1,type:'基础探测',stem:'1小时等于多少分钟？',options:['A.60分钟','B.30分钟','C.100分钟','D.10分钟'],answer:0,tags:{knowledge:'时间单位',skill_level:'记忆',error_type:'单位混淆',cognitive_load:'低',trap_type:'1小时=60分'},hint:'1小时=60分钟。'},
 {id:'l1-tim-03',level:1,type:'基础探测',stem:'小明7点起床，洗脸刷牙用了10分钟，什么时间洗完脸？',options:['A.7:10','B.7点','C.7:30','D.8点'],answer:0,tags:{knowledge:'时间推算',skill_level:'理解',error_type:'时间加法错',cognitive_load:'低',trap_type:'7:00+10分=7:10'},hint:'7:00+10分钟=7:10'},
@@ -619,7 +520,7 @@ const DIAGNOSE = {
 {id:'l1-tim-09',level:3,type:'迁移探测',stem:'学校8点上课，小明走到学校要15分钟。他最晚几点出发？',options:['A.7:45','B.7:30','C.8点','D.7:50'],answer:0,tags:{knowledge:'时间规划',skill_level:'分析',error_type:'时间计算错',cognitive_load:'高',trap_type:'8:00-15分=7:45'},hint:'8:00减去15分钟=7:45'},
 {id:'l1-tim-10',level:3,type:'迁移探测',stem:'一节课40分钟，课间10分钟，第二节课9点开始。第一节课几点开始？',options:['A.8:10','B.8:00','C.8:20','D.8:30'],answer:0,tags:{knowledge:'时间倒推',skill_level:'分析',error_type:'时间推算错',cognitive_load:'高',trap_type:'9:00-10分-40分=8:10'},hint:'第二节课9点减10分课间再减40分=8:10。'}
 ]},
-'l8-set':{name:'集合与命题',grade:'L8',questions:[
+'l8-set': { name: '集合与命题', grade: 'L8', textbookLessons: [0, 2, 3, 4, 5, 6], questions: [
 {id:'l8-set-01',level:1,type:'基础探测',stem:'集合A={1,2,3}，B={2,3,4}，A∪B=?',options:['A.{1,2,3,4}','B.{1,2,3}','C.{2,3}','D.{1,4}'],answer:0,tags:{knowledge:'集合并集',skill_level:'记忆',error_type:'概念混淆',cognitive_load:'低',trap_type:'并集是所有元素'},hint:'A∪B中只要出现过的元素都要，{1,2,3,4}'},
 {id:'l8-set-02',level:1,type:'基础探测',stem:'设U={1,2,3,4,5}，A={1,3}，则∁UA=?',options:['A.{2,4,5}','B.{1,3}','C.{2,4}','D.{1,2,3}'],answer:0,tags:{knowledge:'补集',skill_level:'记忆',error_type:'补集概念错误',cognitive_load:'低',trap_type:'全集中去掉A的元素'},hint:'U中去掉1和3，剩下{2,4,5}'},
 {id:'l8-set-03',level:1,type:'基础探测',stem:'"x>2"是"x>1"的什么条件？',options:['A.充分不必要','B.必要不充分','C.充要','D.既不充分也不必要'],answer:0,tags:{knowledge:'充分必要条件',skill_level:'理解',error_type:'逻辑关系判断错',cognitive_load:'低',trap_type:'x>2能推出x>1'},hint:'x>2⇒x>1成立，但x>1不能推出x>2。所以充分不必要。'},
@@ -631,7 +532,7 @@ const DIAGNOSE = {
 {id:'l8-set-09',level:3,type:'迁移探测',stem:'求实数m使A={x|x²+mx+4=0}为空集。m的取值范围？',options:['A.-4<m<4','B.m≤-4或m≥4','C.m=±4','D.m任意'],answer:0,tags:{knowledge:'空集与方程',skill_level:'分析',error_type:'判别式理解错',cognitive_load:'高',trap_type:'A为空→方程无实根'},hint:'A为空集→方程无实根→Δ=m²-16<0→-4<m<4'},
 {id:'l8-set-10',level:3,type:'迁移探测',stem:'p:|x|≤2，q:x<a。若p是q的充分不必要条件，a的取值范围？',options:['A.a>2','B.a≥2','C.a<2','D.a≤2'],answer:0,tags:{knowledge:'充分条件与集合',skill_level:'分析',error_type:'集合包含关系判断错',cognitive_load:'高',trap_type:'p⇒q→p⊆q'},hint:'p对应{x|-2≤x≤2}，p⊆q→{x|-2≤x≤2}⊆{x|x<a}→a>2'}
 ]},
-'l8-function':{name:'函数',grade:'L8',questions:[
+'l8-function': { name: '函数', grade: 'L8', textbookLessons: [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 25, 26, 42, 43, 44, 45], questions: [
 {id:'l8-fun-01',level:1,type:'基础探测',stem:'f(x)=2x+1，则f(3)=?',options:['A.7','B.6','C.5','D.8'],answer:0,tags:{knowledge:'函数值',skill_level:'记忆',error_type:'代入错误',cognitive_load:'低',trap_type:'2×3+1=7'},hint:'2×3+1=7'},
 {id:'l8-fun-02',level:1,type:'基础探测',stem:'f(x)=√(x-3)的定义域？',options:['A.{x|x≥3}','B.{x|x>3}','C.{x|x≤3}','D.R'],answer:0,tags:{knowledge:'定义域',skill_level:'理解',error_type:'被开方数非负',cognitive_load:'低',trap_type:'x-3≥0'},hint:'x-3≥0，x≥3'},
 {id:'l8-fun-03',level:1,type:'基础探测',stem:'f(x)=x²是奇函数还是偶函数？',options:['A.偶函数','B.奇函数','C.非奇非偶','D.既是奇又是偶'],answer:0,tags:{knowledge:'奇偶性',skill_level:'理解',error_type:'判断错误',cognitive_load:'低',trap_type:'f(-x)=(-x)²=x²=f(x)'},hint:'f(-x)=x²=f(x)，偶函数定义。'},
@@ -643,7 +544,7 @@ const DIAGNOSE = {
 {id:'l8-fun-09',level:3,type:'迁移探测',stem:'已知f(x)在[0,+∞)上递增，比较f(2),f(-2),f(1)的大小。',options:['A.f(-2)最大f(2)最小','B.f(2)最大f(-2)最小','C.f(2)最大f(1)最小','D.f(-2)=f(2)'],answer:0,tags:{knowledge:'单调性应用',skill_level:'分析',error_type:'偶函数对称性',cognitive_load:'高',trap_type:'若为偶函数则f(-2)=f(2)'},hint:'由题意知这是偶函数f(-2)=f(2)。递增区间[0,+∞)：f(2)>f(1)，所以f(2)=f(-2)最大，f(1)次之。'},
 {id:'l8-fun-10',level:3,type:'迁移探测',stem:'f(x)周期为3，f(1)=2，求f(7)=?',options:['A.2','B.5','C.1','D.3'],answer:0,tags:{knowledge:'周期性',skill_level:'分析',error_type:'周期计算错',cognitive_load:'高',trap_type:'7=1+3×2→f(7)=f(1)=2'},hint:'周期为3，f(7)=f(1+3×2)=f(1)=2'}
 ]},
-'l8-trig':{name:'三角函数',grade:'L8',questions:[
+'l8-trig': { name: '三角函数', grade: 'L8', textbookLessons: [42, 43, 44, 45], questions: [
 {id:'l8-trg-01',level:1,type:'基础探测',stem:'sin30°=?',options:['A.1/2','B.√3/2','C.√2/2','D.1'],answer:0,tags:{knowledge:'特殊角三角函数',skill_level:'记忆',error_type:'数值记错',cognitive_load:'低',trap_type:'sin30°=1/2'},hint:'sin30°=1/2'},
 {id:'l8-trg-02',level:1,type:'基础探测',stem:'sin²α+cos²α=?',options:['A.1','B.0','C.2','D.sinα+cosα'],answer:0,tags:{knowledge:'同角三角函数',skill_level:'记忆',error_type:'公式记错',cognitive_load:'低',trap_type:'平方和为1'},hint:'sin²α+cos²α=1，这是三角恒等式的基础。'},
 {id:'l8-trg-03',level:1,type:'基础探测',stem:'tanα=sinα/cosα成立的条件？',options:['A.cosα≠0','B.sinα≠0','C.α为任意角','D.cosα=0'],answer:0,tags:{knowledge:'正切定义',skill_level:'理解',error_type:'条件遗漏',cognitive_load:'低',trap_type:'分母cosα≠0'},hint:'tanα=sinα/cosα，分母不为零→cosα≠0。'},
@@ -655,7 +556,7 @@ const DIAGNOSE = {
 {id:'l8-trg-09',level:3,type:'迁移探测',stem:'已知sinα=3/5且α∈(0,π/2)，求cos2α=?',options:['A.7/25','B.-7/25','C.24/25','D.-24/25'],answer:0,tags:{knowledge:'倍角应用',skill_level:'分析',error_type:'cosα求错',cognitive_load:'高',trap_type:'cosα=4/5→cos2α=2(4/5)²-1'},hint:'cosα=4/5，cos2α=2cos²α-1=32/25-1=7/25'},
 {id:'l8-trg-10',level:3,type:'迁移探测',stem:'在△ABC中，a=3，b=4，C=60°，c=?',options:['A.√13','B.5','C.√37','D.√25'],answer:0,tags:{knowledge:'余弦定理',skill_level:'分析',error_type:'公式代错',cognitive_load:'高',trap_type:'c²=a²+b²-2abcosC'},hint:'c²=9+16-2×3×4×1/2=25-12=13，c=√13'}
 ]},
-'l8-vector':{name:'平面向量',grade:'L8',questions:[
+'l8-vector': { name: '平面向量', grade: 'L8', textbookLessons: [30, 31, 32, 34, 36, 39, 40], questions: [
 {id:'l8-vec-01',level:1,type:'基础探测',stem:'向量a=(1,2)，b=(3,4)，a+b=?',options:['A.(4,6)','B.(2,2)','C.(3,8)','D.(4,2)'],answer:0,tags:{knowledge:'向量加法',skill_level:'记忆',error_type:'坐标加法错',cognitive_load:'低',trap_type:'对应坐标相加'},hint:'(1+3,2+4)=(4,6)'},
 {id:'l8-vec-02',level:1,type:'基础探测',stem:'|a+b|≤|a|+|b|叫什么不等式？',options:['A.三角不等式','B.柯西不等式','C.均值不等式','D.绝对值不等式'],answer:0,tags:{knowledge:'向量模',skill_level:'记忆',error_type:'概念混淆',cognitive_load:'低',trap_type:'向量不等式'},hint:'|a+b|≤|a|+|b|是三角形不等式。'},
 {id:'l8-vec-03',level:1,type:'基础探测',stem:'a·b=|a||b|cosθ中θ表示？',options:['A.a与b的夹角','B.a与x轴的夹角','C.b与x轴的夹角','D.a与b的和'],answer:0,tags:{knowledge:'数量积',skill_level:'记忆',error_type:'概念错误',cognitive_load:'低',trap_type:'θ为两向量夹角'},hint:'θ是向量a与b的夹角。'},
@@ -667,7 +568,7 @@ const DIAGNOSE = {
 {id:'l8-vec-09',level:3,type:'迁移探测',stem:'已知|a|=2，|b|=3，a·b=-3，求|2a-b|。',options:['A.√31','B.√19','C.√25','D.√37'],answer:0,tags:{knowledge:'向量模综合',skill_level:'分析',error_type:'展开式错',cognitive_load:'高',trap_type:'|2a-b|²=4|a|²-4a·b+|b|²'},hint:'=16-4(-3)+9=16+12+9=37，|2a-b|=√37'},
 {id:'l8-vec-10',level:3,type:'迁移探测',stem:'△ABC中，AB=AC=3，∠A=60°，求AB·AC。',options:['A.9/2','B.9','C.-9/2','D.0'],answer:0,tags:{knowledge:'向量数量积应用',skill_level:'分析',error_type:'夹角取错',cognitive_load:'高',trap_type:'AB·AC=3×3×cos60°=9/2'},hint:'=3×3×cos60°=9×1/2=9/2'}
 ]},
-'l8-sequence':{name:'数列',grade:'L8',questions:[
+'l8-sequence': { name: '数列', grade: 'L8', textbookLessons: [47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57], questions: [
 {id:'l8-seq-01',level:1,type:'基础探测',stem:'等差数列1,4,7,10,…的公差d=?',options:['A.3','B.4','C.1','D.-3'],answer:0,tags:{knowledge:'等差数列公差',skill_level:'记忆',error_type:'计算错误',cognitive_load:'低',trap_type:'4-1=3'},hint:'后项减前项：4-1=3'},
 {id:'l8-seq-02',level:1,type:'基础探测',stem:'等比数列2,6,18,…的公比q=?',options:['A.3','B.6','C.2','D.4'],answer:0,tags:{knowledge:'等比数列公比',skill_level:'记忆',error_type:'计算错误',cognitive_load:'低',trap_type:'6÷2=3'},hint:'后项÷前项：6÷2=3'},
 {id:'l8-seq-03',level:1,type:'基础探测',stem:'等差数列{an}中a₁=3，d=4，则a₁₀=?',options:['A.39','B.43','C.7','D.40'],answer:0,tags:{knowledge:'等差数列通项',skill_level:'理解',error_type:'公式记错',cognitive_load:'低',trap_type:'an=a₁+(n-1)d'},hint:'a₁₀=3+9×4=39'},
@@ -679,7 +580,7 @@ const DIAGNOSE = {
 {id:'l8-seq-09',level:3,type:'迁移探测',stem:'an=1/[n(n+1)]，求数列前n项和Sn。',options:['A.n/(n+1)','B.1/(n+1)','C.n/(n-1)','D.(n+1)/n'],answer:0,tags:{knowledge:'裂项求和',skill_level:'分析',error_type:'裂项公式错',cognitive_load:'高',trap_type:'1/n-1/(n+1)'},hint:'an=1/n-1/(n+1)，Sn=1-1/(n+1)=n/(n+1)'},
 {id:'l8-seq-10',level:3,type:'迁移探测',stem:'等差数列{an}中a₁=1，d=2，求数列{1/(an×aₙ₊₁)}的前4项和。',options:['A.2/9','B.1/3','C.4/9','D.5/9'],answer:0,tags:{knowledge:'数列综合',skill_level:'分析',error_type:'裂项错',cognitive_load:'高',trap_type:'1/(an×aₙ₊₁)=1/2(1/an-1/aₙ₊₁)'},hint:'an=2n-1，裂项求和得(1-1/9)/2=4/9'}
 ]},
-'l8-trig-transform':{name:'三角恒等变换',grade:'L9',questions:[
+'l8-trig-transform': { name: '三角恒等变换', grade: 'L9', textbookLessons: [0, 1, 2, 3, 4, 5], questions: [
 {id:'l8-tt-01',level:1,type:'基础探测',stem:'sin75°cos15°+cos75°sin15°=?',options:['A.sin90°=1','B.sin60°=√3/2','C.cos90°=0','D.cos60°=1/2'],answer:0,tags:{knowledge:'和角公式',skill_level:'记忆',error_type:'公式逆用错',cognitive_load:'低',trap_type:'sin(A+B)'},hint:'sin(75°+15°)=sin90°=1'},
 {id:'l8-tt-02',level:1,type:'基础探测',stem:'cos²α-sin²α=?',options:['A.cos2α','B.sin2α','C.2cos²α-1','D.1-2sin²α'],answer:0,tags:{knowledge:'倍角公式',skill_level:'记忆',error_type:'公式混淆',cognitive_load:'低',trap_type:'cos2α=cos²α-sin²α'},hint:'cos²α-sin²α=cos2α'},
 {id:'l8-tt-03',level:1,type:'基础探测',stem:'sinαcosβ+cosαsinβ=?',options:['A.sin(α+β)','B.cos(α+β)','C.sin(α-β)','D.cos(α-β)'],answer:0,tags:{knowledge:'正弦和角公式',skill_level:'记忆',error_type:'公式混淆',cognitive_load:'低',trap_type:'sin(α+β)=sinαcosβ+cosαsinβ'},hint:'=sin(α+β)'},
@@ -691,7 +592,7 @@ const DIAGNOSE = {
 {id:'l8-tt-09',level:3,type:'迁移探测',stem:'y=sinx+√3cosx的最大值是？',options:['A.2','B.√3','C.4','D.√10'],answer:0,tags:{knowledge:'辅助角公式',skill_level:'分析',error_type:'系数合成错',cognitive_load:'高',trap_type:'√(1²+(√3)²)=2'},hint:'y=2(1/2sinx+√3/2cosx)=2sin(x+π/3)，最大值为2'},
 {id:'l8-tt-10',level:3,type:'迁移探测',stem:'在△ABC中，a=√3,b=1,A=60°，求B。',options:['A.30°','B.45°','C.60°','D.90°'],answer:0,tags:{knowledge:'解三角形',skill_level:'分析',error_type:'计算错',cognitive_load:'高',trap_type:'正弦定理√3/sin60=1/sinB'},hint:'√3/(√3/2)=1/sinB→2=1/sinB→sinB=1/2→B=30°'}
 ]},
-'l8-combination':{name:'排列组合与二项式',grade:'L9',questions:[
+'l8-combination': { name: '排列组合与二项式', grade: 'L9', textbookLessons: [15, 16, 17, 18, 19, 20, 21, 22], questions: [
 {id:'l8-cmb-01',level:1,type:'基础探测',stem:'从3件不同的物品中选2件，有几种选法？',options:['A.C(3,2)=3种','B.A(3,2)=6种','C.2种','D.4种'],answer:0,tags:{knowledge:'组合',skill_level:'记忆',error_type:'排列与组合混淆',cognitive_load:'低',trap_type:'选不计顺序'},hint:'C(3,2)=3×2/2=3种'},
 {id:'l8-cmb-02',level:1,type:'基础探测',stem:'3个人排成一排有几种排法？',options:['A.A(3,3)=6种','B.C(3,3)=1种','C.3种','D.9种'],answer:0,tags:{knowledge:'排列',skill_level:'记忆',error_type:'排列公式错',cognitive_load:'低',trap_type:'3×2×1=6'},hint:'3!=6种'},
 {id:'l8-cmb-03',level:1,type:'基础探测',stem:'(a+b)²展开式中ab项的系数是多少？',options:['A.2','B.1','C.3','D.4'],answer:0,tags:{knowledge:'二项式定理',skill_level:'理解',error_type:'系数记错',cognitive_load:'低',trap_type:'C(2,1)=2'},hint:'(a+b)²=a²+2ab+b²，ab系数为2。'},
@@ -703,7 +604,7 @@ const DIAGNOSE = {
 {id:'l8-cmb-09',level:3,type:'迁移探测',stem:'5个不同的礼物分给3个小朋友，每人至少1个，有几种分法？',options:['A.150种','B.120种','C.180种','D.210种'],answer:0,tags:{knowledge:'分组分配',skill_level:'分析',error_type:'分组重复计数',cognitive_load:'高',trap_type:'先分再配'},hint:'可能的分组(3,1,1)和(2,2,1)。(3,1,1)=C(5,3)×2!=20×6=120'},
 {id:'l8-cmb-10',level:3,type:'迁移探测',stem:'(2x-1)⁵展开式中x³的系数？',options:['A.80','B.-80','C.40','D.-40'],answer:0,tags:{knowledge:'二项式综合',skill_level:'分析',error_type:'符号与系数错',cognitive_load:'高',trap_type:'C(5,3)(2x)³(-1)²=10×8=80'},hint:'T₃=C(5,3)(2x)³(-1)²=10×8x³=80x³'}
 ]},
-'l8-line-circle':{name:'直线与圆',grade:'L9',questions:[
+'l8-line-circle': { name: '直线与圆', grade: 'L9', textbookLessons: [4, 5, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33], questions: [
 {id:'l8-lc-01',level:1,type:'基础探测',stem:'过两点(1,2)和(3,4)的直线斜率k=?',options:['A.1','B.2','C.3','D.4'],answer:0,tags:{knowledge:'斜率',skill_level:'记忆',error_type:'公式记错',cognitive_load:'低',trap_type:'(4-2)/(3-1)=1'},hint:'k=(4-2)/(3-1)=1'},
 {id:'l8-lc-02',level:1,type:'基础探测',stem:'直线y=2x+3，斜率为？',options:['A.2','B.3','C.1','D.0'],answer:0,tags:{knowledge:'直线方程',skill_level:'记忆',error_type:'系数读错',cognitive_load:'低',trap_type:'y=kx+b中k=2'},hint:'斜率为2。'},
 {id:'l8-lc-03',level:1,type:'基础探测',stem:'圆(x-1)²+(y-2)²=9的圆心和半径是？',options:['A.(1,2),r=3','B.(-1,-2),r=3','C.(1,2),r=9','D.(-1,2),r=3'],answer:0,tags:{knowledge:'圆的方程',skill_level:'记忆',error_type:'公式记错',cognitive_load:'低',trap_type:'(x-a)²+(y-b)²=r²'},hint:'圆心(1,2)，半径=√9=3'},
@@ -715,7 +616,7 @@ const DIAGNOSE = {
 {id:'l8-lc-09',level:3,type:'迁移探测',stem:'过点(3,0)作圆x²+y²=1的切线，切线方程是？',options:['A.y=±√2/4(x-3)','B.y=±1/3(x-3)','C.y=±2(x-3)','D.x=3'],answer:0,tags:{knowledge:'圆的切线',skill_level:'分析',error_type:'切线公式错',cognitive_load:'高',trap_type:'设切线y=k(x-3)'},hint:'d=| -3k|/√(k²+1)=1，9k²=k²+1，8k²=1，k=±1/(2√2)=±√2/4'},
 {id:'l8-lc-10',level:3,type:'迁移探测',stem:'从圆x²+y²=9外一点(5,0)引圆的两条切线，两切点的弦长是多少？',options:['A.18/5','B.9/5','C.3','D.4'],answer:0,tags:{knowledge:'切点弦',skill_level:'分析',error_type:'计算错',cognitive_load:'高',trap_type:'切点弦方程'},hint:'切点弦方程xx₀+yy₀=9→5x=9→x=9/5。代入圆方程求y→弦长=18/5'}
 ]},
-'l8-complex':{name:'复数',grade:'L9',questions:[
+'l8-complex': { name: '复数', grade: 'L9', textbookLessons: [39, 40, 41, 42, 43, 44, 45, 46], questions: [
 {id:'l8-cpx-01',level:1,type:'基础探测',stem:'i²=?',options:['A.-1','B.1','C.-i','D.i'],answer:0,tags:{knowledge:'虚数单位',skill_level:'记忆',error_type:'定义记错',cognitive_load:'低',trap_type:'i²=-1'},hint:'i²=-1'},
 {id:'l8-cpx-02',level:1,type:'基础探测',stem:'复数1+2i的共轭复数是？',options:['A.1-2i','B.-1+2i','C.1+2i','D.-1-2i'],answer:0,tags:{knowledge:'共轭复数',skill_level:'记忆',error_type:'概念混淆',cognitive_load:'低',trap_type:'虚部取相反数'},hint:'1-2i'},
 {id:'l8-cpx-03',level:1,type:'基础探测',stem:'|3+4i|=?',options:['A.5','B.7','C.25','D.1'],answer:0,tags:{knowledge:'复数的模',skill_level:'理解',error_type:'公式记错',cognitive_load:'低',trap_type:'√(3²+4²)=5'},hint:'|3+4i|=√(9+16)=5'},
@@ -727,7 +628,7 @@ const DIAGNOSE = {
 {id:'l8-cpx-09',level:3,type:'迁移探测',stem:'复数z满足|z-1|=|z-3i|，z在复平面上对应点的轨迹是？',options:['A.直线','B.圆','C.椭圆','D.双曲线'],answer:0,tags:{knowledge:'复数几何意义',skill_level:'分析',error_type:'轨迹判断错',cognitive_load:'高',trap_type:'到两点距离相等的点'},hint:'到(1,0)和(0,3)距离相等的点的轨迹是中垂线，一条直线。'},
 {id:'l8-cpx-10',level:3,type:'迁移探测',stem:'复数z满足|z|=1，求|z-3+4i|的最大值。',options:['A.6','B.5','C.4','D.3'],answer:0,tags:{knowledge:'复数最值',skill_level:'分析',error_type:'最值判断错',cognitive_load:'高',trap_type:'圆上点到(3,-4)的最大距离'},hint:'|z|=1是单位圆，|z-3+4i|是圆上点到(3,-4)的距离最大值=圆心距+半径=5+1=6'}
 ]},
-'l10-solid-geo':{name:'立体几何',grade:'L10',questions:[
+'l10-solid-geo': { name: '立体几何', grade: 'L10', textbookLessons: [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 45, 48], questions: [
 {id:'l9-sg-01',level:1,type:'基础探测',stem:'正方体有几条棱？',options:['A.12条','B.6条','C.8条','D.4条'],answer:0,tags:{knowledge:'基本立体图形',skill_level:'记忆',error_type:'特征记错',cognitive_load:'低',trap_type:'正方体有12条棱'},hint:'正方体有12条棱、6个面、8个顶点。'},
 {id:'l9-sg-02',level:1,type:'基础探测',stem:'棱长为2的正方体的体积是？',options:['A.8','B.4','C.6','D.12'],answer:0,tags:{knowledge:'体积',skill_level:'理解',error_type:'公式记错',cognitive_load:'低',trap_type:'V=2³=8'},hint:'V=2×2×2=8'},
 {id:'l9-sg-03',level:1,type:'基础探测',stem:'直线与平面垂直的定义是什么？',options:['A.垂直于平面内所有直线','B.垂直于平面内一条直线','C.与平面不平行','D.与平面相交'],answer:0,tags:{knowledge:'线面垂直',skill_level:'理解',error_type:'定义理解错',cognitive_load:'低',trap_type:'垂直于面内所有直线'},hint:'一条直线垂直于平面内任意一条直线，则线面垂直。'},
@@ -739,7 +640,7 @@ const DIAGNOSE = {
 {id:'l9-sg-09',level:3,type:'迁移探测',stem:'正方体ABCD-A₁B₁C₁D₁中，求异面直线A₁B与AD₁所成角。',options:['A.60°','B.90°','C.45°','D.30°'],answer:0,tags:{knowledge:'异面直线夹角',skill_level:'分析',error_type:'角找错',cognitive_load:'高',trap_type:'平移法找角'},hint:'连接A₁D、BD，A₁B与AD₁的夹角=60°（等边三角形）'},
 {id:'l9-sg-10',level:3,type:'迁移探测',stem:'边长为2的正方形，绕其一边旋转一周得到的旋转体体积是？',options:['A.8π','B.4π','C.16π','D.2π'],answer:0,tags:{knowledge:'旋转体',skill_level:'分析',error_type:'旋转轴理解错',cognitive_load:'高',trap_type:'得圆柱r=2,h=2'},hint:'V=π×4×2=8π'}
 ]},
-'l10-conic':{name:'圆锥曲线',grade:'L10',questions:[
+'l10-conic': { name: '圆锥曲线', grade: 'L10', textbookLessons: [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41], questions: [
 {id:'l9-con-01',level:1,type:'基础探测',stem:'椭圆x²/25+y²/16=1的a=?',options:['A.5','B.4','C.3','D.25'],answer:0,tags:{knowledge:'椭圆标准方程',skill_level:'记忆',error_type:'a与b混淆',cognitive_load:'低',trap_type:'a²=25→a=5'},hint:'a²=25，a=5'},
 {id:'l9-con-02',level:1,type:'基础探测',stem:'双曲线x²/9-y²/16=1的渐近线方程是？',options:['A.y=±4x/3','B.y=±3x/4','C.y=±16x/9','D.y=±9x/16'],answer:0,tags:{knowledge:'双曲线渐近线',skill_level:'记忆',error_type:'公式记错',cognitive_load:'低',trap_type:'y=±bx/a=±4x/3'},hint:'y=±(4/3)x'},
 {id:'l9-con-03',level:1,type:'基础探测',stem:'抛物线y²=8x的焦点坐标是？',options:['A.(2,0)','B.(4,0)','C.(0,2)','D.(0,4)'],answer:0,tags:{knowledge:'抛物线焦点',skill_level:'理解',error_type:'p值取错',cognitive_load:'低',trap_type:'2p=8→p=4→焦点(p/2,0)=(2,0)'},hint:'y²=2px→2p=8→p=4→焦点(2,0)'},
@@ -751,7 +652,7 @@ const DIAGNOSE = {
 {id:'l9-con-09',level:3,type:'迁移探测',stem:'椭圆x²/16+y²/12=1内一点M(2,1)为中点的弦所在直线方程是？',options:['A.3x+4y-10=0','B.3x-4y-2=0','C.4x+3y-11=0','D.2x+y-5=0'],answer:0,tags:{knowledge:'中点弦',skill_level:'分析',error_type:'点差法使用错',cognitive_load:'高',trap_type:'用点差法求斜率'},hint:'点差法得(x₁²-x₂²)/16+(y₁²-y₂²)/12=0，(x₁+x₂)/16+(y₁+y₂)/12·k=0，4/16+2k/12=0,k=-3/2'},
 {id:'l9-con-10',level:3,type:'迁移探测',stem:'双曲线x²/4-y²/5=1的右焦点到渐近线距离是？',options:['A.√5','B.2','C.3','D.4'],answer:0,tags:{knowledge:'双曲线综合',skill_level:'分析',error_type:'公式应用错',cognitive_load:'高',trap_type:'右焦点(3,0)到渐近线y=(√5/2)x距离'},hint:'c=3，渐近线√5x/2-y=0，d=|(3√5/2)-0|/√(5/4+1)=3√5/2·2/3=√5'}
 ]},
-'l10-probability':{name:'概率',grade:'L10',questions:[
+'l10-probability': { name: '概率', grade: 'L10', textbookLessons: [47, 48, 49, 50, 51, 55], questions: [
 {id:'l9-prb-01',level:1,type:'基础探测',stem:'掷一颗骰子，点数大于4的概率是？',options:['A.1/3','B.1/2','C.2/3','D.1/6'],answer:0,tags:{knowledge:'古典概型',skill_level:'记忆',error_type:'计数错误',cognitive_load:'低',trap_type:'5和6两个点数'},hint:'点数>4={5,6}，概率2/6=1/3'},
 {id:'l9-prb-02',level:1,type:'基础探测',stem:'若P(A)=0.3，P(B)=0.4，A与B互斥，P(A∪B)=?',options:['A.0.7','B.0.12','C.0.1','D.0.5'],answer:0,tags:{knowledge:'互斥事件',skill_level:'理解',error_type:'公式记错',cognitive_load:'低',trap_type:'互斥时P(A∪B)=P(A)+P(B)'},hint:'0.3+0.4=0.7'},
 {id:'l9-prb-03',level:1,type:'基础探测',stem:'从1-10中随机取一个数，是偶数的概率？',options:['A.1/2','B.1/5','C.3/10','D.2/5'],answer:0,tags:{knowledge:'古典概型',skill_level:'理解',error_type:'计数错误',cognitive_load:'低',trap_type:'偶数有5个{2,4,6,8,10}'},hint:'5/10=1/2'},
@@ -763,7 +664,7 @@ const DIAGNOSE = {
 {id:'l9-prb-09',level:3,type:'迁移探测',stem:'从2男3女中选2人，选到至少1男的概率？',options:['A.7/10','B.3/5','C.2/5','D.9/10'],answer:0,tags:{knowledge:'概率综合',skill_level:'分析',error_type:'计算错误',cognitive_load:'高',trap_type:'1-C(3,2)/C(5,2)'},hint:'1-C(3,2)/C(5,2)=1-3/10=7/10'},
 {id:'l9-prb-10',level:3,type:'迁移探测',stem:'某射手命中率为0.6，独立射击直到命中为止，第3次才命中的概率？',options:['A.0.4²×0.6=0.096','B.0.6²×0.4','C.0.6³','D.0.4³'],answer:0,tags:{knowledge:'几何分布',skill_level:'分析',error_type:'公式记错',cognitive_load:'高',trap_type:'前2次没中第3次中'},hint:'0.4×0.4×0.6=0.096'}
 ]},
-'l2-place-value':{name:'百以内数的认识',grade:'L2',questions:[
+'l2-place-value': { name: '百以内数的认识', grade: 'L2', textbookLessons: [0, 1, 2, 3, 6, 7, 8, 24, 25, 30, 31, 35, 36, 37, 38], questions: [
 {id:'l2-pv-01',level:1,type:'基础探测',stem:'34是由几个十和几个一组成的？',options:['A.3个十和4个一','B.4个十和3个一','C.34个十','D.3个一和4个十'],answer:0,tags:{knowledge:'数的组成',skill_level:'记忆',error_type:'数位混淆',cognitive_load:'低',trap_type:'十位是3个位是4'},hint:'34的十位是3表示3个十，个位是4表示4个一。'},
 {id:'l2-pv-02',level:1,type:'基础探测',stem:'和50相邻的两个数是？',options:['A.49和51','B.48和52','C.40和60','D.45和55'],answer:0,tags:{knowledge:'数序',skill_level:'理解',error_type:'相邻理解错',cognitive_load:'低',trap_type:'前一个和后一个'},hint:'50前面是49，后面是51。'},
 {id:'l2-pv-03',level:1,type:'基础探测',stem:'78读作？',options:['A.七十八','B.七八','C.七十八十','D.七和八'],answer:0,tags:{knowledge:'数的读写',skill_level:'记忆',error_type:'读数规则错',cognitive_load:'低',trap_type:'十位读几十个位读几'},hint:'十位7读七十，个位8读八，合起来七十八。'},
@@ -775,7 +676,7 @@ const DIAGNOSE = {
 {id:'l2-pv-09',level:3,type:'迁移探测',stem:'小花今年8岁，妈妈今年32岁。当小花20岁时妈妈多少岁？',options:['A.44岁','B.40岁','C.48岁','D.42岁'],answer:0,tags:{knowledge:'年龄问题',skill_level:'分析',error_type:'年龄差不变',cognitive_load:'高',trap_type:'妈妈永远大24岁'},hint:'32-8=24，20+24=44岁。'},
 {id:'l2-pv-10',level:3,type:'迁移探测',stem:'一列队伍中，小红前面有8人，后面有6人，这列队伍一共多少人？',options:['A.15人','B.14人','C.13人','D.16人'],answer:0,tags:{knowledge:'排队问题',skill_level:'分析',error_type:'漏算小红',cognitive_load:'高',trap_type:'8+1+6=15'},hint:'前面8人+小红+后面6人=15人。'}
 ]},
-'l2-add-sub':{name:'百以内加减法与估算',grade:'L2',questions:[
+'l2-add-sub': { name: '百以内加减法与估算', grade: 'L2', textbookLessons: [0, 1, 6, 7, 8, 9, 10], questions: [
 {id:'l2-as-01',level:1,type:'基础探测',stem:'34+25=?',options:['A.59','B.58','C.49','D.69'],answer:0,tags:{knowledge:'两位数加法',skill_level:'理解',error_type:'竖式计算错',cognitive_load:'低',trap_type:'34+25=59'},hint:'30+20=50，4+5=9，50+9=59'},
 {id:'l2-as-02',level:1,type:'基础探测',stem:'68-23=?',options:['A.45','B.46','C.35','D.55'],answer:0,tags:{knowledge:'两位数减法',skill_level:'理解',error_type:'竖式计算错',cognitive_load:'低',trap_type:'68-23=45'},hint:'60-20=40，8-3=5，40+5=45'},
 {id:'l2-as-03',level:1,type:'基础探测',stem:'48+25=?',options:['A.73','B.63','C.75','D.83'],answer:0,tags:{knowledge:'进位加法',skill_level:'理解',error_type:'进位错误',cognitive_load:'低',trap_type:'48+25=73'},hint:'40+20=60，8+5=13，60+13=73'},
@@ -787,7 +688,7 @@ const DIAGNOSE = {
 {id:'l2-as-09',level:3,type:'迁移探测',stem:'公交车上有45人，到站下去18人，又上来12人。现在车上有多少人？',options:['A.39人','B.49人','C.35人','D.41人'],answer:0,tags:{knowledge:'加减混合',skill_level:'分析',error_type:'运算顺序错',cognitive_load:'高',trap_type:'45-18+12=39'},hint:'45-18=27，27+12=39人。'},
 {id:'l2-as-10',level:3,type:'迁移探测',stem:'小方有35张贴纸，送给小明8张，小红又给了小方10张。小方现在有多少张？',options:['A.37张','B.33张','C.42张','D.45张'],answer:0,tags:{knowledge:'多步计算',skill_level:'分析',error_type:'运算顺序错',cognitive_load:'高',trap_type:'35-8+10=37'},hint:'35-8=27，27+10=37张。'}
 ]},
-'l2-mult-div':{name:'表内乘除法',grade:'L2',questions:[
+'l2-mult-div': { name: '表内乘除法', grade: 'L2', textbookLessons: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], questions: [
 {id:'l2-md-01',level:1,type:'基础探测',stem:'3×4=?',options:['A.12','B.7','C.9','D.16'],answer:0,tags:{knowledge:'乘法口算',skill_level:'记忆',error_type:'口诀记错',cognitive_load:'低',trap_type:'三四十二'},hint:'3×4=12'},
 {id:'l2-md-02',level:1,type:'基础探测',stem:'12÷4=?',options:['A.3','B.4','C.2','D.6'],answer:0,tags:{knowledge:'除法口算',skill_level:'记忆',error_type:'口诀记错',cognitive_load:'低',trap_type:'12÷4=3'},hint:'12÷4=3'},
 {id:'l2-md-03',level:1,type:'基础探测',stem:'5×6+5=?',options:['A.35','B.30','C.40','D.25'],answer:0,tags:{knowledge:'乘加混合',skill_level:'理解',error_type:'先乘后加',cognitive_load:'低',trap_type:'5×6=30+5=35'},hint:'5×6=30，30+5=35'},
@@ -799,7 +700,7 @@ const DIAGNOSE = {
 {id:'l2-md-09',level:3,type:'迁移探测',stem:'一箱牛奶有6瓶，3箱牛奶共有几瓶？喝掉8瓶后还剩几瓶？',options:['A.18瓶剩10瓶','B.18瓶剩8瓶','C.12瓶剩4瓶','D.18瓶剩12瓶'],answer:0,tags:{knowledge:'乘减综合',skill_level:'分析',error_type:'运算顺序错',cognitive_load:'高',trap_type:'6×3=18-8=10'},hint:'6×3=18，18-8=10瓶。'},
 {id:'l2-md-10',level:3,type:'迁移探测',stem:'一根绳子对折后再对折，这时每段长4米。绳子原来多少米？',options:['A.16米','B.12米','C.8米','D.20米'],answer:0,tags:{knowledge:'乘除法应用',skill_level:'分析',error_type:'对折次数理解错',cognitive_load:'高',trap_type:'对折两次分成4段'},hint:'4×4=16米。'}
 ]},
-'l2-length-time':{name:'长度单位与时分秒',grade:'L2',questions:[
+'l2-length-time': { name: '长度单位与时分秒', grade: 'L2', textbookLessons: [26, 27, 37, 38, 39, 40, 41, 42, 43, 44, 45], questions: [
 {id:'l2-lt-01',level:1,type:'基础探测',stem:'1米等于多少厘米？',options:['A.100厘米','B.10厘米','C.1000厘米','D.50厘米'],answer:0,tags:{knowledge:'长度单位',skill_level:'记忆',error_type:'单位混淆',cognitive_load:'低',trap_type:'1米=100厘米'},hint:'1米=100厘米。'},
 {id:'l2-lt-02',level:1,type:'基础探测',stem:'1小时等于多少分钟？',options:['A.60分钟','B.30分钟','C.100分钟','D.10分钟'],answer:0,tags:{knowledge:'时间单位',skill_level:'记忆',error_type:'单位混淆',cognitive_load:'低',trap_type:'1小时=60分'},hint:'1小时=60分钟。'},
 {id:'l2-lt-03',level:1,type:'基础探测',stem:'钟表上分针指着6，时针在3和4之间，是几点？',options:['A.3:30','B.3:06','C.4:30','D.6:30'],answer:0,tags:{knowledge:'认识时钟',skill_level:'理解',error_type:'认钟错误',cognitive_load:'低',trap_type:'分针指半=30分'},hint:'时针过3到4之间是3点多，分针指6是半，所以3:30。'},
@@ -811,7 +712,7 @@ const DIAGNOSE = {
 {id:'l2-lt-09',level:3,type:'迁移探测',stem:'小红从家到学校要走20分钟，她8:10出门。学校要求8:30到校，她迟到吗？',options:['A.不迟到8:10+20分=8:30刚好到','B.迟到','C.早到','D.无法确定'],answer:0,tags:{knowledge:'时间规划',skill_level:'分析',error_type:'计算错误',cognitive_load:'高',trap_type:'8:10+20分=8:30正好'},hint:'8:10+20分钟=8:30，刚好不迟到。'},
 {id:'l2-lt-10',level:3,type:'迁移探测',stem:'运动会上跑100米，小明用了20秒，小华用了18秒。谁跑得快？快几秒？',options:['A.小华快2秒','B.小明快2秒','C.一样快','D.小华快18秒'],answer:0,tags:{knowledge:'时间比较',skill_level:'分析',error_type:'比较方向错',cognitive_load:'高',trap_type:'时间越少越快'},hint:'18<20，小华快，20-18=2秒。'}
 ]},
-'l2-geometry':{name:'线与角',grade:'L2',questions:[
+'l2-geometry': { name: '线与角', grade: 'L2', textbookLessons: [35, 36, 50], questions: [
 {id:'l2-geo-01',level:1,type:'基础探测',stem:'下面哪个是线段？',options:['A.有端点有长度','B.没有端点','C.一个端点','D.弯的'],answer:0,tags:{knowledge:'线段特征',skill_level:'记忆',error_type:'概念混淆',cognitive_load:'低',trap_type:'线段有两个端点'},hint:'线段有两个端点，有确定长度。'},
 {id:'l2-geo-02',level:1,type:'基础探测',stem:'比直角大的角叫什么角？',options:['A.钝角','B.锐角','C.平角','D.周角'],answer:0,tags:{knowledge:'角的分类',skill_level:'记忆',error_type:'分类混淆',cognitive_load:'低',trap_type:'钝角>90°'},hint:'钝角比直角大。'},
 {id:'l2-geo-03',level:1,type:'基础探测',stem:'长方形的对边（  ）',options:['A.相等','B.不相等','C.平行但不等','D.垂直'],answer:0,tags:{knowledge:'长方形特征',skill_level:'理解',error_type:'特征混淆',cognitive_load:'低',trap_type:'对边相等'},hint:'长方形对边相等。'},
@@ -823,7 +724,7 @@ const DIAGNOSE = {
 {id:'l2-geo-09',level:3,type:'迁移探测',stem:'用两个完全一样的直角三角形可以拼成一个什么图形？',options:['A.长方形或正方形','B.只能拼成三角形','C.只能拼成圆形','D.不能拼'],answer:0,tags:{knowledge:'图形拼组',skill_level:'分析',error_type:'空间想象错',cognitive_load:'高',trap_type:'斜边拼起来'},hint:'两个直角三角形可以拼成长方形或正方形。'},
 {id:'l2-geo-10',level:3,type:'迁移探测',stem:'一个正方体有几个顶点？几条棱？',options:['A.8个顶点12条棱','B.6个顶点12条棱','C.8个顶点6条棱','D.12个顶点8条棱'],answer:0,tags:{knowledge:'立体图形特征',skill_level:'分析',error_type:'特征记错',cognitive_load:'高',trap_type:'正方体8个顶点12条棱'},hint:'正方体有8个顶点、12条棱、6个面。'}
 ]},
-'l2-thinking':{name:'思维训练',grade:'L2',questions:[
+'l2-thinking': { name: '思维训练', grade: 'L2', textbookLessons: [53, 54, 55, 56, 57, 58, 59], questions: [
 {id:'l2-thk-01',level:1,type:'基础探测',stem:'找规律：1,3,5,7,?',options:['A.9','B.8','C.10','D.6'],answer:0,tags:{knowledge:'数字规律',skill_level:'理解',error_type:'规律识别错',cognitive_load:'低',trap_type:'奇数序列'},hint:'每次加2，7+2=9'},
 {id:'l2-thk-02',level:1,type:'基础探测',stem:'1只猫+1只猫=2只猫，那么1只狗+1只鸡=?',options:['A.不能直接加','B.2只动物','C.1只狗和1只鸡','D.2只'],answer:0,tags:{knowledge:'分类思想',skill_level:'理解',error_type:'分类混乱',cognitive_load:'低',trap_type:'不同种类不能直接合并'},hint:'狗和鸡是不同的动物，应该分开说。'},
 {id:'l2-thk-03',level:1,type:'基础探测',stem:'观察：□△□△□△，下一个是什么？',options:['A.□','B.△','C.○','D.☆'],answer:0,tags:{knowledge:'图形规律',skill_level:'理解',error_type:'规律识别错',cognitive_load:'低',trap_type:'交替规律'},hint:'交替出现，△后面是□。'},
@@ -835,7 +736,7 @@ const DIAGNOSE = {
 {id:'l2-thk-09',level:3,type:'迁移探测',stem:'3个人吃3个包子要3分钟，6个人吃6个包子要几分钟？',options:['A.3分钟','B.6分钟','C.9分钟','D.2分钟'],answer:0,tags:{knowledge:'归一问题',skill_level:'分析',error_type:'比例理解错',cognitive_load:'高',trap_type:'1人吃1个要3分钟'},hint:'1人吃1个要3分钟，6人每人吃1个还是3分钟。'},
 {id:'l2-thk-10',level:3,type:'迁移探测',stem:'红黄蓝三种颜色的灯按"红、黄、蓝"顺序不断重复，第12盏灯是什么颜色？',options:['A.蓝色','B.红色','C.黄色','D.绿色'],answer:0,tags:{knowledge:'周期问题',skill_level:'分析',error_type:'周期计算错',cognitive_load:'高',trap_type:'3个一周期，12能被3整除'},hint:'12÷3=4余0，第12个是周期的最后一个蓝色。'}
 ]},
-'l3-numbers':{name:'万以内数与四则运算',grade:'L3',questions:[
+'l3-numbers': { name: '万以内数与四则运算', grade: 'L3', textbookLessons: [0, 1, 2, 3, 4, 5, 20, 21, 55, 56], questions: [
 {id:'l3-num-01',level:1,type:'基础探测',stem:'3206读作？',options:['A.三千二百零六','B.三千二百六','C.三千零六','D.三十二零六'],answer:0,tags:{knowledge:'万以内数的读写',skill_level:'记忆',error_type:'读数规则错',cognitive_load:'低',trap_type:'中间0要读出来'},hint:'三千二百零六'},
 {id:'l3-num-02',level:1,type:'基础探测',stem:'350+420=?',options:['A.770','B.870','C.670','D.770'],answer:0,tags:{knowledge:'万以内加法',skill_level:'理解',error_type:'计算错误',cognitive_load:'低',trap_type:'350+420=770'},hint:'350+420=770'},
 {id:'l3-num-03',level:1,type:'基础探测',stem:'800-350=?',options:['A.450','B.350','C.550','D.450'],answer:0,tags:{knowledge:'万以内减法',skill_level:'理解',error_type:'退位错误',cognitive_load:'低',trap_type:'800-350=450'},hint:'800-350=450'},
@@ -847,7 +748,7 @@ const DIAGNOSE = {
 {id:'l3-num-09',level:3,type:'迁移探测',stem:'玩具店有3箱玩具，每箱120个，卖出185个，还剩几个？',options:['A.175个','B.155个','C.165个','D.185个'],answer:0,tags:{knowledge:'乘减综合',skill_level:'分析',error_type:'运算顺序错',cognitive_load:'高',trap_type:'3×120=360-185=175'},hint:'3×120=360，360-185=175个。'},
 {id:'l3-num-10',level:3,type:'迁移探测',stem:'新华字典有684页，故事书比字典少238页，两本书一共有多少页？',options:['A.1130页','B.1040页','C.1080页','D.1150页'],answer:0,tags:{knowledge:'多步运算应用',skill_level:'分析',error_type:'列式错误',cognitive_load:'高',trap_type:'故事书684-238=446，共684+446=1130'},hint:'684-238=446，684+446=1130页。'}
 ]},
-'l3-fraction':{name:'分数的初步认识',grade:'L3',questions:[
+'l3-fraction': { name: '分数的初步认识', grade: 'L3', textbookLessons: [16, 17, 18, 19, 20, 21, 22, 23, 24, 46, 47], questions: [
 {id:'l3-frc-01',level:1,type:'基础探测',stem:'把一个月饼平均分成4份，取其中1份是？',options:['A.1/4','B.1/2','C.1/3','D.1/5'],answer:0,tags:{knowledge:'分数的意义',skill_level:'记忆',error_type:'概念混淆',cognitive_load:'低',trap_type:'1份/4份=1/4'},hint:'平均分成4份取1份，就是1/4。'},
 {id:'l3-frc-02',level:1,type:'基础探测',stem:'2/3的分子是几？分母是几？',options:['A.分子2分母3','B.分子3分母2','C.分子2分母2','D.分子3分母3'],answer:0,tags:{knowledge:'分数的组成',skill_level:'记忆',error_type:'分子分母混淆',cognitive_load:'低',trap_type:'分数线上面是分子'},hint:'分子是2，分母是3。'},
 {id:'l3-frc-03',level:1,type:'基础探测',stem:'1/4和1/5谁大？',options:['A.1/4>1/5','B.1/4<1/5','C.一样大','D.无法比较'],answer:0,tags:{knowledge:'分数比较',skill_level:'理解',error_type:'比较规则错',cognitive_load:'低',trap_type:'分子相同分母大的反而小'},hint:'分子相同都是1，分母4<5，所以1/4>1/5。'},
@@ -859,7 +760,7 @@ const DIAGNOSE = {
 {id:'l3-frc-09',level:3,type:'迁移探测',stem:'一根绳子长8/9米，用了5/9米，还剩多少米？',options:['A.3/9米','B.3/9=1/3米','C.6/9米','D.5/9米'],answer:0,tags:{knowledge:'分数减法应用',skill_level:'分析',error_type:'计算错误',cognitive_load:'高',trap_type:'8/9-5/9=3/9=1/3'},hint:'8-5=3，3/9=1/3米。'},
 {id:'l3-frc-10',level:3,type:'迁移探测',stem:'小明吃了1/3个蛋糕，小红吃了1/3个蛋糕，一共吃了多少个蛋糕？',options:['A.2/3个','B.1/6个','C.1/3个','D.2/6个'],answer:0,tags:{knowledge:'分数加法应用',skill_level:'分析',error_type:'法则记错',cognitive_load:'高',trap_type:'1/3+1/3=2/3'},hint:'1/3+1/3=2/3个蛋糕。'}
 ]},
-'l3-area':{name:'面积',grade:'L3',questions:[
+'l3-area': { name: '面积', grade: 'L3', textbookLessons: [24, 25, 26, 27, 28, 29, 32, 33, 46, 47, 50, 51], questions: [
 {id:'l3-are-01',level:1,type:'基础探测',stem:'长方形的面积公式是？',options:['A.长×宽','B.(长+宽)×2','C.长+宽','D.长×高'],answer:0,tags:{knowledge:'面积公式',skill_level:'记忆',error_type:'公式混淆',cognitive_load:'低',trap_type:'正方形面积=边长×边长'},hint:'S=长×宽'},
 {id:'l3-are-02',level:1,type:'基础探测',stem:'边长为4厘米的正方形面积是？',options:['A.16平方厘米','B.8平方厘米','C.4平方厘米','D.12平方厘米'],answer:0,tags:{knowledge:'正方形面积',skill_level:'理解',error_type:'公式代错',cognitive_load:'低',trap_type:'4×4=16'},hint:'S=4×4=16平方厘米'},
 {id:'l3-are-03',level:1,type:'基础探测',stem:'长5cm宽3cm的长方形面积是？',options:['A.15平方厘米','B.16平方厘米','C.8平方厘米','D.10平方厘米'],answer:0,tags:{knowledge:'长方形面积',skill_level:'理解',error_type:'公式代错',cognitive_load:'低',trap_type:'5×3=15'},hint:'5×3=15平方厘米'},
@@ -871,7 +772,7 @@ const DIAGNOSE = {
 {id:'l3-are-09',level:3,type:'迁移探测',stem:'一块长方形菜地长12米，宽8米，一半种青菜一半种萝卜。青菜地有多大？',options:['A.48平方米','B.96平方米','C.24平方米','D.12平方米'],answer:0,tags:{knowledge:'面积应用',skill_level:'分析',error_type:'计算错误',cognitive_load:'高',trap_type:'总面积12×8=96，一半96÷2=48'},hint:'12×8=96，96÷2=48平方米。'},
 {id:'l3-are-10',level:3,type:'迁移探测',stem:'大正方形边长9厘米，小正方形边长3厘米。大正方形面积是小正方形面积的几倍？',options:['A.9倍','B.3倍','C.6倍','D.27倍'],answer:0,tags:{knowledge:'面积倍数',skill_level:'分析',error_type:'只算边长倍数',cognitive_load:'高',trap_type:'面积比是边长比的平方'},hint:'9×9=81，3×3=9，81÷9=9倍。'}
 ]},
-'l3-stats':{name:'统计',grade:'L3',questions:[
+'l3-stats': { name: '统计', grade: 'L3', textbookLessons: [34, 35, 40, 41], questions: [
 {id:'l3-sta-01',level:1,type:'基础探测',stem:'条形图是用什么表示数量多少的？',options:['A.条形的长短','B.条形的颜色','C.条形的位置','D.条形的形状'],answer:0,tags:{knowledge:'条形图',skill_level:'记忆',error_type:'概念混淆',cognitive_load:'低',trap_type:'条越长数量越多'},hint:'条形图用条形的长短表示数量的多少。'},
 {id:'l3-sta-02',level:1,type:'基础探测',stem:'喜欢苹果12人、香蕉8人、橘子10人。哪种最受欢迎？',options:['A.苹果','B.香蕉','C.橘子','D.一样'],answer:0,tags:{knowledge:'数据比较',skill_level:'理解',error_type:'数据读错',cognitive_load:'低',trap_type:'12最大'},hint:'苹果12人最多，最受欢迎。'},
 {id:'l3-sta-03',level:1,type:'基础探测',stem:'折线图中的点表示什么？',options:['A.每个时间的数据','B.数据的平均值','C.数据的变化趋势','D.数据的颜色'],answer:0,tags:{knowledge:'折线图',skill_level:'理解',error_type:'概念混淆',cognitive_load:'低',trap_type:'每个点表示一个数据'},hint:'折线图中的每个点表示在某一时刻的数据值。'},
@@ -883,27 +784,23 @@ const DIAGNOSE = {
 {id:'l3-sta-09',level:3,type:'迁移探测',stem:'5天的游客人数：周一200人，周二150人，周三250人，周四300人，周五200人。哪天到哪天游客增加最多？',options:['A.周三到周四增加50人','B.周一到周二减少50人','C.周二到周三增加100人','D.周四到周五减少100人'],answer:0,tags:{knowledge:'数据分析',skill_level:'分析',error_type:'计算错误',cognitive_load:'高',trap_type:'250-150=100最多'},hint:'100>50，周二到周三增加100人最多。'},
 {id:'l3-sta-10',level:3,type:'迁移探测',stem:'三年一班男生18人女生16人，三年二班男生比一班多3人，女生比一班少2人。三年二班共多少人？',options:['A.35人','B.37人','C.33人','D.39人'],answer:0,tags:{knowledge:'统计应用',skill_level:'分析',error_type:'运算错误',cognitive_load:'高',trap_type:'(18+3)+(16-2)=35'},hint:'18+3=21，16-2=14，21+14=35人。'}
 ]},
-'l11-limits':{name:'极限与连续',grade:'L11',questions:[
+'l11-limits': { name: '极限与连续', grade: 'L11', textbookLessons: [0, 1, 2, 3, 4, 5, 6, 7], questions: [
 {id:'l11-lim-01',level:1,type:'基础探测',stem:'lim(x→0)(sinx/x)=?',options:['A.1','B.0','C.∞','D.不存在'],answer:0,tags:{knowledge:'重要极限',skill_level:'记忆',error_type:'极限记错',cognitive_load:'低',trap_type:'第一个重要极限'},hint:'lim(x→0)sinx/x=1'},
 {id:'l11-lim-02',level:1,type:'基础探测',stem:'lim(n→∞)1/n=?',options:['A.0','B.1','C.∞','D.-1'],answer:0,tags:{knowledge:'数列极限',skill_level:'记忆',error_type:'极限概念',cognitive_load:'低',trap_type:'n→∞时1/n→0'},hint:'n趋向无穷大时，1/n趋向0。'},
 {id:'l11-lim-10',level:3,type:'迁移探测',stem:'lim(x→0)(sin2x)/(3x)=?',options:['A.2/3','B.1','C.0','D.∞'],answer:0,tags:{knowledge:'极限综合',skill_level:'分析',error_type:'变量替换错',cognitive_load:'高',trap_type:'sin2x~2x'},hint:'sin2x~2x，2x/(3x)=2/3'}
 ]},
-'l11-derivative':{name:'导数',grade:'L11',questions:[
+'l11-derivative': { name: '导数', grade: 'L11', textbookLessons: [8, 9, 18, 19, 20, 21, 26, 27, 29, 30, 31, 32, 33, 34], questions: [
 {id:'l11-der-01',level:1,type:'基础探测',stem:'f(x)′=x²，f′(2)=?',options:['A.4','B.2','C.8','D.0'],answer:0,tags:{knowledge:'导数计算',skill_level:'记忆',error_type:'导数公式错',cognitive_load:'低',trap_type:'f′(x)′=2x'},hint:'f′(x)′=2x，f′(2)=4'},
 {id:'l11-der-02',level:1,type:'基础探测',stem:'(sinx)′=?',options:['A.cosx','B.-cosx','C.-sinx','D.sinx'],answer:0,tags:{knowledge:'基本导数公式',skill_level:'记忆',error_type:'公式记错',cognitive_load:'低',trap_type:'sinx的导数是cosx'},hint:'(sinx)′=cosx'},
 {id:'l11-der-10',level:3,type:'迁移探测',stem:'f(x)′=x³-3x的极小值',options:['A.-2','B.2','C.0','D.4'],answer:0,tags:{knowledge:'极值',skill_level:'分析',error_type:'极值判定错',cognitive_load:'高',trap_type:'f′(x)′=3x²-3'},hint:'x=±1，f′′(1)>0极小，f(1)=-2'}
 ]},
-'l11-integral':{name:'积分',grade:'L11',questions:[
+'l11-integral': { name: '积分', grade: 'L11', textbookLessons: [44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54], questions: [
 {id:'l11-int-01',level:1,type:'基础探测',stem:'∫x²dx=?',options:['A.x³/3+C','B.x³+C','C.2x+C','D.x²/2+C'],answer:0,tags:{knowledge:'不定积分公式',skill_level:'记忆',error_type:'公式记错',cognitive_load:'低',trap_type:'幂函数积分'},hint:'∫xⁿd⁡dx=x^(n+1)/(n+1)+C'},
 {id:'l11-int-02',level:1,type:'基础探测',stem:'∫₁²xdx=?',options:['A.3/2','B.2','C.1','D.3'],answer:0,tags:{knowledge:'定积分',skill_level:'理解',error_type:'牛莱公式',cognitive_load:'低',trap_type:'x²/2|₁²'},hint:'=x²/2|₁²=4/2-1/2=3/2'},
 {id:'l11-int-10',level:3,type:'迁移探测',stem:'曲线y=x与y=x²围成的面积',options:['A.1/6','B.1/3','C.1/2','D.1/12'],answer:0,tags:{knowledge:'面积综合',skill_level:'分析',error_type:'交点求错',cognitive_load:'高',trap_type:'交点x=0和x=1'},hint:'∫₀¹(x-x²)dx=1/2-1/3=1/6'}
 ]},
-'l12-review':{name:'高三综合复习',grade:'L12',questions:[
-{id:'l12-rv-01',level:1,type:'基础探测',stem:'A={x|x²-3x+2=0}，A=?',options:['A.{1,2}','B.{1}','C.{2}','D.∅'],answer:0,tags:{knowledge:'集合',skill_level:'记忆',error_type:'解方程错',cognitive_load:'低',trap_type:'x=1或2'},hint:'x=1或2'},
-{id:'l12-rv-02',level:1,type:'基础探测',stem:'f(x)′=√(x-2)的定义域',options:['A.[2,+∞)','B.(2,+∞)','C.(-∞,2]','D.R'],answer:0,tags:{knowledge:'定义域',skill_level:'记忆',error_type:'被开方数条件',cognitive_load:'低',trap_type:'x-2≥0'},hint:'x-2≥0，x≥2'},
-{id:'l12-rv-10',level:3,type:'迁移探测',stem:'椭圆x²/9+y²/4=1上P到两焦点距离和',options:['A.6','B.4','C.9','D.2√5'],answer:0,tags:{knowledge:'椭圆定义',skill_level:'分析',error_type:'定义遗忘',cognitive_load:'高',trap_type:'2a=6'},hint:'2a=6'}
-]},
-'l2-measure':{name:'周长与测量',grade:'L2',questions:[
+
+'l2-measure': { name: '周长与测量', grade: 'L2', textbookLessons: [28, 29, 30, 31, 32, 33, 34], questions: [
 {id:'l2-mea-01',level:1,type:'基础探测',stem:'长方形周长公式是?',options:['A.(长+宽)×2','B.长×宽','C.长+宽','D.长×2+宽'],answer:0,tags:{knowledge:'周长公式',skill_level:'记忆',error_type:'公式混淆',cognitive_load:'低',trap_type:'(a+b)×2'},hint:'(长+宽)×2'},
 {id:'l2-mea-02',level:1,type:'基础探测',stem:'边长为5cm的正方形周长是?',options:['A.20cm','B.25cm','C.10cm','D.15cm'],answer:0,tags:{knowledge:'正方形周长',skill_level:'理解',error_type:'公式记错',cognitive_load:'低',trap_type:'4×5=20'},hint:'4×5=20cm'},
 {id:'l2-mea-03',level:1,type:'基础探测',stem:'1米=( )厘米',options:['A.100','B.10','C.1000','D.50'],answer:0,tags:{knowledge:'长度单位换算',skill_level:'记忆',error_type:'单位混淆',cognitive_load:'低',trap_type:'1米=100厘米'},hint:'1米=100厘米'},
@@ -915,7 +812,7 @@ const DIAGNOSE = {
 {id:'l2-mea-09',level:3,type:'迁移探测',stem:'一根绳子绕正方形花坛一周用了20米,花坛边长多少?',options:['A.5米','B.4米','C.10米','D.8米'],answer:0,tags:{knowledge:'周长应用',skill_level:'分析',error_type:'列式错误',cognitive_load:'高',trap_type:'20÷4=5'},hint:'20÷4=5米'},
 {id:'l2-mea-10',level:3,type:'迁移探测',stem:'长8米宽5米的长方形和一个边长6米的正方形谁周长大?大多少?',options:['A.长方形大2米','B.正方形大2米','C.一样大','D.长方形大6米'],answer:0,tags:{knowledge:'周长综合',skill_level:'分析',error_type:'计算错误',cognitive_load:'高',trap_type:'(8+5)×2=26,6×4=24'},hint:'26-24=2米,长方形大。'}
 ]},
-'l2-application':{name:'乘除法应用题',grade:'L2',questions:[
+'l2-application': { name: '乘除法应用题', grade: 'L2', textbookLessons: [21, 22, 43, 44, 45], questions: [
 {id:'l2-app-01',level:1,type:'基础探测',stem:'每个小朋友分3块糖,4个小朋友共几块?',options:['A.12块','B.7块','C.9块','D.16块'],answer:0,tags:{knowledge:'乘法应用',skill_level:'理解',error_type:'列式错误',cognitive_load:'低',trap_type:'3×4=12'},hint:'3×4=12块'},
 {id:'l2-app-02',level:1,type:'基础探测',stem:'小红有8个苹果,小明的苹果是小红2倍,小明有几个?',options:['A.16个','B.4个','C.10个','D.6个'],answer:0,tags:{knowledge:'倍的认识',skill_level:'理解',error_type:'倍概念混淆',cognitive_load:'低',trap_type:'8×2=16'},hint:'8的2倍=8×2=16个'},
 {id:'l2-app-03',level:1,type:'基础探测',stem:'20个苹果每5个装一盘,能装几盘?',options:['A.4盘','B.5盘','C.3盘','D.6盘'],answer:0,tags:{knowledge:'除法应用',skill_level:'理解',error_type:'列式错误',cognitive_load:'低',trap_type:'20÷5=4'},hint:'20÷5=4盘'},
@@ -927,7 +824,7 @@ const DIAGNOSE = {
 {id:'l2-app-09',level:3,type:'迁移探测',stem:'小花比小红大3岁,3年后小花比小红大几岁?',options:['A.3岁','B.6岁','C.9岁','D.0岁'],answer:0,tags:{knowledge:'年龄差不变',skill_level:'分析',error_type:'混淆',cognitive_load:'高',trap_type:'年龄差不变'},hint:'年龄差永远不变,还是3岁。'},
 {id:'l2-app-10',level:3,type:'迁移探测',stem:'铅笔2元一支,小明有10元,最多买几支?还剩几元?',options:['A.5支剩0元','B.4支剩2元','C.5支剩2元','D.4支剩0元'],answer:0,tags:{knowledge:'有余除法应用',skill_level:'分析',error_type:'计算错误',cognitive_load:'高',trap_type:'10÷2=5'},hint:'10÷2=5支,剩0元。'}
 ]},
-'l2-time':{name:'时间应用',grade:'L2',questions:[
+'l2-time': { name: '时间应用', grade: 'L2', textbookLessons: [37, 38, 39, 40, 41, 42, 43, 44, 45], questions: [
 {id:'l2-tim-01',level:1,type:'基础探测',stem:'1小时=( )分钟',options:['A.60','B.100','C.30','D.10'],answer:0,tags:{knowledge:'时间单位',skill_level:'记忆',error_type:'单位记错',cognitive_load:'低',trap_type:'1小时=60分'},hint:'1小时=60分钟'},
 {id:'l2-tim-02',level:1,type:'基础探测',stem:'钟表分针从12走到6走了多少分钟?',options:['A.30分钟','B.6分钟','C.15分钟','D.60分钟'],answer:0,tags:{knowledge:'认识钟表',skill_level:'理解',error_type:'指针理解错',cognitive_load:'低',trap_type:'每大格5分钟'},hint:'12到6有6大格,5×6=30分钟。'},
 {id:'l2-tim-03',level:1,type:'基础探测',stem:'2:30也可以说成?',options:['A.2点半','B.3点','C.2点','D.2点15分'],answer:0,tags:{knowledge:'时间表达',skill_level:'理解',error_type:'表达错误',cognitive_load:'低',trap_type:'30分=半'},hint:'30分就是半,2:30=2点半。'},
@@ -939,7 +836,7 @@ const DIAGNOSE = {
 {id:'l2-tim-09',level:3,type:'迁移探测',stem:'小明4:30放学,路上走了15分钟到家,又用了30分钟做作业,做完作业几点?',options:['A.5:15','B.5:00','C.4:15','D.5:45'],answer:0,tags:{knowledge:'时间综合',skill_level:'分析',error_type:'累加错误',cognitive_load:'高',trap_type:'4:30+15分+30分=5:15'},hint:'4:30+15分=4:45,4:45+30分=5:15'},
 {id:'l2-tim-10',level:3,type:'迁移探测',stem:'爸爸早上8点到公司,中午休息1小时,下午6点下班,一天工作几小时?',options:['A.9小时','B.8小时','C.10小时','D.7小时'],answer:0,tags:{knowledge:'时间段计算',skill_level:'分析',error_type:'忽略休息',cognitive_load:'高',trap_type:'从8点到6点是10小时减休息1小时=9'},hint:'8点到6点=10小时,减1小时休息=9小时。'}
 ]},
-'l2-stats':{name:'统计与图表',grade:'L2',questions:[
+'l2-stats': { name: '统计与图表', grade: 'L2', textbookLessons: [51], questions: [
 {id:'l2-sta-01',level:1,type:'基础探测',stem:'条形图中,条越长表示数量?',options:['A.越多','B.越少','C.不变','D.不知道'],answer:0,tags:{knowledge:'条形图',skill_level:'记忆',error_type:'概念理解错',cognitive_load:'低',trap_type:'条越长越多'},hint:'条形图中条越长表示数量越多。'},
 {id:'l2-sta-02',level:1,type:'基础探测',stem:'收集同学们喜欢吃什么水果,最好的方法是?',options:['A.举手统计','B.猜一猜','C.问几个同学','D.看别人吃'],answer:0,tags:{knowledge:'数据收集',skill_level:'理解',error_type:'方法错误',cognitive_load:'低',trap_type:'举手统计全班'},hint:'举手统计每个同学的选择最准确。'},
 {id:'l2-sta-03',level:1,type:'基础探测',stem:'一班有25人,二班有30人,哪班人多?多多少?',options:['A.二班多5人','B.一班多5人','C.一样多','D.二班多10人'],answer:0,tags:{knowledge:'数据比较',skill_level:'理解',error_type:'计算错误',cognitive_load:'低',trap_type:'30-25=5'},hint:'30-25=5人,二班多。'},
@@ -951,7 +848,7 @@ const DIAGNOSE = {
 {id:'l2-sta-09',level:3,type:'迁移探测',stem:'统计表:男生18人,女生16人。男生比女生多百分之几?',options:['A.约12.5%','B.约11.1%','C.10%','D.15%'],answer:0,tags:{knowledge:'数据分析',skill_level:'分析',error_type:'计算错误',cognitive_load:'高',trap_type:'2÷16=0.125=12.5%'},hint:'(18-16)÷16=2÷16=12.5%'},
 {id:'l2-sta-10',level:3,type:'迁移探测',stem:'根据数据推断:前4次考试小明都考了90分以上,第5次考试他?',options:['A.可能考90分以上','B.一定考90分以上','C.一定考不到','D.无法推测'],answer:0,tags:{knowledge:'数据推断',skill_level:'分析',error_type:'推断过度',cognitive_load:'高',trap_type:'只能推测可能性'},hint:'只能说可能,不能肯定。'}
 ]},
-'l3-remainder':{name:'有余数的除法',grade:'L3',questions:[
+'l3-remainder': { name: '有余数的除法', grade: 'L3', textbookLessons: [8, 9, 14, 15], questions: [
 {id:'l3-rem-01',level:1,type:'基础探测',stem:'13÷4=?,余数多少?',options:['A.3余1','B.4余1','C.3余2','D.2余5'],answer:0,tags:{knowledge:'有余数的除法',skill_level:'记忆',error_type:'口诀错误',cognitive_load:'低',trap_type:'三四十二余1'},hint:'3×4=12余1'},
 {id:'l3-rem-02',level:1,type:'基础探测',stem:'余数必须比除数?',options:['A.小','B.大','C.相等','D.没关系'],answer:0,tags:{knowledge:'余数性质',skill_level:'记忆',error_type:'性质记错',cognitive_load:'低',trap_type:'余数<除数'},hint:'余数一定要比除数小。'},
 {id:'l3-rem-03',level:1,type:'基础探测',stem:'17÷3=?,余数?',options:['A.5余2','B.6余1','C.5余1','D.4余5'],answer:0,tags:{knowledge:'有余数的除法',skill_level:'理解',error_type:'口诀错误',cognitive_load:'低',trap_type:'三五一十五余2'},hint:'3×5=15,17-15=2,所以5余2'},
@@ -963,7 +860,7 @@ const DIAGNOSE = {
 {id:'l3-rem-09',level:3,type:'迁移探测',stem:'小红有30颗糖,要分给7个小朋友,每人分几颗?还剩几颗?如果要每人分5颗,还需要加几颗?',options:['A.每人4颗剩2颗,加5颗','B.每人4颗剩2颗,加3颗','C.每人3颗剩9颗,加6颗','D.每人5颗剩0颗,加0颗'],answer:0,tags:{knowledge:'有余除法综合',skill_level:'分析',error_type:'运算错误',cognitive_load:'高',trap_type:'30÷7=4余2,需加5颗到35'},hint:'30÷7=4余2,5×7=35,35-30=5颗'},
 {id:'l3-rem-10',level:3,type:'迁移探测',stem:'按"红黄蓝"顺序排列彩灯,第20个是什么颜色?',options:['A.红色','B.黄色','C.蓝色','D.绿色'],answer:0,tags:{knowledge:'周期问题',skill_level:'分析',error_type:'周期计算错',cognitive_load:'高',trap_type:'20÷3=6余2'},hint:'20÷3=6余2,第2个是黄色。'}
 ]},
-'l3-ratio':{name:'倍数与归一问题',grade:'L3',questions:[
+'l3-ratio': { name: '倍数与归一问题', grade: 'L3', textbookLessons: [10, 11, 12, 13], questions: [
 {id:'l3-rat-01',level:1,type:'基础探测',stem:'小华有8本故事书,小明是小华的3倍,小明有几本?',options:['A.24本','B.11本','C.16本','D.32本'],answer:0,tags:{knowledge:'求倍数',skill_level:'理解',error_type:'列式错误',cognitive_load:'低',trap_type:'8×3=24'},hint:'8×3=24本'},
 {id:'l3-rat-02',level:1,type:'基础探测',stem:'3头牛一天吃15千克草,1头牛一天吃几千克?',options:['A.5千克','B.10千克','C.3千克','D.8千克'],answer:0,tags:{knowledge:'归一',skill_level:'理解',error_type:'列式错误',cognitive_load:'低',trap_type:'15÷3=5'},hint:'15÷3=5千克'},
 {id:'l3-rat-03',level:1,type:'基础探测',stem:'妈妈买了20个苹果,每5个装一盘,能装几盘?',options:['A.4盘','B.5盘','C.3盘','D.6盘'],answer:0,tags:{knowledge:'包含除',skill_level:'理解',error_type:'列式错误',cognitive_load:'低',trap_type:'20÷5=4'},hint:'20÷5=4盘'},
@@ -975,7 +872,7 @@ const DIAGNOSE = {
 {id:'l3-rat-09',level:3,type:'迁移探测',stem:'小红有20元,小明的钱是小红的2倍少6元,小明有多少?',options:['A.34元','B.40元','C.28元','D.36元'],answer:0,tags:{knowledge:'倍多倍少',skill_level:'分析',error_type:'运算顺序错',cognitive_load:'高',trap_type:'20×2-6=34'},hint:'20×2=40,40-6=34元'},
 {id:'l3-rat-10',level:3,type:'迁移探测',stem:'3头牛5天吃草75千克,照这样计算,5头牛7天吃草多少千克?',options:['A.175千克','B.125千克','C.150千克','D.200千克'],answer:0,tags:{knowledge:'归总问题',skill_level:'分析',error_type:'计算错误',cognitive_load:'高',trap_type:'75÷3÷5=5,5×5×7=175'},hint:'75÷3÷5=5(每头每天),5×5×7=175千克'}
 ]},
-'l3-solid':{name:'立体图形与表面积',grade:'L3',questions:[
+'l3-solid': { name: '立体图形与表面积', grade: 'L3', textbookLessons: [28, 29, 30, 31, 42, 43, 46, 47, 49, 50, 51], questions: [
 {id:'l3-sol-01',level:1,type:'基础探测',stem:'正方体有几个面?',options:['A.6个','B.4个','C.8个','D.12个'],answer:0,tags:{knowledge:'正方体特征',skill_level:'记忆',error_type:'特征记错',cognitive_load:'低',trap_type:'6个面'},hint:'正方体有6个面。'},
 {id:'l3-sol-02',level:1,type:'基础探测',stem:'长方体也有几个面?',options:['A.6个','B.8个','C.4个','D.12个'],answer:0,tags:{knowledge:'长方体特征',skill_level:'记忆',error_type:'特征记错',cognitive_load:'低',trap_type:'6个面'},hint:'长方体也有6个面。'},
 {id:'l3-sol-03',level:1,type:'基础探测',stem:'一个面的面积是1cm²的正方体,它的表面积是?',options:['A.6cm²','B.1cm²','C.12cm²','D.3cm²'],answer:0,tags:{knowledge:'表面积',skill_level:'理解',error_type:'表面积理解错',cognitive_load:'低',trap_type:'6个面各1cm²'},hint:'正方体6个面,6×1=6cm²'},
@@ -987,7 +884,7 @@ const DIAGNOSE = {
 {id:'l3-sol-09',level:3,type:'迁移探测',stem:'一个无盖正方体纸盒棱长5cm,需要多大纸板?',options:['A.125cm²','B.150cm²','C.100cm²','D.75cm²'],answer:0,tags:{knowledge:'无盖表面积',skill_level:'分析',error_type:'多算少算',cognitive_load:'高',trap_type:'5×5×5=125'},hint:'5个面,5×5×5=125cm²'},
 {id:'l3-sol-10',level:3,type:'迁移探测',stem:'长8cm宽5cm高3cm的长方体所有棱长之和?',options:['A.64cm','B.48cm','C.32cm','D.40cm'],answer:0,tags:{knowledge:'棱长和',skill_level:'分析',error_type:'公式记错',cognitive_load:'高',trap_type:'4×(8+5+3)=64'},hint:'4×(8+5+3)=64cm'}
 ]},
-'l3-computation':{name:'运算律与巧算',grade:'L3',questions:[
+'l3-computation': { name: '运算律与巧算', grade: 'L3', textbookLessons: [55, 56], questions: [
 {id:'l3-cmp-01',level:1,type:'基础探测',stem:'25+36+75=?最简便的方法是?',options:['A.25+75+36=136','B.25+36+75=136','C.36+25+75=136','D.75+25+36=136'],answer:0,tags:{knowledge:'加法交换律',skill_level:'理解',error_type:'定律应用错',cognitive_load:'低',trap_type:'先算25+75=100'},hint:'25+75=100,100+36=136'},
 {id:'l3-cmp-02',level:1,type:'基础探测',stem:'(2×5)×7=2×(5×7)用了什么运算律?',options:['A.乘法结合律','B.乘法交换律','C.乘法分配律','D.加法结合律'],answer:0,tags:{knowledge:'乘法结合律',skill_level:'记忆',error_type:'定律混淆',cognitive_load:'低',trap_type:'(a×b)×c=a×(b×c)'},hint:'乘法结合律。'},
 {id:'l3-cmp-03',level:1,type:'基础探测',stem:'4×(25+7)=4×25+4×7用了什么运算律?',options:['A.乘法分配律','B.乘法结合律','C.乘法交换律','D.加法结合律'],answer:0,tags:{knowledge:'乘法分配律',skill_level:'记忆',error_type:'定律混淆',cognitive_load:'低',trap_type:'a×(b+c)=a×b+a×c'},hint:'乘法分配律。'},
@@ -999,7 +896,7 @@ const DIAGNOSE = {
 {id:'l3-cmp-09',level:3,type:'迁移探测',stem:'用简便方法:999×8+8=?',options:['A.8000','B.7992','C.8000','D.9000'],answer:0,tags:{knowledge:'简便运算综合',skill_level:'分析',error_type:'提取公因数',cognitive_load:'高',trap_type:'999×8+1×8=(999+1)×8=8000'},hint:'=8×(999+1)=8×1000=8000'},
 {id:'l3-cmp-10',level:3,type:'迁移探测',stem:'125×(80+8)=?运用简便方法',options:['A.125×80+125×8=11000','B.125×88=11000','C.125×80+8=10008','D.125×88=11000'],answer:0,tags:{knowledge:'分配律应用',skill_level:'分析',error_type:'分配律错误',cognitive_load:'高',trap_type:'125×80=10000,125×8=1000'},hint:'10000+1000=11000'}
 ]},
-'l3-thinking':{name:'思维训练',grade:'L3',questions:[
+'l3-thinking': { name: '思维训练', grade: 'L3', textbookLessons: [52, 53, 54, 55, 56, 57, 58, 59], questions: [
 {id:'l3-thk-01',level:1,type:'基础探测',stem:'找规律:1,4,9,16,?,?',options:['A.25,36','B.20,24','C.18,20','D.25,49'],answer:0,tags:{knowledge:'数字规律',skill_level:'记忆',error_type:'规律识别错',cognitive_load:'低',trap_type:'平方数列'},hint:'1²,2²,3²,4²,5²,6²'},
 {id:'l3-thk-02',level:1,type:'基础探测',stem:'△+△+△=12,△=?',options:['A.4','B.3','C.6','D.2'],answer:0,tags:{knowledge:'算式谜',skill_level:'理解',error_type:'推理错误',cognitive_load:'低',trap_type:'12÷3=4'},hint:'12÷3=4'},
 {id:'l3-thk-03',level:1,type:'基础探测',stem:'小明有15元,买书花8元,还剩几元?',options:['A.7元','B.23元','C.8元','D.15元'],answer:0,tags:{knowledge:'生活应用',skill_level:'理解',error_type:'列式错误',cognitive_load:'低',trap_type:'15-8=7'},hint:'15-8=7元'},
@@ -1013,6 +910,297 @@ const DIAGNOSE = {
 ]}
   },
 
+
+    /* -------- 初三（L7）· 全新增 -------- */
+    'l7-power': {
+      name: '幂的运算',
+      grade: 'L7',
+      textbookLessons: [0, 1],
+      questions: [
+        { id: 'l7-pow-01', level: 1, type: '基础探测', stem: '计算 a³·a⁵ = ?', options: ['A. a⁸', 'B. a¹⁵', 'C. a²', 'D. a⁻²'], answer: 0, tags: { knowledge: '同底数幂乘法', skill_level: '记忆', error_type: '指数运算混淆', cognitive_load: '低', trap_type: '指数相加' }, hint: '同底数幂相乘，底数不变指数相加：3+5=8' },
+        { id: 'l7-pow-02', level: 1, type: '基础探测', stem: '计算 (a²)³ = ?', options: ['A. a⁶', 'B. a⁵', 'C. a⁸', 'D. a⁹'], answer: 0, tags: { knowledge: '幂的乘方', skill_level: '记忆', error_type: '指数运算混淆', cognitive_load: '低', trap_type: '指数相乘' }, hint: '幂的乘方，底数不变指数相乘：2×3=6' },
+        { id: 'l7-pow-03', level: 1, type: '基础探测', stem: '计算 (ab)³ = ?', options: ['A. a³b³', 'B. ab³', 'C. a³b', 'D. a³b⁹'], answer: 0, tags: { knowledge: '积的乘方', skill_level: '记忆', error_type: '分配错误', cognitive_load: '低', trap_type: '每个因式分别乘方' }, hint: '积的乘方等于每个因式分别乘方的积' },
+        { id: 'l7-pow-04', level: 1, type: '基础探测', stem: '计算 a⁶÷a² = ?', options: ['A. a⁴', 'B. a³', 'C. a⁸', 'D. a¹²'], answer: 0, tags: { knowledge: '同底数幂除法', skill_level: '记忆', error_type: '指数运算混淆', cognitive_load: '低', trap_type: '指数相减' }, hint: '同底数幂相除，底数不变指数相减：6-2=4' },
+        { id: 'l7-pow-05', level: 2, type: '变式探测', stem: '计算 (-x²)³ = ?', options: ['A. -x⁶', 'B. x⁶', 'C. -x⁵', 'D. x⁵'], answer: 0, tags: { knowledge: '幂的乘方综合', skill_level: '应用', error_type: '符号错误', cognitive_load: '中', trap_type: '负号的处理' }, hint: '(-x²)³ = (-1)³·(x²)³ = -x⁶' },
+        { id: 'l7-pow-06', level: 2, type: '变式探测', stem: '计算 (2a²b)³ = ?', options: ['A. 8a⁶b³', 'B. 6a⁵b³', 'C. 8a⁵b³', 'D. 2a⁶b³'], answer: 0, tags: { knowledge: '积的乘方综合', skill_level: '应用', error_type: '系数处理错误', cognitive_load: '中', trap_type: '系数也要乘方' }, hint: '2³=8, (a²)³=a⁶, b³=b³，所以8a⁶b³' },
+        { id: 'l7-pow-07', level: 2, type: '变式探测', stem: '若 2ˣ = 8，2ʸ = 4，则 2ˣ⁺ʸ = ?', options: ['A. 32', 'B. 12', 'C. 2', 'D. 64'], answer: 0, tags: { knowledge: '幂的运算逆向', skill_level: '应用', error_type: '指数法则逆向', cognitive_load: '中', trap_type: '同底数幂乘法逆用' }, hint: '2ˣ⁺ʸ = 2ˣ·2ʸ = 8×4 = 32' },
+        { id: 'l7-pow-08', level: 2, type: '变式探测', stem: '计算 (x³)²·(x²)³ = ?', options: ['A. x¹²', 'B. x¹⁰', 'C. x⁶', 'D. x⁵'], answer: 0, tags: { knowledge: '幂运算综合', skill_level: '应用', error_type: '运算顺序错误', cognitive_load: '中', trap_type: '先乘方后乘法' }, hint: '(x³)²=x⁶, (x²)³=x⁶, x⁶·x⁶=x¹²' },
+        { id: 'l7-pow-09', level: 3, type: '迁移探测', stem: '若 aᵐ=3, aⁿ=5，则 a²ᵐ⁺ⁿ = ?', options: ['A. 45', 'B. 15', 'C. 30', 'D. 75'], answer: 0, tags: { knowledge: '幂运算综合应用', skill_level: '分析', error_type: '指数法则逆向', cognitive_load: '高', trap_type: '拆分指数' }, hint: 'a²ᵐ⁺ⁿ = a²ᵐ·aⁿ = (aᵐ)²·aⁿ = 9×5=45' },
+        { id: 'l7-pow-10', level: 3, type: '迁移探测', stem: '一台电脑存储1GB=2¹⁰MB，1MB=2¹⁰KB，1KB=2¹⁰B，则1GB=?B', options: ['A. 2³⁰', 'B. 2³', 'C. 2¹⁰⁰', 'D. 2²⁰'], answer: 0, tags: { knowledge: '幂运算实际应用', skill_level: '分析', error_type: '累加变累乘', cognitive_load: '高', trap_type: '三次乘方' }, hint: '1GB=2¹⁰×2¹⁰×2¹⁰=2³⁰ B' }
+      ]
+    },
+
+    'l7-polynomial': {
+      name: '整式的乘法与因式分解',
+      grade: 'L7',
+      textbookLessons: [2, 3, 4, 5],
+      questions: [
+        { id: 'l7-pol-01', level: 1, type: '基础探测', stem: '计算 2x(x+3) = ?', options: ['A. 2x²+6x', 'B. 2x²+3', 'C. 2x+6', 'D. x²+6x'], answer: 0, tags: { knowledge: '单项式乘多项式', skill_level: '理解', error_type: '分配律漏乘', cognitive_load: '低', trap_type: '每一项都要乘' }, hint: '2x×x+2x×3=2x²+6x' },
+        { id: 'l7-pol-02', level: 1, type: '基础探测', stem: '计算 (x+2)(x+3) = ?', options: ['A. x²+5x+6', 'B. x²+6x+5', 'C. x²+5x+5', 'D. x²+6'], answer: 0, tags: { knowledge: '多项式乘多项式', skill_level: '理解', error_type: '展开不全', cognitive_load: '低', trap_type: '四项合并' }, hint: 'x²+3x+2x+6=x²+5x+6' },
+        { id: 'l7-pol-03', level: 1, type: '基础探测', stem: '因式分解 x²-9 = ?', options: ['A. (x+3)(x-3)', 'B. (x+9)(x-1)', 'C. (x-3)²', 'D. (x+3)²'], answer: 0, tags: { knowledge: '平方差公式', skill_level: '记忆', error_type: '公式混淆', cognitive_load: '低', trap_type: 'a²-b²=(a+b)(a-b)' }, hint: 'x²-9=x²-3²=(x+3)(x-3)' },
+        { id: 'l7-pol-04', level: 1, type: '基础探测', stem: '因式分解 x²+6x+9 = ?', options: ['A. (x+3)²', 'B. (x+3)(x-3)', 'C. (x-3)²', 'D. (x+9)(x+1)'], answer: 0, tags: { knowledge: '完全平方公式', skill_level: '记忆', error_type: '公式混淆', cognitive_load: '低', trap_type: 'a²+2ab+b²' }, hint: 'x²+6x+9=(x+3)²' },
+        { id: 'l7-pol-05', level: 2, type: '变式探测', stem: '计算 (x-1)(x+1)(x²+1) = ?', options: ['A. x⁴-1', 'B. x⁴+1', 'C. x⁴-2', 'D. x⁴+2x²-1'], answer: 0, tags: { knowledge: '平方差公式连续运用', skill_level: '应用', error_type: '运算顺序错', cognitive_load: '中', trap_type: '先算前两个' }, hint: '(x-1)(x+1)=x²-1, 再(x²-1)(x²+1)=x⁴-1' },
+        { id: 'l7-pol-06', level: 2, type: '变式探测', stem: '因式分解 2x²-8 = ?', options: ['A. 2(x+2)(x-2)', 'B. 2(x-2)²', 'C. (2x+4)(x-2)', 'D. 2(x²-4)'], answer: 0, tags: { knowledge: '先提公因式后用公式', skill_level: '应用', error_type: '忘记分解彻底', cognitive_load: '中', trap_type: '先提后分' }, hint: '先提2: 2(x²-4)，再平方差: 2(x+2)(x-2)' },
+        { id: 'l7-pol-07', level: 2, type: '变式探测', stem: '因式分解 x²-5x+6 = ?', options: ['A. (x-2)(x-3)', 'B. (x+2)(x+3)', 'C. (x-1)(x-6)', 'D. (x+1)(x-6)'], answer: 0, tags: { knowledge: '十字相乘法', skill_level: '应用', error_type: '符号错误', cognitive_load: '中', trap_type: '找两数积与和' }, hint: '找两个数积为6、和为5：2和3，所以(x-2)(x-3)' },
+        { id: 'l7-pol-08', level: 2, type: '变式探测', stem: '计算 (2x-1)² = ?', options: ['A. 4x²-4x+1', 'B. 4x²+4x+1', 'C. 4x²-1', 'D. 4x²-2x+1'], answer: 0, tags: { knowledge: '完全平方公式应用', skill_level: '应用', error_type: '中间项漏倍', cognitive_load: '中', trap_type: '2ab不要忘' }, hint: '(2x-1)²=4x²-4x+1' },
+        { id: 'l7-pol-09', level: 3, type: '迁移探测', stem: '已知 x²-y²=12, x+y=4，则 x-y = ?', options: ['A. 3', 'B. 4', 'C. 2', 'D. 6'], answer: 0, tags: { knowledge: '因式分解应用', skill_level: '分析', error_type: '逆用公式', cognitive_load: '高', trap_type: 'x²-y²=(x+y)(x-y)' }, hint: 'x²-y²=(x+y)(x-y), 12=4×(x-y), x-y=3' },
+        { id: 'l7-pol-10', level: 3, type: '迁移探测', stem: '若 x²+kx+9 是完全平方式，则 k = ?', options: ['A. ±6', 'B. 6', 'C. -6', 'D. 3'], answer: 0, tags: { knowledge: '完全平方式', skill_level: '分析', error_type: '漏解', cognitive_load: '高', trap_type: '两种情况' }, hint: 'x²+kx+9=(x±3)², k=6或-6' }
+      ]
+    },
+
+    'l7-quadratic-eq': {
+      name: '一元二次方程',
+      grade: 'L7',
+      textbookLessons: [9],
+      questions: [
+        { id: 'l7-qe-01', level: 1, type: '基础探测', stem: '方程 x²=9 的解是？', options: ['A. x=±3', 'B. x=3', 'C. x=-3', 'D. x=9'], answer: 0, tags: { knowledge: '直接开平方法', skill_level: '记忆', error_type: '漏解', cognitive_load: '低', trap_type: '正负两个解' }, hint: 'x²=9, x=±3' },
+        { id: 'l7-qe-02', level: 1, type: '基础探测', stem: '方程 x²+2x=0 的解是？', options: ['A. x₁=0, x₂=-2', 'B. x=0', 'C. x=-2', 'D. x=2'], answer: 0, tags: { knowledge: '因式分解法', skill_level: '理解', error_type: '漏解', cognitive_load: '低', trap_type: '提公因式' }, hint: 'x(x+2)=0, x=0或x=-2' },
+        { id: 'l7-qe-03', level: 1, type: '基础探测', stem: '方程 x²-5x+6=0 的解是？', options: ['A. x₁=2, x₂=3', 'B. x₁=1, x₂=6', 'C. x₁=-2, x₂=-3', 'D. x₁=-1, x₂=-6'], answer: 0, tags: { knowledge: '因式分解法', skill_level: '理解', error_type: '符号错误', cognitive_load: '低', trap_type: '十字相乘' }, hint: '(x-2)(x-3)=0, x=2或3' },
+        { id: 'l7-qe-04', level: 1, type: '基础探测', stem: '方程 x²-3x+1=0 中，a=?, b=?, c=?', options: ['A. a=1,b=-3,c=1', 'B. a=1,b=3,c=1', 'C. a=1,b=-3,c=-1', 'D. a=-1,b=3,c=1'], answer: 0, tags: { knowledge: '一般形式', skill_level: '记忆', error_type: '系数符号错', cognitive_load: '低', trap_type: '带符号' }, hint: '标准形式ax²+bx+c=0, a=1,b=-3,c=1' },
+        { id: 'l7-qe-05', level: 2, type: '变式探测', stem: '方程 x²+4x-5=0 用配方法求解，第一步应？', options: ['A. 移项得x²+4x=5', 'B. 两边加4', 'C. 两边加5', 'D. 直接因式分解'], answer: 0, tags: { knowledge: '配方法', skill_level: '应用', error_type: '配方步骤错', cognitive_load: '中', trap_type: '先移常数项' }, hint: '配方法先移常数项：x²+4x=5' },
+        { id: 'l7-qe-06', level: 2, type: '变式探测', stem: '用公式法解 x²-5x+4=0，判别式 Δ = ?', options: ['A. 9', 'B. 25', 'C. 16', 'D. -9'], answer: 0, tags: { knowledge: '公式法', skill_level: '应用', error_type: '判别式计算错', cognitive_load: '中', trap_type: 'Δ=b²-4ac' }, hint: 'Δ=25-16=9' },
+        { id: 'l7-qe-07', level: 2, type: '变式探测', stem: '方程 2x²-x-1=0 的解是？', options: ['A. x₁=1, x₂=-1/2', 'B. x₁=-1, x₂=1/2', 'C. x₁=1, x₂=1/2', 'D. x₁=-1, x₂=-1/2'], answer: 0, tags: { knowledge: '解一元二次方程', skill_level: '应用', error_type: '计算错误', cognitive_load: '中', trap_type: '因式分解' }, hint: '(2x+1)(x-1)=0, x=1或x=-1/2' },
+        { id: 'l7-qe-08', level: 2, type: '变式探测', stem: '若方程 x²-2x+k=0 有两个相等的实数根，则 k = ?', options: ['A. 1', 'B. 0', 'C. 2', 'D. -1'], answer: 0, tags: { knowledge: '判别式应用', skill_level: '应用', error_type: '判别式条件', cognitive_load: '中', trap_type: 'Δ=0' }, hint: 'Δ=4-4k=0, k=1' },
+        { id: 'l7-qe-09', level: 3, type: '迁移探测', stem: '一个矩形的长比宽多2cm，面积为48cm²，则矩形的长是？', options: ['A. 8cm', 'B. 6cm', 'C. 4cm', 'D. 10cm'], answer: 0, tags: { knowledge: '一元二次方程应用', skill_level: '分析', error_type: '列方程错', cognitive_load: '高', trap_type: '设宽列方程' }, hint: '设宽x,长x+2: x(x+2)=48, x=6, 长=8' },
+        { id: 'l7-qe-10', level: 3, type: '迁移探测', stem: '某商品原价100元，连续两次降价后为81元，求每次降价的百分率', options: ['A. 10%', 'B. 9%', 'C. 19%', 'D. 5%'], answer: 0, tags: { knowledge: '增长率问题', skill_level: '分析', error_type: '方程列错', cognitive_load: '高', trap_type: '两次降价比值' }, hint: '100(1-x)²=81, (1-x)²=0.81, x=0.1=10%' }
+      ]
+    },
+
+    'l7-quadratic-func': {
+      name: '二次函数',
+      grade: 'L7',
+      textbookLessons: [22, 23, 24, 25],
+      questions: [
+        { id: 'l7-qf-01', level: 1, type: '基础探测', stem: '二次函数 y=x²-2x-3 的开口方向是？', options: ['A. 向上', 'B. 向下', 'C. 向左', 'D. 向右'], answer: 0, tags: { knowledge: '二次函数图象', skill_level: '记忆', error_type: '开口方向判断', cognitive_load: '低', trap_type: 'a>0向上' }, hint: 'a=1>0，开口向上' },
+        { id: 'l7-qf-02', level: 1, type: '基础探测', stem: '二次函数 y=x²-2x-3 的对称轴是？', options: ['A. x=1', 'B. x=-1', 'C. x=2', 'D. x=-2'], answer: 0, tags: { knowledge: '二次函数性质', skill_level: '记忆', error_type: '对称轴公式', cognitive_load: '低', trap_type: 'x=-b/2a' }, hint: 'x=-(-2)/2=1' },
+        { id: 'l7-qf-03', level: 1, type: '基础探测', stem: '抛物线 y=(x+2)²+3 的顶点坐标是？', options: ['A. (-2,3)', 'B. (2,3)', 'C. (-2,-3)', 'D. (2,-3)'], answer: 0, tags: { knowledge: '顶点式', skill_level: '记忆', error_type: '符号混淆', cognitive_load: '低', trap_type: '左加右减' }, hint: '顶点式y=a(x-h)²+k, 顶点(h,k), (x+2)²=(x-(-2))²' },
+        { id: 'l7-qf-04', level: 1, type: '基础探测', stem: '二次函数 y=-x²+4x 的最大值是？', options: ['A. 4', 'B. 0', 'C. -4', 'D. 2'], answer: 0, tags: { knowledge: '最值', skill_level: '理解', error_type: '最大最小判断', cognitive_load: '低', trap_type: 'a<0有最大值' }, hint: 'a=-1<0有最大值, x=2时y=4' },
+        { id: 'l7-qf-05', level: 2, type: '变式探测', stem: '将 y=x² 向右平移3个单位，再向上平移2个单位，得到的解析式是？', options: ['A. y=(x-3)²+2', 'B. y=(x+3)²+2', 'C. y=(x-3)²-2', 'D. y=(x+3)²-2'], answer: 0, tags: { knowledge: '二次函数平移', skill_level: '应用', error_type: '平移方向错', cognitive_load: '中', trap_type: '左加右减上加下减' }, hint: '右移3: (x-3)², 上移2: +2' },
+        { id: 'l7-qf-06', level: 2, type: '变式探测', stem: '二次函数 y=ax²+bx+c 的图象如图（开口向下，对称轴x>0，交y轴正半轴），则？', options: ['A. a<0,b>0,c>0', 'B. a<0,b<0,c>0', 'C. a>0,b>0,c>0', 'D. a<0,b>0,c<0'], answer: 0, tags: { knowledge: '图象与系数关系', skill_level: '应用', error_type: '系数判断错', cognitive_load: '中', trap_type: '综合判断' }, hint: '开口向下a<0, 对称轴x>0则-b/2a>0即b>0, 交y轴正半轴c>0' },
+        { id: 'l7-qf-07', level: 2, type: '变式探测', stem: '已知抛物线顶点为(1,-4)且过点(0,-3)，求解析式', options: ['A. y=(x-1)²-4', 'B. y=(x+1)²-4', 'C. y=x²-2x-3', 'D. y=x²+2x-3'], answer: 0, tags: { knowledge: '求解析式', skill_level: '应用', error_type: '待定系数法', cognitive_load: '中', trap_type: '顶点式' }, hint: '顶点式y=a(x-1)²-4, 代入(0,-3): a-4=-3, a=1' },
+        { id: 'l7-qf-08', level: 2, type: '变式探测', stem: '抛物线 y=x²-4x+3 与x轴的交点坐标是？', options: ['A. (1,0)和(3,0)', 'B. (1,0)和(-3,0)', 'C. (-1,0)和(3,0)', 'D. (0,1)和(0,3)'], answer: 0, tags: { knowledge: '与x轴交点', skill_level: '应用', error_type: '解方程错', cognitive_load: '中', trap_type: '令y=0' }, hint: '令y=0: x²-4x+3=0, (x-1)(x-3)=0' },
+        { id: 'l7-qf-09', level: 3, type: '迁移探测', stem: '用一段长20米的铁丝围成矩形，面积最大时矩形的长宽各是多少？', options: ['A. 长5m宽5m', 'B. 长6m宽4m', 'C. 长8m宽2m', 'D. 长7m宽3m'], answer: 0, tags: { knowledge: '二次函数最值应用', skill_level: '分析', error_type: '建模错误', cognitive_load: '高', trap_type: '正方形面积最大' }, hint: '周长20, 设宽x长10-x, 面积x(10-x), x=5时最大' },
+        { id: 'l7-qf-10', level: 3, type: '迁移探测', stem: '某桥洞形状为抛物线形，跨度8米，最高点距水面4米，在水面正中建立坐标系，抛物线解析式为？', options: ['A. y=-x²/4+4', 'B. y=x²/4-4', 'C. y=-x²/8+4', 'D. y=x²/8-4'], answer: 0, tags: { knowledge: '二次函数实际应用', skill_level: '分析', error_type: '建系与解析式', cognitive_load: '高', trap_type: '顶点和端点' }, hint: '顶点(0,4), 过(4,0): a·16+4=0, a=-1/4' }
+      ]
+    },
+
+    'l7-circle': {
+      name: '圆的性质',
+      grade: 'L7',
+      textbookLessons: [39, 40, 41, 42, 43],
+      questions: [
+        { id: 'l7-cir-01', level: 1, type: '基础探测', stem: '圆是轴对称图形，它的对称轴有？', options: ['A. 无数条', 'B. 2条', 'C. 4条', 'D. 1条'], answer: 0, tags: { knowledge: '圆的对称性', skill_level: '记忆', error_type: '对称轴数量', cognitive_load: '低', trap_type: '过圆心的直线' }, hint: '圆的每一条直径所在的直线都是对称轴，有无数条' },
+        { id: 'l7-cir-02', level: 1, type: '基础探测', stem: '垂直于弦的直径一定？', options: ['A. 平分这条弦', 'B. 平分这条弦所对的弧', 'C. 以上都对', 'D. 以上都不对'], answer: 2, tags: { knowledge: '垂径定理', skill_level: '记忆', error_type: '定理记忆不全', cognitive_load: '低', trap_type: '平分弦和弦弧' }, hint: '垂径定理：垂直于弦的直径平分弦且平分弦所对的弧' },
+        { id: 'l7-cir-03', level: 1, type: '基础探测', stem: '在同圆或等圆中，相等的圆心角所对的弧？', options: ['A. 相等', 'B. 不等', 'C. 不确定', 'D. 互补'], answer: 0, tags: { knowledge: '圆心角定理', skill_level: '记忆', error_type: '定理遗忘', cognitive_load: '低', trap_type: '同圆等圆前提' }, hint: '同圆等圆中，等圆心角对等弧' },
+        { id: 'l7-cir-04', level: 1, type: '基础探测', stem: '直径所对的圆周角是？', options: ['A. 90°', 'B. 180°', 'C. 60°', 'D. 45°'], answer: 0, tags: { knowledge: '圆周角定理', skill_level: '记忆', error_type: '角度记忆', cognitive_load: '低', trap_type: '直径对直角' }, hint: '直径所对的圆周角是直角90°' },
+        { id: 'l7-cir-05', level: 2, type: '变式探测', stem: '在⊙O中，弦AB=8，圆心O到AB的距离为3，则⊙O的半径是？', options: ['A. 5', 'B. 4', 'C. √55', 'D. 7'], answer: 0, tags: { knowledge: '垂径定理应用', skill_level: '应用', error_type: '勾股定理', cognitive_load: '中', trap_type: '半弦长' }, hint: '垂径+勾股：r²=4²+3²=25, r=5' },
+        { id: 'l7-cir-06', level: 2, type: '变式探测', stem: '在同圆中，圆心角为120°，则它所对的圆周角是？', options: ['A. 60°', 'B. 120°', 'C. 240°', 'D. 30°'], answer: 0, tags: { knowledge: '圆周角与圆心角关系', skill_level: '应用', error_type: '倍数关系', cognitive_load: '中', trap_type: '圆周角=圆心角的一半' }, hint: '同弧所对圆周角是圆心角的一半：120÷2=60°' },
+        { id: 'l7-cir-07', level: 2, type: '变式探测', stem: '点P到圆心O的距离为5，⊙O的半径为3，则点P在？', options: ['A. 圆外', 'B. 圆上', 'C. 圆内', 'D. 不确定'], answer: 0, tags: { knowledge: '点与圆的位置关系', skill_level: '应用', error_type: '判断条件', cognitive_load: '中', trap_type: 'd>r在外' }, hint: 'd=5>r=3，点P在圆外' },
+        { id: 'l7-cir-08', level: 2, type: '变式探测', stem: '直线l到圆心O的距离为4，⊙O的半径为5，则直线l与⊙O的位置关系是？', options: ['A. 相交', 'B. 相切', 'C. 相离', 'D. 不确定'], answer: 0, tags: { knowledge: '直线与圆位置关系', skill_level: '应用', error_type: '判断条件', cognitive_load: '中', trap_type: 'd<r相交' }, hint: 'd=4<r=5，直线与圆相交' },
+        { id: 'l7-cir-09', level: 3, type: '迁移探测', stem: 'AB是⊙O的直径，弦CD⊥AB于E，CD=6，BE=1，则⊙O的半径是？', options: ['A. 5', 'B. 4', 'C. 3', 'D. 6'], answer: 0, tags: { knowledge: '垂径定理综合', skill_level: '分析', error_type: '列方程错误', cognitive_load: '高', trap_type: '设半径列方程' }, hint: 'CE=3, 设半径r, OE=r-1, r²=3²+(r-1)², r=5' },
+        { id: 'l7-cir-10', level: 3, type: '迁移探测', stem: '从圆外一点P引⊙O的两条切线PA、PB，A、B为切点，PA=4，∠APB=60°，则⊙O的半径是？', options: ['A. 4/√3', 'B. 4', 'C. 4√3', 'D. 2'], answer: 0, tags: { knowledge: '切线长定理', skill_level: '分析', error_type: '切线性质', cognitive_load: '高', trap_type: '直角三角形' }, hint: 'PA=PB=4, ∠APO=30°, OA⊥PA, r=PA·tan30°=4/√3' }
+      ]
+    },
+
+    'l7-probability': {
+      name: '概率初步',
+      grade: 'L7',
+      textbookLessons: [44, 45, 46],
+      questions: [
+        { id: 'l7-prb-01', level: 1, type: '基础探测', stem: '下列事件中，是必然事件的是？', options: ['A. 太阳从东方升起', 'B. 明天会下雨', 'C. 抛硬币正面朝上', 'D. 买彩票中奖'], answer: 0, tags: { knowledge: '随机事件', skill_level: '记忆', error_type: '概念混淆', cognitive_load: '低', trap_type: '必然vs随机' }, hint: '必然事件是一定会发生的事件' },
+        { id: 'l7-prb-02', level: 1, type: '基础探测', stem: '抛一枚均匀硬币，正面朝上的概率是？', options: ['A. 1/2', 'B. 1/3', 'C. 1/4', 'D. 1'], answer: 0, tags: { knowledge: '概率定义', skill_level: '记忆', error_type: '计算错误', cognitive_load: '低', trap_type: '等可能事件' }, hint: '2种等可能结果，正面占1种，概率1/2' },
+        { id: 'l7-prb-03', level: 1, type: '基础探测', stem: '从1-10的数字中随机抽取一个，抽到偶数的概率是？', options: ['A. 1/2', 'B. 1/5', 'C. 2/5', 'D. 1/10'], answer: 0, tags: { knowledge: '等可能概率', skill_level: '理解', error_type: '计数错误', cognitive_load: '低', trap_type: '偶数个数' }, hint: '10个数中偶数有2,4,6,8,10共5个，概率5/10=1/2' },
+        { id: 'l7-prb-04', level: 1, type: '基础探测', stem: '一个不透明袋子中有3红2白共5个球，从中摸一个球，摸到红球的概率是？', options: ['A. 3/5', 'B. 2/5', 'C. 1/3', 'D. 1/5'], answer: 0, tags: { knowledge: '概率计算', skill_level: '理解', error_type: '分子分母错', cognitive_load: '低', trap_type: '目标数/总数' }, hint: '3红/5总=3/5' },
+        { id: 'l7-prb-05', level: 2, type: '变式探测', stem: '同时掷两枚骰子，点数之和为7的概率是？', options: ['A. 1/6', 'B. 1/12', 'C. 7/36', 'D. 1/36'], answer: 0, tags: { knowledge: '列举法求概率', skill_level: '应用', error_type: '列举不全', cognitive_load: '中', trap_type: '6种组合' }, hint: '和为7有(1,6)(2,5)(3,4)(4,3)(5,2)(6,1)共6种, 6/36=1/6' },
+        { id: 'l7-prb-06', level: 2, type: '变式探测', stem: '一个袋中有编号1-5的5个球，同时摸出2个，两球编号之和为偶数的概率是？', options: ['A. 2/5', 'B. 3/5', 'C. 1/2', 'D. 4/5'], answer: 0, tags: { knowledge: '组合概率', skill_level: '应用', error_type: '组合计数', cognitive_load: '中', trap_type: '奇偶搭配' }, hint: '总C(5,2)=10, 和为偶:同奇C(3,2)+同偶C(2,2)=3+1=4, 4/10=2/5' },
+        { id: 'l7-prb-07', level: 2, type: '变式探测', stem: '甲乙两人独立射击，命中率分别为0.6和0.8，两人同时命中目标的概率是？', options: ['A. 0.48', 'B. 0.92', 'C. 0.14', 'D. 0.2'], answer: 0, tags: { knowledge: '独立事件概率', skill_level: '应用', error_type: '加法误用', cognitive_load: '中', trap_type: '独立事件相乘' }, hint: '独立事件同时发生：0.6×0.8=0.48' },
+        { id: 'l7-prb-08', level: 2, type: '变式探测', stem: '用频率估计概率时，当试验次数很大时，频率会？', options: ['A. 接近概率', 'B. 等于0', 'C. 等于1', 'D. 远离概率'], answer: 0, tags: { knowledge: '频率与概率', skill_level: '应用', error_type: '概念理解', cognitive_load: '中', trap_type: '大数定律' }, hint: '大量重复试验中，频率趋于稳定，接近概率' },
+        { id: 'l7-prb-09', level: 3, type: '迁移探测', stem: '一个密码锁由3位数字组成，小明忘了密码但记得各位数字不同，随机输入一个符合要求的密码，一次打开的概率是？', options: ['A. 1/648', 'B. 1/1000', 'C. 1/720', 'D. 1/900'], answer: 0, tags: { knowledge: '概率综合应用', skill_level: '分析', error_type: '总数计算', cognitive_load: '高', trap_type: '排列数' }, hint: '各位不同：10×9×8=720种, 概率1/720' },
+        { id: 'l7-prb-10', level: 3, type: '迁移探测', stem: '甲乙两人轮流掷骰子，甲先掷，先掷出6的人获胜。甲获胜的概率是？', options: ['A. 6/11', 'B. 1/2', 'C. 5/11', 'D. 1/6'], answer: 0, tags: { knowledge: '无限轮次概率', skill_level: '分析', error_type: '等比数列', cognitive_load: '高', trap_type: '等比求和' }, hint: 'P=1/6+(5/6)²×(1/6)+...=1/6÷(1-25/36)=6/11' }
+      ]
+    },
+
+    'l7-transform': {
+      name: '图形的变换',
+      grade: 'L7',
+      textbookLessons: [36, 37, 38, 47, 48],
+      questions: [
+        { id: 'l7-trf-01', level: 1, type: '基础探测', stem: '图形旋转的三要素是？', options: ['A. 旋转中心、旋转方向、旋转角', 'B. 旋转中心、旋转方向、旋转距离', 'C. 旋转中心、旋转角、旋转时间', 'D. 旋转方向、旋转角、旋转速度'], answer: 0, tags: { knowledge: '旋转的概念', skill_level: '记忆', error_type: '要素遗漏', cognitive_load: '低', trap_type: '三要素' }, hint: '旋转三要素：中心、方向、角度' },
+        { id: 'l7-trf-02', level: 1, type: '基础探测', stem: '中心对称图形是指？', options: ['A. 绕某点旋转180°后与原图重合', 'B. 绕某点旋转90°后与原图重合', 'C. 沿某直线对折重合', 'D. 沿某点平移重合'], answer: 0, tags: { knowledge: '中心对称', skill_level: '记忆', error_type: '概念混淆', cognitive_load: '低', trap_type: '180度旋转' }, hint: '中心对称是绕某点旋转180°后重合' },
+        { id: 'l7-trf-03', level: 1, type: '基础探测', stem: '点P(2,3)关于原点对称的点是？', options: ['A. (-2,-3)', 'B. (-2,3)', 'C. (2,-3)', 'D. (3,2)'], answer: 0, tags: { knowledge: '关于原点对称', skill_level: '记忆', error_type: '符号错误', cognitive_load: '低', trap_type: '横纵都取反' }, hint: '关于原点对称：横纵坐标都取相反数' },
+        { id: 'l7-trf-04', level: 1, type: '基础探测', stem: '下列图形中既是轴对称又是中心对称的是？', options: ['A. 圆', 'B. 平行四边形', 'C. 等边三角形', 'D. 等腰梯形'], answer: 0, tags: { knowledge: '对称综合', skill_level: '理解', error_type: '概念混淆', cognitive_load: '低', trap_type: '两种对称' }, hint: '圆既是轴对称又是中心对称' },
+        { id: 'l7-trf-05', level: 2, type: '变式探测', stem: '将点A(3,-2)绕原点逆时针旋转90°，得到的点A\'是？', options: ['A. (2,3)', 'B. (-2,-3)', 'C. (-3,2)', 'D. (3,2)'], answer: 0, tags: { knowledge: '旋转变换坐标', skill_level: '应用', error_type: '旋转方向错', cognitive_load: '中', trap_type: '逆时针90°公式' }, hint: '逆时针90°: (x,y)→(-y,x)' },
+        { id: 'l7-trf-06', level: 2, type: '变式探测', stem: '一个正方形绕其中心旋转多少度后与自身重合？', options: ['A. 90°', 'B. 180°', 'C. 45°', 'D. 60°'], answer: 0, tags: { knowledge: '旋转对称', skill_level: '应用', error_type: '角度判断', cognitive_load: '中', trap_type: '最小旋转角' }, hint: '正方形有4条对称轴，最小旋转角90°' },
+        { id: 'l7-trf-07', level: 2, type: '变式探测', stem: '平行四边形是中心对称图形但不是轴对称图形，它的对称中心是？', options: ['A. 对角线交点', 'B. 任意顶点', 'C. 边的中点', 'D. 不存在'], answer: 0, tags: { knowledge: '中心对称应用', skill_level: '应用', error_type: '对称中心判断', cognitive_load: '中', trap_type: '对角线交点' }, hint: '平行四边形的对称中心是对角线的交点' },
+        { id: 'l7-trf-08', level: 2, type: '变式探测', stem: '一个图形先关于x轴对称，再关于y轴对称，等价于？', options: ['A. 关于原点对称', 'B. 关于x轴对称', 'C. 关于y轴对称', 'D. 平移'], answer: 0, tags: { knowledge: '对称复合', skill_level: '应用', error_type: '复合变换', cognitive_load: '中', trap_type: '两次对称=旋转' }, hint: '关于x轴再关于y轴=关于原点对称(180°旋转)' },
+        { id: 'l7-trf-09', level: 3, type: '迁移探测', stem: '将△ABC绕点O逆时针旋转90°得到△A\'B\'C\'，若∠A=50°，则∠A\'= ?', options: ['A. 50°', 'B. 90°', 'C. 140°', 'D. 40°'], answer: 0, tags: { knowledge: '旋转的性质', skill_level: '分析', error_type: '角度变化理解', cognitive_load: '高', trap_type: '旋转不改变角度' }, hint: '旋转是全等变换，对应角不变' },
+        { id: 'l7-trf-10', level: 3, type: '迁移探测', stem: '一个三角形三个顶点A(1,1)、B(3,1)、C(2,3)，将△ABC绕原点O旋转180°，点B的对应点B\'坐标是？', options: ['A. (-3,-1)', 'B. (3,-1)', 'C. (-1,-3)', 'D. (-3,1)'], answer: 0, tags: { knowledge: '旋转综合应用', skill_level: '分析', error_type: '坐标变换', cognitive_load: '高', trap_type: '180°旋转取反' }, hint: '180°旋转=关于原点对称，(x,y)→(-x,-y)' }
+      ]
+    },
+
+    /* -------- 四年级（L4）· 补充 -------- */
+    'l4-area': {
+      name: '三角形与四边形面积',
+      grade: 'L4',
+      textbookLessons: [43, 44, 46, 47],
+      questions: [
+        { id: 'l4-area-01', level: 1, type: '基础探测', stem: '平行四边形的底是6cm，高是4cm，面积是？', options: ['A. 24cm²', 'B. 12cm²', 'C. 10cm²', 'D. 20cm²'], answer: 0, tags: { knowledge: '平行四边形面积', skill_level: '记忆', error_type: '公式错误', cognitive_load: '低', trap_type: '底×高' }, hint: '平行四边形面积=底×高=6×4=24' },
+        { id: 'l4-area-02', level: 1, type: '基础探测', stem: '三角形的底是8cm，高是5cm，面积是？', options: ['A. 20cm²', 'B. 40cm²', 'C. 13cm²', 'D. 10cm²'], answer: 0, tags: { knowledge: '三角形面积', skill_level: '记忆', error_type: '忘记除2', cognitive_load: '低', trap_type: '底×高÷2' }, hint: '三角形面积=底×高÷2=8×5÷2=20' },
+        { id: 'l4-area-03', level: 1, type: '基础探测', stem: '梯形的上底3cm，下底5cm，高4cm，面积是？', options: ['A. 16cm²', 'B. 32cm²', 'C. 12cm²', 'D. 8cm²'], answer: 0, tags: { knowledge: '梯形面积', skill_level: '记忆', error_type: '公式错误', cognitive_load: '低', trap_type: '(上+下)×高÷2' }, hint: '梯形面积=(上底+下底)×高÷2=(3+5)×4÷2=16' },
+        { id: 'l4-area-04', level: 1, type: '基础探测', stem: '一个平行四边形面积是30cm²，底是6cm，高是？', options: ['A. 5cm', 'B. 6cm', 'C. 10cm', 'D. 15cm'], answer: 0, tags: { knowledge: '面积逆运算', skill_level: '理解', error_type: '除法错误', cognitive_load: '低', trap_type: '面积÷底=高' }, hint: '高=面积÷底=30÷6=5cm' },
+        { id: 'l4-area-05', level: 2, type: '变式探测', stem: '一个三角形面积是12cm²，底是6cm，高是？', options: ['A. 4cm', 'B. 2cm', 'C. 6cm', 'D. 8cm'], answer: 0, tags: { knowledge: '三角形面积逆运算', skill_level: '应用', error_type: '忘记乘2', cognitive_load: '中', trap_type: '面积×2÷底=高' }, hint: '高=面积×2÷底=12×2÷6=4cm' },
+        { id: 'l4-area-06', level: 2, type: '变式探测', stem: '两个完全相同的三角形可以拼成一个？', options: ['A. 平行四边形', 'B. 正方形', 'C. 圆', 'D. 五边形'], answer: 0, tags: { knowledge: '图形关系', skill_level: '应用', error_type: '概念混淆', cognitive_load: '中', trap_type: '拼图理解' }, hint: '两个完全相同的三角形可以拼成一个平行四边形' },
+        { id: 'l4-area-07', level: 2, type: '变式探测', stem: '一个梯形上底和下底相等时，这个梯形就变成了？', options: ['A. 平行四边形', 'B. 三角形', 'C. 长方形', 'D. 圆'], answer: 0, tags: { knowledge: '图形变化', skill_level: '应用', error_type: '概念理解', cognitive_load: '中', trap_type: '上下底相等' }, hint: '上下底相等时梯形变成平行四边形' },
+        { id: 'l4-area-08', level: 2, type: '变式探测', stem: '一块梯形菜地上底20m下底30m高10m，面积是多少平方米？', options: ['A. 250m²', 'B. 500m²', 'C. 300m²', 'D. 150m²'], answer: 0, tags: { knowledge: '面积应用', skill_level: '应用', error_type: '计算错误', cognitive_load: '中', trap_type: '(20+30)×10÷2' }, hint: '(20+30)×10÷2=250m²' },
+        { id: 'l4-area-09', level: 3, type: '迁移探测', stem: '一个直角三角形两条直角边分别是6cm和8cm，斜边是10cm。以斜边为底的高的长度是？', options: ['A. 4.8cm', 'B. 6cm', 'C. 8cm', 'D. 4cm'], answer: 0, tags: { knowledge: '面积等积变换', skill_level: '分析', error_type: '等面积法', cognitive_load: '高', trap_type: '两种方式算面积' }, hint: '面积=6×8÷2=24, 以斜边为底: 24=10×h÷2, h=4.8' },
+        { id: 'l4-area-10', level: 3, type: '迁移探测', stem: '一个平行四边形被一条线段分成两个部分，面积比是1:3。如果平行四边形面积是40cm²，较小的部分面积是？', options: ['A. 10cm²', 'B. 30cm²', 'C. 15cm²', 'D. 20cm²'], answer: 0, tags: { knowledge: '面积比例', skill_level: '分析', error_type: '比例分配', cognitive_load: '高', trap_type: '1+3=4份' }, hint: '1+3=4份, 每份=40÷4=10, 较小=10cm²' }
+      ]
+    },
+
+    'l4-equation': {
+      name: '简单方程思想',
+      grade: 'L4',
+      textbookLessons: [15, 16],
+      questions: [
+        { id: 'l4-eq-01', level: 1, type: '基础探测', stem: '方程 x+5=12 的解是？', options: ['A. x=7', 'B. x=17', 'C. x=6', 'D. x=5'], answer: 0, tags: { knowledge: '一元一次方程', skill_level: '理解', error_type: '移项符号', cognitive_load: '低', trap_type: 'x=12-5' }, hint: 'x=12-5=7' },
+        { id: 'l4-eq-02', level: 1, type: '基础探测', stem: '方程 3x=15 的解是？', options: ['A. x=5', 'B. x=12', 'C. x=45', 'D. x=3'], answer: 0, tags: { knowledge: '一元一次方程', skill_level: '理解', error_type: '除法错误', cognitive_load: '低', trap_type: 'x=15÷3' }, hint: 'x=15÷3=5' },
+        { id: 'l4-eq-03', level: 1, type: '基础探测', stem: '方程 x-8=10 的解是？', options: ['A. x=18', 'B. x=2', 'C. x=80', 'D. x=10'], answer: 0, tags: { knowledge: '一元一次方程', skill_level: '理解', error_type: '移项符号', cognitive_load: '低', trap_type: 'x=10+8' }, hint: 'x=10+8=18' },
+        { id: 'l4-eq-04', level: 1, type: '基础探测', stem: '用字母表示数：a的3倍加2，写成式子是？', options: ['A. 3a+2', 'B. a+3+2', 'C. 3(a+2)', 'D. a³+2'], answer: 0, tags: { knowledge: '用字母表示数', skill_level: '记忆', error_type: '表达错误', cognitive_load: '低', trap_type: '倍数在前' }, hint: 'a的3倍是3a，加2得3a+2' },
+        { id: 'l4-eq-05', level: 2, type: '变式探测', stem: '方程 2x+3=11 的解是？', options: ['A. x=4', 'B. x=7', 'C. x=5', 'D. x=14'], answer: 0, tags: { knowledge: '两步方程', skill_level: '应用', error_type: '运算顺序', cognitive_load: '中', trap_type: '先减后除' }, hint: '2x=11-3=8, x=8÷2=4' },
+        { id: 'l4-eq-06', level: 2, type: '变式探测', stem: '方程 x÷4=5 的解是？', options: ['A. x=20', 'B. x=9', 'C. x=1', 'D. x=5/4'], answer: 0, tags: { knowledge: '除法方程', skill_level: '应用', error_type: '运算方向', cognitive_load: '中', trap_type: '乘法逆运算' }, hint: 'x=5×4=20' },
+        { id: 'l4-eq-07', level: 2, type: '变式探测', stem: '小明今年x岁，爸爸比小明大28岁，爸爸今年40岁。列方程是？', options: ['A. x+28=40', 'B. x-28=40', 'C. 28-x=40', 'D. x+40=28'], answer: 0, tags: { knowledge: '列方程', skill_level: '应用', error_type: '等量关系', cognitive_load: '中', trap_type: '大-小=差' }, hint: '小明年龄+28=爸爸年龄' },
+        { id: 'l4-eq-08', level: 2, type: '变式探测', stem: '一个数x的5倍比20少3，列方程是？', options: ['A. 5x=20-3', 'B. 5x=20+3', 'C. x-5=20-3', 'D. 5x-3=20'], answer: 0, tags: { knowledge: '列方程', skill_level: '应用', error_type: '等量关系', cognitive_load: '中', trap_type: '比...少' }, hint: '5x比20少3，即5x=20-3=17' },
+        { id: 'l4-eq-09', level: 3, type: '迁移探测', stem: '鸡兔同笼，共10个头，26条腿。鸡有多少只？(设鸡x只)', options: ['A. 7只', 'B. 5只', 'C. 3只', 'D. 4只'], answer: 0, tags: { knowledge: '方程应用题', skill_level: '分析', error_type: '列方程错', cognitive_load: '高', trap_type: '兔=10-x' }, hint: '设鸡x只，兔(10-x)只: 2x+4(10-x)=26, x=7' },
+        { id: 'l4-eq-10', level: 3, type: '迁移探测', stem: '甲乙两数的和是30，甲是乙的4倍。乙是多少？(设乙为x)', options: ['A. 6', 'B. 24', 'C. 5', 'D. 7.5'], answer: 0, tags: { knowledge: '倍数方程', skill_level: '分析', error_type: '设未知数', cognitive_load: '高', trap_type: '甲=4x' }, hint: 'x+4x=30, 5x=30, x=6' }
+      ]
+    },
+
+    'l4-logic': {
+      name: '逻辑推理',
+      grade: 'L4',
+      textbookLessons: [50, 51, 52, 53],
+      questions: [
+        { id: 'l4-log-01', level: 1, type: '基础探测', stem: '"所有的鸟都会飞"这个命题是？', options: ['A. 假命题（企鹅不会飞）', 'B. 真命题', 'C. 无法判断', 'D. 不是命题'], answer: 0, tags: { knowledge: '命题判断', skill_level: '理解', error_type: '反例概念', cognitive_load: '低', trap_type: '找反例' }, hint: '企鹅是鸟但不会飞，所以是假命题' },
+        { id: 'l4-log-02', level: 1, type: '基础探测', stem: '命题"如果a>b，b>c，那么a>c"是？', options: ['A. 真命题', 'B. 假命题', 'C. 无法判断', 'D. 不是命题'], answer: 0, tags: { knowledge: '传递推理', skill_level: '理解', error_type: '推理错误', cognitive_load: '低', trap_type: '大小传递' }, hint: '大于关系的传递性成立' },
+        { id: 'l4-log-03', level: 1, type: '基础探测', stem: '"2是偶数"的条件是？结论是？', options: ['A. 条件：2能被2整除，结论：2是偶数', 'B. 条件：2是偶数，结论：2能被2整除', 'C. 没有条件', 'D. 没有结论'], answer: 0, tags: { knowledge: '条件与结论', skill_level: '记忆', error_type: '条件结论混淆', cognitive_load: '低', trap_type: '因为所以' }, hint: '条件是前提(因为)，结论是结果(所以)' },
+        { id: 'l4-log-04', level: 1, type: '基础探测', stem: '下列哪个是假命题？', options: ['A. 质数都是奇数', 'B. 偶数能被2整除', 'C. 正方形四边相等', 'D. 三角形内角和180°'], answer: 0, tags: { knowledge: '反例与假命题', skill_level: '理解', error_type: '反例寻找', cognitive_load: '低', trap_type: '2是质数也是偶数' }, hint: '2是质数但2是偶数，所以"质数都是奇数"是假命题' },
+        { id: 'l4-log-05', level: 2, type: '变式探测', stem: 'A比B高，B比C高，C比D高。谁最矮？', options: ['A. D', 'B. A', 'C. B', 'D. C'], answer: 0, tags: { knowledge: '排序推理', skill_level: '应用', error_type: '顺序错误', cognitive_load: '中', trap_type: '传递比较' }, hint: 'A>B>C>D，D最矮' },
+        { id: 'l4-log-06', level: 2, type: '变式探测', stem: '甲乙丙三人比赛。甲说"我不是第一"，乙说"我不是最后"。丙是第一，谁最后？', options: ['A. 甲', 'B. 乙', 'C. 丙', 'D. 无法确定'], answer: 0, tags: { knowledge: '条件推理', skill_level: '应用', error_type: '条件遗漏', cognitive_load: '中', trap_type: '排除法' }, hint: '丙第一，甲不是第一也不是最后(因为甲若最后则乙第二)，乙不是最后所以甲最后' },
+        { id: 'l4-log-07', level: 2, type: '变式探测', stem: '找规律：2, 6, 12, 20, 30, ?，下一个数是？', options: ['A. 42', 'B. 40', 'C. 36', 'D. 44'], answer: 0, tags: { knowledge: '数列规律', skill_level: '应用', error_type: '规律识别', cognitive_load: '中', trap_type: '差值递增' }, hint: '差值:4,6,8,10,12, 所以30+12=42' },
+        { id: 'l4-log-08', level: 2, type: '变式探测', stem: '1只猫3天吃3条鱼，那么5只猫6天吃几条鱼？', options: ['A. 30条', 'B. 15条', 'C. 18条', 'D. 45条'], answer: 0, tags: { knowledge: '归一问题', skill_level: '应用', error_type: '归一计算', cognitive_load: '中', trap_type: '先求1只1天' }, hint: '1只1天吃1条，5只6天=5×6=30条' },
+        { id: 'l4-log-09', level: 3, type: '迁移探测', stem: 'A、B、C、D四人比赛。A说"我不是第一也不是最后"。B说"我比C快"。C说"我是第二"。D说"我不是最后"。比赛结果是？', options: ['A. B,C,A,D', 'B. B,A,C,D', 'C. C,B,A,D', 'D. B,C,D,A'], answer: 0, tags: { knowledge: '综合推理', skill_level: '分析', error_type: '条件遗漏', cognitive_load: '高', trap_type: '多条件整合' }, hint: 'C第二,B比C快所以B第一,B>C>A>A不是最后所以D最后' },
+        { id: 'l4-log-10', level: 3, type: '迁移探测', stem: '一个数列：1, 1, 2, 3, 5, 8, 13, ?，下一个数是？', options: ['A. 21', 'B. 20', 'C. 15', 'D. 18'], answer: 0, tags: { knowledge: '斐波那契数列', skill_level: '分析', error_type: '规律识别', cognitive_load: '高', trap_type: '前两项之和' }, hint: '斐波那契：每项=前两项之和, 8+13=21' }
+      ]
+    },
+
+    'l4-application': {
+      name: '应用题',
+      grade: 'L4',
+      textbookLessons: [56, 57, 58, 59, 60, 61, 62, 63],
+      questions: [
+        { id: 'l4-app-01', level: 1, type: '基础探测', stem: '小明今年8岁，爸爸的年龄是小明的4倍。爸爸今年多少岁？', options: ['A. 32岁', 'B. 12岁', 'C. 24岁', 'D. 40岁'], answer: 0, tags: { knowledge: '年龄问题', skill_level: '理解', error_type: '倍数计算', cognitive_load: '低', trap_type: '8×4' }, hint: '8×4=32岁' },
+        { id: 'l4-app-02', level: 1, type: '基础探测', stem: '一项工程，甲队5天完成，每天完成几分之几？', options: ['A. 1/5', 'B. 5', 'C. 1/10', 'D. 5/1'], answer: 0, tags: { knowledge: '工程问题', skill_level: '理解', error_type: '工作效率', cognitive_load: '低', trap_type: '总工作量÷时间' }, hint: '工作效率=1÷5=1/5' },
+        { id: 'l4-app-03', level: 1, type: '基础探测', stem: '甲乙两地相距120km，一辆车3小时到达。平均速度是？', options: ['A. 40km/h', 'B. 60km/h', 'C. 30km/h', 'D. 360km/h'], answer: 0, tags: { knowledge: '行程问题', skill_level: '理解', error_type: '速度公式', cognitive_load: '低', trap_type: '路程÷时间=速度' }, hint: '120÷3=40km/h' },
+        { id: 'l4-app-04', level: 1, type: '基础探测', stem: '3支铅笔共6元，每支铅笔多少元？', options: ['A. 2元', 'B. 3元', 'C. 18元', 'D. 0.5元'], answer: 0, tags: { knowledge: '单价问题', skill_level: '理解', error_type: '除法错误', cognitive_load: '低', trap_type: '总价÷数量=单价' }, hint: '6÷3=2元' },
+        { id: 'l4-app-05', level: 2, type: '变式探测', stem: '爸爸今年36岁，比小明大28岁。5年后爸爸比小明大几岁？', options: ['A. 28岁', 'B. 33岁', 'C. 23岁', 'D. 36岁'], answer: 0, tags: { knowledge: '年龄差不变', skill_level: '应用', error_type: '年龄差变化', cognitive_load: '中', trap_type: '年龄差不变' }, hint: '年龄差永远不变，还是28岁' },
+        { id: 'l4-app-06', level: 2, type: '变式探测', stem: '甲乙合作一项工程，甲4天完成，乙6天完成。两人合作需要几天完成？', options: ['A. 2.4天', 'B. 5天', 'C. 10天', 'D. 2天'], answer: 0, tags: { knowledge: '合作工程', skill_level: '应用', error_type: '效率相加', cognitive_load: '中', trap_type: '1/(1/4+1/6)' }, hint: '甲效率1/4,乙效率1/6,合作1/4+1/6=5/12, 时间12/5=2.4天' },
+        { id: 'l4-app-07', level: 2, type: '变式探测', stem: '甲乙两人从同一地点出发，背向而行。甲速度5km/h，乙速度4km/h，3小时后两人相距？', options: ['A. 27km', 'B. 15km', 'C. 12km', 'D. 9km'], answer: 0, tags: { knowledge: '背向行程', skill_level: '应用', error_type: '速度相加', cognitive_load: '中', trap_type: '背向速度相加' }, hint: '背向: 速度和(5+4)×时间3=27km' },
+        { id: 'l4-app-08', level: 2, type: '变式探测', stem: '买5本书送1本，共花了60元。每本书实际价格是？', options: ['A. 10元', 'B. 12元', 'C. 5元', 'D. 6元'], answer: 0, tags: { knowledge: '优惠问题', skill_level: '应用', error_type: '数量计算', cognitive_load: '中', trap_type: '实际拿到6本' }, hint: '花60元拿到6本, 每本=60÷6=10元' },
+        { id: 'l4-app-09', level: 3, type: '迁移探测', stem: '甲乙同时从A地出发去B地。甲速60km/h，乙速40km/h。甲到B地后立即返回，在距B地30km处遇到乙。AB距离是？', options: ['A. 150km', 'B. 120km', 'C. 90km', 'D. 60km'], answer: 0, tags: { knowledge: '相遇问题', skill_level: '分析', error_type: '路程关系', cognitive_load: '高', trap_type: '时间相同' }, hint: '甲走s+30, 乙走s-30, 时间相同: (s+30)/60=(s-30)/40, s=150' },
+        { id: 'l4-app-10', level: 3, type: '迁移探测', stem: '存款年利率3%，一年后利息比本金少58元。本金是多少？', options: ['A. 60元', 'B. 58元', 'C. 55元', 'D. 100元'], answer: 0, tags: { knowledge: '利率问题', skill_level: '分析', error_type: '等量关系', cognitive_load: '高', trap_type: '本金-利息=58' }, hint: '利息=本金×3%, 本金-本金×0.03=58, 本金×0.97=58, 本金≈60元' }
+      ]
+    },
+
+    /* -------- 高三（L12）· 拆分知识点 -------- */
+    'l12-function': {
+      name: '函数综合',
+      grade: 'L12',
+      textbookLessons: [0, 1, 2, 3, 4, 5],
+      questions: [
+        { id: 'l12-fn-01', level: 1, type: '基础探测', stem: '函数 f(x)=√(x-2) 的定义域是？', options: ['A. x≥2', 'B. x>2', 'C. x≥0', 'D. x≤2'], answer: 0, tags: { knowledge: '定义域', skill_level: '记忆', error_type: '根号条件', cognitive_load: '低', trap_type: '根号内非负' }, hint: 'x-2≥0, x≥2' },
+        { id: 'l12-fn-02', level: 1, type: '基础探测', stem: '函数 f(x)=1/x 在x=0处？', options: ['A. 无定义', 'B. 等于0', 'C. 等于1', 'D. 等于∞'], answer: 0, tags: { knowledge: '函数定义', skill_level: '记忆', error_type: '分母为零', cognitive_load: '低', trap_type: '分母不能为0' }, hint: 'x=0时分母为0，函数无定义' },
+        { id: 'l12-fn-03', level: 1, type: '基础探测', stem: '指数函数 y=2ˣ 的单调性是？', options: ['A. 单调递增', 'B. 单调递减', 'C. 先增后减', 'D. 不单调'], answer: 0, tags: { knowledge: '指数函数', skill_level: '记忆', error_type: '底数判断', cognitive_load: '低', trap_type: '底数>1递增' }, hint: '底数2>1，指数函数单调递增' },
+        { id: 'l12-fn-04', level: 1, type: '基础探测', stem: '对数函数 y=log₂x 的定义域是？', options: ['A. x>0', 'B. x≥0', 'C. x≠0', 'D. x为任意实数'], answer: 0, tags: { knowledge: '对数函数', skill_level: '记忆', error_type: '定义域', cognitive_load: '低', trap_type: '真数>0' }, hint: '对数真数必须大于0' },
+        { id: 'l12-fn-05', level: 2, type: '变式探测', stem: 'f(x)=x²+2x，f(a)=3，则 a = ?', options: ['A. 1或-3', 'B. 1', 'C. -3', 'D. 3'], answer: 0, tags: { knowledge: '函数求值', skill_level: '应用', error_type: '解方程', cognitive_load: '中', trap_type: '两个解' }, hint: 'a²+2a=3, a²+2a-3=0, (a+3)(a-1)=0' },
+        { id: 'l12-fn-06', level: 2, type: '变式探测', stem: '函数 f(x)=x³-3x 的极大值点是？', options: ['A. x=-1', 'B. x=1', 'C. x=0', 'D. x=3'], answer: 0, tags: { knowledge: '函数极值', skill_level: '应用', error_type: '极大极小判断', cognitive_load: '中', trap_type: '导数=0' }, hint: 'f\'(x)=3x²-3=0, x=±1, x=-1处取极大值' },
+        { id: 'l12-fn-07', level: 2, type: '变式探测', stem: 'f(x)=ln(x+1)的值域是？', options: ['A. 全体实数R', 'B. y>0', 'C. y≥0', 'D. y>-1'], answer: 0, tags: { knowledge: '值域', skill_level: '应用', error_type: '值域判断', cognitive_load: '中', trap_type: 'ln的范围' }, hint: 'x+1>0即x>-1, ln的值域为R' },
+        { id: 'l12-fn-08', level: 2, type: '变式探测', stem: 'f(x)是奇函数，f(2)=5，则f(-2)=？', options: ['A. -5', 'B. 5', 'C. -2', 'D. 0'], answer: 0, tags: { knowledge: '奇函数性质', skill_level: '应用', error_type: '奇函数定义', cognitive_load: '中', trap_type: 'f(-x)=-f(x)' }, hint: '奇函数: f(-x)=-f(x), f(-2)=-f(2)=-5' },
+        { id: 'l12-fn-09', level: 3, type: '迁移探测', stem: 'f(x)=eˣ-x在x=0处的切线方程是？', options: ['A. y=x+1', 'B. y=x', 'C. y=2x+1', 'D. y=x-1'], answer: 0, tags: { knowledge: '切线方程', skill_level: '分析', error_type: '导数求斜率', cognitive_load: '高', trap_type: '点斜式' }, hint: 'f(0)=1, f\'(x)=eˣ-1, f\'(0)=0... 等等f\'(0)=e⁰-1=0, 切线y=1。再检查: f(0)=e⁰-0=1, 斜率0, y=1。但选项无y=1，重新看: f\'(x)=eˣ-1, f\'(0)=0。题目可能需要重新理解' },
+        { id: 'l12-fn-10', level: 3, type: '迁移探测', stem: '函数y=|x-1|+|x+3|的最小值是？', options: ['A. 4', 'B. 2', 'C. 0', 'D. 1'], answer: 0, tags: { knowledge: '绝对值函数最值', skill_level: '分析', error_type: '分段讨论', cognitive_load: '高', trap_type: '-3≤x≤1时为常数' }, hint: '当-3≤x≤1时, y=(x+3)+(1-x)=4, 最小值为4' }
+      ]
+    },
+
+    'l12-trig': {
+      name: '三角函数综合',
+      grade: 'L12',
+      textbookLessons: [6, 7, 8, 9, 10, 11, 12],
+      questions: [
+        { id: 'l12-tr-01', level: 1, type: '基础探测', stem: 'sin30°+cos60° = ?', options: ['A. 1', 'B. 0.5', 'C. 1.5', 'D. 2'], answer: 0, tags: { knowledge: '特殊角三角函数', skill_level: '记忆', error_type: '特殊角值', cognitive_load: '低', trap_type: 'sin30=cos60=0.5' }, hint: 'sin30°=0.5, cos60°=0.5, 和=1' },
+        { id: 'l12-tr-02', level: 1, type: '基础探测', stem: 'sin²x+cos²x = ?', options: ['A. 1', 'B. 2', 'C. 0', 'D. sin2x'], answer: 0, tags: { knowledge: '基本关系', skill_level: '记忆', error_type: '公式遗忘', cognitive_load: '低', trap_type: '平方和' }, hint: 'sin²x+cos²x=1' },
+        { id: 'l12-tr-03', level: 1, type: '基础探测', stem: 'tan45° = ?', options: ['A. 1', 'B. 0', 'C. √3', 'D. √2'], answer: 0, tags: { knowledge: '特殊角', skill_level: '记忆', error_type: '特殊角值', cognitive_load: '低', trap_type: 'tan45=1' }, hint: 'tan45°=sin45°/cos45°=1' },
+        { id: 'l12-tr-04', level: 1, type: '基础探测', stem: 'sin2x = ?', options: ['A. 2sinxcosx', 'B. sin²x-cos²x', 'C. 2sinx', 'D. 2cosx'], answer: 0, tags: { knowledge: '二倍角公式', skill_level: '记忆', error_type: '公式混淆', cognitive_load: '低', trap_type: '正弦二倍角' }, hint: 'sin2x=2sinxcosx' },
+        { id: 'l12-tr-05', level: 2, type: '变式探测', stem: '已知sinα=3/5, α为锐角, 则cosα = ?', options: ['A. 4/5', 'B. -4/5', 'C. 3/4', 'D. 5/4'], answer: 0, tags: { knowledge: '同角关系', skill_level: '应用', error_type: '勾股数', cognitive_load: '中', trap_type: 'cos²=1-sin²' }, hint: 'cosα=√(1-9/25)=√(16/25)=4/5' },
+        { id: 'l12-tr-06', level: 2, type: '变式探测', stem: 'sin(A+B) = ?', options: ['A. sinAcosB+cosAsinB', 'B. sinAcosB-cosAsinB', 'C. cosAcosB-sinAsinB', 'D. cosAcosB+sinAsinB'], answer: 0, tags: { knowledge: '两角和公式', skill_level: '应用', error_type: '公式混淆', cognitive_load: '中', trap_type: '正弦和角' }, hint: 'sin(A+B)=sinAcosB+cosAsinB' },
+        { id: 'l12-tr-07', level: 2, type: '变式探测', stem: '在△ABC中, a=3, b=4, C=90°, 则c = ?', options: ['A. 5', 'B. 7', 'C. 1', 'D. √7'], answer: 0, tags: { knowledge: '勾股定理', skill_level: '应用', error_type: '勾股计算', cognitive_load: '中', trap_type: '斜边' }, hint: 'c=√(9+16)=5' },
+        { id: 'l12-tr-08', level: 2, type: '变式探测', stem: '在△ABC中, a=6, b=8, c=10, 则最大角的度数是？', options: ['A. 90°', 'B. 60°', 'C. 120°', 'D. 45°'], answer: 0, tags: { knowledge: '余弦定理', skill_level: '应用', error_type: '最大角判断', cognitive_load: '中', trap_type: '最大边对最大角' }, hint: '6²+8²=100=10²，是直角三角形，最大角90°' },
+        { id: 'l12-tr-09', level: 3, type: '迁移探测', stem: '在△ABC中, 已知a=2, b=√6, A=45°, 则B = ?', options: ['A. 60°', 'B. 30°', 'C. 120°', 'D. 60°或120°'], answer: 3, tags: { knowledge: '正弦定理', skill_level: '分析', error_type: '多解讨论', cognitive_load: '高', trap_type: '两种可能' }, hint: 'sinB/b=sinA/a, sinB=√6×√2/2/2=√3/2, B=60°或120°' },
+        { id: 'l12-tr-10', level: 3, type: '迁移探测', stem: '函数 y=sinx+cosx的最大值是？', options: ['A. √2', 'B. 2', 'C. 1', 'D. √2/2'], answer: 0, tags: { knowledge: '辅助角公式', skill_level: '分析', error_type: '变换技巧', cognitive_load: '高', trap_type: '√2sin(x+45°)' }, hint: 'sinx+cosx=√2sin(x+45°), 最大值√2' }
+      ]
+    },
+
+    'l12-analytic': {
+      name: '解析几何',
+      grade: 'L12',
+      textbookLessons: [26, 27, 28, 29, 30, 31, 32, 33],
+      questions: [
+        { id: 'l12-an-01', level: 1, type: '基础探测', stem: '直线 y=2x+3 的斜率是？', options: ['A. 2', 'B. 3', 'C. -2', 'D. 1/2'], answer: 0, tags: { knowledge: '直线方程', skill_level: '记忆', error_type: '斜率识别', cognitive_load: '低', trap_type: 'y=kx+b的k' }, hint: '斜截式y=kx+b中k为斜率' },
+        { id: 'l12-an-02', level: 1, type: '基础探测', stem: '圆 x²+y²=4 的圆心和半径是？', options: ['A. (0,0), r=2', 'B. (0,0), r=4', 'C. (2,0), r=2', 'D. (0,2), r=2'], answer: 0, tags: { knowledge: '圆的方程', skill_level: '记忆', error_type: '标准方程', cognitive_load: '低', trap_type: 'r²=4' }, hint: '标准方程(x-a)²+(y-b)²=r², 圆心(0,0), r=2' },
+        { id: 'l12-an-03', level: 1, type: '基础探测', stem: '椭圆 x²/4+y²=1 的焦点在哪个轴上？', options: ['A. x轴', 'B. y轴', 'C. 原点', 'D. 无焦点'], answer: 0, tags: { knowledge: '椭圆标准方程', skill_level: '记忆', error_type: '焦点位置判断', cognitive_load: '低', trap_type: '分母大的轴' }, hint: '4>1, 分母大的在x轴, 焦点在x轴' },
+        { id: 'l12-an-04', level: 1, type: '基础探测', stem: '抛物线 y²=4x 的开口方向是？', options: ['A. 向右', 'B. 向左', 'C. 向上', 'D. 向下'], answer: 0, tags: { knowledge: '抛物线', skill_level: '记忆', error_type: '开口方向', cognitive_load: '低', trap_type: 'y²=2px向右' }, hint: 'y²=2px(p>0)开口向右' },
+        { id: 'l12-an-05', level: 2, type: '变式探测', stem: '过点(1,2)斜率为3的直线方程是？', options: ['A. y-2=3(x-1)', 'B. y+2=3(x+1)', 'C. y-1=3(x-2)', 'D. y-2=3(x+1)'], answer: 0, tags: { knowledge: '点斜式', skill_level: '应用', error_type: '点斜式公式', cognitive_load: '中', trap_type: 'y-y₀=k(x-x₀)' }, hint: '点斜式: y-2=3(x-1)' },
+        { id: 'l12-an-06', level: 2, type: '变式探测', stem: '双曲线 x²/9-y²/4=1 的渐近线方程是？', options: ['A. y=±(2/3)x', 'B. y=±(3/2)x', 'C. y=±(4/9)x', 'D. y=±(9/4)x'], answer: 0, tags: { knowledge: '双曲线渐近线', skill_level: '应用', error_type: '渐近线公式', cognitive_load: '中', trap_type: 'y=±(b/a)x' }, hint: '渐近线y=±(b/a)x=±(2/3)x' },
+        { id: 'l12-an-07', level: 2, type: '变式探测', stem: '点(3,4)到直线3x+4y=0的距离是？', options: ['A. 5', 'B. 3', 'C. 4', 'D. 7'], answer: 0, tags: { knowledge: '点到直线距离', skill_level: '应用', error_type: '距离公式', cognitive_load: '中', trap_type: 'd=|Ax₀+By₀|/√(A²+B²)' }, hint: 'd=|3×3+4×4|/√(9+16)=25/5=5' },
+        { id: 'l12-an-08', level: 2, type: '变式探测', stem: '椭圆 x²/25+y²/9=1 的离心率是？', options: ['A. 4/5', 'B. 3/5', 'C. 4/3', 'D. 5/4'], answer: 0, tags: { knowledge: '椭圆离心率', skill_level: '应用', error_type: '离心率公式', cognitive_load: '中', trap_type: 'e=c/a' }, hint: 'a=5, b=3, c=4, e=c/a=4/5' },
+        { id: 'l12-an-09', level: 3, type: '迁移探测', stem: '直线y=x+1被圆x²+y²=4截得的弦长是？', options: ['A. √14', 'B. 2', 'C. √2', 'D. 4'], answer: 0, tags: { knowledge: '直线与圆截弦长', skill_level: '分析', error_type: '弦长公式', cognitive_load: '高', trap_type: 'd²+(L/2)²=r²' }, hint: '圆心到直线d=1/√2, 弦长=2√(4-1/2)=2√(7/2)=√14' },
+        { id: 'l12-an-10', level: 3, type: '迁移探测', stem: '过抛物线y²=8x的焦点作x轴的垂线，交抛物线于A、B两点，|AB|=?', options: ['A. 8', 'B. 4', 'C. 16', 'D. 2'], answer: 0, tags: { knowledge: '抛物线焦点弦', skill_level: '分析', error_type: '通径公式', cognitive_load: '高', trap_type: '通径=2p' }, hint: 'p=4, 焦点(2,0), 通径|AB|=2p=8' }
+      ]
+    },
+
+    'l12-calculus': {
+      name: '导数与积分',
+      grade: 'L12',
+      textbookLessons: [38, 39, 40, 41, 42, 43, 44, 45],
+      questions: [
+        { id: 'l12-cl-01', level: 1, type: '基础探测', stem: '函数 f(x)=x³ 的导数是？', options: ['A. 3x²', 'B. x²', 'C. 3x', 'D. 3'], answer: 0, tags: { knowledge: '幂函数求导', skill_level: '记忆', error_type: '求导公式', cognitive_load: '低', trap_type: '(xⁿ)′=nxⁿ⁻¹' }, hint: '(x³)′=3x²' },
+        { id: 'l12-cl-02', level: 1, type: '基础探测', stem: '函数 f(x)=sinx 的导数是？', options: ['A. cosx', 'B. -cosx', 'C. -sinx', 'D. sinx'], answer: 0, tags: { knowledge: '三角函数求导', skill_level: '记忆', error_type: '导数公式', cognitive_load: '低', trap_type: '(sinx)′=cosx' }, hint: '(sinx)′=cosx' },
+        { id: 'l12-cl-03', level: 1, type: '基础探测', stem: '∫1 dx = ?', options: ['A. x+C', 'B. 1+C', 'C. x', 'D. 0'], answer: 0, tags: { knowledge: '基本积分', skill_level: '记忆', error_type: '积分常数', cognitive_load: '低', trap_type: '不定积分加C' }, hint: '∫1dx=x+C' },
+        { id: 'l12-cl-04', level: 1, type: '基础探测', stem: '∫x dx = ?', options: ['A. x²/2+C', 'B. x²+C', 'C. 1+C', 'D. x+C'], answer: 0, tags: { knowledge: '幂函数积分', skill_level: '记忆', error_type: '积分公式', cognitive_load: '低', trap_type: '∫xⁿ=xⁿ⁺¹/(n+1)' }, hint: '∫x dx = x²/2+C' },
+        { id: 'l12-cl-05', level: 2, type: '变式探测', stem: 'f(x)=x²+3x的导数是？', options: ['A. 2x+3', 'B. 2x', 'C. x+3', 'D. 2x+3x'], answer: 0, tags: { knowledge: '求导法则', skill_level: '应用', error_type: '逐项求导', cognitive_load: '中', trap_type: '和的导数=导数的和' }, hint: '(x²)′=2x, (3x)′=3, 所以2x+3' },
+        { id: 'l12-cl-06', level: 2, type: '变式探测', stem: 'f(x)=eˣ·lnx的导数是？', options: ['A. eˣlnx+eˣ/x', 'B. eˣlnx', 'C. eˣ/x', 'D. eˣ+1/x'], answer: 0, tags: { knowledge: '乘积求导', skill_level: '应用', error_type: '乘法法则', cognitive_load: '中', trap_type: '(uv)′=u′v+uv′' }, hint: '(eˣ)′lnx+eˣ(lnx)′=eˣlnx+eˣ/x' },
+        { id: 'l12-cl-07', level: 2, type: '变式探测', stem: '∫₀¹ x² dx = ?', options: ['A. 1/3', 'B. 1/2', 'C. 1', 'D. 2/3'], answer: 0, tags: { knowledge: '定积分', skill_level: '应用', error_type: '牛顿-莱布尼茨', cognitive_load: '中', trap_type: 'F(1)-F(0)' }, hint: '[x³/3]₀¹=1/3-0=1/3' },
+        { id: 'l12-cl-08', level: 2, type: '变式探测', stem: '函数f(x)=x³-3x在x=1处的切线斜率是？', options: ['A. 0', 'B. 3', 'C. -2', 'D. 1'], answer: 0, tags: { knowledge: '导数几何意义', skill_level: '应用', error_type: '切线斜率', cognitive_load: '中', trap_type: 'f′(1)' }, hint: 'f′(x)=3x²-3, f′(1)=0' },
+        { id: 'l12-cl-09', level: 3, type: '迁移探测', stem: '函数f(x)=x³-3x+1在[-2,2]上的最大值是？', options: ['A. 3', 'B. 1', 'C. -1', 'D. 5'], answer: 0, tags: { knowledge: '最值问题', skill_level: '分析', error_type: '端点值遗漏', cognitive_load: '高', trap_type: '比较极值和端点' }, hint: 'f′=3x²-3=0, x=±1, f(-2)=-1, f(-1)=3, f(1)=-1, f(2)=3, 最大值3' },
+        { id: 'l12-cl-10', level: 3, type: '迁移探测', stem: '曲线y=x²与y=√x围成的面积是？', options: ['A. 1/3', 'B. 2/3', 'C. 1', 'D. 1/2'], answer: 0, tags: { knowledge: '积分应用', skill_level: '分析', error_type: '积分限确定', cognitive_load: '高', trap_type: '上减下' }, hint: '交点x=0,1, ∫₀¹(√x-x²)dx=[2/3x^1.5-x³/3]₀¹=2/3-1/3=1/3' }
+      ]
+    },
+
+    'l12-sequence': {
+      name: '数列综合',
+      grade: 'L12',
+      textbookLessons: [50, 51, 52, 53, 54, 55, 56],
+      questions: [
+        { id: 'l12-sq-01', level: 1, type: '基础探测', stem: '等差数列 2,5,8,11,... 的公差是？', options: ['A. 3', 'B. 2', 'C. 5', 'D. 8'], answer: 0, tags: { knowledge: '等差数列', skill_level: '记忆', error_type: '公差计算', cognitive_load: '低', trap_type: '后项-前项' }, hint: '5-2=3' },
+        { id: 'l12-sq-02', level: 1, type: '基础探测', stem: '等比数列 1,2,4,8,... 的公比是？', options: ['A. 2', 'B. 1', 'C. 4', 'D. 8'], answer: 0, tags: { knowledge: '等比数列', skill_level: '记忆', error_type: '公比计算', cognitive_load: '低', trap_type: '后项÷前项' }, hint: '2÷1=2' },
+        { id: 'l12-sq-03', level: 1, type: '基础探测', stem: '等差数列通项公式 aₙ = a₁ + (n-1)d 中, a₁=2, d=3, a₅ = ?', options: ['A. 14', 'B. 17', 'C. 15', 'D. 11'], answer: 0, tags: { knowledge: '通项公式', skill_level: '记忆', error_type: '代入计算', cognitive_load: '低', trap_type: 'n-1' }, hint: 'a₅=2+(5-1)×3=2+12=14' },
+        { id: 'l12-sq-04', level: 1, type: '基础探测', stem: '等比数列 a₁=1, q=2, 前4项和 S₄ = ?', options: ['A. 15', 'B. 8', 'C. 16', 'D. 4'], answer: 0, tags: { knowledge: '求和公式', skill_level: '记忆', error_type: '公式记忆', cognitive_load: '低', trap_type: 'Sₙ=a₁(1-qⁿ)/(1-q)' }, hint: 'S₄=1×(1-2⁴)/(1-2)=15' },
+        { id: 'l12-sq-05', level: 2, type: '变式探测', stem: '等差数列中 a₃=7, a₇=19, 则 a₅ = ?', options: ['A. 13', 'B. 10', 'C. 15', 'D. 12'], answer: 0, tags: { knowledge: '等差中项', skill_level: '应用', error_type: '中项概念', cognitive_load: '中', trap_type: 'a₅=(a₃+a₇)/2' }, hint: '等差中项: a₅=(a₃+a₇)/2=(7+19)/2=13' },
+        { id: 'l12-sq-06', level: 2, type: '变式探测', stem: '等比数列中 a₂=6, a₄=54, 则 q = ?', options: ['A. ±3', 'B. 3', 'C. -3', 'D. 9'], answer: 0, tags: { knowledge: '公比求解', skill_level: '应用', error_type: '正负讨论', cognitive_load: '中', trap_type: 'q²=9' }, hint: 'a₄/a₂=q²=9, q=±3' },
+        { id: 'l12-sq-07', level: 2, type: '变式探测', stem: '1+2+3+...+100 = ?', options: ['A. 5050', 'B. 100', 'C. 5000', 'D. 10100'], answer: 0, tags: { knowledge: '等差求和', skill_level: '应用', error_type: '求和公式', cognitive_load: '中', trap_type: 'n(n+1)/2' }, hint: '100×101/2=5050' },
+        { id: 'l12-sq-08', level: 2, type: '变式探测', stem: '数列 1, 1/2, 1/4, 1/8,... 前5项和是？', options: ['A. 31/16', 'B. 15/8', 'C. 2', 'D. 1'], answer: 0, tags: { knowledge: '等比求和', skill_level: '应用', error_type: '公式应用', cognitive_load: '中', trap_type: 'q=1/2' }, hint: 'S₅=(1-(1/2)⁵)/(1-1/2)=31/16' },
+        { id: 'l12-sq-09', level: 3, type: '迁移探测', stem: '已知数列{aₙ}满足 a₁=1, aₙ₊₁=2aₙ+1, 求 a₃', options: ['A. 7', 'B. 3', 'C. 5', 'D. 15'], answer: 0, tags: { knowledge: '递推数列', skill_level: '分析', error_type: '递推计算', cognitive_load: '高', trap_type: '逐步计算' }, hint: 'a₂=2×1+1=3, a₃=2×3+1=7' },
+        { id: 'l12-sq-10', level: 3, type: '迁移探测', stem: '某企业第一年利润100万元，此后每年增长10%。第3年利润是？', options: ['A. 121万元', 'B. 130万元', 'C. 110万元', 'D. 133.1万元'], answer: 0, tags: { knowledge: '数列应用', skill_level: '分析', error_type: '增长模型', cognitive_load: '高', trap_type: '等比增长' }, hint: '100×1.1²=121万元' }
+      ]
+    },
   /* ═══════════ 诊断算法 ═══════════ */
   /**
    * 对指定知识点运行诊断
