@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <script src="../auth-check.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 缓存控制 -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>幼儿园小班（3-4 岁）48 周家庭学习任务表</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Noto Serif SC", "STSong", "宋体", "SimSun", "KaiTi", "楷体", "STKaiti", "Microsoft YaHei", serif;
+    }
+
+    body {
+      background-color: #fff5f5;
+      padding: 15px;
+      line-height: 1.8;
+      color: #2c2416;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark {
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background-color: #fffef9;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(255, 140, 66, 0.08), 0 8px 10px -6px rgba(255, 140, 66, 0.03);
+      padding: 25px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      grid-template-areas:
+        "header header"
+        "recommend recommend"
+        "nav content";
+      gap: 25px;
+    }
+
+    body.dark .container {
+      background-color: #1e293b;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .header {
+      grid-area: header;
+      text-align: center;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ffafbd;
+      padding-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .header-content {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .header h1 {
+      color: #d4556e;
+      font-size: 26px;
+      margin-bottom: 8px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+    }
+
+    body.dark .header h1 {
+      color: #f8fafc;
+    }
+
+    .header p {
+      color: #8b6f47;
+      font-size: 15px;
+      transition: color 0.3s ease;
+    }
+
+    body.dark .header p {
+      color: #94a3b8;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+
+    .theme-toggle,
+    .print-btn {
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #fff4e6 0%, #fff0e0 100%);
+      color: #ffafbd;
+      border: 1px solid #ffafbd;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    .theme-toggle:hover,
+    .print-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 175, 189, 0.2);
+      background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+      color: white;
+    }
+
+    body.dark .theme-toggle,
+    body.dark .print-btn {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #ffb8cc;
+      border-color: #ff9db0;
+    }
+
+    body.dark .theme-toggle:hover,
+    body.dark .print-btn:hover {
+      background: linear-gradient(135deg, #ff9db0 0%, #d4556e 100%);
+      color: white;
+    }
+
+    .nav-tabs {
+      grid-area: nav;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: sticky;
+      top: 20px;
+      align-self: start;
+    }
+
+    .nav-tab {
+      padding: 12px 18px;
+      background: linear-gradient(135deg, #fff4e6 0%, #fff0e0 100%);
+      color: #ffafbd;
+      border: 1px solid #ffafbd;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .nav-tab:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 175, 189, 0.2);
+    }
+
+    .nav-tab.active {
+      background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+      color: white;
+    }
+
+    body.dark .nav-tab {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #ffb8cc;
+      border-color: #ff9db0;
+    }
+
+    body.dark .nav-tab.active {
+      background: linear-gradient(135deg, #ff9db0 0%, #d4556e 100%);
+      color: white;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      border: 1px solid #ffe6e6;
+      border-radius: 10px;
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(255, 240, 245, 0.5) 0%, rgba(255, 250, 250, 0.3) 100%);
+      transition: all 0.3s ease;
+    }
+
+    body.dark .section {
+      border-color: #334155;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.3) 100%);
+    }
+
+    .section-title {
+      color: #d4556e;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      padding-left: 10px;
+      border-left: 4px solid #ffafbd;
+    }
+
+    body.dark .section-title {
+      color: #ffb8cc;
+    }
+
+    #contentArea {
+      grid-area: content;
+    }
+
+    .week-grid {
+      /* display: grid; */
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .week-card {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      border-left: 3px solid #ffafbd;
+      box-shadow: 0 2px 8px rgba(255, 175, 189, 0.1);
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    body.dark .week-card {
+      background: #1e293b;
+      border-left-color: #ff9db0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .week-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(255, 175, 189, 0.15);
+    }
+
+    .week-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed #ffe6e6;
+    }
+
+    body.dark .week-header {
+      border-bottom-color: #334155;
+    }
+
+    .week-icon {
+      font-size: 24px;
+    }
+
+    .week-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #d4556e;
+    }
+
+    body.dark .week-title {
+      color: #ffb8cc;
+    }
+
+    .week-content {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    body.dark .week-content {
+      color: #cbd5e1;
+    }
+
+    .recommend-section {
+      grid-area: recommend;
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(255, 244, 230, 0.6) 0%, rgba(255, 250, 245, 0.4) 100%);
+      border-radius: 10px;
+      border: 2px dashed #ffafbd;
+    }
+
+    body.dark .recommend-section {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.4) 100%);
+      border-color: #ff9db0;
+    }
+
+    .recommend-title {
+      color: #d4556e;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    body.dark .recommend-title {
+      color: #ffb8cc;
+    }
+
+    .recommend-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      width: 100%;
+    }
+
+    .recommend-card {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      border-left: 3px solid #ffc3a0;
+    }
+
+    body.dark .recommend-card {
+      background: #1e293b;
+      border-left-color: #ff9d5c;
+    }
+
+    .recommend-card h4 {
+      color: #d4556e;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    body.dark .recommend-card h4 {
+      color: #ffb8cc;
+    }
+
+    .recommend-card p {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    body.dark .recommend-card p {
+      color: #cbd5e1;
+    }
+
+    @media print {
+
+      .theme-toggle,
+      .print-btn,
+      .nav-tabs {
+        display: none;
+      }
+
+      .container {
+        box-shadow: none;
+        padding: 15px;
+      }
+
+      .section {
+        break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-actions {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "recommend"
+          "nav"
+          "content";
+      }
+
+      .nav-tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: static;
+        justify-content: center;
+      }
+
+      .nav-tab {
+        width: auto;
+      }
+
+      .week-grid,
+      .recommend-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-content">
+        <h1>🐻 幼儿园小班（3-4 岁）48 周家庭学习任务表</h1>
+        <p id="description">核心说明：每日整体学习 30 分钟左右（分 2 次完成，每次 15 分钟）、亲子阅读 30 分钟、英语学习 15-20 分钟；48 周分为上下两学期（每学期 24
+          周），贴合家庭学习场景，以游戏化、感知体验为主，避免机械训练。</p>
+      </div>
+      <div class="header-actions">
+        <button class="theme-toggle" onclick="toggleTheme()">🌙 暗黑模式</button>
+        <a href="#" class="print-btn" onclick="window.print(); return false;">🖨️ 打印大纲</a>
+      </div>
+    </div>
+
+    <div class="recommend-section" id="recommendSection">
+      <h3 class="recommend-title">📚 学习推荐</h3>
+      <div class="recommend-grid" id="recommendGrid">
+        <!-- 推荐内容将通过 JavaScript 动态生成 -->
+      </div>
+    </div>
+
+    <div class="nav-tabs" id="navTabs">
+      <!-- 导航标签将通过 JavaScript 动态生成 -->
+    </div>
+
+    <div id="contentArea">
+      <!-- 内容区域将通过 JavaScript 动态生成 -->
+    </div>
+  </div>
+
+  <script>
+    // 学习数据
+    let learningData = null;
+
+    let currentTermIndex = 0;
+
+    // 初始化页面
+    async function init() {
+      await loadLearningData();
+      if (learningData) {
+        // 更新标题和描述
+        document.querySelector('.header h1').textContent = '🐻 ' + learningData.title;
+        document.getElementById('description').textContent = learningData.desc;
+
+        renderNavTabs();
+        renderContent(0);
+        renderRecommendations();
+      }
+    }
+
+    // 加载学习数据
+    async function loadLearningData() {
+      try {
+        const response = await fetch('grade1.json');
+        if (!response.ok) {
+          throw new Error('无法加载数据文件');
+        }
+        learningData = await response.json();
+        console.log('数据加载成功:', learningData.title);
+      } catch (error) {
+        console.error('加载数据失败:', error);
+        alert('加载数据失败，请检查 grade1.json 文件是否存在');
+      }
+    }
+
+    // 渲染导航标签
+    function renderNavTabs() {
+      const tabsContainer = document.getElementById('navTabs');
+      tabsContainer.innerHTML = '';
+
+      learningData.terms.forEach((term, index) => {
+        const tab = document.createElement('div');
+        tab.className = `nav-tab ${index === 0 ? 'active' : ''}`;
+        tab.textContent = term.title;
+        tab.onclick = () => switchTerm(index);
+        tabsContainer.appendChild(tab);
+      });
+    }
+
+    // 切换章节
+    function switchTerm(index) {
+      currentTermIndex = index;
+      const tabs = document.querySelectorAll('.nav-tab');
+      tabs.forEach((tab, i) => {
+        tab.classList.toggle('active', i === index);
+      });
+      renderContent(index);
+    }
+
+    // 渲染内容
+    function renderContent(termIndex) {
+      const contentArea = document.getElementById('contentArea');
+      const term = learningData.terms[termIndex];
+
+      if (!term) {
+        contentArea.innerHTML = '<p>暂无内容</p>';
+        return;
+      }
+
+      let html = `
+                <div class="section">
+                    <h2 class="section-title">${term.title}</h2>
+                    <div class="week-grid">
+            `;
+
+      const icons = ['🐻', '🐰', '🐱', '🐶', '🐼', '🐨'];
+      const titles = [learningData.column1name, learningData.column2name, learningData.column3name,
+      learningData.column4name, learningData.column5name, learningData.column6name];
+
+      term.weeks.forEach((week, weekIndex) => {
+        html += `
+                    <div class="week-card">
+                        <div class="week-header">
+                            <span class="week-icon">${icons[weekIndex % icons.length]}</span>
+                            <h3 class="week-title">${week.column1}</h3>
+                        </div>
+                        <div class="week-content">
+                            <p><strong>${titles[1]}:</strong> ${week.column2}</p>
+                            <p style="margin-top: 8px;"><strong>${titles[2]}:</strong> ${week.column3}</p>
+                            <p style="margin-top: 8px;"><strong>${titles[3]}:</strong> ${week.column4}</p>
+                            <p style="margin-top: 8px;"><strong>${titles[4]}:</strong> ${week.column5}</p>
+                            <p style="margin-top: 8px; color: #ffafbd;"><strong>${titles[5]}:</strong> ${week.column6}</p>
+                        </div>
+                    </div>
+                `;
+      });
+
+      html += `
+                    </div>
+                </div>
+            `;
+
+      contentArea.innerHTML = html;
+    }
+
+    // 渲染推荐内容
+    function renderRecommendations() {
+      const recommendGrid = document.getElementById('recommendGrid');
+      recommendGrid.innerHTML = '';
+
+      learningData.recommend.forEach(rec => {
+        const card = document.createElement('div');
+        card.className = 'recommend-card';
+        card.innerHTML = `
+                    <h4>📌 ${rec.title}</h4>
+                    <p>${rec.content}</p>
+                `;
+        recommendGrid.appendChild(card);
+      });
+    }
+
+    // 切换主题
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      document.querySelector('.theme-toggle').textContent = isDark ? '☀️ 亮色模式' : '🌙 暗黑模式';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    // 页面加载时初始化
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+  <script>
+        // 本地版本：已跳过登录验证
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,3308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <script src="../auth-check.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 缓存控制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>6年级数学分层递进学习大纲</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 保留原有样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", "Microsoft YaHei", Arial, sans-serif;
+        }
+        body {
+            background-color: #f8fafc;
+            padding: 15px;
+            line-height: 1.7;
+            color: #1e293b;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body.dark {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            padding: 25px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        body.dark .container {
+            background-color: #1e293b;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #409eff;
+            padding-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .header-content {
+            flex: 1;
+            min-width: 280px;
+        }
+        .header h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        body.dark .header h1 {
+            color: #f8fafc;
+        }
+        .header p {
+            color: #64748b;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+        body.dark .header p {
+            color: #94a3b8;
+        }
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .theme-toggle {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+            color: #409eff;
+            border: 1px solid #409eff;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(64, 158, 255, 0.2);
+            background: linear-gradient(135deg, #409eff 0%, #3375b9 100%);
+            color: white;
+        }
+        body.dark .theme-toggle {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            border-color: #3b82f6;
+        }
+        body.dark .theme-toggle:hover {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+            color: #409eff;
+            border: 1px solid #409eff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease;
+        }
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(64, 158, 255, 0.3);
+            background: linear-gradient(135deg, #409eff 0%, #3375b9 100%);
+            color: white;
+        }
+        body.dark .print-btn {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #93c5fd;
+            border-color: #3b82f6;
+        }
+        body.dark .print-btn:hover {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+        }
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .progress-label {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        body.dark .progress-label {
+            color: #94a3b8;
+        }
+        .progress-bar {
+            flex: 1;
+            height: 8px;
+            background-color: #f0f7ff;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+        }
+        body.dark .progress-bar {
+            background-color: #1e293b;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #409eff 0%, #3375b9 100%);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        body.dark .progress-fill {
+            background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+        }
+        .progress-text {
+            font-size: 13px;
+            color: #409eff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        body.dark .progress-text {
+            color: #93c5fd;
+        }
+        .layout {
+            display: flex;
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .sidebar {
+            flex: 0 0 220px;
+            background-color: #f1f5f9;
+            border-radius: 12px;
+            border: 1px solid #dbe5ff;
+            padding: 18px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+            position: sticky;
+            top: 20px;
+            align-self: flex-start;
+            max-height: calc(100vh - 60px);
+            overflow-y: auto;
+        }
+        body.dark .sidebar {
+            background-color: #111827;
+            border-color: #2d3748;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+        body.dark .sidebar-title {
+            color: #94a3b8;
+        }
+        .content-area {
+            flex: 1;
+        }
+        .month-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 0;
+        }
+        body.dark .month-nav {
+            border-color: transparent;
+        }
+        .month-link {
+            padding: 12px 16px;
+            background-color: transparent;
+            color: #1d4ed8;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            cursor: pointer;
+            text-align: left;
+            border: 1px solid transparent;
+        }
+        body.dark .month-link {
+            color: #cbd5f5;
+        }
+        .month-link:hover {
+            background-color: rgba(64, 158, 255, 0.15);
+            color: #2563eb;
+        }
+        .month-link.active {
+            background: linear-gradient(135deg, #409eff 0%, #3375b9 100%);
+            color: white;
+            box-shadow: 0 8px 20px rgba(64, 158, 255, 0.3);
+        }
+        body.dark .month-link.active {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+        .month-link::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 0;
+            width: 4px;
+            border-radius: 999px;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+        .month-link.active::after {
+            background-color: white;
+        }
+        .anchor-nav {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 0;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            scrollbar-width: thin;
+            transition: border-color 0.3s ease;
+        }
+        body.dark .anchor-nav {
+            border-color: #2d3748;
+        }
+        .anchor-nav::-webkit-scrollbar {
+            height: 4px;
+        }
+        .anchor-nav::-webkit-scrollbar-thumb {
+            background-color: #409eff;
+            border-radius: 2px;
+        }
+        body.dark .anchor-nav::-webkit-scrollbar-thumb {
+            background-color: #3b82f6;
+        }
+        .anchor-link {
+            padding: 8px 18px;
+            margin-right: 12px;
+            background-color: #f0f7ff;
+            color: #409eff;
+            text-decoration: none;
+            border-radius: 25px;
+            white-space: nowrap;
+            font-size: 14px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        body.dark .anchor-link {
+            background-color: #1e293b;
+            color: #93c5fd;
+        }
+        .anchor-link:hover, .anchor-link.active {
+            background-color: #409eff;
+            color: white;
+        }
+        body.dark .anchor-link:hover, body.dark .anchor-link.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .anchor-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        .anchor-link.active::after, .anchor-link:hover::after {
+            width: 100%;
+        }
+        .month-detail-panel {
+            margin-bottom: 25px;
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid #dbe5ff;
+            background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+            box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
+        }
+        .month-detail-panel h3 {
+            font-size: 18px;
+            color: #1e2d3b;
+            margin-bottom: 6px;
+        }
+        .month-detail-panel p {
+            margin-bottom: 10px;
+            color: #475669;
+        }
+        .detail-list {
+            padding-left: 20px;
+            color: #334155;
+            line-height: 1.6;
+        }
+        .plan-desc {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f0f7ff;
+            border-left: 4px solid #409eff;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        body.dark .plan-desc {
+            background-color: #1e293b;
+            border-color: #3b82f6;
+        }
+        .plan-desc h3 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        body.dark .plan-desc h3 {
+            color: #f8fafc;
+        }
+        .plan-desc ul {
+            list-style: disc;
+            margin-left: 20px;
+            font-size: 14px;
+            color: #64748b;
+            transition: color 0.3s ease;
+        }
+        body.dark .plan-desc ul {
+            color: #94a3b8;
+        }
+        .plan-desc li {
+            margin-bottom: 6px;
+        }
+        .month-content {
+            display: none;
+        }
+        .month-content.active {
+            display: block;
+        }
+        .week-plan {
+            margin-bottom: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .week-plan:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+        }
+        body.dark .week-plan {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+        }
+        body.dark .week-plan:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+        .week-plan:nth-child(even) .week-content {
+            background-color: #faf9f5;
+        }
+        body.dark .week-plan:nth-child(even) .week-content {
+            background-color: #1a2435;
+        }
+        .week-title {
+            background-color: #3375b9;
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: 8px 8px 0 0;
+            font-size: 17px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        .week-title:hover {
+            background-color: #2563eb;
+        }
+        body.dark .week-title {
+            background-color: #2563eb;
+        }
+        body.dark .week-title:hover {
+            background-color: #1d4ed8;
+        }
+        .week-title::after {
+            content: "▼";
+            font-size: 14px;
+            transition: transform 0.5s ease;
+        }
+        .week-title.collapsed::after {
+            transform: rotate(-180deg);
+        }
+        .week-content {
+            border: 1px solid #eee;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+            background-color: #fff;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+        body.dark .week-content {
+            background-color: #1e293b;
+            border-color: #2d3748;
+        }
+        .week-title:not(.collapsed) + .week-content {
+            max-height: 5000px;
+            opacity: 1;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #f0f7ff;
+            vertical-align: top;
+            line-height: 1.8;
+        }
+        body.dark .table th, body.dark .table td {
+            border-bottom: 1px solid #2d3748;
+        }
+        .table th {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 15px;
+            width: 18%;
+            border-right: 1px solid #f0f7ff;
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        body.dark .table th {
+            background: linear-gradient(135deg, #1e293b 0%, #1a2435 100%);
+            color: #f8fafc;
+            border-right: 1px solid #2d3748;
+        }
+        .table td {
+            font-size: 14px;
+            color: #64748b;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body.dark .table td {
+            color: #94a3b8;
+        }
+        .table tr:hover td {
+            background-color: #fefeff;
+        }
+        body.dark .table tr:hover td {
+            background-color: #1a2435;
+        }
+        .level-basic, .level-improve, .level-expand {
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 6px;
+            color: white;
+            font-weight: 500;
+        }
+        .level-basic {
+            background-color: #22c55e;
+        }
+        .level-improve {
+            background-color: #f97316;
+        }
+        .level-expand {
+            background-color: #ef4444;
+        }
+        .task-item {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .task-item::before {
+            content: '✓';
+            position: absolute;
+            left: 5px;
+            color: #409eff;
+            font-weight: bold;
+            font-size: 12px;
+            transition: color 0.3s ease;
+        }
+        body.dark .task-item::before {
+            color: #3b82f6;
+        }
+        .task-item .duration {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 2px 6px;
+            background-color: #e0f2fe;
+            color: #1d4ed8;
+            font-size: 12px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body.dark .task-item .duration {
+            background-color: #1e293b;
+            color: #93c5fd;
+        }
+        .tips {
+            background-color: #fff8e1;
+            padding: 14px 16px;
+            border-radius: 6px;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #8a6d3b;
+            border-left: 3px solid #f39c12;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        body.dark .tips {
+            background-color: #374151;
+            color: #fcd34d;
+            border-color: #f59e0b;
+        }
+        .tips::before {
+            content: '💡';
+            font-size: 16px;
+            margin-top: 2px;
+        }
+        .star-btn {
+            background: none;
+            border: none;
+            color: #ccc;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 5px;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        .star-btn:hover {
+            transform: scale(1.2);
+            color: #fcd34d;
+        }
+        .star-btn.active {
+            color: #f1c40f;
+            animation: pulse 0.5s ease;
+        }
+        body.dark .star-btn {
+            color: #4b5563;
+        }
+        body.dark .star-btn:hover {
+            color: #fcd34d;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        .error-record-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #409eff 0%, #3375b9 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(64,158,255,0.3);
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        .error-record-btn:hover {
+            background: linear-gradient(135deg, #3375b9 0%, #2563eb 100%);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(64,158,255,0.4);
+        }
+        body.dark .error-record-btn {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            box-shadow: 0 3px 10px rgba(59,130,246,0.4);
+        }
+        body.dark .error-record-btn:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+        .error-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 101;
+            display: none;
+            transition: background-color 0.3s ease;
+        }
+        body.dark .error-modal {
+            background-color: rgba(0,0,0,0.7);
+        }
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 12px;
+            padding: 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        body.dark .modal-content {
+            background-color: #1e293b;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .modal-header {
+            background: linear-gradient(135deg, #409eff 0%, #3375b9 100%);
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        body.dark .modal-header {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+        .modal-header h3 {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+        .close-modal:hover {
+            opacity: 1;
+        }
+        .modal-body {
+            padding: 20px;
+        }
+        .modal-body textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px 16px;
+            border: 1px solid #e0f2fe;
+            border-radius: 8px;
+            font-size: 14px;
+            resize: none;
+            margin-bottom: 15px;
+            background-color: #f8fafc;
+            color: #1e293b;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+        body.dark .modal-body textarea {
+            background-color: #1a2435;
+            border-color: #2d3748;
+            color: #e2e8f0;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .modal-footer {
+            text-align: right;
+            padding: 0 20px 20px;
+        }
+        .save-error {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #409eff 0%, #3375b9 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+        }
+        .save-error:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(64, 158, 255, 0.3);
+            background: linear-gradient(135deg, #3375b9 0%, #2563eb 100%);
+        }
+        body.dark .save-error {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+        body.dark .save-error:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #64748b;
+            font-size: 13px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        body.dark .footer {
+            color: #94a3b8;
+            border-top: 1px solid #2d3748;
+        }
+        .knowledge-graph {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .knowledge-graph img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        body.dark .knowledge-graph img {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .knowledge-graph p {
+            margin-top: 10px;
+            color: #64748b;
+            font-size: 13px;
+        }
+        body.dark .knowledge-graph p {
+            color: #94a3b8;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 20px;
+            }
+            .header p {
+                font-size: 13px;
+            }
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+            .theme-toggle, .print-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .progress-container {
+                gap: 8px;
+            }
+            .progress-label, .progress-text {
+                font-size: 12px;
+            }
+            .month-link, .anchor-link {
+                padding: 6px 14px;
+                margin-right: 8px;
+                font-size: 13px;
+            }
+            .plan-desc {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            .plan-desc h3 {
+                font-size: 16px;
+            }
+            .plan-desc ul {
+                font-size: 13px;
+            }
+            .week-title {
+                padding: 12px 15px;
+                font-size: 15px;
+            }
+            .table {
+                display: flex;
+                flex-direction: column;
+            }
+            .table tr {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 15px;
+                border: 1px solid #f0f7ff;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            }
+            body.dark .table tr {
+                border: 1px solid #2d3748;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .table th {
+                width: 100%;
+                padding: 12px 15px;
+                font-size: 15px;
+                background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+            }
+            body.dark .table th {
+                background: linear-gradient(135deg, #1e293b 0%, #1a2435 100%);
+            }
+            .table td {
+                padding: 12px 15px;
+                font-size: 13px;
+            }
+            .task-item {
+                padding-left: 15px;
+                margin-bottom: 8px;
+            }
+            .tips {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+            .error-record-btn {
+                width: 45px;
+                height: 45px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 18px;
+            }
+        .layout {
+            flex-direction: column;
+        }
+        .sidebar {
+            width: 100%;
+            position: static;
+            max-height: none;
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1);
+        }
+        .sidebar-title {
+            display: none;
+        }
+        .month-nav {
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 8px;
+            overflow-x: auto;
+        }
+        body.dark .month-nav {
+            border-color: #2d3748;
+        }
+        .month-link {
+            margin-right: 8px;
+            flex: 0 0 auto;
+        }
+        }
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+                color: #1e293b;
+            }
+            body.dark {
+                background-color: white;
+                color: #1e293b;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+                background-color: white;
+            }
+            body.dark .container {
+                background-color: white;
+            }
+            .sidebar, .month-nav, .anchor-nav, .error-record-btn, .print-btn, .theme-toggle, .progress-container {
+                display: none !important;
+            }
+            .month-content {
+                display: block !important;
+            }
+            .week-title {
+                background-color: #e8f4ff !important;
+                color: #2c3e50 !important;
+                border: 1px solid #ddd;
+            }
+            .week-content {
+                border: 1px solid #ddd;
+                background-color: white !important;
+                max-height: none !important;
+                opacity: 1 !important;
+            }
+            body.dark .week-content {
+                background-color: white !important;
+            }
+            .table th {
+                background: linear-gradient(135deg, #f7f9fc 0%, #f0f7ff 100%) !important;
+                color: #2c3e50 !important;
+                border-color: #eee !important;
+            }
+            .table td {
+                color: #64748b !important;
+                border-color: #eee !important;
+            }
+            .tips {
+                background-color: #fff8e1 !important;
+                color: #8a6d3b !important;
+                border-color: #f39c12 !important;
+            }
+            tr, td, th {
+                page-break-inside: avoid;
+            }
+            .week-plan {
+                page-break-after: avoid;
+                margin-bottom: 15px;
+                box-shadow: none !important;
+            }
+            .level-basic {
+                background-color: #22c55e !important;
+                color: white !important;
+            }
+            .level-improve {
+                background-color: #f97316 !important;
+                color: white !important;
+            }
+            .level-expand {
+                background-color: #ef4444 !important;
+                color: white !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>6年级数学分层递进学习大纲</h1>
+                <p>按月份系统学习：分数乘除法→百分数→比例→圆的周长和面积→圆柱和圆锥→统计与可能性</p>
+            </div>
+            <div class="header-actions">
+                <a href="javascript:window.print()" class="print-btn">📄 打印学习大纲</a>
+                <button class="theme-toggle">🌙 暗黑模式</button>
+            </div>
+        </div>
+
+        <div class="layout">
+            <aside class="sidebar">
+                <div class="sidebar-title">章节目录</div>
+                <div class="month-nav">
+                    <div class="month-link active" data-month="september">9月：分数乘除法</div>
+                    <div class="month-link" data-month="october">10月：百分数</div>
+                    <div class="month-link" data-month="november">11月：比例</div>
+                    <div class="month-link" data-month="december">12月：圆的周长和面积</div>
+                    <div class="month-link" data-month="january">1月：圆柱和圆锥</div>
+                    <div class="month-link" data-month="march">3月：负数初步</div>
+                    <div class="month-link" data-month="april">4月：统计与可能性</div>
+                    <div class="month-link" data-month="may">5月：综合应用</div>
+                    <div class="month-link" data-month="june">6月：复习与检测</div>
+                </div>
+            </aside>
+            <div class="content-area">
+                <div class="month-detail-panel" id="month-detail-panel">
+            <h3>月度知识图谱 • <span id="detail-month-title">9月</span></h3>
+            <p id="detail-focus">核心聚焦：深化分数乘除法的计算方法，理解分数乘除法的算理，培养估算与验算能力。</p>
+            <ul class="detail-list">
+                <li id="detail-knowledge">重点：分数乘法、分数除法、约分、估算与验算、分数性质的应用、分数应用题。</li>
+                <li id="detail-difficulty">难点：分数乘除法的理解、约分的方法、估算方法的掌握、分数应用题的解答。</li>
+                <li id="detail-advice">教学建议：强调约分的重要性，通过实际情境理解分数乘除法意义，培养计算能力和估算意识。</li>
+            </ul>
+        </div>
+
+        <!-- 9月内容 -->
+        <div id="september" class="month-content active">
+            <div class="plan-desc">
+                <h3>9月学习重点说明</h3>
+                <ul>
+                    <li>核心模块：分数乘法、分数除法、约分、估算与验算、分数性质的应用、分数应用题</li>
+                    <li>重点难点：分数乘除法的理解、约分的方法、估算方法的掌握、分数应用题的解答</li>
+                    <li>能力目标：深化分数乘除法的计算方法，理解分数乘除法的算理，培养估算与验算能力</li>
+                    <li>衔接要点：从五年级的分数乘除法过渡到六年级的深化学习，提高计算能力和应用能力</li>
+                </ul>
+            </div>
+
+
+            <div id="week1" class="week-plan">
+                <div class="week-title">第1周：分数乘法</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握分数乘整数、分数乘分数的计算方法<button class="star-btn">★</button></div>
+                                <div class="task-item">理解分数乘法的算理，能正确进行约分<button class="star-btn">★</button></div>
+                                <div class="task-item">培养估算意识，提高计算准确性<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：分数乘整数</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">1. 理解分数乘整数的意义：表示求几个相同分数的和<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 掌握计算方法：分子与整数相乘，分母不变，如 2/3×4=8/3<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关练习题，巩固分数乘整数的计算方法<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：分数乘分数</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 理解分数乘分数的意义：表示求一个数的几分之几<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 掌握计算方法：分子乘分子，分母乘分母，如 2/3×3/4=6/12=1/2<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关练习题，注意计算过程中的约分<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day5：先约分再计算</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 学习先约分再计算的方法，提高计算效率<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成10道分数乘法计算题，强调约分过程<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：每日安排"10道计算+5道口算"，强调约分过程，通过互查答案培养验算习惯</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：估算练习</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 学习分数乘法的估算方法：如 2/3×5 可以估算为 1×5 或 2/3×6<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成5道估算题，培养估算意识<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3-4：验算方法</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 学习分数乘法的验算方法：用除法验算乘法<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成5道需要验算的题目，培养验算习惯<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day5：分数乘法性质</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 探索分数乘法的交换律和结合律<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成运用乘法性质简便计算的练习<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：提升层注重估算和验算能力的培养，为解决应用题打基础</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day1-2：分数乘法应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决实际问题：如"一块布长3米，用去了它的2/3，用去了多少米？"<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 理解"求一个数的几分之几是多少"的数量关系<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day3-4：连乘问题</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 探索分数连乘的计算方法和简便运算<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成分数连乘练习，提高计算速度<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day5：综合应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决综合应用题，结合估算和验算<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结分数乘法的计算方法和技巧<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：拓展层注重应用能力和思维训练，建议通过实际情境激发学习兴趣</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 绘制"分数乘法"思维导图，包含分数乘整数、分数乘分数、约分方法3个模块<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，按"约分错误""计算错误""理解错误"分类，标注错误原因与正确方法<span class="duration">15分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 限时测试：完成10道综合题（基础6道、提升3道、拓展1道），限时30分钟，检验学习效果<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="week2" class="week-plan">
+                <div class="week-title collapsed">第2周：分数除法</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握分数除以整数、分数除以分数的计算方法<button class="star-btn">★</button></div>
+                                <div class="task-item">理解分数除法的算理：除以一个数等于乘这个数的倒数<button class="star-btn">★</button></div>
+                                <div class="task-item">培养估算与验算意识，提高计算准确性<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：分数除以整数</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">1. 理解分数除以整数的意义：把一个分数平均分成几份<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 掌握计算方法：分数除以整数等于乘这个整数的倒数，如 2/3÷2=2/3×1/2=1/3<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关练习题，巩固分数除以整数的计算方法<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：分数除以分数</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 理解分数除以分数的算理：除以一个数等于乘这个数的倒数<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 掌握计算方法：如 2/3÷3/4=2/3×4/3=8/9<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关练习题，注意转化为乘法后的约分<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day5：分数除法综合练习</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 综合练习分数除以整数和分数除以分数<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成10道分数除法计算题，强调转化和约分过程<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：每日安排"10道计算+5道口算"，强调"除以一个数等于乘倒数"的转化思想</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：估算练习</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 学习分数除法的估算方法：先估计商的大致范围<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成5道估算题，培养估算意识<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3-4：验算方法</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 学习分数除法的验算方法：用乘法验算除法<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成5道需要验算的题目，培养验算习惯<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day5：分数乘除混合运算</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 学习分数乘除混合运算：如 2/3×3/4÷1/2<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 理解运算顺序，完成混合运算练习<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：提升层注重估算和验算能力的培养，为后续应用题学习打基础</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day1-2：分数除法应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决实际问题：如"一块布用去了2/3米，正好是全长的1/4，这块布全长多少米？"<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 理解"已知一个数的几分之几是多少，求这个数"的数量关系<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day3-4：比较大小</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 探索分数除法中商与被除数的大小关系<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结规律：除以大于1的数，商比被除数小；除以小于1的数，商比被除数大<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day5：综合应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决综合应用题，结合估算和验算<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结分数除法的计算方法和技巧<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：拓展层注重应用能力和思维训练，建议通过实际情境激发学习兴趣</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 绘制"分数除法"思维导图，包含分数除以整数、分数除以分数、倒数转化3个模块<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，按"转化错误""约分错误""计算错误"分类，标注错误原因与正确方法<span class="duration">15分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 限时测试：完成10道综合题（基础6道、提升3道、拓展1道），限时30分钟，检验学习效果<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="week3" class="week-plan">
+                <div class="week-title collapsed">第3周：约分与分数性质的应用</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握约分的方法，能熟练进行分数的约分<button class="star-btn">★</button></div>
+                                <div class="task-item">理解分数的基本性质，能灵活应用<button class="star-btn">★</button></div>
+                                <div class="task-item">培养估算与验算能力，提高计算准确性<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：约分方法</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">1. 复习最大公因数的求法：列举法、短除法<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 掌握约分方法：分子分母同时除以它们的最大公因数，如 12/18=2/3<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关练习题，巩固约分方法<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：分数基本性质</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 理解分数的基本性质：分子分母同时乘或除以同一个非零数，分数的大小不变<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 应用分数基本性质进行通分和约分<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关练习题，灵活运用分数基本性质<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day5：分数乘除法中的约分</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 在分数乘除法计算中灵活运用约分：先约分后计算<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成10道需要约分的分数乘除法计算题<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：每日进行约分专项练习，强调先约分后计算的重要性</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：快速约分技巧</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 学习快速约分技巧：观察法、逐步约分法<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成5道约分练习，提高约分速度<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3-4：分数性质应用</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 运用分数基本性质比较分数大小<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成5道比较分数大小的题目<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day5：估算与验算</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 在分数运算中应用估算和验算<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结分数计算的估算验算方法<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：提升层注重计算技巧的培养，提高计算效率</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day1-2：分数性质综合应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决需要灵活运用分数性质的问题<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 探索分数性质在简便计算中的应用<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day3-4：分数规律探索</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 探索分数的规律：如 1/2+1/4+1/8+... 的规律<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 用分数性质解释规律，培养数学思维<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day5：综合应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 综合运用约分和分数性质解决复杂问题<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结分数性质的应用方法<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：拓展层注重思维训练，建议通过探究性学习激发学习兴趣</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 绘制"约分与分数性质"思维导图，包含约分方法、分数基本性质、应用技巧3个模块<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，按"约分错误""性质理解错误""应用错误"分类，标注错误原因与正确方法<span class="duration">15分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 限时测试：完成10道综合题（基础6道、提升3道、拓展1道），限时30分钟，检验学习效果<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="week4" class="week-plan">
+                <div class="week-title collapsed">第4周：分数应用题与复习检测</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握分数应用题的解题方法，能正确分析数量关系<button class="star-btn">★</button></div>
+                                <div class="task-item">梳理分数乘除法所有知识，形成完整知识体系<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：分数应用题</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 学习"求一个数的几分之几是多少"类型的应用题：用乘法<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 学习"已知一个数的几分之几是多少，求这个数"类型的应用题：用除法<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关应用题练习<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3：知识梳理</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">按"分数乘法→分数除法→约分→分数性质→应用题"列出知识点并补充关键内容。</div>
+                                
+                                <div class="task-item"><span class="level-basic">Day4：典型练习</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">做教辅阶段测试题，重点练习分数乘除法计算、约分与应用题。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：多步骤应用题</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决两步或三步分数应用题<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 画线段图分析数量关系<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3：错题串讲</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">按"错因分析→补充知识"整理错题并与同伴讲解。</div>
+                                
+                                <div class="task-item"><span class="level-improve">Day4：综合应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">用思维导图展示"分数乘法→分数除法→约分→应用题"的知识结构。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day5：综合模拟</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">完成一套分数乘除法综合测试，要求写出解题思路。</div>
+                                
+                                <div class="task-item"><span class="level-expand">挑战题</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">解决复杂的分数应用题，如工程问题、行程问题等。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">整理"易错点+正确方法"对照表，保持复习思路清晰。</div>
+                                <div class="task-item">完成一次限时错题复盘，并写出反思与改进方案。</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10月内容：乘法表与图形 -->
+        <div id="october" class="month-content">
+            <div class="plan-desc">
+                <h3>10月学习重点说明</h3>
+                <ul>
+                    <li>核心模块：百分数的意义、百分数的读写、百分数与分数小数的互化、百分数应用题</li>
+                    <li>重点难点：百分数意义的理解、百分数与分数小数的互化、百分数应用题的解答</li>
+                    <li>能力目标：掌握百分数的意义和读写，理解百分数与分数、小数的互化，学会百分数的应用</li>
+                    <li>衔接要点：从分数过渡到百分数，理解百分数与分数的关系，提高应用能力</li>
+                </ul>
+            </div>
+
+
+            <div id="week1" class="week-plan">
+                <div class="week-title">第1周：百分数的意义与读写</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">理解百分数的意义：表示一个数是另一个数的百分之几<button class="star-btn">★</button></div>
+                                <div class="task-item">掌握百分数的读法和写法，能正确读写百分数<button class="star-btn">★</button></div>
+                                <div class="task-item">理解百分数与分数的联系与区别<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：百分数的意义</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">1. 理解百分数的意义：表示一个数是另一个数的百分之几，如45%表示45/100<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 通过实际例子理解百分数：如合格率95%、出勤率98%等<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关练习题，巩固百分数意义的理解<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：百分数的读写</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">1. 学习百分数的写法：先写数字，再写百分号"%"，如75%<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 学习百分数的读法：先读"百分之"，再读数字，如75%读作"百分之七十五"<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成20道百分数读写练习，注意规范书写<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day5：百分数与分数的关系</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 理解百分数与分数的联系：百分数是分母为100的特殊分数<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 理解百分数与分数的区别：百分数只表示两个量的比率，不表示具体数量<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：通过生活中的实例理解百分数意义，强调百分数在日常生活中的广泛应用</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：百分数的应用场景</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 收集生活中的百分数：如折扣、利率、税率等<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 分析这些百分数的实际意义<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3-4：特殊百分数</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 认识大于100%的百分数：如120%表示超过原来的20%<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 认识小于1%的百分数：如0.5%表示很小的比率<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day5：百分数比较</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 比较百分数的大小：如75%＞60%，25%＜50%<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成百分数大小比较练习<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：提升层注重理解百分数在实际生活中的应用，培养数学应用意识</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day1-2：百分数的由来</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 了解百分数的历史起源和发展<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 理解为什么人们喜欢用百分数表示比率<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day3-4：百分数与统计</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 学习用百分数表示统计数据<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 分析简单的百分数统计图<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day5：综合应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决百分数意义相关的综合题<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结百分数的特点和应用<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：拓展层注重百分数的深入理解，培养数学思维和应用能力</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 绘制"百分数的意义与读写"思维导图，包含意义、读法、写法、与分数的关系4个模块<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，按"意义理解""读写错误"分类，标注错误原因与正确方法<span class="duration">15分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 限时测试：完成10道综合题（基础6道、提升3道、拓展1道），限时30分钟，检验学习效果<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="week2" class="week-plan">
+                <div class="week-title collapsed">第2周：百分数与分数、小数的互化</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握百分数化成分数、小数的方法<button class="star-btn">★</button></div>
+                                <div class="task-item">掌握分数、小数化成百分数的方法<button class="star-btn">★</button></div>
+                                <div class="task-item">能熟练进行百分数、分数、小数的互化<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：百分数化成分数和小数</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 百分数化成分数：去掉百分号，写成分母为100的分数，再约分，如75%=75/100=3/4<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 百分数化成小数：去掉百分号，小数点向左移动两位，如75%=0.75<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关练习题，熟练掌握互化方法<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：分数和小数化成百分数</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 分数化成百分数：先把分数化成分母为100的分数，再写成百分数；或先化成小数再化成百分数<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 小数化成百分数：小数点向右移动两位，添上百分号，如0.45=45%<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关练习题，注意小数点移动方向<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day5：互化综合练习</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">1. 综合练习百分数、分数、小数的互化<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成15道互化练习题，提高熟练度<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：每日进行互化专项练习，强调小数点移动规律和约分的重要性</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：特殊互化</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 掌握常用分数与百分数的对照：如1/2=50%，1/4=25%，1/5=20%<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 快速记忆常用互化结果<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3-4：循环小数与百分数</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 学习循环小数化成百分数的方法：如1/3=0.333...≈33.3%<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 理解取近似值的方法<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day5：互化应用</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 在实际问题中选择合适的形式进行计算<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结互化的技巧和注意事项<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：提升层注重互化技巧的培养，提高计算效率</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day1-2：分数、小数、百分数比较大小</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 通过互化比较分数、小数、百分数的大小<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 探索快速比较的方法<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day3-4：互化规律探索</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 探索分数、小数、百分数互化的规律<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结互化的核心原理<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day5：综合应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决需要互化的综合问题<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 培养灵活运用能力<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：拓展层注重思维训练，建议通过探究性学习掌握互化规律</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 绘制"百分数互化"思维导图，包含百分数化分数、百分数化小数、分数化百分数、小数化百分数4个模块<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，按"互化方向错误""小数点移动错误""约分错误"分类，标注错误原因与正确方法<span class="duration">15分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 限时测试：完成10道综合题（基础6道、提升3道、拓展1道），限时30分钟，检验学习效果<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="week3" class="week-plan">
+                <div class="week-title collapsed">第3周：百分数应用题（一）</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握"求一个数是另一个数的百分之几"类型题的解法<button class="star-btn">★</button></div>
+                                <div class="task-item">掌握"求一个数的百分之几是多少"类型题的解法<button class="star-btn">★</button></div>
+                                <div class="task-item">能正确分析百分数应用题的数量关系<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：求一个数是另一个数的百分之几</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 理解题型：用除法计算，结果化成百分数<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 例题：班级有50人，其中男生有30人，男生占全班的百分之几？30÷50=60%<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关练习题，注意找准"比较量"和"标准量"<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：求一个数的百分之几是多少</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 理解题型：用乘法计算<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 例题：一本书有200页，小明已经看了60%，小明看了多少页？200×60%=120页<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关练习题，注意百分数化成小数再计算<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day5：两种类型综合练习</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">1. 区分两种类型题的特点和解法<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成10道综合练习题<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：注意分析数量关系，找准"比较量""标准量"和"百分率"</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：增加百分之几</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 理解"增加百分之几"的意义：现在=原来×(1+增加的百分率)<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成增加百分之几类型的练习<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3-4：减少百分之几</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 理解"减少百分之几"的意义：现在=原来×(1-减少的百分率)<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成减少百分之几类型的练习<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day5：综合应用</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 区分"求百分之几""求百分之几是多少""增加/减少百分之几"<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结各类型题目的解题思路<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：提升层注重题型分析能力的培养，学会举一反三</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day1-2：生活中的百分数问题</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决折扣问题：原价×折扣=现价<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 解决成数问题：完成了几成即完成了百分之几十<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day3-4：多步骤百分数问题</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决两步或三步百分数应用题<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 画线段图分析复杂数量关系<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day5：综合应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决综合性百分数应用题<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结百分数应用题的解题策略<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：拓展层注重应用能力和思维训练，建议通过实际问题激发学习兴趣</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 绘制"百分数应用题"思维导图，包含求百分之几、求百分之几是多少、增减百分之几3个模块<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，按"题型判断错误""数量关系错误""计算错误"分类，标注错误原因与正确方法<span class="duration">15分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 限时测试：完成10道综合题（基础6道、提升3道、拓展1道），限时30分钟，检验学习效果<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="week4" class="week-plan">
+                <div class="week-title collapsed">第4周：百分数应用题（二）与复习检测</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握"已知一个数的百分之几是多少，求这个数"类型题的解法<button class="star-btn">★</button></div>
+                                <div class="task-item">梳理百分数所有知识，形成完整知识体系<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：求标准量</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 理解题型：已知比较量和百分率，求标准量，用除法<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 例题：小明看了一本书的60%，共120页，这本书一共多少页？120÷60%=200页<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关练习题，注意分析数量关系<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3：知识梳理</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">按"百分数意义→读写→互化→应用题"列出知识点并补充关键内容。</div>
+                                
+                                <div class="task-item"><span class="level-basic">Day4：典型练习</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">做教辅阶段测试题，重点练习百分数互化与各类应用题。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：求标准量变式</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决"比原来增加/减少百分之几后是多少，求原来"类型<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 理解公式变形：原来=现在÷(1±变化的百分率)<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3：错题串讲</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">按"错因分析→补充知识"整理错题并与同伴讲解。</div>
+                                
+                                <div class="task-item"><span class="level-improve">Day4：综合应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">用思维导图展示"百分数意义→互化→应用题"的知识结构。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day5：综合模拟</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">完成一套百分数综合测试，要求写出解题思路。</div>
+                                
+                                <div class="task-item"><span class="level-expand">挑战题</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">解决复杂的百分数应用题，如利润问题、浓度问题等。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">整理"易错点+正确方法"对照表，保持复习思路清晰。</div>
+                                <div class="task-item">完成一次限时错题复盘，并写出反思与改进方案。</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11月内容：多步骤应用 -->
+        <div id="november" class="month-content">
+            <div class="plan-desc">
+                <h3>11月学习重点说明</h3>
+                <ul>
+                    <li>核心模块：比例的意义、比例的性质、比例的应用、正比例、反比例</li>
+                    <li>重点难点：比例意义的理解、比例性质的应用、正比例和反比例的判断</li>
+                    <li>能力目标：理解比例的意义和性质，掌握比例的应用，学会解决比例问题</li>
+                    <li>衔接要点：从分数和百分数过渡到比例，理解比例的意义，培养逻辑思维</li>
+                </ul>
+            </div>
+
+
+            <div class="week-plan">
+                <div class="week-title">第1周：比例的意义与基本性质</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">理解比例的意义：表示两个比相等的式子<button class="star-btn">★</button></div>
+                                <div class="task-item">掌握比例的各部分名称：前项、后项、内项、外项<button class="star-btn">★</button></div>
+                                <div class="task-item">理解并掌握比例的基本性质：内项积等于外项积<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：比例的意义</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">1. 回顾比的概念：两个数相除又叫做两个数的比<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 理解比例的意义：如果两个比的比值相等，则这两个比可以组成比例，如2:3=4:6<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 学习判断两个比能否组成比例的方法：求比值或化简<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：比例的各部分名称</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">1. 认识比例的各部分：在a:b=c:d中，a和d是外项，b和c是内项<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 理解比例的分数形式：a/b=c/d<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成教材相关练习题，巩固比例各部分名称<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day5：比例的基本性质</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 探索并发现比例的基本性质：两个外项的积等于两个内项的积<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 用字母表示：如果a:b=c:d，那么a×d=b×c<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 用比例的基本性质验证比例是否成立<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：通过具体数字的比例来验证基本性质，加深理解</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：比与比例的联系</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 比较比和比例的联系与区别<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 理解比例与分数、除法的关系<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3-4：比例的多种表示</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 掌握比例的两种表示形式：a:b=c:d和a/b=c/d<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 练习两种形式的相互转换<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day5：基本性质的应用</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 用基本性质判断比例是否成立<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成基本性质应用练习<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：提升层注重比与比例概念的深入理解，建立知识联系</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day1-2：比例的变换</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 探索比例的变换性质：如果a:b=c:d，则b:a=d:c（交换内项）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 探索：如果a:b=c:d，则a:c=b:d（交换内外项）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day3-4：比例与实际问题</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 用比例解决生活中的实际问题<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 理解比例在图纸、地图中的应用<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day5：综合应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决比例意义和性质的综合题<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结比例的核心知识点<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：拓展层注重比例变换的探索，培养逻辑推理能力</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">整理“对称轴+对应段”的思维手稿，便于复习。</div>
+                                <div class="task-item">2. 整理本周错题，按"意义理解""名称识别""性质应用"分类，标注错误原因与正确方法<span class="duration">15分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 限时测试：完成10道综合题（基础6道、提升3道、拓展1道），限时30分钟，检验学习效果<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="week-plan">
+                <div class="week-title collapsed">第2周：解比例与比例尺</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握解比例的方法：利用比例的基本性质求未知项<button class="star-btn">★</button></div>
+                                <div class="task-item">理解比例尺的意义：图上距离与实际距离的比<button class="star-btn">★</button></div>
+                                <div class="task-item">能运用比例尺解决实际问题<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1：解比例的方法</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 回顾比例的基本性质：内项积等于外项积<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 学习解比例的步骤：根据比例性质列方程，解方程求未知项<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 练习解基本的比例题（如：2:3 = 4:x）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day2-3：比例尺的意义</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 理解比例尺的定义：比例尺 = 图上距离:实际距离<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 认识数值比例尺（如1:1000）和线段比例尺<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 学习比例尺的两种表示形式及相互转换<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：解比例时要注意单位统一，比例尺的前项通常为1（缩小比例尺）</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day4：比例尺的应用（一）</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 根据比例尺和图上距离求实际距离（实际距离 = 图上距离 ÷ 比例尺）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 练习地图、图纸上的实际距离计算<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day5：比例尺的应用（二）</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 根据比例尺和实际距离求图上距离（图上距离 = 实际距离 × 比例尺）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 练习绘制简单的平面图<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6：比例尺的综合应用</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 解决比例尺的复杂应用题，如：根据比例尺计算两地实际距离并换算成实际路程<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 学习放大比例尺（如2:1）及其在精密零件图纸中的应用<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 综合运用解比例和比例尺解决实际问题<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 整理解比例的方法和步骤，制作思维导图<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结比例尺的意义、类型及应用，制作“比例尺知识卡片”<span class="duration">15分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成比例尺综合练习题，检查学习效果<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="week-plan">
+                <div class="week-title collapsed">第3周：正比例与反比例</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">理解正比例的意义：两个量的比值一定，这两个量成正比例<button class="star-btn">★</button></div>
+                                <div class="task-item">理解反比例的意义：两个量的乘积一定，这两个量成反比例<button class="star-btn">★</button></div>
+                                <div class="task-item">能判断两个量是否成正比例或反比例关系<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：正比例的意义</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 通过实例理解正比例：如购买同种商品，总价与数量的关系<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 归纳正比例的特征：y/x=k（一定），则x和y成正比例<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 判断正比例的方法：找出两个相关联的量，看比值是否一定<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：反比例的意义</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 通过实例理解反比例：如走同一段路，速度与时间的关系<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 归纳反比例的特征：x×y=k（一定），则x和y成反比例<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 判断反比例的方法：找出两个相关联的量，看乘积是否一定<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day5：正、反比例的区分</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">1. 比较正比例和反比例的异同<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成正、反比例判断的综合练习<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：判断正、反比例的关键是找准两个相关联的量，分析其变化规律</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：正比例图像</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 认识正比例图像：一条过原点的直线<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 根据正比例关系描点画图<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3-4：反比例图像</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 认识反比例图像：一条曲线<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 比较正、反比例图像的特点<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day5：图像分析</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">1. 根据图像判断正、反比例关系<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结图像与比例关系的对应<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：提升层注重图像直观理解，培养数形结合能力</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day1-2：生活中的正反比例</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 寻找生活中正比例的实例：如汽车行驶路程与耗油量<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 寻找生活中反比例的实例：如工人数量与完工时间<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day3-4：正反比例的判断技巧</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 掌握快速判断正、反比例的技巧<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 分析易混淆的情况，如周长与边长等<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day5：综合探究</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 探究三个量之间的比例关系<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 解决综合性正反比例问题<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：拓展层注重数学思维和应用能力的培养</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 绘制"正比例与反比例"思维导图，包含正比例意义、反比例意义、判断方法、图像特征4个模块<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，按"概念混淆""判断失误""应用错误"分类，标注错误原因与正确方法<span class="duration">15分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 限时测试：完成10道综合题（基础6道、提升3道、拓展1道），限时30分钟，检验学习效果<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="week-plan">
+                <div class="week-title collapsed">第4周：比例应用题与复习检测</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握用比例解决实际问题的方法<button class="star-btn">★</button></div>
+                                <div class="task-item">梳理比例所有知识，形成完整知识体系<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：用比例解决问题</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 判断问题中两个量是正比例还是反比例关系<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 正比例问题：设未知数，根据比值相等列比例式求解<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 反比例问题：设未知数，根据乘积相等列方程求解<button class="star-btn">★</button></div>
+                                <div class="task-item">4. 例题：修一条路，每天修50米，12天修完。如果每天修60米，几天修完？（反比例）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3：知识梳理</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">按"比例意义→基本性质→解比例→比例尺→正反比例→应用"列出知识点并补充关键内容。</div>
+                                
+                                <div class="task-item"><span class="level-basic">Day4：典型练习</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">做教辅阶段测试题，重点练习解比例、比例尺、正反比例判断与应用。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：复杂比例应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">1. 解决两步或多步比例应用题<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 比较用比例方法和算术方法解题的异同<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3：错题串讲</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">按"错因分析→补充知识"整理错题并与同伴讲解。</div>
+                                
+                                <div class="task-item"><span class="level-improve">Day4：综合应用</span><span class="duration">25分钟</span></div>
+                                <div class="task-item">用思维导图展示"比例意义→性质→正反比例→应用"的知识结构。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day5：综合模拟</span><span class="duration">30分钟</span></div>
+                                <div class="task-item">完成一套比例综合测试，要求写出解题思路。</div>
+                                
+                                <div class="task-item"><span class="level-expand">挑战题</span><span class="duration">20分钟</span></div>
+                                <div class="task-item">解决复杂的比例应用题，如比例分配、按比例缩放等。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">整理"易错点+正确方法"对照表，保持复习思路清晰。</div>
+                                <div class="task-item">完成一次限时错题复盘，并写出反思与改进方案。</div>
+                                <div class="task-item">写出"下一阶段预习计划"，规划如何过渡到12月圆的学习。</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12月内容：复习与思维 -->
+        <div id="december" class="month-content">
+    <div class="plan-desc">
+        <h3>12月学习重点说明</h3>
+        <ul>
+            <li>核心模块：圆的认识、圆的周长、圆的面积、圆周率、圆的应用</li>
+            <li>重点难点：圆周率意义的理解、圆的周长和面积公式的应用、圆的应用题的解答</li>
+            <li>能力目标：掌握圆的周长和面积的计算方法，理解圆周率的意义，培养空间观念</li>
+            <li>衔接要点：从多边形过渡到圆，理解圆的特征，培养空间观念</li>
+        </ul>
+    </div>
+
+    <div id="dec-week1" class="week-plan">
+        <div class="week-title">第1周：圆的基础认知与圆周率</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握圆的圆心、半径、直径等基本概念<button class="star-btn">★</button></div>
+                        <div class="task-item">理解圆周率的意义，熟记圆周率近似值<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：圆的基本要素</span><span class="duration">35分钟</span> 绘制圆并标注圆心、半径、直径，掌握半径与直径的关系（d=2r）。</div>
+                        <div class="task-item"><span class="level-basic">Day3：圆周率的认识</span><span class="duration">40分钟</span> 通过测量不同圆形物体的周长和直径，计算比值理解圆周率的意义。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：圆周率验证</span><span class="duration">30分钟</span> 用多个圆形物品重复周长÷直径实验，验证比值接近3.14。</div>
+                        <div class="task-item"><span class="level-improve">Day5：概念辨析</span><span class="duration">30分钟</span> 区分圆周率与圆的周长/面积的关系，避免公式混淆。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：圆周率发展史</span><span class="duration">45分钟</span> 了解祖冲之对圆周率的贡献，结合史料理解数学常数的意义。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">整理“圆的基本要素+圆周率”笔记，绘制概念思维导图。</div>
+                        <div class="task-item">归纳测量圆形物体时的误差原因，优化测量方法。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="dec-week2" class="week-plan">
+        <div class="week-title collapsed">第2周：圆的周长公式与应用</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握圆的周长公式（C=πd=2πr）并能推导<button class="star-btn">★</button></div>
+                        <div class="task-item">运用周长公式解决实际问题<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：周长公式推导</span><span class="duration">35分钟</span> 结合圆周率定义，推导C=πd和C=2πr的转换关系。</div>
+                        <div class="task-item"><span class="level-basic">Day2：基础计算</span><span class="duration">35分钟</span> 已知半径/直径，计算圆的周长（如r=5cm、d=8cm）。</div>
+                        <div class="task-item"><span class="level-basic">Day3：反向计算</span><span class="duration">35分钟</span> 已知周长，求半径或直径（如C=31.4cm，求r）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：公式混合</span><span class="duration">30分钟</span> 结合直径与半径的关系，灵活选用周长公式解题。</div>
+                        <div class="task-item"><span class="level-improve">Day5：记忆卡片</span><span class="duration">30分钟</span> 制作周长公式卡片，标注“已知条件→选用公式”对应关系。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：名校题</span><span class="duration">45分钟</span> 练习含半圆+直径的组合图形周长计算（如半圆周长=πr+d）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">总结周长公式的“正向计算+反向推导”解题模板。</div>
+                        <div class="task-item">做一轮“周长公式辨析”训练，区分圆周长与半圆周长。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="dec-week3" class="week-plan">
+        <div class="week-title collapsed">第3周：圆的面积公式与应用</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握圆的面积公式（S=πr²）并理解推导过程<button class="star-btn">★</button></div>
+                        <div class="task-item">运用面积公式解决实际问题，区分周长与面积的应用场景<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：面积公式推导</span><span class="duration">35分钟</span> 通过割补法将圆转化为近似长方形，推导S=πr²。</div>
+                        <div class="task-item"><span class="level-basic">Day2：基础计算</span><span class="duration">35分钟</span> 已知半径/直径，计算圆的面积（如r=6cm、d=10cm）。</div>
+                        <div class="task-item"><span class="level-basic">Day3：环形面积</span><span class="duration">35分钟</span> 掌握环形面积公式（S=π(R²-r²)），计算圆环面积。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：逆向分析</span><span class="duration">30分钟</span> 已知圆的面积，求半径（如S=78.5cm²，求r）。</div>
+                        <div class="task-item"><span class="level-improve">Day5：代数检验</span><span class="duration">30分钟</span> 用周长与面积公式交叉验证解题结果，避免混淆公式。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：复合题</span><span class="duration">45分钟</span> 解一道含“圆与正方形组合”的面积题（如正方形内最大圆的面积计算）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">整理“圆的面积技巧表”，区分基础面积、环形面积、组合图形面积的解题方法。</div>
+                        <div class="task-item">将错题写成“题干→思路→验证”的三段式记录，重点标注周长/面积混淆的错误。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="dec-week4" class="week-plan">
+        <div class="week-title collapsed">第4周：圆的综合应用与寒假预习</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">整合圆的周长与面积知识，解决实际应用题<button class="star-btn">★</button></div>
+                        <div class="task-item">形成“圆的知识→实际应用→寒假预习”的闭环思维<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：知识串联</span><span class="duration">40分钟</span> 归纳圆的周长/面积公式的应用场景（如围栏长度用周长、占地大小用面积）。</div>
+                        <div class="task-item"><span class="level-basic">Day3：限时检测</span><span class="duration">45分钟</span> 完成圆的综合模拟卷，重点区分周长与面积的解题思路。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：问题讲解</span><span class="duration">30分钟</span> 向同伴口述一道圆的实际应用题（如“圆形花坛铺草皮的面积计算”）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day5：名校题点评</span><span class="duration">45分钟</span> 练习一道名校“圆与多边形结合”的综合题，模仿标准答案的解题步骤。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">制定寒假圆的复习计划，明确“公式背诵→基础计算→应用题拓展”的每日目标。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        </div>
+
+        <!-- 1月内容：分式 -->
+        <div id="january" class="month-content">
+    <div class="plan-desc">
+        <h3>1月学习重点说明</h3>
+        <ul>
+            <li>核心模块：圆柱、圆锥、表面积、体积、体积单位换算</li>
+            <li>重点难点：表面积和体积概念的理解、表面积和体积公式的应用、体积单位换算的掌握</li>
+            <li>能力目标：认识圆柱和圆锥，掌握它们的特征和表面积、体积的计算方法</li>
+            <li>衔接要点：从圆过渡到圆柱和圆锥，理解立体图形的特征，培养空间观念</li>
+        </ul>
+    </div>
+
+    <div id="jan-week1" class="week-plan">
+        <div class="week-title">第1周：圆柱的认识与表面积</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握圆柱的底面、侧面、高的特征，理解圆柱与圆的关联<button class="star-btn">★</button></div>
+                        <div class="task-item">推导并掌握圆柱表面积公式（侧面积+2个底面积）<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：圆柱特征认知</span><span class="duration">35分钟</span> 观察圆柱实物/模型，标注底面（圆形）、侧面、高，明确“圆柱有2个大小相等的圆形底面”。</div>
+                        <div class="task-item"><span class="level-basic">Day2-3：侧面积推导</span><span class="duration">40分钟</span> 将圆柱侧面展开为长方形，推导侧面积公式（侧面积=底面周长×高=2πrh）。</div>
+                        <div class="task-item"><span class="level-basic">Day4：表面积计算</span><span class="duration">35分钟</span> 计算圆柱表面积（表面积=侧面积+2πr²），如r=3cm、h=5cm的圆柱表面积。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day5：特殊圆柱表面积</span><span class="duration">30分钟</span> 计算无盖圆柱（如水桶）的表面积，区分“全表面积”与“部分表面积”。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：表面积应用题</span><span class="duration">45分钟</span> 解决“制作底面直径4dm、高6dm的圆柱形通风管，需要多少铁皮”的实际问题（仅算侧面积）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">总结“圆柱表面积计算三步法”：算底周长→算侧面积→算底面积→求和（按需）。</div>
+                        <div class="task-item">记录本周错题，重点标注“混淆侧面积/表面积”“底面半径/直径代入错误”的问题。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="jan-week2" class="week-plan">
+        <div class="week-title collapsed">第2周：圆柱体积与体积单位换算</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">推导并掌握圆柱体积公式（V=πr²h）<button class="star-btn">★</button></div>
+                        <div class="task-item">熟练掌握体积单位换算（m³、dm³、cm³、L、mL）<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：体积公式推导</span><span class="duration">35分钟</span> 通过“切拼圆柱为近似长方体”，推导体积公式（底面积×高=πr²h）。</div>
+                        <div class="task-item"><span class="level-basic">Day2：体积基础计算</span><span class="duration">35分钟</span> 计算圆柱体积，如d=8cm、h=10cm的圆柱体积。</div>
+                        <div class="task-item"><span class="level-basic">Day3：体积单位换算</span><span class="duration">30分钟</span> 熟记换算关系（1m³=1000dm³、1dm³=1000cm³、1dm³=1L、1cm³=1mL），完成单位换算练习。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：逆向计算</span><span class="duration">30分钟</span> 已知圆柱体积和底面积，求高（h=V÷S）；已知体积和高，求底面积。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day5：综合应用</span><span class="duration">45分钟</span> 解决“一个圆柱水桶，底面半径2dm，高5dm，能装多少升水”的问题（先算体积再换算单位）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">填写“圆柱体积计算+单位换算对照表”，标注公式、单位关系、典型例题。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="jan-week3" class="week-plan">
+        <div class="week-title collapsed">第3周：圆锥的认识与体积计算</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握圆锥的底面、高、侧面特征，理解圆锥与圆柱的关联<button class="star-btn">★</button></div>
+                        <div class="task-item">推导并掌握圆锥体积公式（V=1/3πr²h），强调“等底等高”条件<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：圆锥特征认知</span><span class="duration">40分钟</span> 观察圆锥模型，测量底面（圆形）、高（顶点到底面圆心的垂直距离），对比圆柱与圆锥的异同。</div>
+                        <div class="task-item"><span class="level-basic">Day3：体积公式推导</span><span class="duration">30分钟</span> 通过“等底等高圆柱/圆锥倒水实验”，验证圆锥体积=1/3圆柱体积。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：体积计算练习</span><span class="duration">35分钟</span> 计算圆锥体积，如r=6cm、h=9cm的圆锥体积；已知圆锥体积和底面积，求高。</div>
+                        <div class="task-item"><span class="level-improve">Day5：等底等高对比</span><span class="duration">30分钟</span> 计算等底等高的圆柱与圆锥体积差，强化“1/3”的记忆。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：高阶应用题</span><span class="duration">45分钟</span> 解决“一个圆锥沙堆，底面周长12.56m，高1.5m，这堆沙的体积是多少”的问题（先算半径再算体积）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">记录“圆锥体积计算思维笔记”：找底面积→确认高→乘1/3，标注“等底等高”关键条件。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="jan-week4" class="week-plan">
+        <div class="week-title collapsed">第4周：圆柱圆锥综合应用与总结</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">综合复习圆柱/圆锥的表面积、体积知识，解决跨知识点应用题<button class="star-btn">★</button></div>
+                        <div class="task-item">建立“平面圆→立体圆柱/圆锥”的知识体系，拓展空间观念<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：总体复盘</span><span class="duration">40分钟</span> 归纳圆柱/圆锥核心公式（表面积、体积），梳理“圆→圆柱→圆锥”的知识衔接逻辑。</div>
+                        <div class="task-item"><span class="level-basic">Day3：限时训练</span><span class="duration">45分钟</span> 完成圆柱圆锥专项闭卷测试，涵盖表面积、体积、单位换算、应用题。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：错题重写</span><span class="duration">35分钟</span> 按“问题描述→解题过程→错误原因→修正方法”记录错题，重点突破“体积单位换算失误”“圆锥忘乘1/3”等问题。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day5：迁移训练</span><span class="duration">45分钟</span> 解决“一个圆柱容器装满水，倒入等底等高的圆锥容器，剩余水的体积是12L，求圆柱容器容积”的综合题。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">制定寒假圆柱圆锥复习+预习计划，每日安排“公式背诵→基础计算→1道应用题”。</div>
+                        <div class="task-item">口述一道圆柱圆锥综合题的解题思路，检查“空间想象→公式选择→计算验证”的逻辑完整性。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        </div>
+
+        <!-- 3月内容：函数与一次函数 -->
+        <div id="march" class="month-content">
+    <div class="plan-desc">
+        <h3>3月学习重点说明</h3>
+        <ul>
+            <li>核心模块：负数的意义、负数的读写、负数的大小比较、数轴</li>
+            <li>重点难点：负数意义的理解、负数的大小比较、数轴的应用</li>
+            <li>能力目标：初步认识负数，理解负数的意义，掌握负数的读写和比较</li>
+            <li>衔接要点：从正数过渡到负数，理解负数的意义，为初中学习打基础</li>
+        </ul>
+    </div>
+
+    <div id="march-week1" class="week-plan">
+        <div class="week-title">第1周：负数的意义与读写</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">理解负数的实际意义（表示相反意义的量）<button class="star-btn">★</button></div>
+                        <div class="task-item">掌握负数的读写方法，区分正数、负数和0<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：负数的意义</span><span class="duration">35分钟</span> 结合生活实例（气温、海拔、收支）理解负数：如-5℃表示零下5℃，-100元表示支出100元，明确“负数用于表示与正数相反意义的量”。</div>
+                        <div class="task-item"><span class="level-basic">Day3：负数的读写</span><span class="duration">30分钟</span> 练习读写负数：如-3读作“负三”，+8（或8）读作“正八”；写出“零下8摄氏度”（-8℃）、“海平面以下200米”（-200米）等表述。</div>
+                        <div class="task-item"><span class="level-basic">Day4：正负数分类</span><span class="duration">30分钟</span> 从数集（5、-2、0、+7、-12、3.5、-0.8）中区分正数、负数，明确“0既不是正数也不是负数”。</div>
+                        <div class="tips">Tips：用“相反意义的量”口诀辅助理解，如“收入-支出、上升-下降、零上-零下”，建立负数与生活的关联。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day5：生活中的负数辨析</span><span class="duration">35分钟</span> 判断“增加-3kg”“前进-5米”的实际意义（分别表示减少3kg、后退5米），强化相反意义的理解。</div>
+                        <div class="task-item"><span class="level-improve">Day6：情景描述</span><span class="duration">40分钟</span> 将“电梯上升5层、下降3层”“存折存入800元、取出500元”转化为正负数表示，练习“情景→数”的转化。</div>
+                        <div class="tips">Tips：描述负数意义时，一定要说明“与哪个量相反”，比如“-6米表示比海平面低6米”，避免单独说“-6米”。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day7：负数综合辨析</span><span class="duration">40分钟</span> 解析“某物体先上升10米，再下降15米，最终位置用正负数表示”的问题，结合相反意义的量列式。</div>
+                        <div class="task-item"><span class="level-expand">日常：数感训练</span><span class="duration">30分钟</span> 记录当天的气温（如最高5℃、最低-2℃），用正负数标注并描述意义。</div>
+                        <div class="tips">Tips：名校常考“生活情景+正负数表示”的组合题，重点关注“基准量（0点）”的确定。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">建立“负数认识”思维导图，标出意义、读写、正负数区分、生活实例。<span class="duration">25分钟</span></div>
+                        <div class="task-item">完成教材课后题1-6，标注每题中“相反意义的量”。<span class="duration">35分钟</span></div>
+                        <div class="task-item">错题整理：记录混淆“0的归属”“负数读写格式”的情况，注明辨析理由。<span class="duration">20分钟</span></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="march-week2" class="week-plan">
+        <div class="week-title collapsed">第2周：数轴的认识与应用</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握数轴的三要素（原点、正方向、单位长度）<button class="star-btn">★</button></div>
+                        <div class="task-item">能在数轴上表示正负数，理解数轴上数的分布规律<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：数轴三要素</span><span class="duration">40分钟</span> 绘制数轴：标注原点（0）、正方向（向右）、单位长度（如1格代表1），明确“数轴是规定了原点、正方向、单位长度的直线”。</div>
+                        <div class="task-item"><span class="level-basic">Day3：数轴表示数</span><span class="duration">30分钟</span> 在数轴上标出3、-2、0、+4.5、-1.5等数，总结“正数在原点右侧，负数在原点左侧”。</div>
+                        <div class="task-item"><span class="level-basic">Day4：数轴读数</span><span class="duration">30分钟</span> 根据数轴上的点，读出对应的数，判断点的位置与正负数的关系。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day5：数轴与距离</span><span class="duration">35分钟</span> 计算数轴上两点间的距离（如3到-1的距离是4），理解“距离是绝对值，与正负无关”。</div>
+                        <div class="task-item"><span class="level-improve">Day6：数轴描述情景</span><span class="duration">35分钟</span> 用数轴表示“小明从家（原点）向东走5米，再向西走7米”的过程，标注最终位置（-2）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day7：参数推断</span><span class="duration">40分钟</span> 已知数轴上点A表示-3，点B在点A右侧5个单位，求点B表示的数（2），并验证。</div>
+                        <div class="task-item"><span class="level-expand">名校训练题</span><span class="duration">40分钟</span> 解决“数轴上到原点距离为4的点有几个，分别表示什么数”的问题（2个，+4和-4）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">绘制“数轴三要素+数的分布”表，记录原点、正方向、单位长度的作用，以及正负数在数轴上的位置。</div>
+                        <div class="task-item">完成课后数轴专题题，整理“数轴绘制不规范”“数的位置标错”的典型错误。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="march-week3" class="week-plan">
+        <div class="week-title collapsed">第3周：负数的大小比较</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握负数大小比较的规则，结合数轴理解“左边的数小于右边的数”<button class="star-btn">★</button></div>
+                        <div class="task-item">能比较正负数、负数与0、两个负数的大小<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：负数与0、正数的比较</span><span class="duration">40分钟</span> 总结规则：正数>0>负数，如5>0>-3、-2<0<1.5，通过数轴验证（右边的数更大）。</div>
+                        <div class="task-item"><span class="level-basic">Day3：两个负数比较</span><span class="duration">35分钟</span> 掌握“绝对值大的负数反而小”：如|-5|=5，|-3|=3，因为5>3，所以-5<-3；结合数轴验证（-5在-3左侧，更小）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：多数比较排序</span><span class="duration">35分钟</span> 将数集（-4、2、-1、0、3.5、-2.5）按从小到大排序，步骤：先分正负→负数按绝对值反向排→正数正常排，结果：-4<-2.5<-1<0<2<3.5。</div>
+                        <div class="task-item"><span class="level-improve">Day5-6：情景比较</span><span class="duration">40分钟</span> 比较气温高低（如-8℃和-5℃，-8℃更低）、海拔高低（如-100米和-50米，-100米更低），结合生活理解负数大小。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day7：综合题</span><span class="duration">45分钟</span> 题目：某一天哈尔滨气温-12℃，北京-3℃，上海5℃，把这三个城市的气温按从低到高排序，并说明理由。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">制作“负数大小比较”卡片：①正数>0>负数；②两个负数，绝对值大的反而小；③数轴上，左边<右边。</div>
+                        <div class="task-item">整理错题，将“负数大小比较错误”的题目分类，标注“未看绝对值”“数轴方向搞反”等原因。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="march-week4" class="week-plan">
+        <div class="week-title collapsed">第4周：负数综合应用与检测</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">梳理负数、数轴、大小比较的知识体系，解决综合应用题<button class="star-btn">★</button></div>
+                        <div class="task-item">通过检测强化知识掌握，为初中有理数学习铺垫<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：章节复习</span><span class="duration">40分钟</span> 归纳负数核心知识点：意义（相反量）→读写→数轴（三要素）→大小比较，绘制“正数→0→负数”的数系拓展图谱。</div>
+                        <div class="task-item"><span class="level-basic">Day3：限时训练</span><span class="duration">30分钟</span> 完成教辅“负数与数轴”速算20题，重点关注“意义理解”“大小比较”“数轴表示”。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：综合试卷</span><span class="duration">40分钟</span> 做1套校级负数模拟题，重点分析“情景转化正负数”“数轴应用”“大小比较”的失分点。</div>
+                        <div class="task-item"><span class="level-improve">Day5：错题回顾</span><span class="duration">30分钟</span> 将负数类错题按“概念类”“计算类”“应用类”分类，写出解题思路。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">名校练习</span><span class="duration">45分钟</span> 完成“负数+数轴+实际情景”组合题（如“仓库进出货：第一天进货8吨，第二天出货5吨，第三天出货3吨，用正负数表示并计算最终库存变化”），模拟讲解思路。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">编写负数复习提纲，标注“意义理解”“数轴绘制”“大小比较”三大核心考点及解题技巧。</div>
+                        <div class="task-item">与同伴互相出题（含1道意义题、1道数轴题、1道大小比较题），验证对方解题准确性。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        </div>
+
+        <!-- 4月内容：统计与数据分析 -->
+        <div id="april" class="month-content">
+    <div class="plan-desc">
+        <h3>4月学习重点说明</h3>
+        <ul>
+            <li>核心模块：条形图、折线图、扇形图、统计表、可能性、概率初步</li>
+            <li>重点难点：统计图表的制作与解读、可能性的理解、数据分析的能力</li>
+            <li>能力目标：掌握统计图表的制作与解读，理解可能性的概念，培养数据分析能力</li>
+            <li>衔接要点：从统计图表过渡到可能性，培养数据分析能力和概率思维</li>
+        </ul>
+    </div>
+
+    <div id="april-week1" class="week-plan">
+        <div class="week-title">第1周：统计表与条形图的制作和解读</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握统计表的编制方法，能整理数据并填写规范统计表<button class="star-btn">★</button></div>
+                        <div class="task-item">学会条形图的绘制步骤，能解读条形图中的数量关系<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：统计表编制</span><span class="duration">30分钟</span> 收集“班级同学最喜欢的水果（苹果、香蕉、橙子、梨）”数据，制作包含“类别、人数、占比”的规范统计表。</div>
+                        <div class="task-item"><span class="level-basic">Day2-3：条形图绘制</span><span class="duration">35分钟</span> 根据水果喜好统计表，绘制纵轴为人数、横轴为水果类别的条形图，标注标题、单位、刻度。</div>
+                        <div class="task-item"><span class="level-basic">Day4：条形图解读</span><span class="duration">30分钟</span> 从绘制的条形图中分析“哪种水果最受欢迎”“喜欢苹果的比香蕉多几人”等问题，总结“条形越高，数量越多”的规律。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day5：复式条形图</span><span class="duration">35分钟</span> 补充“男生/女生水果喜好”数据，制作复式条形图，对比不同性别喜好差异。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：数据合理性分析</span><span class="duration">40分钟</span> 讨论“调查样本仅选取10人是否合理”，写出“增加样本量提升数据可信度”的书面说明。</div>
+                        <div class="task-item"><span class="level-expand">Day7：异常值处理</span><span class="duration">30分钟</span> 分析统计表中“某类别人数为0”的异常值，判断是否影响整体分析。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">制作“统计表→条形图”转化流程图，标注“数据核对→刻度设定→绘图→标注”每一步要点。</div>
+                        <div class="task-item">整理本周图表绘制错误（如“刻度不均匀”“标题缺失”），举例说明修正方法。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="april-week2" class="week-plan">
+        <div class="week-title collapsed">第2周：折线图与扇形图的制作和解读</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握折线图（表示变化趋势）、扇形图（表示占比）的制作方法<button class="star-btn">★</button></div>
+                        <div class="task-item">能根据图表类型选择合适的数据分析角度<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：折线图绘制与解读</span><span class="duration">35分钟</span> 收集“一周每日气温”数据，绘制折线图，分析“气温上升/下降时段”“最高/最低气温”。</div>
+                        <div class="task-item"><span class="level-basic">Day3：扇形图绘制</span><span class="duration">30分钟</span> 根据水果喜好统计表，计算各水果占比（如苹果占30%），绘制扇形图并标注百分比。</div>
+                        <div class="task-item"><span class="level-basic">Day4：扇形图解读</span><span class="duration">30分钟</span> 从扇形图中分析“哪种水果占比最大”“两种水果占比之和”，总结“扇形面积越大，占比越高”。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day5：图表对比分析</span><span class="duration">35分钟</span> 对比“水果喜好”的条形图与扇形图，总结：条形图看数量多少，扇形图看占比大小。</div>
+                        <div class="task-item"><span class="level-improve">Day6：图表选择练习</span><span class="duration">35分钟</span> 针对“每月零花钱变化”“各科成绩占总分比例”，选择合适的图表类型并说明理由。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day7：综合图表解读</span><span class="duration">40分钟</span> 阅读“某商场季度销售额”折线图+扇形图组合报表，判断“哪个季度销售额最高”“日用品占比是否超过50%”。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">整理“三类图表对比表”：
+                            <ul>
+                                <li>条形图：比较数量多少</li>
+                                <li>折线图：分析变化趋势</li>
+                                <li>扇形图：看各部分占整体比例</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="april-week3" class="week-plan">
+        <div class="week-title collapsed">第3周：可能性与概率初步</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">理解“可能性”的含义，能描述事件发生的可能性大小（一定、可能、不可能）<button class="star-btn">★</button></div>
+                        <div class="task-item">通过实验初步认识概率，理解“频率趋近于概率”<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：可能性描述</span><span class="duration">35分钟</span> 结合生活实例判断事件类型：如“太阳从东方升起（一定）”“掷骰子出6（可能）”“公鸡下蛋（不可能）”。</div>
+                        <div class="task-item"><span class="level-basic">Day2：可能性大小</span><span class="duration">35分钟</span> 比较“摸红球（盒中有5红1白）”和“摸白球”的可能性大小，总结“数量多，可能性大”。</div>
+                        <div class="task-item"><span class="level-basic">Day3：概率初步实验</span><span class="duration">30分钟</span> 抛硬币100次，记录正面/反面次数，计算频率（正面次数÷总次数），初步感知概率≈0.5。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：可能性与统计结合</span><span class="duration">35分钟</span> 制作“摸球实验”统计表，记录不同颜色球的摸出次数，绘制条形图展示可能性大小。</div>
+                        <div class="task-item"><span class="level-improve">Day5：概率事件描述</span><span class="duration">35分钟</span> 准确描述“掷骰子出偶数”的事件：“样本空间为1-6，符合条件的是2、4、6，可能性为1/2”。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：理论概率与实验对比</span><span class="duration">40分钟</span> 设计“掷骰子出奇数”实验，记录50次结果，对比实验频率与理论概率（1/2），分析差异原因。</div>
+                        <div class="task-item"><span class="level-expand">Day7：概率应用分析</span><span class="duration">35分钟</span> 分析“商场抽奖活动”的概率图表，解读“一等奖中奖概率0.1%”的实际含义。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">归纳可能性判断口诀：“确定事件用一定/不可能，不确定用可能；数量多→可能性大”，附典型例题。</div>
+                        <div class="task-item">制作概率卡片：正面写事件（如“摸红球”），反面写样本空间、可能性大小、理论概率。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="april-week4" class="week-plan">
+        <div class="week-title collapsed">第4周：统计与概率综合应用与检测</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">串联“数据收集→统计表→统计图→可能性/概率”的知识链条<button class="star-btn">★</button></div>
+                        <div class="task-item">能从数据中分析结论，培养数据分析与概率思维<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：知识体系梳理</span><span class="duration">30分钟</span> 绘制思维导图：数据收集→统计表→条形图/折线图/扇形图→可能性→概率，标注各环节核心要点。</div>
+                        <div class="task-item"><span class="level-basic">Day2：限时综合小测</span><span class="duration">40分钟</span> 完成10道综合题（含统计表制作、图表解读、可能性判断），强化知识应用。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day3：数据可视化海报</span><span class="duration">35分钟</span> 结合“一周运动时长”数据，制作包含统计表、折线图、可能性分析的海报（如“运动1小时以上的可能性为70%”）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day4：数据分析报告</span><span class="duration">40分钟</span> 分析“某小区居民出行方式”统计图表，撰写简短报告：含数据概况（如“开车出行占40%”）、可能性分析（如“随机选1人，步行出行的可能性为30%”）、结论（如“绿色出行占比超50%”）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">完成“数据故事”练习：以“班级阅读时间”为例，写出统计结论（如“日均阅读30分钟以上的有15人”）+可能性推断（如“随机抽1人，阅读不足20分钟的可能性较小”），注明数据依据。</div>
+                        <div class="task-item">整理错题，按“图表制作错误”“可能性判断错误”“概率计算错误”分类，标注正确思路。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        </div>
+
+        <!-- 5月内容：二次根式与代数练习 -->
+        <div id="may" class="month-content">
+    <div class="plan-desc">
+        <h3>5月学习重点说明</h3>
+        <ul>
+            <li>核心模块：综合题型、应用题、错题本整理、知识体系</li>
+            <li>重点难点：综合题型的解答、应用题的思路、知识点的整合</li>
+            <li>能力目标：通过综合应用检验知识链，掌握综合题型与应用题</li>
+            <li>衔接要点：整合全年所学知识，为复习做好准备</li>
+        </ul>
+    </div>
+
+    <div id="may-week1" class="week-plan">
+        <div class="week-title">第1周：全年核心知识点梳理与错题初整理</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">梳理全年核心知识点框架，建立知识关联<button class="star-btn">★</button></div>
+                        <div class="task-item">初步分类整理全年错题，定位高频出错模块<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：知识框架搭建</span><span class="duration">35分钟</span> 按“数与代数（负数、分式）、图形与几何（圆柱圆锥）、统计与概率（图表、可能性）”分类，列出各模块核心公式/概念（如圆柱体积公式、负数大小比较规则）。</div>
+                        <div class="task-item"><span class="level-basic">Day3：错题收集</span><span class="duration">30分钟</span> 收集全年作业本、试卷中的错题，按“计算错误、概念错误、思路错误”初步分类。</div>
+                        <div class="task-item"><span class="level-basic">Day4：高频错因分析</span><span class="duration">30分钟</span> 统计出错最多的模块（如“圆锥体积忘乘1/3”“负数大小比较失误”），标注核心错因。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day5：知识关联梳理</span><span class="duration">35分钟</span> 分析模块间的联系（如“数轴→负数大小比较→可能性中的概率表示”），绘制关联图。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：综合应用题拆解</span><span class="duration">40分钟</span> 选取1道跨模块综合题（如“圆柱容器装水+体积单位换算+可能性抽奖”），拆解涉及的知识点。</div>
+                        <div class="task-item"><span class="level-expand">Day7：错题溯源</span><span class="duration">40分钟</span> 针对高频错题，追溯到对应知识点的掌握漏洞，写出补漏计划。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">制作“知识体系卡片”，按模块列出核心知识点、公式、易错点；制作“错题分类表”，标注错因、对应模块。</div>
+                        <div class="task-item">完成2道跨模块基础综合题，写下解题时的知识点调用思路。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="may-week2" class="week-plan">
+        <div class="week-title collapsed">第2周：应用题专项突破（思路与方法）</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握应用题的解题通用思路（审题→建模→计算→验证）<button class="star-btn">★</button></div>
+                        <div class="task-item">针对不同类型应用题（几何、统计、数与代数）总结专属解题模板<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：审题技巧</span><span class="duration">30分钟</span> 练习“圈关键词、找数量关系、确定问题目标”，如从“圆柱形水桶底面半径2dm，高5dm，能装多少升水”中圈出核心数据和问题。</div>
+                        <div class="task-item"><span class="level-basic">Day2：代数类应用题</span><span class="duration">30分钟</span> 练习负数应用（气温/收支）、分式计算类应用题，总结“设未知数→列算式→求解”模板。</div>
+                        <div class="task-item"><span class="level-basic">Day3：几何类应用题</span><span class="duration">35分钟</span> 练习圆柱圆锥表面积/体积、单位换算类应用题，总结“找几何公式→代入数据→单位统一”模板。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：应用题解题技巧优化</span><span class="duration">35分钟</span> 探索“画图辅助建模”“逆向推导”等技巧，如用数轴画负数应用题、用示意图画圆柱体积题。</div>
+                        <div class="task-item"><span class="level-improve">Day5：错题复盘（应用题）</span><span class="duration">30分钟</span> 分析应用题错题中“审题漏条件”“公式用错”“计算失误”的问题，写出针对性补救策略。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：综合应用题解答</span><span class="duration">40分钟</span> 解决跨模块综合应用题：“某商场用圆柱形礼盒装抽奖券，礼盒底面直径8cm，高10cm，每张奖券中奖概率10%，装满礼盒需多少奖券？（先算礼盒体积，再按每张奖券体积换算）”。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">整理“应用题通用解题流程”：审题（圈关键词）→建模（选公式/列关系）→计算（准算）→验证（回代检查）；按类型（代数、几何、统计）补充专属技巧，制定后续应用题每日练习计划。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="may-week3" class="week-plan">
+        <div class="week-title collapsed">第3周：综合题型整合应用（跨模块融合）</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">熟练解答跨2个及以上模块的综合题型<button class="star-btn">★</button></div>
+                        <div class="task-item">掌握“拆解题型→调用对应知识点→分步解答”的核心方法</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：数与代数+几何综合</span><span class="duration">35分钟</span> 练习“负数表示海拔+圆柱体积计算”“分式计算+单位换算”类题目，如“某山海拔-50米处有圆柱形蓄水池，底面半径3m，高4m，求蓄水池容积（用正负数标注海拔，计算体积）”。</div>
+                        <div class="task-item"><span class="level-basic">Day2：统计+概率综合</span><span class="duration">35分钟</span> 练习“统计图表解读+可能性大小判断”类题目，如“从班级阅读时间条形图中，计算随机选1人阅读超1小时的可能性”。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day3：多模块复合综合题</span><span class="duration">40分钟</span> 处理“几何（圆锥体积）+代数（负数）+统计（平均数）”类题目，如“记录3次圆锥沙堆体积测量值（-0.2m³误差、5.2m³、5.4m³），计算平均值并修正误差”。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day4：综合题自主设计</span><span class="duration">45分钟</span> 自主设计1道跨3模块的综合题（如“圆柱表面积+负数温度影响+概率抽奖”），写出题干、解题步骤，邀请同学解答并互评。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">总结综合题“拆解→换形→求解”三步走：①拆解题型（找涉及模块）；②换形（转化为各模块基础题）；③分步求解（按模块逐一解答）。整理本周错题，补充跨模块知识点的衔接漏洞，通过网课/教辅资料强化薄弱模块融合应用。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="may-week4" class="week-plan">
+        <div class="week-title collapsed">第4周：知识体系复盘与综合检测</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">完善全年知识体系，形成模块化、关联化的知识网络<button class="star-btn">★</button></div>
+                        <div class="task-item">通过综合检测检验知识掌握情况，完成最终错题分析与补漏<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：知识体系复盘</span><span class="duration">30分钟</span> 补充完善前期知识框架，标注模块间的衔接点（如“数轴→负数→可能性”“统计表→条形图→概率”），形成完整知识图谱。</div>
+                        <div class="task-item"><span class="level-basic">Day2：综合模拟测验</span><span class="duration">45分钟</span> 完成1套涵盖数与代数、几何、统计概率的综合卷（10道基础+5道综合+2道拓展），限时作答。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day3：能力拓展应用</span><span class="duration">35分钟</span> 探究综合知识在生活中的应用，如“用圆柱体积计算家庭用水量+统计图表分析用水趋势+可能性预测下月用水量”，建立数学与生活的关联模型。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day4：名校级综合题练习</span><span class="duration">45分钟</span> 练习名校模拟卷中的压轴综合题（如“几何图形拼接+分式计算+概率分析”），模拟考场思路，写出详细解题步骤与知识点调用说明。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">制作“终极知识复习卡片”，按模块梳理核心知识点、公式、易错点、解题模板；整理本次综合检测错题，按“模块漏洞”“思路漏洞”“计算漏洞”分类，制定考前最后阶段的补漏与复习计划。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        </div>
+
+        <!-- 6月内容：立体几何与空间思维 -->
+        <div id="june" class="month-content">
+    <div class="plan-desc">
+        <h3>6月学习重点说明</h3>
+        <ul>
+            <li>核心模块：综合题型、应用题、错题本整理、知识体系</li>
+            <li>重点难点：综合题型的解答、应用题的思路、知识点的整合</li>
+            <li>能力目标：通过自测与分享检验知识链，掌握综合题型与应用题</li>
+            <li>衔接要点：整合全年所学知识，为下学期学习做好准备</li>
+        </ul>
+    </div>
+
+    <div id="june-week1" class="week-plan">
+        <div class="week-title">第1周：全年知识体系精修与错题深度复盘</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">完善全年知识体系图谱，填补模块衔接漏洞<button class="star-btn">★</button></div>
+                        <div class="task-item">深度复盘错题，形成“错因-解法-预防”闭环<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：知识图谱补全</span><span class="duration">30分钟</span> 针对5月梳理的知识框架，补充“立体图形（圆柱/长方体）与代数（单位换算）、统计（数据测量）”的衔接点，标注易错衔接处（如体积单位换算失误）。</div>
+                        <div class="task-item"><span class="level-basic">Day2：错题分类精修</span><span class="duration">30分钟</span> 将全年错题按“概念类、计算类、思路类、审题类”重新分类，标注每道错题对应的知识模块（如“圆柱体积忘乘1/3→几何模块”）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day3：错题溯源训练</span><span class="duration">35分钟</span> 针对高频错题（如负数大小比较、立体表面积计算），重做同类基础题，验证是否掌握核心知识点。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day4：知识体系应用分析</span><span class="duration">40分钟</span> 分析名校综合题中“知识点调用路径”（如“立体体积计算→单位换算→统计图表呈现”），补充到知识图谱中。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">整理“全年知识核心属性表”：按模块列出核心概念、公式、易错点、衔接知识点；制作“错题闭环卡”，每道卡记录错题、错因、正确解法、预防措施。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="june-week2" class="week-plan">
+        <div class="week-title collapsed">第2周：综合应用题专项突破（生活化+跨模块）</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握生活化综合应用题的解题思路，能从场景中提取数学模型<button class="star-btn">★</button></div>
+                        <div class="task-item">熟练解答跨3个及以上模块的复杂应用题<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：生活化应用题建模</span><span class="duration">30分钟</span> 从“装修铺地砖（长方体面积+单位换算）”“超市促销（分式计算+负数折扣）”等场景中提取数学问题，建立解题模型。</div>
+                        <div class="task-item"><span class="level-basic">Day2：跨模块应用题拆解</span><span class="duration">30分钟</span> 拆解“圆柱形水箱装水（体积）+水温记录（负数）+用水量统计（折线图）”应用题，分步解答。</div>
+                        <div class="task-item"><span class="level-basic">Day3：审题与验证强化</span><span class="duration">35分钟</span> 练习“圈关键信息→列数量关系→计算→回代验证”四步法，解决5道生活化综合应用题。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：应用题变式训练</span><span class="duration">35分钟</span> 对同一生活化场景（如“快递打包”），改编出“求长方体包装表面积”“计算打包材料成本（分式）”“统计打包效率（图表）”等不同应用题，训练多角度建模能力。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day5：名校生活化综合题解答</span><span class="duration">40分钟</span> 解答名校真题：“某农场用圆柱形谷仓存粮，底面直径6m，高8m，每立方米粮食重0.8吨，卖出总量的2/5后，剩余粮食按每吨3000元出售，求销售额（涉及体积、分式、乘法计算）”，写出详细解题思路。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">制作“生活化应用题-数学模型”对应卡片：正面写生活场景，反面写涉及的知识点、公式、解题步骤；整理本周应用题错题，标注“建模失误”“计算失误”等错因。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="june-week3" class="week-plan">
+        <div class="week-title collapsed">第3周：综合题型自测与知识漏洞补漏</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">通过分层自测检验全年知识掌握情况，定位最后漏洞<button class="star-btn">★</button></div>
+                        <div class="task-item">针对性补漏薄弱模块，强化综合题型解答能力<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：基础模块自测</span><span class="duration">35分钟</span> 完成“数与代数（负数、分式）、几何（立体体积）、统计（图表）”基础自测卷（20道基础题），统计正确率，定位薄弱模块。</div>
+                        <div class="task-item"><span class="level-basic">Day2：薄弱模块补漏</span><span class="duration">35分钟</span> 针对自测中正确率低于80%的模块（如立体表面积），重做基础题+错题，梳理核心公式与解题步骤。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day3：综合题型进阶自测</span><span class="duration">40分钟</span> 完成10道跨模块综合题（如“负数+立体体积+概率”），训练知识点快速调用能力，记录解题耗时与正确率。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day4：名校压轴题突破</span><span class="duration">45分钟</span> 练习2道名校期末压轴综合题（如“几何拼接+统计分析+应用题”），总结压轴题的“拆解技巧”“得分点”，撰写解题思路复盘。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">制作“体积/表面积公式对照表”（补充立体模块核心公式），标注单位换算易错点；整理自测错题，按“薄弱模块”分类，制定最后补漏计划。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="june-week4" class="week-plan">
+        <div class="week-title collapsed">第4周：知识整合分享与下学期衔接准备</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">通过分享与交流巩固全年知识，形成完整知识体系<button class="star-btn">★</button></div>
+                        <div class="task-item">衔接下学期知识点，做好预习准备<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：错题本整理收尾</span><span class="duration">30分钟</span> 完善全年错题本，按“模块+错因”分类装订，标注重点复习题；总结全年高频错因（如单位换算、公式遗漏）。</div>
+                        <div class="task-item"><span class="level-basic">Day2：知识分享活动</span><span class="duration">40分钟</span> 组织小组分享：每人选择1个核心模块（如立体图形、负数），讲解核心知识点、易错点、解题技巧，互相答疑。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day3：跨学期知识衔接</span><span class="duration">35分钟</span> 分析本学期知识与下学期的关联（如“立体图形体积→下学期立体几何进阶”“负数→下学期有理数运算”），列出预习重点。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day4：综合能力拓展</span><span class="duration">45分钟</span> 完成名校“小升初/期末”综合能力测评卷，撰写测评分析报告：总结优势模块、薄弱环节、下学期提升计划。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">制作“全年知识复习小报”：涵盖各模块核心公式、易错点、综合应用题解题模板；制定下学期预习计划，明确每日/每周预习内容（如提前了解有理数、方程基础）。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        </div>
+
+
+        </div>
+        </div>
+
+        <div id="footer" class="footer">
+            <p>6年级数学分层递进学习大纲 | 版权所有 © 2025 小学数学教学研究室</p>
+        </div>
+    </div>
+
+    <script>
+        const monthHighlights = {
+            september: {
+                focus: '深化分数乘除法的计算方法，理解分数乘除法的算理，培养估算与验算能力。',
+                knowledge: '分数乘法、分数除法、约分、估算与验算、分数性质的应用、分数应用题。',
+                difficulty: '分数乘除法的理解、约分的方法、估算方法的掌握、分数应用题的解答。',
+                advice: '强调约分的重要性，通过实际情境理解分数乘除法意义，培养计算能力和估算意识。'
+            },
+            october: {
+                focus: '掌握百分数的意义和读写，理解百分数与分数、小数的互化，学会百分数的应用。',
+                knowledge: '百分数的意义、百分数的读写、百分数与分数小数的互化、百分数应用题。',
+                difficulty: '百分数意义的理解、百分数与分数小数的互化、百分数应用题的解答。',
+                advice: '通过实际情境理解百分数的意义，掌握百分数与分数小数的互化，培养应用能力。'
+            },
+            november: {
+                focus: '理解比例的意义和性质，掌握比例的应用，学会解决比例问题。',
+                knowledge: '比例的意义、比例的性质、比例的应用、正比例、反比例。',
+                difficulty: '比例意义的理解、比例性质的应用、正比例和反比例的判断。',
+                advice: '通过实际情境理解比例的意义，掌握比例的应用，培养逻辑思维和解决问题的能力。'
+            },
+            december: {
+                focus: '掌握圆的周长和面积的计算方法，理解圆周率的意义，培养空间观念。',
+                knowledge: '圆的认识、圆的周长、圆的面积、圆周率、圆的应用。',
+                difficulty: '圆周率意义的理解、圆的周长和面积公式的应用、圆的应用题的解答。',
+                advice: '通过动手操作理解圆的特征，掌握圆的周长和面积公式，培养空间观念。'
+            },
+            january: {
+                focus: '认识圆柱和圆锥，掌握它们的特征和表面积、体积的计算方法。',
+                knowledge: '圆柱、圆锥、表面积、体积、体积单位换算。',
+                difficulty: '表面积和体积概念的理解、表面积和体积公式的应用、体积单位换算的掌握。',
+                advice: '通过实物观察认识圆柱和圆锥，动手操作理解表面积和体积，培养空间观念。'
+            },
+            march: {
+                focus: '初步认识负数，理解负数的意义，掌握负数的读写和比较。',
+                knowledge: '负数的意义、负数的读写、负数的大小比较、数轴。',
+                difficulty: '负数意义的理解、负数的大小比较、数轴的应用。',
+                advice: '通过实际情境理解负数的意义，掌握负数的读写和比较，培养数感。'
+            },
+            april: {
+                focus: '掌握统计图表的制作与解读，理解可能性的概念，培养数据分析能力。',
+                knowledge: '条形图、折线图、扇形图、统计表、可能性、概率初步。',
+                difficulty: '统计图表的制作与解读、可能性的理解、数据分析的能力。',
+                advice: '让学生自己收集数据，制作统计图表，通过游戏理解可能性，培养数据分析能力。'
+            },
+            may: {
+                focus: '通过综合应用检验知识链，掌握综合题型与应用题。',
+                knowledge: '综合题型、应用题、错题本整理、知识体系。',
+                difficulty: '综合题型的解答、应用题的思路、知识点的整合。',
+                advice: '互讲错题思路，错题分享环节，做"知识卡片"游戏，通过分享巩固知识。'
+            },
+            june: {
+                focus: '通过自测与分享检验知识链，掌握综合题型与应用题。',
+                knowledge: '综合题型、应用题、错题本整理、知识体系。',
+                difficulty: '综合题型的解答、应用题的思路、知识点的整合。',
+                advice: '互讲错题思路，错题分享环节，做"知识卡片"游戏，通过分享巩固知识。'
+            }
+        };
+        const detailFocus = document.getElementById('detail-focus');
+        const detailKnowledge = document.getElementById('detail-knowledge');
+        const detailDifficulty = document.getElementById('detail-difficulty');
+        const detailAdvice = document.getElementById('detail-advice');
+        const detailMonthTitle = document.getElementById('detail-month-title');
+
+        function updateMonthDetailPanel(month) {
+            const info = monthHighlights[month];
+            if (!info) return;
+            detailFocus.textContent = `核心聚焦：${info.focus}`;
+            detailKnowledge.textContent = `重点：${info.knowledge}`;
+            detailDifficulty.textContent = `难点：${info.difficulty}`;
+            detailAdvice.textContent = `建议：${info.advice}`;
+            detailMonthTitle.textContent = thisMonthLabel(month);
+        }
+        function thisMonthLabel(month) {
+            const monthMap = {
+                september: '9月',
+                october: '10月',
+                november: '11月',
+                december: '12月',
+                january: '1月',
+                march: '3月',
+                april: '4月',
+                may: '5月',
+                june: '6月'
+            };
+            return monthMap[month] || '';
+        }
+
+        // 月份切换功能
+        document.querySelectorAll('.month-link').forEach(link => {
+            link.addEventListener('click', function() {
+                // 移除所有月份的active类
+                document.querySelectorAll('.month-link').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('.month-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // 给当前点击的月份添加active类
+                this.classList.add('active');
+                const month = this.getAttribute('data-month');
+                document.getElementById(month).classList.add('active');
+                updateMonthDetailPanel(month);
+            });
+        });
+
+        // 周计划折叠/展开功能
+        document.querySelectorAll('.week-title').forEach(title => {
+            title.addEventListener('click', function() {
+                this.classList.toggle('collapsed');
+            });
+        });
+
+        // 主题切换功能
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            this.innerHTML = isDark ? '☀️ 亮色模式' : '🌙 暗黑模式';
+        });
+
+        // 重点标记功能
+        document.querySelectorAll('.star-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+
+        updateMonthDetailPanel('september');
+    </script>
+    <script>
+        // 本地版本：已跳过登录验证
+    </script>
+</body>
+</html>

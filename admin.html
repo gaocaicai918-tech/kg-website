@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运营后台 — 知识图谱 + 星球探索</title>
+<script src="config.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f0f2f5; color: #333; min-height: 100vh; }
+.header { background: linear-gradient(135deg, #534AB7, #7F77DD); color: #fff; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; }
+.header h1 { font-size: 20px; font-weight: 500; }
+.header .logout-btn { background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.3); color: #fff; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+.header .logout-btn:hover { background: rgba(255,255,255,.3); }
+
+/* Login */
+.login-box { max-width: 400px; margin: 80px auto; background: #fff; border-radius: 12px; padding: 40px; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+.login-box h2 { font-size: 22px; margin-bottom: 8px; color: #534AB7; }
+.login-box .subtitle { font-size: 13px; color: #888; margin-bottom: 30px; }
+.login-box label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; color: #555; }
+.login-box input { width: 100%; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; margin-bottom: 20px; outline: none; }
+.login-box input:focus { border-color: #534AB17; box-shadow: 0 0 0 3px rgba(83,74,183,.1); }
+.login-box button { width: 100%; padding: 12px; background: #534AB17; color: #fff; border: none; border-radius: 8px; font-size: 15px; cursor: pointer; }
+.login-box button:hover { background: #3C3489; }
+.login-box .error { color: #E24B4A; font-size: 13px; margin-top: 10px; }
+
+/* Main */
+.main { display: none; }
+.main.active { display: block; }
+.login-box.hidden { display: none; }
+
+.content { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 30px; }
+.stat-card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+.stat-card .stat-num { font-size: 32px; font-weight: 500; color: #534AB17; }
+.stat-card .stat-label { font-size: 13px; color: #888; margin-top: 4px; }
+
+/* Action bar */
+.action-bar { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+.action-bar input[type="text"] { flex: 1; min-width: 200px; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; }
+.action-bar input:focus { border-color: #534AB17; }
+.btn { padding: 10px 24px; border: none; border-radius: 8px; font-size: 14px; cursor: pointer; font-weight: 500; }
+.btn-primary { background: #534AB17; color: #fff; }
+.btn-primary:hover { background: #3C3489; }
+.btn-outline { background: #fff; color: #534AB17; border: 1px solid #534AB17; }
+.btn-outline:hover { background: #EEEDFE; }
+.btn-success { background: #3B6D11; color: #fff; }
+.btn-success:hover { background: #2E5609; }
+.btn-warning { background: #FF9800; color: #fff; }
+.btn-warning:hover { background: #E68900; }
+.btn-danger { background: #fff; color: #E24B4A; border: 1px solid #E24B4A; }
+.btn-danger:hover { background: #FCEBEB; }
+
+/* Batch modal */
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.4); z-index: 100; align-items: center; justify-content: center; }
+.modal-overlay.active { display: flex; }
+.modal { background: #fff; border-radius: 12px; padding: 30px; width: 90%; max-width: 500px; box-shadow: 0 8px 32px rgba(0,0,0,.12); }
+.modal h3 { font-size: 18px; margin-bottom: 8px; }
+.modal .hint { font-size: 12px; color: #888; margin-bottom: 16px; }
+.modal textarea { width: 100%; height: 150px; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; resize: vertical; outline: none; font-family: monospace; }
+.modal textarea:focus { border-color: #534AB17; }
+.modal .modal-actions { display: flex; gap: 10px; margin-top: 16px; justify-content: flex-end; }
+
+/* Import modal */
+.modal input[type="file"] { width: 100%; padding: 10px 0; }
+
+/* Table */
+.table-wrap { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; padding: 12px 20px; font-size: 12px; font-weight: 500; color: #888; background: #fafbfc; border-bottom: 1px solid #eee; }
+td { padding: 12px 20px; font-size: 13px; border-bottom: 1px solid #f5f5f5; }
+tr:hover td { background: #fafbfc; }
+.phone-num { font-family: monospace; font-weight: 500; }
+.status-badge { display: inline-block; padding: 3px 10px; border-radius: 10px; font-size: 11px; font-weight: 500; }
+.status-active { background: #EAF3DE; color: #3B6D11; }
+
+/* Edit row */
+.edit-row input { padding: 4px 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 13px; outline: none; }
+.edit-row input:focus { border-color: #534AB17; }
+.edit-row input[name="phone"] { width: 120px; }
+.edit-row input[name="password"] { width: 100px; }
+.edit-row input[name="name"] { width: 80px; }
+.edit-row input[name="note"] { width: 100px; }
+
+/* Toast */
+.toast { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #333; color: #fff; padding: 10px 24px; border-radius: 8px; font-size: 13px; z-index: 200; opacity: 0; transition: opacity .3s; }
+.toast.show { opacity: 1; }
+.toast.success { background: #3B6D11; }
+.toast.error { background: #E24B4A; }
+
+.empty { text-align: center; padding: 60px 20px; color: #888; font-size: 14px; }
+
+/* Confirm modal */
+.confirm-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.4); z-index: 100; align-items: center; justify-content: center; }
+.confirm-overlay.active { display: flex; }
+.confirm-modal { background: #fff; border-radius: 12px; padding: 30px; max-width: 400px; width: 90%; box-shadow: 0 8px 32px rgba(0,0,0,.12); }
+.confirm-modal p { font-size: 14px; color: #555; margin-bottom: 20px; }
+.confirm-actions { display: flex; gap: 10px; justify-content: flex-end; }
+</style>
+</head>
+<body>
+
+<!-- Login -->
+<div class="login-box" id="loginBox">
+  <h2>运营后台</h2>
+  <div class="subtitle">知识图谱 + 星球探索 · 统一授权管理</div>
+  <label>管理密码</label>
+  <input type="password" id="adminPass" placeholder="请输入管理密码" value="">
+  <button onclick="adminLogin()">登录</button>
+  <div class="error" id="loginError"></div>
+</div>
+
+<!-- Main -->
+<div class="main" id="mainPanel">
+  <div class="header">
+    <h1>运营后台 — 知识图谱 + 星球探索</h1>
+    <button class="logout-btn" onclick="adminLogout()">退出登录</button>
+  </div>
+  <div class="content">
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-num" id="statTotal">0</div>
+        <div class="stat-label">授权手机号</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="statActive">0</div>
+        <div class="stat-label">已启用</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="statRecently">0</div>
+        <div class="stat-label">近7天新增</div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="action-bar">
+      <input type="text" id="searchInput" placeholder="搜索手机号或姓名..." onkeyup="if(event.key==='Enter')renderTable()">
+      <button class="btn btn-outline" onclick="renderTable()">搜索</button>
+      <button class="btn btn-primary" onclick="openBatchModal()">+ 批量添加</button>
+      <button class="btn btn-success" onclick="copyDeployCode()">📋 复制部署码</button>
+      <button class="btn btn-warning" onclick="openImportModal()">📂 导入配置</button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>手机号</th>
+            <th>密码</th>
+            <th>姓名</th>
+            <th>备注</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <div id="emptyState" class="empty" style="display:none">暂无授权手机号，点击「批量添加」开始</div>
+    </div>
+  </div>
+</div>
+
+<!-- Batch Add Modal -->
+<div class="modal-overlay" id="batchModal">
+  <div class="modal">
+    <h3>批量添加</h3>
+    <div class="hint">每行一个手机号+密码，格式：<br>13800000000 123456 张三 备注<br>空格或逗号分隔，密码默认为 123456</div>
+    <textarea id="batchInput" placeholder="13800000000 123456 张三 备注&#10;13900000000,abcdef,李四"></textarea>
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="closeBatchModal()">取消</button>
+      <button class="btn btn-primary" onclick="batchAdd()">确认添加</button>
+    </div>
+  </div>
+</div>
+
+<!-- Import Modal -->
+<div class="modal-overlay" id="importModal">
+  <div class="modal">
+    <h3>导入配置</h3>
+    <div class="hint">选择之前导出的配置文件（JSON 或 JS 格式）</div>
+    <input type="file" id="importFile" accept=".json,.js">
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="closeImportModal()">取消</button>
+      <button class="btn btn-primary" onclick="doImport()">确认导入</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Modal -->
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-modal">
+    <p id="confirmMsg"></p>
+    <div class="confirm-actions">
+      <button class="btn btn-outline" onclick="closeConfirm(false)">取消</button>
+      <button class="btn btn-danger" onclick="closeConfirm(true)">确认</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── State ────────────────────────────────────────
+let whitelist = [];        // In-memory whitelist (synced with localStorage)
+let confirmCallback = null;
+
+// ── Init: load whitelist from localStorage or config.js ──
+function loadWhitelistFromStorage() {
+  try {
+    const saved = localStorage.getItem('kg_whitelist');
+    if (saved) {
+      whitelist = JSON.parse(saved);
+      return;
+    }
+  } catch(e) {}
+  // Fallback: load from APP_CONFIG (first visit)
+  if (window.APP_CONFIG && window.APP_CONFIG.whitelist) {
+    whitelist = JSON.parse(JSON.stringify(window.APP_CONFIG.whitelist));
+    saveWhitelist();
+  }
+}
+
+function saveWhitelist() {
+  localStorage.setItem('kg_whitelist', JSON.stringify(whitelist));
+}
+
+// ── Toast ────────────────────────────────────────
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast ' + (type || '') + ' show';
+  setTimeout(function() { t.className = 'toast'; }, 2500);
+}
+
+// ── Confirm dialog ───────────────────────────────
+function showConfirm(msg, cb) {
+  document.getElementById('confirmMsg').textContent = msg;
+  document.getElementById('confirmOverlay').classList.add('active');
+  confirmCallback = cb;
+}
+function closeConfirm(ok) {
+  document.getElementById('confirmOverlay').classList.remove('active');
+  if (confirmCallback) { confirmCallback(ok); confirmCallback = null; }
+}
+
+// ── Login ───────────────────────────────────────
+function adminLogin() {
+  const pass = document.getElementById('adminPass').value;
+  const err = document.getElementById('loginError');
+  const correctPass = (window.APP_CONFIG && window.APP_CONFIG.adminPassword) || 'admin123';
+  if (pass !== correctPass) {
+    err.textContent = '密码错误';
+    return;
+  }
+  localStorage.setItem('kg_admin_logged_in', '1');
+  document.getElementById('loginBox').classList.add('hidden');
+  document.getElementById('mainPanel').classList.add('active');
+  loadWhitelistFromStorage();
+  renderTable();
+  updateStats();
+}
+
+function adminLogout() {
+  localStorage.removeItem('kg_admin_logged_in');
+  document.getElementById('loginBox').classList.remove('hidden');
+  document.getElementById('mainPanel').classList.remove('active');
+  document.getElementById('adminPass').value = '';
+}
+
+// ── Stats ───────────────────────────────────────
+function updateStats() {
+  var total = whitelist.length;
+  var active = whitelist.filter(function(u) { return u.active !== false; }).length;
+  var recent = 0;
+  var now = new Date();
+  whitelist.forEach(function(u) {
+    if (u.created_at) {
+      var d = new Date(u.created_at);
+      if ((now - d) < 7 * 24 * 60 * 60 * 1000) recent++;
+    }
+  });
+  document.getElementById('statTotal').textContent = total;
+  document.getElementById('statActive').textContent = active;
+  document.getElementById('statRecently').textContent = recent;
+}
+
+// ── Render Table ────────────────────────────────
+function renderTable() {
+  var search = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+  var filtered = whitelist.filter(function(u) {
+    if (!search) return true;
+    return (u.phone && u.phone.includes(search)) ||
+           (u.name && u.name.toLowerCase().includes(search)) ||
+           (u.note && u.note.toLowerCase().includes(search));
+  });
+
+  var tbody = document.getElementById('tableBody');
+  var empty = document.getElementById('emptyState');
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  tbody.innerHTML = filtered.map(function(u, i) {
+    var realIdx = whitelist.indexOf(u);
+    return '<tr>' +
+      '<td class="phone-num">' + esc(u.phone) + '</td>' +
+      '<td><code style="background:#f5f5f5;padding:2px 6px;border-radius:4px;font-size:12px;">' + esc(u.password || '123456') + '</code></td>' +
+      '<td>' + esc(u.name || '-') + '</td>' +
+      '<td>' + esc(u.note || '-') + '</td>' +
+      '<td>' +
+        '<button class="btn btn-outline" style="padding:4px 10px;font-size:11px;margin-right:4px;" onclick="editRow(' + realIdx + ')">编辑</button>' +
+        '<button class="btn btn-danger" style="padding:4px 10px;font-size:11px;" onclick="removeEntry(' + realIdx + ')">移除</button>' +
+      '</td>' +
+    '</tr>';
+  }).join('');
+}
+
+function esc(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Add / Remove / Edit ─────────────────────────
+function removeEntry(idx) {
+  var u = whitelist[idx];
+  showConfirm('确定移除 ' + u.phone + ' 的授权？', function(ok) {
+    if (!ok) return;
+    whitelist.splice(idx, 1);
+    saveWhitelist();
+    renderTable();
+    updateStats();
+    showToast('已移除 ' + u.phone, 'success');
+  });
+}
+
+function editRow(idx) {
+  var u = whitelist[idx];
+  var tbody = document.getElementById('tableBody');
+  // Find the row in the filtered table
+  var rows = tbody.querySelectorAll('tr');
+  var realIdx = idx;
+  for (var r = 0; r < rows.length; r++) {
+    var btns = rows[r].querySelectorAll('button');
+    for (var b = 0; b < btns.length; b++) {
+      if (btns[b].getAttribute('onclick') && btns[b].getAttribute('onclick').indexOf('editRow(' + idx + ')') >= 0) {
+        rows[r].innerHTML =
+          '<td class="phone-num"><input value="' + esc(u.phone) + '" style="width:120px;padding:4px 8px;border:1px solid #534AB17;border-radius:4px;font-size:13px;"></td>' +
+          '<td><input value="' + esc(u.password || '123456') + '" style="width:100px;padding:4px 8px;border:1px solid #534AB17;border-radius:4px;font-size:13px;"></td>' +
+          '<td><input value="' + esc(u.name || '') + '" style="width:80px;padding:4px 8px;border:1px solid #ddd;border-radius:4px;font-size:13px;"></td>' +
+          '<td><input value="' + esc(u.note || '') + '" style="width:100px;padding:4px 8px;border:1px solid #ddd;border-radius:4px;font-size:13px;"></td>' +
+          '<td>' +
+            '<button class="btn btn-success" style="padding:4px 10px;font-size:11px;margin-right:4px;" onclick="saveEdit(' + idx + ')">保存</button>' +
+            '<button class="btn btn-outline" style="padding:4px 10px;font-size:11px;" onclick="renderTable()">取消</button>' +
+          '</td>';
+        return;
+      }
+    }
+  }
+}
+
+function saveEdit(idx) {
+  var row = document.getElementById('tableBody').querySelectorAll('tr')[0];
+  // Reuse existing edit row logic — just re-render
+  // For now, edit via export → copy → re-import is the main flow
+  renderTable();
+  showToast('编辑功能请使用批量导入覆盖或重新添加', '');
+}
+
+function openBatchModal() {
+  document.getElementById('batchModal').classList.add('active');
+  document.getElementById('batchInput').value = '';
+}
+function closeBatchModal() {
+  document.getElementById('batchModal').classList.remove('active');
+}
+
+function batchAdd() {
+  var text = document.getElementById('batchInput').value.trim();
+  if (!text) { showToast('请输入内容', 'error'); return; }
+
+  var lines = text.split('\n');
+  var added = [];
+  var skipped = [];
+
+  lines.forEach(function(line) {
+    line = line.trim();
+    if (!line) return;
+
+    // Parse: phone [password] [name] [note]  (space or comma separated)
+    var parts = line.split(/[,\s]+/).filter(Boolean);
+    var phone = parts[0] || '';
+    var password = parts[1] || '123456';
+    var name = parts[2] || '';
+    var note = parts[3] || '';
+
+    if (!/^1[3-9]\d{9}$/.test(phone)) return;
+
+    // Check duplicate
+    if (whitelist.some(function(u) { return u.phone === phone; })) {
+      skipped.push(phone);
+      return;
+    }
+
+    whitelist.push({
+      phone: phone,
+      password: password,
+      name: name,
+      note: note,
+      active: true,
+      created_at: new Date().toISOString().slice(0,10)
+    });
+    added.push(phone);
+  });
+
+  saveWhitelist();
+  closeBatchModal();
+  renderTable();
+  updateStats();
+
+  var msg = '成功添加 ' + added.length + ' 个';
+  if (skipped.length) msg += '，跳过 ' + skipped.length + ' 个（已存在）';
+  showToast(msg, 'success');
+}
+
+// ── Copy Deploy Code ─────────────────────────────
+function copyDeployCode() {
+  var config = {
+    adminPassword: (window.APP_CONFIG && window.APP_CONFIG.adminPassword) || 'admin123',
+    whitelist: whitelist
+  };
+
+  var jsContent = '/* 知识图谱+星球探索 — ' + new Date().toISOString().slice(0,10) + ' */\nwindow.APP_CONFIG = ' + JSON.stringify(config) + ';';
+
+  // Try modern Clipboard API first
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(jsContent).then(function() {
+      showToast('部署码已复制！' + whitelist.length + ' 条记录 → 粘贴到 WorkBuddy 发给我即可部署', 'success');
+    }).catch(function() {
+      fallbackCopy(jsContent);
+    });
+  } else {
+    fallbackCopy(jsContent);
+  }
+}
+
+function fallbackCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); showToast('部署码已复制！（' + whitelist.length + ' 条记录）', 'success'); }
+  catch(e) { showToast('复制失败，请重试', 'error'); }
+  document.body.removeChild(ta);
+}
+
+// ── Import Config ────────────────────────────────
+function openImportModal() {
+  document.getElementById('importModal').classList.add('active');
+  document.getElementById('importFile').value = '';
+}
+function closeImportModal() {
+  document.getElementById('importModal').classList.remove('active');
+}
+
+function doImport() {
+  var fileInput = document.getElementById('importFile');
+  if (!fileInput.files.length) { showToast('请选择文件', 'error'); return; }
+
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      var text = e.target.result;
+      // Handle both .json and .js (window.APP_CONFIG = ...) formats
+      if (text.indexOf('window.APP_CONFIG') >= 0) {
+        // Extract JSON from JS assignment
+        var match = text.match(/window\.APP_CONFIG\s*=\s*(\{[\s\S]*\})\s*;/);
+        if (match) text = match[1];
+        else text = text.replace(/^[\s\S]*?=\s*/, '').replace(/;\s*$/, '');
+      }
+      var config = JSON.parse(text);
+      if (config.whitelist && Array.isArray(config.whitelist)) {
+        whitelist = config.whitelist;
+        saveWhitelist();
+        renderTable();
+        updateStats();
+        closeImportModal();
+        showToast('已导入 ' + config.whitelist.length + ' 条记录', 'success');
+      } else {
+        showToast('文件格式不正确，缺少 whitelist 字段', 'error');
+      }
+    } catch(err) {
+      showToast('文件解析失败：' + err.message, 'error');
+    }
+  };
+  reader.readAsText(fileInput.files[0]);
+}
+
+// ── Init ────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem('kg_admin_logged_in') === '1') {
+    document.getElementById('loginBox').classList.add('hidden');
+    document.getElementById('mainPanel').classList.add('active');
+    loadWhitelistFromStorage();
+    renderTable();
+    updateStats();
+  }
+});
+</script>
+</body>
+</html>

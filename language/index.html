@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <script src="../auth-check.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 缓存控制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>语文大纲关联 - 知识图谱导航</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Noto Serif SC", "STSong", "宋体", "SimSun", "KaiTi", "楷体", "STKaiti", "Microsoft YaHei", serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff8c42 0%, #e55a00 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #2c2416;
+        }
+
+        body.dark {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(255, 140, 66, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        body.dark .header {
+            background: rgba(30, 41, 59, 0.95);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff8c42 0%, #e55a00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .header h1 span.emoji {
+            background: none;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+            background-clip: initial;
+        }
+
+        body.dark .header h1 {
+            background: linear-gradient(135deg, #ffb88c 0%, #ff9d5c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #8b6f47;
+            margin-top: 10px;
+        }
+
+        body.dark .header p {
+            color: #94a3b8;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #ff8c42;
+            border: 2px solid #ff8c42;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-toggle:hover {
+            background: #ff8c42;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 140, 66, 0.3);
+        }
+
+        body.dark .theme-toggle {
+            background: rgba(30, 41, 59, 0.9);
+            color: #ffb88c;
+            border-color: #ff9d5c;
+        }
+
+        body.dark .theme-toggle:hover {
+            background: #ff9d5c;
+            color: #1e293b;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 5px solid white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        body.dark .section-title {
+            color: #e2e8f0;
+        }
+
+        .grade-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .grade-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(255, 140, 66, 0.15);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .grade-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ff8c42 0%, #e55a00 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .grade-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        body.dark .grade-card {
+            background: rgba(30, 41, 59, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .grade-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 140, 66, 0.2);
+            border-color: #ff8c42;
+        }
+
+        body.dark .grade-card:hover {
+            border-color: #ff9d5c;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .grade-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .grade-icon {
+            font-size: 36px;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .grade-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #8b4513;
+            margin: 0;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+
+        body.dark .grade-title {
+            color: #f8fafc;
+        }
+
+        .grade-description {
+            font-size: 18px;
+            font-weight: 600;
+            color: #8b6f47;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        body.dark .grade-description {
+            color: #cbd5e1;
+        }
+
+        .grade-subtitle {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        body.dark .grade-subtitle {
+            color: #94a3b8;
+        }
+
+        .grade-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #ff8c42 0%, #e55a00 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .grade-link:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(255, 140, 66, 0.4);
+        }
+
+        body.dark .grade-link {
+            background: linear-gradient(135deg, #ff9d5c 0%, #d45500 100%);
+        }
+
+        .grade-link::after {
+            content: '→';
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .grade-link:hover::after {
+            transform: translateX(3px);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: linear-gradient(135deg, #fff4e6 0%, #ffe6cc 100%);
+            color: #ff8c42;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        body.dark .badge {
+            background: rgba(255, 157, 92, 0.2);
+            color: #ffb88c;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 140, 66, 0.15);
+        }
+
+        body.dark .footer {
+            background: rgba(30, 41, 59, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer p {
+            color: #8b6f47;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        body.dark .footer p {
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .header p {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .grade-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .grade-card {
+                padding: 25px;
+            }
+
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 10px 18px;
+                font-size: 14px;
+            }
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff8c42 0%, #e55a00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.dark .stat-number {
+            background: linear-gradient(135deg, #ffb88c 0%, #ff9d5c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #8b6f47;
+            margin-top: 5px;
+        }
+
+        body.dark .stat-label {
+            color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="theme-toggle">🌙 暗黑模式</button>
+
+    <div class="container">
+        <div class="header">
+            <h1><span class="emoji">📚</span> 语文大纲关联</h1>
+            <p>知识图谱导航系统</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">个年级</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">144+</div>
+                    <div class="stat-label">个月度计划</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1500+</div>
+                    <div class="stat-label">个学习任务</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">📖 小学阶段（4年）</h2>
+            <div class="grade-grid">
+                <div class="grade-card" onclick="window.location.href='1.html'">
+                    <div class="grade-header">
+                        <span class="grade-icon">📖</span>
+                        <h3 class="grade-title">第一年语文<span class="badge">基础</span></h3>
+                    </div>
+                    <p class="grade-description">夯实基础，培养兴趣</p>
+                    <p class="grade-subtitle">拼音学习 → 汉字认读 → 词语积累 → 简单阅读 → 口语表达 → 书写训练</p>
+                    <a href="1.html" class="grade-link">进入学习大纲</a>
+                </div>
+                <div class="grade-card" onclick="window.location.href='2.html'">
+                    <div class="grade-header">
+                        <span class="grade-icon">📘</span>
+                        <h3 class="grade-title">第二年语文<span class="badge">进阶</span></h3>
+                    </div>
+                    <p class="grade-description">拓展思维，提升能力</p>
+                    <p class="grade-subtitle">汉字书写 → 词语理解 → 句子练习 → 段落阅读 → 看图说话 → 简单写作</p>
+                    <a href="2.html" class="grade-link">进入学习大纲</a>
+                </div>
+                <div class="grade-card" onclick="window.location.href='3.html'">
+                    <div class="grade-header">
+                        <span class="grade-icon">📗</span>
+                        <h3 class="grade-title">第三年语文<span class="badge">提升</span></h3>
+                    </div>
+                    <p class="grade-description">深化理解，系统学习</p>
+                    <p class="grade-subtitle">阅读理解 → 写作训练 → 古诗词学习 → 成语积累 → 语言表达 → 文学素养</p>
+                    <a href="3.html" class="grade-link">进入学习大纲</a>
+                </div>
+                <div class="grade-card" onclick="window.location.href='4.html'">
+                    <div class="grade-header">
+                        <span class="grade-icon">📙</span>
+                        <h3 class="grade-title">第四年语文<span class="badge">强化</span></h3>
+                    </div>
+                    <p class="grade-description">强化训练，综合应用</p>
+                    <p class="grade-subtitle">深度阅读 → 写作技巧 → 古诗词鉴赏 → 文言文入门 → 语言运用 → 文学创作</p>
+                    <a href="4.html" class="grade-link">进入学习大纲</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🎓 初中阶段（3年）</h2>
+            <div class="grade-grid">
+                <div class="grade-card" onclick="window.location.href='5.html'">
+                    <div class="grade-header">
+                        <span class="grade-icon">📕</span>
+                        <h3 class="grade-title">第五年语文<span class="badge">衔接</span></h3>
+                    </div>
+                    <p class="grade-description">初入中学，系统学习</p>
+                    <p class="grade-subtitle">现代文阅读 → 写作系统训练 → 古诗词系统学习 → 文言文系统学习 → 语言运用 → 文学素养</p>
+                    <a href="5.html" class="grade-link">进入学习大纲</a>
+                </div>
+                <div class="grade-card" onclick="window.location.href='6.html'">
+                    <div class="grade-header">
+                        <span class="grade-icon">📓</span>
+                        <h3 class="grade-title">第六年语文<span class="badge">提升</span></h3>
+                    </div>
+                    <p class="grade-description">能力提升，深化理解</p>
+                    <p class="grade-subtitle">深度阅读 → 写作技巧提升 → 古诗词鉴赏 → 文言文理解 → 语言综合运用 → 文学创作</p>
+                    <a href="6.html" class="grade-link">进入学习大纲</a>
+                </div>
+                <div class="grade-card" onclick="window.location.href='7.html'">
+                    <div class="grade-header">
+                        <span class="grade-icon">📚</span>
+                        <h3 class="grade-title">第七年语文<span class="badge">冲刺</span></h3>
+                    </div>
+                    <p class="grade-description">中考冲刺，全面复习</p>
+                    <p class="grade-subtitle">综合阅读 → 写作强化 → 古诗词系统复习 → 文言文系统复习 → 语言运用 → 应试技巧</p>
+                    <a href="7.html" class="grade-link">进入学习大纲</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🎯 高中阶段（5年）</h2>
+            <div class="grade-grid">
+                <div class="grade-card" onclick="window.location.href='8.html'">
+                    <div class="grade-header">
+                        <span class="grade-icon">📔</span>
+                        <h3 class="grade-title">第八年语文<span class="badge">进阶</span></h3>
+                    </div>
+                    <p class="grade-description">高中起点，能力进阶</p>
+                    <p class="grade-subtitle">现代文深度阅读 → 写作能力提升 → 古诗词深度鉴赏 → 文言文深度理解 → 语言综合运用 → 文学素养提升</p>
+                    <a href="8.html" class="grade-link">进入学习大纲</a>
+                </div>
+                <div class="grade-card" onclick="window.location.href='9.html'">
+                    <div class="grade-header">
+                        <span class="grade-icon">📒</span>
+                        <h3 class="grade-title">第九年语文<span class="badge">深化</span></h3>
+                    </div>
+                    <p class="grade-description">能力深化，素养提升</p>
+                    <p class="grade-subtitle">文本深度分析 → 写作技巧深化 → 古诗词系统研究 → 文言文系统研究 → 语言表达 → 文学创作</p>
+                    <a href="9.html" class="grade-link">进入学习大纲</a>
+                </div>
+                <div class="grade-card" onclick="window.location.href='10.html'">
+                    <div class="grade-header">
+                        <span class="grade-icon">📑</span>
+                        <h3 class="grade-title">第十年语文<span class="badge">提升</span></h3>
+                    </div>
+                    <p class="grade-description">持续提升，综合发展</p>
+                    <p class="grade-subtitle">综合阅读训练 → 写作能力强化 → 古诗词深度研究 → 文言文深度研究 → 语言综合运用 → 文学素养深化</p>
+                    <a href="10.html" class="grade-link">进入学习大纲</a>
+                </div>
+                <div class="grade-card" onclick="window.location.href='11.html'">
+                    <div class="grade-header">
+                        <span class="grade-icon">📋</span>
+                        <h3 class="grade-title">第十一年语文<span class="badge">强化</span></h3>
+                    </div>
+                    <p class="grade-description">全面强化，备战高考</p>
+                    <p class="grade-subtitle">文本深度分析 → 写作技巧强化 → 古诗词全面研究 → 文言文全面研究 → 语言表达提升 → 文学创作深化</p>
+                    <a href="11.html" class="grade-link">进入学习大纲</a>
+                </div>
+                <div class="grade-card" onclick="window.location.href='12.html'">
+                    <div class="grade-header">
+                        <span class="grade-icon">📊</span>
+                        <h3 class="grade-title">第十二年语文<span class="badge">冲刺</span></h3>
+                    </div>
+                    <p class="grade-description">高考冲刺，全面备战</p>
+                    <p class="grade-subtitle">综合阅读训练 → 写作强化训练 → 古诗词全面复习 → 文言文全面复习 → 语言运用 → 高考应试</p>
+                    <a href="12.html" class="grade-link">进入学习大纲</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>语文大纲关联知识图谱导航系统</strong></p>
+            <p>版权所有 © 2025 语文教学研究室</p>
+            <p style="margin-top: 15px; font-size: 13px; color: #94a3b8;">
+                涵盖第一年至第十二年完整语文学习体系<br>
+                每个年级包含详细的月度学习计划、周次安排和分层任务
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // 主题切换功能
+        const themeToggle = document.querySelector('.theme-toggle');
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark');
+            themeToggle.innerHTML = '☀️ 亮色模式';
+        }
+
+        themeToggle.addEventListener('click', function () {
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            this.innerHTML = isDark ? '☀️ 亮色模式' : '🌙 暗黑模式';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        // 添加卡片点击动画
+        document.querySelectorAll('.grade-card').forEach(card => {
+            card.addEventListener('click', function (e) {
+                if (e.target.classList.contains('grade-link')) return;
+                const link = this.querySelector('.grade-link');
+                if (link) {
+                    window.location.href = link.href;
+                }
+            });
+        });
+    </script>
+    <script>
+        // 本地版本：已跳过登录验证
+    </script>
+</body>
+
+</html>

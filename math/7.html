@@ -1,0 +1,3245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <script src="../auth-check.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 缓存控制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <!-- 数学公式渲染 -->
+    <script src="tex-mml-chtml.js"></script>
+    <title>7年级数学分层递进学习大纲</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 保留原有样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", "Microsoft YaHei", Arial, sans-serif;
+        }
+        body {
+            background-color: #f8fafc;
+            padding: 15px;
+            line-height: 1.7;
+            color: #1e293b;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body.dark {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            padding: 25px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        body.dark .container {
+            background-color: #1e293b;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #409eff;
+            padding-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .header-content {
+            flex: 1;
+            min-width: 280px;
+        }
+        .header h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        body.dark .header h1 {
+            color: #f8fafc;
+        }
+        .header p {
+            color: #64748b;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+        body.dark .header p {
+            color: #94a3b8;
+        }
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .theme-toggle {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+            color: #409eff;
+            border: 1px solid #409eff;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(64, 158, 255, 0.2);
+            background: linear-gradient(135deg, #409eff 0%, #3375b9 100%);
+            color: white;
+        }
+        body.dark .theme-toggle {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            border-color: #3b82f6;
+        }
+        body.dark .theme-toggle:hover {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+            color: #409eff;
+            border: 1px solid #409eff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease;
+        }
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(64, 158, 255, 0.3);
+            background: linear-gradient(135deg, #409eff 0%, #3375b9 100%);
+            color: white;
+        }
+        body.dark .print-btn {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #93c5fd;
+            border-color: #3b82f6;
+        }
+        body.dark .print-btn:hover {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+        }
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .progress-label {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        body.dark .progress-label {
+            color: #94a3b8;
+        }
+        .progress-bar {
+            flex: 1;
+            height: 8px;
+            background-color: #f0f7ff;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+        }
+        body.dark .progress-bar {
+            background-color: #1e293b;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #409eff 0%, #3375b9 100%);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        body.dark .progress-fill {
+            background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+        }
+        .progress-text {
+            font-size: 13px;
+            color: #409eff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        body.dark .progress-text {
+            color: #93c5fd;
+        }
+        .layout {
+            display: flex;
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .sidebar {
+            flex: 0 0 220px;
+            background-color: #f1f5f9;
+            border-radius: 12px;
+            border: 1px solid #dbe5ff;
+            padding: 18px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+            position: sticky;
+            top: 20px;
+            align-self: flex-start;
+            max-height: calc(100vh - 60px);
+            overflow-y: auto;
+        }
+        body.dark .sidebar {
+            background-color: #111827;
+            border-color: #2d3748;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+        body.dark .sidebar-title {
+            color: #94a3b8;
+        }
+        .content-area {
+            flex: 1;
+        }
+        .month-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 0;
+        }
+        body.dark .month-nav {
+            border-color: transparent;
+        }
+        .month-link {
+            padding: 12px 16px;
+            background-color: transparent;
+            color: #1d4ed8;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            cursor: pointer;
+            text-align: left;
+            border: 1px solid transparent;
+        }
+        body.dark .month-link {
+            color: #cbd5f5;
+        }
+        .month-link:hover {
+            background-color: rgba(64, 158, 255, 0.15);
+            color: #2563eb;
+        }
+        .month-link.active {
+            background: linear-gradient(135deg, #409eff 0%, #3375b9 100%);
+            color: white;
+            box-shadow: 0 8px 20px rgba(64, 158, 255, 0.3);
+        }
+        body.dark .month-link.active {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+        .month-link::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 0;
+            width: 4px;
+            border-radius: 999px;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+        .month-link.active::after {
+            background-color: white;
+        }
+        .anchor-nav {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 0;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            scrollbar-width: thin;
+            transition: border-color 0.3s ease;
+        }
+        body.dark .anchor-nav {
+            border-color: #2d3748;
+        }
+        .anchor-nav::-webkit-scrollbar {
+            height: 4px;
+        }
+        .anchor-nav::-webkit-scrollbar-thumb {
+            background-color: #409eff;
+            border-radius: 2px;
+        }
+        body.dark .anchor-nav::-webkit-scrollbar-thumb {
+            background-color: #3b82f6;
+        }
+        .anchor-link {
+            padding: 8px 18px;
+            margin-right: 12px;
+            background-color: #f0f7ff;
+            color: #409eff;
+            text-decoration: none;
+            border-radius: 25px;
+            white-space: nowrap;
+            font-size: 14px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        body.dark .anchor-link {
+            background-color: #1e293b;
+            color: #93c5fd;
+        }
+        .anchor-link:hover, .anchor-link.active {
+            background-color: #409eff;
+            color: white;
+        }
+        body.dark .anchor-link:hover, body.dark .anchor-link.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .anchor-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        .anchor-link.active::after, .anchor-link:hover::after {
+            width: 100%;
+        }
+        .month-detail-panel {
+            margin-bottom: 25px;
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid #dbe5ff;
+            background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+            box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
+        }
+        .month-detail-panel h3 {
+            font-size: 18px;
+            color: #1e2d3b;
+            margin-bottom: 6px;
+        }
+        .month-detail-panel p {
+            margin-bottom: 10px;
+            color: #475669;
+        }
+        .detail-list {
+            padding-left: 20px;
+            color: #334155;
+            line-height: 1.6;
+        }
+        .plan-desc {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f0f7ff;
+            border-left: 4px solid #409eff;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        body.dark .plan-desc {
+            background-color: #1e293b;
+            border-color: #3b82f6;
+        }
+        .plan-desc h3 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        body.dark .plan-desc h3 {
+            color: #f8fafc;
+        }
+        .plan-desc ul {
+            list-style: disc;
+            margin-left: 20px;
+            font-size: 14px;
+            color: #64748b;
+            transition: color 0.3s ease;
+        }
+        body.dark .plan-desc ul {
+            color: #94a3b8;
+        }
+        .plan-desc li {
+            margin-bottom: 6px;
+        }
+        .month-content {
+            display: none;
+        }
+        .month-content.active {
+            display: block;
+        }
+        .week-plan {
+            margin-bottom: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .week-plan:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+        }
+        body.dark .week-plan {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+        }
+        body.dark .week-plan:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+        .week-plan:nth-child(even) .week-content {
+            background-color: #faf9f5;
+        }
+        body.dark .week-plan:nth-child(even) .week-content {
+            background-color: #1a2435;
+        }
+        .week-title {
+            background-color: #3375b9;
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: 8px 8px 0 0;
+            font-size: 17px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        .week-title:hover {
+            background-color: #2563eb;
+        }
+        body.dark .week-title {
+            background-color: #2563eb;
+        }
+        body.dark .week-title:hover {
+            background-color: #1d4ed8;
+        }
+        .week-title::after {
+            content: "▼";
+            font-size: 14px;
+            transition: transform 0.5s ease;
+        }
+        .week-title.collapsed::after {
+            transform: rotate(-180deg);
+        }
+        .week-content {
+            border: 1px solid #eee;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+            background-color: #fff;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+        body.dark .week-content {
+            background-color: #1e293b;
+            border-color: #2d3748;
+        }
+        .week-title:not(.collapsed) + .week-content {
+            max-height: 5000px;
+            opacity: 1;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #f0f7ff;
+            vertical-align: top;
+            line-height: 1.8;
+        }
+        body.dark .table th, body.dark .table td {
+            border-bottom: 1px solid #2d3748;
+        }
+        .table th {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 15px;
+            width: 18%;
+            border-right: 1px solid #f0f7ff;
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        body.dark .table th {
+            background: linear-gradient(135deg, #1e293b 0%, #1a2435 100%);
+            color: #f8fafc;
+            border-right: 1px solid #2d3748;
+        }
+        .table td {
+            font-size: 14px;
+            color: #64748b;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body.dark .table td {
+            color: #94a3b8;
+        }
+        .table tr:hover td {
+            background-color: #fefeff;
+        }
+        body.dark .table tr:hover td {
+            background-color: #1a2435;
+        }
+        .level-basic, .level-improve, .level-expand {
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 6px;
+            color: white;
+            font-weight: 500;
+        }
+        .level-basic {
+            background-color: #22c55e;
+        }
+        .level-improve {
+            background-color: #f97316;
+        }
+        .level-expand {
+            background-color: #ef4444;
+        }
+        .task-item {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .task-item::before {
+            content: '✓';
+            position: absolute;
+            left: 5px;
+            color: #409eff;
+            font-weight: bold;
+            font-size: 12px;
+            transition: color 0.3s ease;
+        }
+        body.dark .task-item::before {
+            color: #3b82f6;
+        }
+        .task-item .duration {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 2px 6px;
+            background-color: #e0f2fe;
+            color: #1d4ed8;
+            font-size: 12px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body.dark .task-item .duration {
+            background-color: #1e293b;
+            color: #93c5fd;
+        }
+        .tips {
+            background-color: #fff8e1;
+            padding: 14px 16px;
+            border-radius: 6px;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #8a6d3b;
+            border-left: 3px solid #f39c12;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        body.dark .tips {
+            background-color: #374151;
+            color: #fcd34d;
+            border-color: #f59e0b;
+        }
+        .tips::before {
+            content: '💡';
+            font-size: 16px;
+            margin-top: 2px;
+        }
+        .star-btn {
+            background: none;
+            border: none;
+            color: #ccc;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 5px;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        .star-btn:hover {
+            transform: scale(1.2);
+            color: #fcd34d;
+        }
+        .star-btn.active {
+            color: #f1c40f;
+            animation: pulse 0.5s ease;
+        }
+        body.dark .star-btn {
+            color: #4b5563;
+        }
+        body.dark .star-btn:hover {
+            color: #fcd34d;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        .error-record-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #409eff 0%, #3375b9 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(64,158,255,0.3);
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        .error-record-btn:hover {
+            background: linear-gradient(135deg, #3375b9 0%, #2563eb 100%);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(64,158,255,0.4);
+        }
+        body.dark .error-record-btn {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            box-shadow: 0 3px 10px rgba(59,130,246,0.4);
+        }
+        body.dark .error-record-btn:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+        .error-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 101;
+            display: none;
+            transition: background-color 0.3s ease;
+        }
+        body.dark .error-modal {
+            background-color: rgba(0,0,0,0.7);
+        }
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 12px;
+            padding: 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        body.dark .modal-content {
+            background-color: #1e293b;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .modal-header {
+            background: linear-gradient(135deg, #409eff 0%, #3375b9 100%);
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        body.dark .modal-header {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+        .modal-header h3 {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+        .close-modal:hover {
+            opacity: 1;
+        }
+        .modal-body {
+            padding: 20px;
+        }
+        .modal-body textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px 16px;
+            border: 1px solid #e0f2fe;
+            border-radius: 8px;
+            font-size: 14px;
+            resize: none;
+            margin-bottom: 15px;
+            background-color: #f8fafc;
+            color: #1e293b;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+        body.dark .modal-body textarea {
+            background-color: #1a2435;
+            border-color: #2d3748;
+            color: #e2e8f0;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .modal-footer {
+            text-align: right;
+            padding: 0 20px 20px;
+        }
+        .save-error {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #409eff 0%, #3375b9 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+        }
+        .save-error:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(64, 158, 255, 0.3);
+            background: linear-gradient(135deg, #3375b9 0%, #2563eb 100%);
+        }
+        body.dark .save-error {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+        body.dark .save-error:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #64748b;
+            font-size: 13px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        body.dark .footer {
+            color: #94a3b8;
+            border-top: 1px solid #2d3748;
+        }
+        .knowledge-graph {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .knowledge-graph img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        body.dark .knowledge-graph img {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .knowledge-graph p {
+            margin-top: 10px;
+            color: #64748b;
+            font-size: 13px;
+        }
+        body.dark .knowledge-graph p {
+            color: #94a3b8;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 20px;
+            }
+            .header p {
+                font-size: 13px;
+            }
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+            .theme-toggle, .print-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .progress-container {
+                gap: 8px;
+            }
+            .progress-label, .progress-text {
+                font-size: 12px;
+            }
+            .month-link, .anchor-link {
+                padding: 6px 14px;
+                margin-right: 8px;
+                font-size: 13px;
+            }
+            .plan-desc {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            .plan-desc h3 {
+                font-size: 16px;
+            }
+            .plan-desc ul {
+                font-size: 13px;
+            }
+            .week-title {
+                padding: 12px 15px;
+                font-size: 15px;
+            }
+            .table {
+                display: flex;
+                flex-direction: column;
+            }
+            .table tr {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 15px;
+                border: 1px solid #f0f7ff;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            }
+            body.dark .table tr {
+                border: 1px solid #2d3748;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .table th {
+                width: 100%;
+                padding: 12px 15px;
+                font-size: 15px;
+                background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+            }
+            body.dark .table th {
+                background: linear-gradient(135deg, #1e293b 0%, #1a2435 100%);
+            }
+            .table td {
+                padding: 12px 15px;
+                font-size: 13px;
+            }
+            .task-item {
+                padding-left: 15px;
+                margin-bottom: 8px;
+            }
+            .tips {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+            .error-record-btn {
+                width: 45px;
+                height: 45px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 18px;
+            }
+        .layout {
+            flex-direction: column;
+        }
+        .sidebar {
+            width: 100%;
+            position: static;
+            max-height: none;
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1);
+        }
+        .sidebar-title {
+            display: none;
+        }
+        .month-nav {
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 8px;
+            overflow-x: auto;
+        }
+        body.dark .month-nav {
+            border-color: #2d3748;
+        }
+        .month-link {
+            margin-right: 8px;
+            flex: 0 0 auto;
+        }
+        }
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+                color: #1e293b;
+            }
+            body.dark {
+                background-color: white;
+                color: #1e293b;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+                background-color: white;
+            }
+            body.dark .container {
+                background-color: white;
+            }
+            .sidebar, .month-nav, .anchor-nav, .error-record-btn, .print-btn, .theme-toggle, .progress-container {
+                display: none !important;
+            }
+            .month-content {
+                display: block !important;
+            }
+            .week-title {
+                background-color: #e8f4ff !important;
+                color: #2c3e50 !important;
+                border: 1px solid #ddd;
+            }
+            .week-content {
+                border: 1px solid #ddd;
+                background-color: white !important;
+                max-height: none !important;
+                opacity: 1 !important;
+            }
+            body.dark .week-content {
+                background-color: white !important;
+            }
+            .table th {
+                background: linear-gradient(135deg, #f7f9fc 0%, #f0f7ff 100%) !important;
+                color: #2c3e50 !important;
+                border-color: #eee !important;
+            }
+            .table td {
+                color: #64748b !important;
+                border-color: #eee !important;
+            }
+            .tips {
+                background-color: #fff8e1 !important;
+                color: #8a6d3b !important;
+                border-color: #f39c12 !important;
+            }
+            tr, td, th {
+                page-break-inside: avoid;
+            }
+            .week-plan {
+                page-break-after: avoid;
+                margin-bottom: 15px;
+                box-shadow: none !important;
+            }
+            .level-basic {
+                background-color: #22c55e !important;
+                color: white !important;
+            }
+            .level-improve {
+                background-color: #f97316 !important;
+                color: white !important;
+            }
+            .level-expand {
+                background-color: #ef4444 !important;
+                color: white !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>7年级数学分层递进学习大纲</h1>
+            </div>
+            <div class="header-actions">
+                <a href="javascript:window.print()" class="print-btn">📄 打印学习大纲</a>
+                <button class="theme-toggle">🌙 暗黑模式</button>
+            </div>
+        </div>
+
+        <div class="layout">
+            <aside class="sidebar">
+                <div class="sidebar-title">章节目录</div>
+                <div class="month-nav">
+                    <div class="month-link active" data-month="september">9月：有理数</div>
+                    <div class="month-link" data-month="october">10月：整式的加减</div>
+                    <div class="month-link" data-month="november">11月：一元一次方程</div>
+                    <div class="month-link" data-month="december">12月：几何图形初步</div>
+                    <div class="month-link" data-month="january">1月：相交线与平行线</div>
+                    <div class="month-link" data-month="march">3月：实数</div>
+                    <div class="month-link" data-month="april">4月：平面直角坐标系</div>
+                    <div class="month-link" data-month="may">5月：二元一次方程组</div>
+                    <div class="month-link" data-month="june">6月：不等式与不等式组</div>
+                </div>
+            </aside>
+            <div class="content-area">
+                <div class="month-detail-panel" id="month-detail-panel">
+            <h3>月度知识图谱 • <span id="detail-month-title">9月</span></h3>
+            <p id="detail-focus">核心聚焦：理解有理数的概念，掌握有理数的加减乘除运算，培养数感和运算能力。</p>
+            <ul class="detail-list">
+                <li id="detail-knowledge">重点：正数和负数、有理数的分类、数轴、相反数和绝对值、有理数的加减乘除运算。</li>
+                <li id="detail-difficulty">难点：有理数加减法的符号处理、乘除法的符号法则、绝对值的理解与应用。</li>
+                <li id="detail-advice">教学建议：通过数轴理解有理数的意义，强化符号法则的训练，培养运算能力和数感。</li>
+            </ul>
+        </div>
+
+        <!-- 9月内容 -->
+        <div id="september" class="month-content active">
+            <div class="plan-desc">
+                <h3>9月学习重点说明</h3>
+                <ul>
+                    <li>核心模块：正数和负数、有理数的分类、数轴、相反数和绝对值、有理数的加减乘除运算</li>
+                    <li>重点难点：有理数加减法的符号处理、乘除法的符号法则、绝对值的理解与应用</li>
+                    <li>能力目标：理解有理数的概念，掌握有理数的加减乘除运算，培养数感和运算能力</li>
+                    <li>衔接要点：从小学阶段的整数、分数、小数过渡到初中阶段的有理数，建立完整的数系概念</li>
+                </ul>
+            </div>
+
+
+            <div id="week1" class="week-plan">
+                <div class="week-title">第1周：正数和负数、有理数的分类</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">理解正数和负数的意义，会用正负数表示相反意义的量<button class="star-btn">★</button></div>
+                                <div class="task-item">掌握有理数的分类方法，能对有理数进行正确分类<button class="star-btn">★</button></div>
+                                <div class="task-item">建立数系扩展的概念，衔接小学与初中的数学学习<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：正数和负数的认识</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 明确正数和负数的定义（大于0的数是正数，小于0的数是负数）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 正负数的表示方法：正数前面的“+”号可省略，负数前面必须加“-”号<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 基础练习：用正负数表示下列量（①零上5℃；②低于海平面150米；③收入300元）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：有理数的分类</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 有理数的定义：整数和分数统称为有理数<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 按定义分类：有理数分为整数（正整数、0、负整数）和分数（正分数、负分数）<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 按性质分类：有理数分为正有理数（正整数、正分数）、0、负有理数（负整数、负分数）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day5：数系的扩展与衔接</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 回顾小学学过的数（整数、分数、小数），并将其纳入有理数体系<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 理解0的特殊意义：0既不是正数也不是负数，是正数和负数的分界点<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成正数和负数相关习题（1-8题）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：每日基础学习后，整理10分钟笔记，标注关键概念（如"有理数的两种分类方法"）</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：正负数的实际应用</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 温度问题：某城市最高气温5℃，最低气温-3℃，求温差（8℃）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 海拔问题：甲地海拔200米，乙地海拔-150米，求两地的高度差（350米）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3-4：有理数分类的拓展</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 非负有理数的概念：正有理数和0<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 分类讨论题：已知x是有理数，试讨论x、-x、|x|的符号<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day5：数系扩展的思考</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 探究：是否存在既不是正数也不是负数的数？（只有0）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 对比练习：完成5道正负数表示题和5道有理数分类题，总结解题注意事项<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：提升层题目建议先独立思考，30分钟未解决可参考教材例题或请教老师，记录解题思路</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day1-2：正负数的综合应用</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 股票涨跌问题：某股票周一涨2元，周二跌3元，周三涨1元，周四跌4元，求周涨幅<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 水位变化问题：水库水位原是10米，第一天上升2米，第二天下降3米，第三天上升1米，求最终水位<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day3-4：有理数分类的创新题</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 集合表示：用韦恩图表示有理数、整数、分数之间的关系<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 规律探究：观察数的排列规律，在空格中填入适当的数（如：-2，4，-6，8，____，____）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day5：名校真题训练</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 完成某重点校月考题：已知a是有理数，下列说法正确的是（ ）（答案：D选项）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结拓展层题型的解题技巧（如"实际问题中要注意正负数的基准点"）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：拓展层题目注重实际应用和创新思维，建议结合生活经验理解题意</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 绘制“有理数分类”思维导图，包含定义、两种分类方法、特殊数（如0）的位置<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，按“概念混淆”“符号错误”“分类错误”分类，标注错误原因与正确解法<span class="duration">25分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 限时测试：完成10道综合题（基础6道、提升3道、拓展1道），限时35分钟，检验学习效果<span class="duration">35分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="week2" class="week-plan">
+                <div class="week-title collapsed">第2周：数轴、相反数和绝对值</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">理解数轴的概念，会画数轴并能在数轴上表示有理数<button class="star-btn">★</button></div>
+                                <div class="task-item">掌握相反数的定义，会求一个数的相反数<button class="star-btn">★</button></div>
+                                <div class="task-item">理解绝对值的意义，会求一个数的绝对值，掌握绝对值的性质<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：数轴的认识</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 数轴的定义：规定了原点、正方向和单位长度的直线<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 数轴的三要素：原点、正方向、单位长度，三者缺一不可<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 作图练习：画出数轴，并在数轴上表示下列数（2，-3，0，1.5，-1.5）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：相反数的意义</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 相反数的定义：只有符号不同的两个数互为相反数，0的相反数是0<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 相反数的几何意义：在数轴上，互为相反数的两个数位于原点两侧，且到原点的距离相等<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 求相反数的方法：在一个数前面加上“-”号，就得到它的相反数<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day5：绝对值的概念</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 绝对值的定义：数轴上表示一个数的点与原点的距离叫做这个数的绝对值<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 绝对值的表示方法：用符号“| |”表示，如a的绝对值记作|a|<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 基础练习：求下列数的绝对值（|3|=3，|-2|=2，|0|=0）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：画数轴时要注意三要素的正确性，单位长度要统一</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：数轴的应用</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 利用数轴比较大小：数轴上右边的数总比左边的数大<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 练习：在数轴上表示-4，-1，2，3.5，并比较它们的大小<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3-4：相反数的性质</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 相反数的性质：a的相反数是-a，-a的相反数是a，即-(-a)=a<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 多重符号的化简：“-”号的个数决定结果的符号（奇数个为负，偶数个为正）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day5：绝对值的性质</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 绝对值的非负性：|a|≥0，即任何数的绝对值都大于或等于0<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 绝对值的代数意义：当a>0时，|a|=a；当a=0时，|a|=0；当a<0时，|a|=-a<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：绝对值的代数意义是重点，要理解“负数的绝对值是它的相反数”</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day1-2：数轴的综合应用</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 数轴上的距离问题：数轴上表示数a和数b的两点之间的距离是|a-b|<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 练习：数轴上表示-2和5的两点之间的距离是多少？（7）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day3-4：相反数与绝对值的综合</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 已知|x|=3，求x的值（±3）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 已知|a|=|b|，则a和b的关系是a=b或a=-b<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day5：名校真题训练</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 某重点校考题：若|x-2|+|y+3|=0，求x+y的值（-1）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结绝对值非负性的应用技巧<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：复杂绝对值问题可采用“分类讨论”的思想，根据绝对值内数的正负性进行分析</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 制作“数轴、相反数、绝对值”对比表，包含定义、几何意义、性质及应用<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成15道综合练习题（数轴5道、相反数5道、绝对值5道），限时50分钟<span class="duration">50分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 预习“有理数的加减法”内容，标记疑问点<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="week3" class="week-plan">
+                <div class="week-title collapsed">第3周：有理数的加减运算</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握有理数加法法则，能熟练进行有理数加法运算<button class="star-btn">★</button></div>
+                                <div class="task-item">理解有理数减法法则，能将减法转化为加法进行运算<button class="star-btn">★</button></div>
+                                <div class="task-item">会进行有理数的加减混合运算，培养运算能力<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：有理数加法法则</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 同号两数相加：取相同的符号，并把绝对值相加<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 异号两数相加：取绝对值较大的加数的符号，并用较大的绝对值减去较小的绝对值；互为相反数的两个数相加得0<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 一个数同0相加，仍得这个数<button class="star-btn">★</button></div>
+                                <div class="task-item">4. 基础练习：计算（①3+5；②-3+(-5)；③3+(-5)；④-3+5）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：有理数加法运算律</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 加法交换律：a+b=b+a<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 加法结合律：(a+b)+c=a+(b+c)<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 简便运算：利用运算律简化计算（如3+(-5)+7+5= (3+7)+[(-5)+5]=10+0=10）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day5：有理数减法法则</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 减法法则：减去一个数，等于加上这个数的相反数，即a-b=a+(-b)<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 基础练习：计算（①5-3；②5-(-3)；③-5-3；④-5-(-3)）<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成有理数的加减混合运算相关习题（1-6题）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：进行有理数加法时，先确定符号，再计算绝对值；减法运算要注意“变号”</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：有理数加法的应用</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 温度变化问题：某天气温从-2℃上升5℃，又下降3℃，求最终气温（0℃）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 路程问题：小明从家出发向东走3km，再向西走5km，求小明离家的距离（2km）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3-4：有理数加减混合运算</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 加减混合运算的步骤：先将减法转化为加法，再利用运算律进行简便计算<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 练习：计算（-3）+5-(-7)-9<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day5：复杂运算的技巧</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 同分母分数的加减运算：先通分，再计算<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 小数与分数的混合运算：统一为小数或分数后再计算<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：加减混合运算中，“+”“-”号可看作运算符号，也可看作数的性质符号</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day1-2：有理数加法的规律探究</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 找规律：1+(-2)+3+(-4)+…+99+(-100)=？（-50）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 符号交替问题：计算1-2+3-4+…+99-100<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day3-4：绝对值的加减运算</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 已知|a|=3，|b|=5，求a+b的值（±2，±8）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 分类讨论：若a<0，b>0，且|a|>|b|，则a+b的符号是什么？（负）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day5：名校真题训练</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 某重点校考题：计算（-1）+2+(-3)+4+…+(-99)+100=？（50）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 总结有理数加减运算的常见错误及避免方法<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：规律探究题要注意观察数的符号、绝对值的变化规律，寻找周期性</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 制作“有理数加减法”思维导图，包含法则、运算律、运算技巧<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 完成20道综合练习题（加法8道、减法6道、混合运算6道），限时60分钟<span class="duration">60分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 预习“有理数的乘除法”内容，标记疑问点<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="week4" class="week-plan">
+                <div class="week-title collapsed">第4周：有理数的乘除运算、单元复习与检测</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握有理数乘法法则，能熟练进行有理数乘法运算<button class="star-btn">★</button></div>
+                                <div class="task-item">理解有理数除法法则，能将除法转化为乘法进行运算<button class="star-btn">★</button></div>
+                                <div class="task-item">会进行有理数的乘除混合运算，能解决实际问题<button class="star-btn">★</button></div>
+                                <div class="task-item">复习有理数单元知识，完成单元检测，巩固学习成果<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：有理数乘法法则</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 乘法法则：两数相乘，同号得正，异号得负，并把绝对值相乘；任何数同0相乘，都得0<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 基础练习：计算（①3×5；②(-3)×(-5)；③3×(-5)；④(-3)×5；⑤3×0）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：有理数乘法运算律</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 乘法交换律：ab=ba<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 乘法结合律：(ab)c=a(bc)<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 乘法分配律：a(b+c)=ab+ac<button class="star-btn">★</button></div>
+                                <div class="task-item">4. 简便运算：利用运算律简化计算（如(-25)×4×(-0.4)=25×4×0.4=40）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day5：有理数除法法则</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 除法法则1：除以一个不等于0的数，等于乘这个数的倒数，即a÷b=a×(1/b)（b≠0）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 除法法则2：两数相除，同号得正，异号得负，并把绝对值相除；0除以任何一个不等于0的数，都得0<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 基础练习：计算（①10÷2；②10÷(-2)；③(-10)÷2；④(-10)÷(-2)）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：进行有理数乘法时，先确定符号（负因数的个数决定符号），再计算绝对值</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day1-2：有理数乘除法的应用</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 温度变化问题：某物体温度每小时下降3℃，5小时后温度下降了多少？（15℃）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 利润问题：某商品每件亏损5元，卖出10件后，总亏损多少？（50元）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day3-4：有理数乘除混合运算</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 乘除混合运算的步骤：先将除法转化为乘法，再确定符号，最后计算绝对值<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 练习：计算（-12）÷4×(-3)= (-3)×(-3)=9<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-improve">Day5：有理数四则混合运算</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 运算顺序：先乘除，后加减，有括号的先算括号里面的<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 练习：计算（-2）×3-(-8)÷4= -6-(-2)= -4<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：乘除混合运算中，要注意运算顺序，不要随意改变运算顺序</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day1-2：有理数乘法的规律探究</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 找规律：(-1)×2×(-3)×4×…×(-99)×100=？（正数）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 符号规律：n个负因数相乘，当n为偶数时，积为正；当n为奇数时，积为负<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day3-4：有理数乘除法的综合应用</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 已知|a|=3，|b|=2，且ab<0，求a+b的值（±1）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 实际问题：某水库的水位平均每天下降0.5米，3天后水位共下降了多少米？若水位上升记为正，下降记为负，用有理数表示结果（-1.5米）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-expand">Day5：单元复习与检测</span><span class="duration">60分钟</span></div>
+                                <div class="task-item">1. 完成有理数单元综合测试题，限时60分钟<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 分析测试结果，总结薄弱环节，制定改进计划<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：单元复习时，要构建知识体系，将各个知识点串联起来，形成整体认识</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 绘制“有理数乘除法”思维导图，包含法则、运算律、运算顺序<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理有理数单元错题，按“概念错误”“符号错误”“运算顺序错误”分类，标注错误原因与正确解法<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成有理数单元综合测试，限时90分钟，检验学习效果<span class="duration">90分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">4. 总结有理数单元的学习收获，为后续学习做好准备<span class="duration">15分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10月内容：整式的加减 -->
+        <div id="october" class="month-content">
+            <div class="plan-desc">
+                <h3>10月学习重点说明</h3>
+                <ul>
+                    <li>核心模块：单项式、多项式、同类项、合并同类项、去括号与添括号、整式的加减</li>
+                    <li>重点难点：同类项的识别、去括号时符号的处理、整式加减的运算顺序</li>
+                    <li>能力目标：理解整式的概念，掌握整式的加减运算，培养代数思维</li>
+                    <li>衔接要点：从数的运算过渡到式的运算，为后续方程学习奠定基础</li>
+                </ul>
+            </div>
+
+
+            <div class="week-plan">
+                <div class="week-title">第1周：单项式与多项式</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">理解单项式与多项式的概念、系数、次数<button class="star-btn">★</button></div>
+                                <div class="task-item">能够区分单项式与多项式，掌握多项式的项数与次数<button class="star-btn">★</button></div>
+                                <div class="task-item">培养用字母表示数的代数思维<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：单项式</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 单项式定义：由数与字母的积组成的代数式<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 系数：单项式中的数字因数（如-3x的系数是-3）<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 次数：所有字母的指数和（如x²y³的次数是5）<button class="star-btn">★</button></div>
+                                <div class="task-item">4. 练习：指出下列单项式的系数和次数：①5x；②-3ab；③πr²；④-2x³y²<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：多项式</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 多项式定义：几个单项式的和<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 项：每个单项式（如3x²-2x+5的项是3x²、-2x、5）<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 次数：最高次项的次数（如x³-2x²+1的次数是3）<button class="star-btn">★</button></div>
+                                <div class="task-item">4. 常数项：不含字母的项（如5x+2中的2）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：单独的一个数或字母也是单项式，如5和a</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day5：单项式与多项式的应用</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 用字母表示数：长方形的长为a，宽为b，面积是ab，周长是2(a+b)<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 实际问题：某商品原价为x元，打八折后的价格是0.8x元<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：用字母表示数时，数字与字母相乘，数字要写在字母前面，乘号可以省略</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6-7：单项式与多项式的综合应用</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 已知单项式-2x³y^m的次数是5，求m的值（m=2）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 已知多项式3x^n+2x-5的次数是4，求n的值（n=4）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：综合应用时，要抓住概念的本质，注意题目中的隐含条件</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 绘制“单项式与多项式”思维导图，包含概念、系数、次数等<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，分析错误原因<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成单项式与多项式的基础测试，检验学习效果<span class="duration">45分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="week-plan">
+                <div class="week-title collapsed">第2周：同类项与合并同类项</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">理解同类项的概念，能够识别同类项<button class="star-btn">★</button></div>
+                                <div class="task-item">掌握合并同类项的法则，能够正确合并同类项<button class="star-btn">★</button></div>
+                                <div class="task-item">培养观察、比较、分类的数学思维<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：同类项</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 同类项定义：所含字母相同，并且相同字母的指数也相同的项<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 识别同类项：①3x与-5x（是）；②2x²与3x（否）；③-2xy与5yx（是）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：合并同类项</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 合并法则：同类项的系数相加，字母和字母的指数不变<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 合并练习：①3x+5x=8x；②-2x²+5x²=3x²；③3a-2b+5a=8a-2b<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：常数项都是同类项，如2与-3是同类项</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day5：合并同类项的应用</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 化简求值：当x=2时，求3x²-5x+2x²+4x的值（代入计算得3×4-10+2×4+8=12-10+8+8=18）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：化简求值时，先合并同类项，再代入计算，可以减少计算量</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6-7：同类项的综合应用</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 已知3x²y^m与-2x^n y³是同类项，求m+n的值（m=3，n=2，m+n=5）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 合并同类项：2(a+b)-3(a-b)+4(a+b)= (2+4)(a+b)-3(a-b)=6(a+b)-3(a-b)=6a+6b-3a+3b=3a+9b<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：将(a+b)、(a-b)等看作一个整体，按同类项合并</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 归纳同类项的识别方法与合并法则<span class="duration">25分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，特别是同类项识别错误的题目<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成合并同类项的综合测试<span class="duration">45分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="week-plan">
+                <div class="week-title collapsed">第3周：去括号与添括号</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握去括号与添括号的法则，能够正确进行去括号与添括号运算<button class="star-btn">★</button></div>
+                                <div class="task-item">理解去括号与添括号的互逆关系<button class="star-btn">★</button></div>
+                                <div class="task-item">培养符号意识与运算能力<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：去括号法则</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 括号前是“+”号，把括号和它前面的“+”号去掉后，原括号里各项的符号都不改变<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 括号前是“-”号，把括号和它前面的“-”号去掉后，原括号里各项的符号都要改变<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 去括号练习：①a+(b-c)=a+b-c；②a-(b-c)=a-b+c；③2(x+2y)=2x+4y；④-3(x-2y)=-3x+6y<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：添括号法则</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 添括号后，括号前是“+”号，括到括号里的各项都不改变符号<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 添括号后，括号前是“-”号，括到括号里的各项都改变符号<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 添括号练习：①a+b-c=a+(b-c)；②a-b+c=a-(b-c)<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：去括号与添括号时，要注意括号前的符号，这是容易出错的地方</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day5：去括号与添括号的应用</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 化简：(2x²+3x-1)-(x²-2x+3)=2x²+3x-1-x²+2x-3=x²+5x-4<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 添括号：2x²-3x+1=2x²-(3x-1)= (2x²-3x)+1<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：化简时，先去括号，再合并同类项</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6-7：去括号与添括号的综合应用</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 化简求值：当a=1，b=-2时，求3(a²b+ab²)-2(a²b-1)-2ab²-2的值（先化简得a²b+ab²，再代入得1×(-2)+1×4=-2+4=2）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 括号的多层去法：2x-[3y-(4x-5y)]=2x-[3y-4x+5y]=2x-[-4x+8y]=2x+4x-8y=6x-8y<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：多层括号去法，从里到外或从外到里都可以，注意符号变化</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 总结去括号与添括号的法则，特别是符号处理<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，重点关注符号错误的题目<span class="duration">25分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成去括号与添括号的综合测试<span class="duration">45分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="week-plan">
+                <div class="week-title collapsed">第4周：整式的加减运算与单元复习</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握整式加减的运算法则，能够正确进行整式的加减运算<button class="star-btn">★</button></div>
+                                <div class="task-item">理解整式加减的本质是合并同类项<button class="star-btn">★</button></div>
+                                <div class="task-item">通过单元复习，构建整式加减的知识体系<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：整式的加减</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 整式加减法则：去括号，合并同类项<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整式加减练习：①(2x+3y)+(x-2y)=3x+y；②(3a²-2a+1)-(a²+3a-2)=2a²-5a+3<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：整式加减的应用</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 用字母表示数：一个长方形的长为2x，宽为x-1，周长是2[2x+(x-1)]=6x-2<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 实际问题：某同学买了x本笔记本，每本2元，y支笔，每支3元，共花费(2x+3y)元<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：整式加减的运算顺序是从左到右，有括号先算括号里的</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day5：整式加减的综合应用</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 化简求值：已知A=2x²+3x-1，B=x²-2x+3，求A-2B的值（先计算A-2B=2x²+3x-1-2x²+4x-6=7x-7，再代入x=1得0）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：化简求值时，先将式子化简，再代入数值计算</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6-7：整式加减的拓展应用</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 已知多项式x³+ax²+bx+6有一个因式x-1，求a+b的值（代入x=1得1+a+b+6=0，所以a+b=-7）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整式的规律探究：观察1+3=4=2²，1+3+5=9=3²，1+3+5+7=16=4²，...，用含n的式子表示规律（1+3+5+...+(2n-1)=n²）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：整式的规律探究需要观察、归纳、验证</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 绘制“整式的加减”思维导图，包含所有知识点<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理整式加减单元错题，按“概念错误”“符号错误”“运算顺序错误”分类<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成整式加减单元综合测试，限时90分钟<span class="duration">90分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">4. 总结整式加减的学习收获，为后续方程学习做准备<span class="duration">15分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 10月其他周内容省略 -->
+        </div>
+
+        <!-- 11月内容：一元一次方程 -->
+        <div id="november" class="month-content">
+            <div class="plan-desc">
+                <h3>11月学习重点说明</h3>
+                <ul>
+                    <li>核心模块：方程的概念、等式的性质、一元一次方程的解法、方程的应用</li>
+                    <li>重点难点：移项时符号的处理、去分母时最小公倍数的确定、方程应用题的列式</li>
+                    <li>能力目标：理解一元一次方程的概念，掌握解一元一次方程的方法，培养方程思想</li>
+                    <li>衔接要点：从算术方法过渡到方程方法，为后续方程组学习奠定基础</li>
+                </ul>
+            </div>
+
+
+            <div class="week-plan">
+                <div class="week-title">第1周：方程的概念与等式的性质</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">理解方程的概念，能够识别一元一次方程<button class="star-btn">★</button></div>
+                                <div class="task-item">掌握等式的基本性质，能够利用等式性质解方程<button class="star-btn">★</button></div>
+                                <div class="task-item">培养方程思想，学会用方程表示实际问题中的等量关系<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：方程的概念</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 方程定义：含有未知数的等式<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 一元一次方程：只含有一个未知数，且未知数的次数是1的整式方程<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 方程的解：使方程左右两边相等的未知数的值<button class="star-btn">★</button></div>
+                                <div class="task-item">4. 练习：判断下列方程是否为一元一次方程：①3x+5=0；②2x²-3x=1；③x+y=2；④3/x=2<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：等式的性质</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 等式性质1：等式两边加（或减）同一个数（或式子），结果仍相等<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 等式性质2：等式两边乘同一个数，或除以同一个不为0的数，结果仍相等<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 练习：利用等式性质解方程：①x+3=5；②2x=6；③x/3=2；④3x-2=7<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：等式性质是解方程的理论基础，要注意等式性质2中除数不能为0</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day5：方程的概念与等式性质的应用</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 已知x=2是方程3x+a=8的解，求a的值（代入得6+a=8，a=2）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 用等式性质解方程：(x+2)/3=4（两边乘3得x+2=12，x=10）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：利用方程的解求未知数的值时，代入是常用方法</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6-7：方程的概念与等式性质的综合应用</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 若方程(2m-3)x² + (m-2)x = 5是一元一次方程，求m的值（2m-3=0且m-2≠0，m=3/2）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 利用等式性质解复杂方程：2(x-1)+3=5（两边减3得2(x-1)=2，两边除以2得x-1=1，x=2）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：综合应用时，要抓住概念的本质，注意题目中的隐含条件</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 绘制“方程的概念与等式性质”思维导图，包含概念、性质、应用<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，分析错误原因<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成方程的概念与等式性质的基础测试，检验学习效果<span class="duration">45分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="week-plan">
+                <div class="week-title collapsed">第2周：一元一次方程的解法（基础）</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握移项法则，能够正确进行移项解方程<button class="star-btn">★</button></div>
+                                <div class="task-item">掌握解一元一次方程的基本步骤，能够解简单的一元一次方程<button class="star-btn">★</button></div>
+                                <div class="task-item">培养运算能力，提高解方程的准确性<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：移项</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 移项定义：把方程中的某一项改变符号后，从方程的一边移到另一边<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 移项法则：移项要变号<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 练习：移项解方程：①3x+2=5x-1；②7-2x=3x+1<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：解一元一次方程的基本步骤</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 解一元一次方程的基本步骤：去分母、去括号、移项、合并同类项、系数化为1<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 练习：解方程：①2(x-3)+3=5；②3x+5=2x+1<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：移项是解方程的关键步骤，要注意移项时符号的变化</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day5：一元一次方程解法的应用</span><span class="duration">35分钟</span></div>
+                                <div class="task-item">1. 已知方程3x-2=4x+1的解为x=a，求a的值（解方程得x=-3，所以a=-3）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 练习：解方程：①4(x+1)=3(x-2)；②5x-3(2x-1)=1<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：解方程时，要按照步骤进行，注意每一步的运算</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6-7：一元一次方程解法的综合应用</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 解方程：2(x-1)-3(2x+5)=x-5（去括号得2x-2-6x-15=x-5，移项得2x-6x-x=-5+2+15，合并同类项得-5x=12，系数化为1得x=-12/5）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 已知关于x的方程2x+a=5的解与方程3x-1=7的解相同，求a的值（解方程3x-1=7得x=8/3，代入2x+a=5得16/3+a=5，a=-1/3）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：综合应用时，要注意方程的解的概念，以及解方程的步骤</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 归纳移项法则与解一元一次方程的基本步骤<span class="duration">25分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，特别是移项符号错误的题目<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成一元一次方程解法的综合测试<span class="duration">45分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="week-plan">
+                <div class="week-title collapsed">第3周：一元一次方程的解法（进阶）</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握去分母法则，能够正确进行去分母解方程<button class="star-btn">★</button></div>
+                                <div class="task-item">掌握解一元一次方程的完整步骤，能够解复杂的一元一次方程<button class="star-btn">★</button></div>
+                                <div class="task-item">培养运算能力，提高解方程的速度和准确性<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：去分母</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 去分母法则：方程两边乘各分母的最小公倍数，消去分母<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 最小公倍数的确定：找出各分母的最小公倍数<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 练习：去分母解方程：①(x+1)/2=3；②(x-3)/3=(2x+1)/4<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：解复杂的一元一次方程</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 解一元一次方程的完整步骤：去分母、去括号、移项、合并同类项、系数化为1<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 练习：解方程：(2x-1)/3-(x+2)/4=1；②(x+1)/2-1=(2x-1)/3<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：去分母时，要注意将方程两边的每一项都乘以最小公倍数，包括常数项</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day5：一元一次方程解法的进阶应用</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 解方程：(3x-1)/2-(x+2)/3=1（去分母得3(3x-1)-2(x+2)=6，去括号得9x-3-2x-4=6，移项得9x-2x=6+3+4，合并同类项得7x=13，系数化为1得x=13/7）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 练习：解方程：(x+1)/3-(x-1)/2=1+2x/3<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：解方程时，要注意运算顺序，先去分母，再去括号，然后移项，合并同类项，最后系数化为1</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6-7：一元一次方程解法的综合应用</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 解方程：(2x-1)/5-(3x+2)/10=(x-1)/2（去分母得2(2x-1)-(3x+2)=5(x-1)，去括号得4x-2-3x-2=5x-5，移项得4x-3x-5x=-5+2+2，合并同类项得-4x=-1，系数化为1得x=1/4）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 已知关于x的方程(ax-3)/2=(x-2)/3的解为x=3，求a的值（代入x=3得(3a-3)/2=(3-2)/3，(3a-3)/2=1/3，3(3a-3)=2，9a-9=2，9a=11，a=11/9）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：综合应用时，要注意方程的解的概念，以及解方程的步骤</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 总结去分母法则与解复杂一元一次方程的完整步骤<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理本周错题，重点关注去分母错误的题目<span class="duration">25分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成一元一次方程解法的进阶测试<span class="duration">45分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="week-plan">
+                <div class="week-title collapsed">第4周：一元一次方程的应用与单元复习</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握列一元一次方程解应用题的基本步骤，能够解决实际问题<button class="star-btn">★</button></div>
+                                <div class="task-item">通过单元复习，构建一元一次方程的知识体系<button class="star-btn">★</button></div>
+                                <div class="task-item">培养应用意识，提高解决实际问题的能力<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：一元一次方程的应用</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 列一元一次方程解应用题的基本步骤：审、设、列、解、验、答<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 行程问题：路程=速度×时间<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 练习：甲、乙两人相距100米，甲每秒走3米，乙每秒走2米，两人同时出发相向而行，经过多少秒相遇？（设经过x秒相遇，3x+2x=100，5x=100，x=20）<button class="star-btn">★</button></div>
+                                
+                                <div class="task-item"><span class="level-basic">Day3-4：其他类型应用题</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 工程问题：工作量=工作效率×工作时间<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 利润问题：利润=售价-成本，利润率=利润/成本×100%<button class="star-btn">★</button></div>
+                                <div class="task-item">3. 练习：一项工程，甲单独做需要10天完成，乙单独做需要15天完成，两人合作需要多少天完成？（设两人合作需要x天完成，(1/10+1/15)x=1，(1/6)x=1，x=6）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：列方程解应用题时，要注意找出题目中的等量关系</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day5：一元一次方程的综合应用</span><span class="duration">40分钟</span></div>
+                                <div class="task-item">1. 甲、乙两人从同一地点出发，甲骑自行车，乙步行，甲的速度是乙的3倍，甲比乙早出发1小时，甲出发后经过多少小时追上乙？（设乙的速度为x，甲的速度为3x，设甲出发后经过y小时追上乙，3x×y=x×(y+1)，3y=y+1，2y=1，y=0.5）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：应用题的关键是找出等量关系，设适当的未知数</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6-7：一元一次方程的拓展应用</span><span class="duration">45分钟</span></div>
+                                <div class="task-item">1. 某商店在某一时间以每件60元的价格卖出两件衣服，其中一件盈利25%，另一件亏损25%，卖这两件衣服总的是盈利还是亏损，或是不盈不亏？（设盈利25%的衣服的成本为x，60-x=25%x，1.25x=60，x=48；设亏损25%的衣服的成本为y，y-60=25%y，1.25y=60，y=80；总成本48+80=128，总售价60+60=120，亏损8元）<button class="star-btn">★</button></div>
+                                <div class="task-item">2. 用白铁皮做罐头盒，每张铁皮可制盒身25个，或制盒底40个，一个盒身与两个盒底配成一套罐头盒，现有36张白铁皮，用多少张制盒身，多少张制盒底可以使盒身与盒底正好配套？（设用x张制盒身，36-x张制盒底，2×25x=40(36-x)，50x=1440-40x，90x=1440，x=16，36-16=20）<button class="star-btn">★</button></div>
+                                
+                                <div class="tips">Tips：应用题的拓展应用需要灵活运用方程思想，找出题目中的等量关系</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">1. 绘制“一元一次方程的应用”思维导图，包含各类应用题的类型、等量关系、解题步骤<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">2. 整理一元一次方程单元错题，按“概念错误”“运算错误”“应用题错误”分类<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">3. 完成一元一次方程单元综合测试，限时90分钟<span class="duration">90分钟</span><button class="star-btn">★</button></div>
+                                <div class="task-item">4. 总结一元一次方程的学习收获，为后续方程组学习做准备<span class="duration">15分钟</span><button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day3：视频讲解</span><span class="duration">30分钟</span> 录制自己讲解一道轴对称题，检查口语表述。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day4：名校思维拓展</span><span class="duration">45分钟</span> 练习一道名校综合题，强化“对称+全等+最短”三者联动。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">整理“轴对称+等腰三角形”知识地图，突出思维流。</div>
+                                <div class="task-item">写出“下一阶段预习计划”，规划如何过渡到12月整式。</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12月内容：几何图形 -->
+        <div id="december" class="month-content">
+            <div class="plan-desc">
+                <h3>12月学习重点说明</h3>
+                <ul>
+                    <li>核心模块：几何图形、点、线、面、体、立体图形与平面图形、展开图</li>
+                    <li>重点难点：立体图形与平面图形的区分、展开图的识别、空间想象能力的培养</li>
+                    <li>能力目标：认识几何图形，理解点、线、面的关系，培养空间观念</li>
+                    <li>衔接要点：从小学阶段的图形认识过渡到初中阶段的几何系统学习</li>
+                </ul>
+            </div>
+
+
+            <div id="dec-week1" class="week-plan">
+                <div class="week-title">第1周：几何图形的认识</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">认识几何图形，理解点、线、面、体的基本概念<button class="star-btn">★</button></div>
+                                <div class="task-item">能区分立体图形与平面图形<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：认识几何图形</span><span class="duration">30分钟</span> 观察生活中的物体，识别常见的几何图形。</div>
+                                <div class="task-item"><span class="level-basic">Day3：点、线、面、体的关系</span><span class="duration">35分钟</span> 理解“点动成线，线动成面，面动成体”的概念。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day4：图形分类</span><span class="duration">30分钟</span> 对收集的几何图形进行分类，并说明分类依据。</div>
+                                <div class="task-item"><span class="level-improve">Day5：数学日记</span><span class="duration">20分钟</span> 记录生活中发现的几何图形及其应用。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6：图形创意</span><span class="duration">40分钟</span> 用基本几何图形创作一幅创意画。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">整理本周认识的几何图形，制作一个图形卡片集。</div>
+                                <div class="task-item">回顾点、线、面、体的关系，并用自己的话描述。</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="dec-week2" class="week-plan">
+                <div class="week-title collapsed">第2周：立体图形与平面图形</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">认识常见的立体图形（棱柱、棱锥、圆柱、圆锥、球）<button class="star-btn">★</button></div>
+                                <div class="task-item">了解立体图形的平面展开图<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1：立体图形的认识</span><span class="duration">35分钟</span> 识别棱柱、棱锥、圆柱、圆锥、球等立体图形，了解它们的特征。</div>
+                                <div class="task-item"><span class="level-basic">Day2：平面展开图</span><span class="duration">35分钟</span> 观察常见立体图形的平面展开图。</div>
+                                <div class="task-item"><span class="level-basic">Day3：动手操作</span><span class="duration">40分钟</span> 用硬纸板制作简单立体图形的模型。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day4：展开图识别</span><span class="duration">30分钟</span> 判断给定的平面图形是否为某立体图形的展开图。</div>
+                                <div class="task-item"><span class="level-improve">Day5：多面体棱数、面数、顶点数关系</span><span class="duration">30分钟</span> 探索欧拉公式的初步应用。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6：复杂展开图</span><span class="duration">45分钟</span> 研究复杂立体图形的展开图，培养空间想象能力。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">总结常见立体图形的特征及其展开图。</div>
+                                <div class="task-item">用制作的立体图形模型，向家人介绍立体图形的特点。</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="dec-week3" class="week-plan">
+                <div class="week-title collapsed">第3周：平面图形的认识</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">认识常见的平面图形（三角形、四边形、多边形、圆）<button class="star-btn">★</button></div>
+                                <div class="task-item">了解平面图形的基本性质<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1：三角形与四边形</span><span class="duration">35分钟</span> 认识三角形、四边形的基本类型及其特征。</div>
+                                <div class="task-item"><span class="level-basic">Day2：多边形</span><span class="duration">35分钟</span> 了解多边形的概念，认识正多边形。</div>
+                                <div class="task-item"><span class="level-basic">Day3：圆</span><span class="duration">35分钟</span> 认识圆的基本元素（圆心、半径、直径、弧、弦）。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day4：图形性质</span><span class="duration">30分钟</span> 探索三角形、四边形的内角和。</div>
+                                <div class="task-item"><span class="level-improve">Day5：图案设计</span><span class="duration">30分钟</span> 用平面图形设计简单的图案。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6：多边形内角和</span><span class="duration">45分钟</span> 推导多边形内角和公式，并应用公式解决问题。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">整理常见平面图形的特征及其性质。</div>
+                                <div class="task-item">完成一幅由平面图形组成的创意图案，并说明使用的图形种类。</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="dec-week4" class="week-plan">
+                <div class="week-title collapsed">第4周：几何图形的综合应用与复习</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">综合运用几何图形的知识解决简单问题<button class="star-btn">★</button></div>
+                                <div class="task-item">复习巩固本月所学内容，形成知识体系<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：知识梳理</span><span class="duration">35分钟</span> 整理本月所学的几何图形知识，形成思维导图。</div>
+                                <div class="task-item"><span class="level-basic">Day3：综合练习</span><span class="duration">40分钟</span> 完成几何图形的综合练习题。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day4：问题解决</span><span class="duration">30分钟</span> 解决与几何图形相关的实际问题。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day5：空间想象训练</span><span class="duration">45分钟</span> 进行立体图形的观察与想象训练，提升空间观念。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">总结本月学习的几何图形知识，找出自己的薄弱环节。</div>
+                                <div class="task-item">制定寒假几何图形的复习计划。</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1月内容：相交线与平行线 -->
+        <div id="january" class="month-content">
+            <div class="plan-desc">
+                <h3>1月学习重点说明</h3>
+                <ul>
+                    <li>核心模块：相交线、对顶角、邻补角、垂线、平行线、平行线的判定与性质</li>
+                    <li>重点难点：平行线判定与性质的区别、推理过程的规范书写、辅助线的添加</li>
+                    <li>能力目标：理解相交线与平行线的概念，掌握平行线的判定与性质，培养推理能力</li>
+                    <li>衔接要点：从几何图形初步过渡到几何推理，为后续几何证明奠定基础</li>
+                </ul>
+            </div>
+
+
+            <div id="jan-week1" class="week-plan">
+                <div class="week-title">第1周：相交线的认识</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">理解相交线的概念，掌握对顶角、邻补角的性质<button class="star-btn">★</button></div>
+                                <div class="task-item">掌握垂线的概念与性质，会画垂线<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1：相交线与对顶角</span><span class="duration">35分钟</span> 认识相交线，理解对顶角的性质并进行计算。</div>
+                                <div class="task-item"><span class="level-basic">Day2：邻补角</span><span class="duration">35分钟</span> 认识邻补角，理解邻补角的性质并进行计算。</div>
+                                <div class="task-item"><span class="level-basic">Day3-4：垂线</span><span class="duration">40分钟</span> 掌握垂线的概念与性质，会用三角尺或量角器画垂线。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day5：点到直线的距离</span><span class="duration">30分钟</span> 理解点到直线的距离概念，会测量点到直线的距离。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6：相交线的综合应用</span><span class="duration">45分钟</span> 解决与相交线相关的复杂计算问题，培养逻辑思维能力。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">总结相交线、对顶角、邻补角、垂线的概念与性质。</div>
+                                <div class="task-item">完成相交线的综合练习题，巩固所学知识。</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="jan-week2" class="week-plan">
+                <div class="week-title collapsed">第2周：平行线的认识与判定</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">理解平行线的概念，掌握平行线的判定方法<button class="star-btn">★</button></div>
+                                <div class="task-item">会用平行线的判定方法进行简单的推理<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1：平行线的概念</span><span class="duration">35分钟</span> 认识平行线，理解平行线的基本性质。</div>
+                                <div class="task-item"><span class="level-basic">Day2：同位角、内错角、同旁内角</span><span class="duration">35分钟</span> 认识同位角、内错角、同旁内角，会识别这些角。</div>
+                                <div class="task-item"><span class="level-basic">Day3-4：平行线的判定</span><span class="duration">40分钟</span> 掌握平行线的三种判定方法，会用这些方法判定两直线平行。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day5：平行线判定的综合应用</span><span class="duration">30分钟</span> 综合运用平行线的判定方法进行推理。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6：复杂图形中的平行线判定</span><span class="duration">45分钟</span> 在复杂图形中识别同位角、内错角、同旁内角，并用平行线的判定方法进行推理。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">总结平行线的概念与判定方法。</div>
+                                <div class="task-item">完成平行线判定的综合练习题，巩固所学知识。</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="jan-week3" class="week-plan">
+                <div class="week-title collapsed">第3周：平行线的性质与综合应用</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">掌握平行线的性质，会用平行线的性质进行计算和推理<button class="star-btn">★</button></div>
+                                <div class="task-item">理解平行线的判定与性质的区别与联系<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：平行线的性质</span><span class="duration">40分钟</span> 掌握平行线的三个性质，会用这些性质进行计算。</div>
+                                <div class="task-item"><span class="level-basic">Day3：平行线的判定与性质的区别</span><span class="duration">35分钟</span> 理解平行线的判定与性质的区别，能正确运用它们进行推理。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day4：平行线的综合应用</span><span class="duration">35分钟</span> 综合运用平行线的判定与性质解决问题。</div>
+                                <div class="task-item"><span class="level-improve">Day5：辅助线的添加</span><span class="duration">30分钟</span> 学习在平行线问题中添加辅助线的方法。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day6：复杂平行线问题</span><span class="duration">45分钟</span> 解决需要添加辅助线的复杂平行线问题，培养推理能力。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">总结平行线的性质，以及平行线的判定与性质的区别。</div>
+                                <div class="task-item">完成平行线性质的综合练习题，巩固所学知识。</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="jan-week4" class="week-plan">
+                <div class="week-title collapsed">第4周：相交线与平行线的复习与检测</div>
+                <div class="week-content">
+                    <table class="table">
+                        <tr>
+                            <th>学习维度</th>
+                            <th>具体内容</th>
+                        </tr>
+                        <tr>
+                            <td>核心目标</td>
+                            <td>
+                                <div class="task-item">综合复习相交线与平行线的知识，形成知识体系<button class="star-btn">★</button></div>
+                                <div class="task-item">掌握几何推理的规范书写，提高推理能力<button class="star-btn">★</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>基础层（必学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-basic">Day1-2：知识梳理</span><span class="duration">40分钟</span> 整理相交线与平行线的知识，形成思维导图。</div>
+                                <div class="task-item"><span class="level-basic">Day3：推理书写训练</span><span class="duration">45分钟</span> 练习几何推理的规范书写。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>提升层（选学）</td>
+                            <td>
+                                <div class="task-item"><span class="level-improve">Day4：综合练习</span><span class="duration">35分钟</span> 完成相交线与平行线的综合练习题。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拓展层（名校导向）</td>
+                            <td>
+                                <div class="task-item"><span class="level-expand">Day5：名校题训练</span><span class="duration">45分钟</span> 练习名校试题，提高解决复杂问题的能力。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>周末总结</td>
+                            <td>
+                                <div class="task-item">总结本月学习的相交线与平行线知识，找出自己的薄弱环节。</div>
+                                <div class="task-item">制定寒假几何复习计划，为后续学习做准备。</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3月内容：函数与一次函数 -->
+       <div id="march" class="month-content">
+    <div class="plan-desc">
+        <h3>3月学习重点说明</h3>
+        <ul>
+            <li>核心模块：平方根、算术平方根、立方根、无理数、实数、实数的运算</li>
+            <li>重点难点：平方根与算术平方根的区别、无理数的理解、实数运算的准确性</li>
+            <li>能力目标：理解实数的概念，掌握实数的运算，培养数感</li>
+            <li>衔接要点：从有理数过渡到实数，建立完整的数系概念</li>
+        </ul>
+    </div>
+    <div id="march-week1" class="week-plan">
+        <div class="week-title">第1周：平方根与算术平方根</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">理解平方根与算术平方根的定义及符号表示<button class="star-btn">★</button></div>
+                        <div class="task-item">区分平方根（±√a）与算术平方根（√a）的取值范围<button class="star-btn">★</button></div>
+                        <div class="task-item">掌握非负数的平方根求解方法<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：概念认知</span><span class="duration">35分钟</span> 阅读教材定义，明确“一个正数有两个平方根，0的平方根是0，负数没有平方根”，完成基础填空（如√16=___，±√25=___）。</div>
+                        <div class="task-item"><span class="level-basic">Day3：取值辨析</span><span class="duration">30分钟</span> 对比√9与±√9的区别，标注算术平方根的非负性特征。</div>
+                        <div class="task-item"><span class="level-basic">Day4：简单计算</span><span class="duration">30分钟</span> 计算√49、√0.09、±√64等基础题型，验证结果的合理性。</div>
+                        <div class="tips">Tips：用“平方逆运算”辅助理解平方根，如“因为4²=16，所以√16=4”，强化正向/逆向思维。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day5：含字母辨析</span><span class="duration">35分钟</span> 分析√a²与(√a)²的区别（注意a的取值范围），举例说明不同场景下的结果。</div>
+                        <div class="task-item"><span class="level-improve">Day6：实际应用</span><span class="duration">40分钟</span> 用正方形面积求边长（如面积为81的正方形，边长=√81=9），练习“面积→边长”的转化。</div>
+                        <div class="tips">Tips：遇到含字母的平方根问题，先标注“被开方数≥0”的前提，再分情况讨论。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day7：综合辨析题</span><span class="duration">40分钟</span> 解析“已知√(x-2) + √(2-x) 有意义，求x的值”类题目，结合被开方数非负性推导。</div>
+                        <div class="task-item"><span class="level-expand">日常：数感训练</span><span class="duration">30分钟</span> 估算√10、√17等无理数的大致范围（如3<√10<4），培养数感。</div>
+                        <div class="tips">Tips：名校常考“平方根有意义的条件+取值范围”组合题，重点关注被开方数的非负性。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">建立“平方根/算术平方根”对比思维导图，标注定义、符号、取值范围、举例。<span class="duration">25分钟</span></div>
+                        <div class="task-item">完成教材课后题1-8，标注错题中“符号混淆”“取值范围忽略”等问题。<span class="duration">35分钟</span></div>
+                        <div class="task-item">错题整理：记录“把算术平方根当成平方根”的错误案例，注明纠正方法。<span class="duration">20分钟</span></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="march-week2" class="week-plan">
+        <div class="week-title collapsed">第2周：立方根与无理数</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握立方根的定义及计算方法，理解立方根与平方根的区别<button class="star-btn">★</button></div>
+                        <div class="task-item">识别无理数，区分有理数与无理数的本质特征<button class="star-btn">★</button></div>
+                        <div class="task-item">通过实例感知无理数的存在（如√2、π）<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：立方根计算</span><span class="duration">40分钟</span> 计算³√27、³√-64、³√0.125等，总结“正数、负数、0的立方根特征”。</div>
+                        <div class="task-item"><span class="level-basic">Day3：平方根vs立方根</span><span class="duration">30分钟</span> 列表对比两者的符号、取值范围、运算性质（如“负数没有平方根，但有立方根”）。</div>
+                        <div class="task-item"><span class="level-basic">Day4：无理数识别</span><span class="duration">30分钟</span> 从数集（3.14、π、√3、1/3、0.101001000…）中筛选无理数，标注判断依据。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day5：立方根应用</span><span class="duration">35分钟</span> 用立方体体积求棱长（如体积为125的立方体，棱长=³√125=5），练习“体积→棱长”转化。</div>
+                        <div class="task-item"><span class="level-improve">Day6：无理数估算</span><span class="duration">35分钟</span> 估算³√50、√11的大致范围，结合数轴标注位置。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day7：参数求解</span><span class="duration">40分钟</span> 已知³√(x-1)=2，求x的值；已知√x + ³√y=0，推导x与y的关系。</div>
+                        <div class="task-item"><span class="level-expand">名校训练题</span><span class="duration">40分钟</span> 解决“已知a是√10的整数部分，b是小数部分，求a-b的值”类题目。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">绘制“平方根/立方根/无理数”知识表，记录定义、运算、举例、区别。</div>
+                        <div class="task-item">完成课后立方根专题题，整理“无理数判断错误”的典型案例。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="march-week3" class="week-plan">
+        <div class="week-title collapsed">第3周：实数的概念与运算</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">理解实数的概念，明确实数与数轴的一一对应关系<button class="star-btn">★</button></div>
+                        <div class="task-item">掌握实数的加减乘除、乘方开方运算规则<button class="star-btn">★</button></div>
+                        <div class="task-item">能准确进行含无理数的简单运算（如√2+2√2、3√5×√5）<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：实数运算</span><span class="duration">40分钟</span> 计算√8+√2、√18-√2、√3×√6、√27÷√3等，总结“同类二次根式合并”规则。</div>
+                        <div class="task-item"><span class="level-basic">Day3：数轴与实数</span><span class="duration">35分钟</span> 在数轴上标注√2、π、-√3的大致位置，验证“实数与数轴一一对应”。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：混合运算</span><span class="duration">35分钟</span> 计算(√3+2)²、(√5-√2)(√5+√2)，运用乘法公式简化运算。</div>
+                        <div class="task-item"><span class="level-improve">Day5-6：运算验证</span><span class="duration">40分钟</span> 对比“有理数运算”与“实数运算”的规则，分析异同点（如都满足交换律、结合律）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day7：综合题</span><span class="duration">45分钟</span> 题目：已知x=√3+1，求x²-2x+1的值（先化简再代入，简化运算）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">制作“实数运算三步法”卡片：化简→合并→验证，标注易错点（如√8未化简直接运算）。</div>
+                        <div class="task-item">整理错题，将“运算顺序错误”“根式未化简”的题目分类标注。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="march-week4" class="week-plan">
+        <div class="week-title collapsed">第4周：实数单元复习与检测</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">梳理实数全章知识，建立“平方根→立方根→无理数→实数运算”的完整体系<button class="star-btn">★</button></div>
+                        <div class="task-item">通过综合检测，强化实数运算准确性与数感<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：章节复习</span><span class="duration">40分钟</span> 归纳实数的定义、分类、运算规则，绘制“数系拓展”图谱（有理数→实数）。</div>
+                        <div class="task-item"><span class="level-basic">Day3：限时训练</span><span class="duration">30分钟</span> 完成教辅“实数速算”20题，重点关注“根式化简”“符号判断”。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：综合试卷</span><span class="duration">40分钟</span> 做1套校级实数模拟题，重点分析“含字母平方根有意义”“无理数运算”的失分点。</div>
+                        <div class="task-item"><span class="level-improve">Day5：错题回顾</span><span class="duration">30分钟</span> 将实数错题按“概念混淆”“运算错误”“估算失误”分类，写出解题思路。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">名校练习</span><span class="duration">45分钟</span> 完成“实数运算+实际应用”组合题（如用实数运算解决正方形对角线长度问题），模拟讲解思路。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">编写实数复习提纲，标注“平方根与算术平方根区别”“无理数判断”“实数运算”三大核心考点。</div>
+                        <div class="task-item">与同伴互相出题（含1道平方根、1道立方根、1道实数运算），验证对方解题准确性。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+
+        <!-- 4月内容：统计与数据分析 -->
+        <div id="april" class="month-content">
+    <div class="plan-desc">
+        <h3>4月学习重点说明</h3>
+        <ul>
+            <li>核心模块：平面直角坐标系、点的坐标、坐标的表示、坐标的应用</li>
+            <li>重点难点：坐标的表示方法、坐标与图形的关系、数形结合思想的应用</li>
+            <li>能力目标：理解平面直角坐标系的概念，掌握点的坐标表示，培养数形结合思想</li>
+            <li>衔接要点：从数过渡到形，为后续函数学习奠定基础</li>
+        </ul>
+    </div>
+    <div id="april-week1" class="week-plan">
+        <div class="week-title">第1周：平面直角坐标系基础认知</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握平面直角坐标系的构成要素（横轴、纵轴、原点）<button class="star-btn">★</button></div>
+                        <div class="task-item">学会在坐标系中准确标注点的位置并读写坐标<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：坐标系构建</span><span class="duration">30分钟</span> 绘制平面直角坐标系，标注横轴、纵轴、原点及四个象限。</div>
+                        <div class="task-item"><span class="level-basic">Day2-3：坐标读写</span><span class="duration">35分钟</span> 写出坐标系中20个点的坐标，再根据坐标在坐标系中标注对应点。</div>
+                        <div class="task-item"><span class="level-basic">Day4：象限特征</span><span class="duration">30分钟</span> 总结各象限内点的横、纵坐标符号规律，完成象限判断练习题。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day5：特殊点分析</span><span class="duration">35分钟</span> 探究坐标轴上点（x轴、y轴）的坐标特征，对比不同位置特殊点的规律。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：坐标设计</span><span class="duration">40分钟</span> 设计一组有规律的点坐标（如等差数列、对称点），分析规律并书面说明。</div>
+                        <div class="task-item"><span class="level-expand">Day7：误差分析</span><span class="duration">30分钟</span> 分析坐标标注中常见的位置偏差原因，提出精准标注的方法。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">制作“平面直角坐标系”知识流程图，梳理坐标系构成、坐标读写、象限特征核心要点。</div>
+                        <div class="task-item">整理本周错题，举例说明因象限判断错误、坐标读写颠倒导致的问题及修正方法。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="april-week2" class="week-plan">
+        <div class="week-title collapsed">第2周：坐标与图形的对应关系</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握简单几何图形（线段、三角形）的坐标表示方法<button class="star-btn">★</button></div>
+                        <div class="task-item">理解坐标变化与图形位置变化的关联<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：线段坐标</span><span class="duration">35分钟</span> 写出给定线段两端点的坐标，计算水平/垂直线段的长度。</div>
+                        <div class="task-item"><span class="level-basic">Day3：三角形坐标</span><span class="duration">30分钟</span> 根据三角形三个顶点坐标在坐标系中画出图形，分析顶点坐标特征。</div>
+                        <div class="task-item"><span class="level-basic">Day4：图形平移</span><span class="duration">30分钟</span> 探究图形沿x轴/y轴平移后，顶点坐标的变化规律。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day5：坐标敏感性</span><span class="duration">35分钟</span> 改变图形顶点的一个坐标值，观察图形形状/位置的变化，总结规律。</div>
+                        <div class="task-item"><span class="level-improve">Day6：方法选择</span><span class="duration">35分钟</span> 对比“先画图形再写坐标”和“先写坐标再画图形”两种方法的优劣。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day7：坐标评价</span><span class="duration">40分钟</span> 分析实际问题（如地图定位）中坐标表示的合理性，提出优化建议。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">记录图形与坐标对应关系的典型题型，标注“坐标→图形”“图形→坐标”的解题思路。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="april-week3" class="week-plan">
+        <div class="week-title collapsed">第3周：坐标的实际应用与数形结合</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握坐标在实际场景（如地图、棋盘）中的应用方法<button class="star-btn">★</button></div>
+                        <div class="task-item">初步理解数形结合思想，用坐标解决简单几何问题<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：地图坐标</span><span class="duration">35分钟</span> 用平面直角坐标系标注校园地图中主要建筑的坐标，描述位置关系。</div>
+                        <div class="task-item"><span class="level-basic">Day2：坐标计算</span><span class="duration">35分钟</span> 比较两点间水平/垂直距离的坐标计算方法，总结计算公式。</div>
+                        <div class="task-item"><span class="level-basic">Day3：数形初步</span><span class="duration">30分钟</span> 通过坐标判断两点是否在同一条水平/垂直线上，验证几何结论。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：复合应用</span><span class="duration">35分钟</span> 结合地图坐标与图形平移，设计从一个地点到另一个地点的路径，用坐标描述路径。</div>
+                        <div class="task-item"><span class="level-improve">Day5：思想描述</span><span class="duration">35分钟</span> 用语言描述“数（坐标）”与“形（图形）”的对应关系，举例说明数形结合的优势。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：坐标实验</span><span class="duration">40分钟</span> 设计小实验（如棋子移动），记录棋子位置的坐标变化，对比实际移动与坐标计算结果。</div>
+                        <div class="task-item"><span class="level-expand">Day7：实际分析</span><span class="duration">35分钟</span> 分析某城市公交线路站点的坐标分布，撰写坐标应用的简短分析报告。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">归纳坐标应用的解题口诀（如“横找差、纵找差，距离计算靠坐标”），附典型例题。</div>
+                        <div class="task-item">制作数形结合思维卡片，标注“坐标问题→几何图形”“几何问题→坐标计算”的转化方法。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="april-week4" class="week-plan">
+        <div class="week-title collapsed">第4周：平面直角坐标系复习与能力迁移</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">串联坐标系、坐标表示、坐标应用的知识链条<button class="star-btn">★</button></div>
+                        <div class="task-item">能运用数形结合思想解决简单综合问题，为函数学习铺垫<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：复习笔记</span><span class="duration">30分钟</span> 整理平面直角坐标系核心知识点，梳理“概念→表示→应用”的逻辑链。</div>
+                        <div class="task-item"><span class="level-basic">Day2：小测</span><span class="duration">40分钟</span> 完成10道综合练习题，涵盖坐标读写、图形坐标、实际应用三类题型。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day3：综合应用</span><span class="duration">35分钟</span> 结合坐标系知识制作“生活中的坐标”主题海报，展示坐标的实际应用场景。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day4：迁移训练</span><span class="duration">40分钟</span> 分析一道结合坐标与简单函数雏形的题目，写出坐标与变量关系的分析说明。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">完成“坐标应用”专题总结，结合具体例题说明数形结合思想的应用方法。</div>
+                        <div class="task-item">整理错题，标注错误类型（概念混淆、坐标读写错误、应用思路偏差）及修正方法。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        </div>
+
+        <!-- 5月内容：二次根式与代数练习 -->
+        <div id="may" class="month-content">
+    <div class="plan-desc">
+        <h3>5月学习重点说明</h3>
+        <ul>
+            <li>核心模块：二元一次方程、二元一次方程组、代入消元法、加减消元法、方程组的应用</li>
+            <li>重点难点：消元方法的选择、运算的准确性、方程组应用题的列式</li>
+            <li>能力目标：理解二元一次方程组的概念，掌握解二元一次方程组的方法，培养方程思想</li>
+            <li>衔接要点：从一元一次方程过渡到二元一次方程组，提高解决问题的能力</li>
+        </ul>
+    </div>
+    <div id="may-week1" class="week-plan">
+        <div class="week-title">第1周：二元一次方程组的概念与基础</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">理解二元一次方程（组）的定义及解的含义<button class="star-btn">★</button></div>
+                        <div class="task-item">能判断一组数是否为方程组的解<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：概念认知</span><span class="duration">35分钟</span> 区分二元一次方程与一元一次方程，判断如2x+y=5、x²+y=3是否为二元一次方程。</div>
+                        <div class="task-item"><span class="level-basic">Day3：解的验证</span><span class="duration">30分钟</span> 验证(1,3)、(2,2)是否为方程组$\begin{cases}x+y=4\\2x-y=2\end{cases}$的解。</div>
+                        <div class="task-item"><span class="level-basic">Day4：列简单方程组</span><span class="duration">30分钟</span> 根据“两数和为8，差为2”列出二元一次方程组。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day5：解的个数分析</span><span class="duration">35分钟</span> 探究二元一次方程的无数个解的规律，举例说明解的取值范围。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：应用题列式</span><span class="duration">40分钟</span> 解答“已知长方形周长20cm，长比宽多2cm，列方程组表示长和宽”。</div>
+                        <div class="task-item"><span class="level-expand">Day7：创新题</span><span class="duration">40分钟</span> 探究含参数的二元一次方程ax+3y=5有无数解时a的取值。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">制作“概念卡片”，写出二元一次方程（组）定义、解的特征、列式关键。</div>
+                        <div class="task-item">完成2道拓展题并写下解题思路，重点标注“设未知数→找等量关系”步骤。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="may-week2" class="week-plan">
+        <div class="week-title collapsed">第2周：代入消元法解方程组</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握代入消元法的步骤，能熟练解系数为1/-1的二元一次方程组<button class="star-btn">★</button></div>
+                        <div class="task-item">理解消元思想，将二元问题转化为一元问题<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：基本步骤</span><span class="duration">30分钟</span> 学习代入消元法“用一个未知数表示另一个→代入→解一元方程→回代”流程，解$\begin{cases}y=x+1\\x+y=5\end{cases}$。</div>
+                        <div class="task-item"><span class="level-basic">Day2：系数化简</span><span class="duration">30分钟</span> 解$\begin{cases}2x+y=7\\x=2y\end{cases}$，先整理再代入。</div>
+                        <div class="task-item"><span class="level-basic">Day3：易错点练习</span><span class="duration">35分钟</span> 重点练习符号处理，如解$\begin{cases}y=2x-3\\3x+2y=8\end{cases}$时的代入符号。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：技巧优化</span><span class="duration">35分钟</span> 探索“优先消系数简单的未知数”策略，对比不同代入顺序的计算量。</div>
+                        <div class="task-item"><span class="level-improve">Day5：错题回顾</span><span class="duration">30分钟</span> 分析代入时漏乘、符号错误等问题，写出补救策略。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：综合计算</span><span class="duration">40分钟</span> 解复杂系数方程组$\begin{cases}3(x-1)=y+5\\5(y-1)=3(x+5)\end{cases}$，先整理再代入。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">整理代入消元法步骤口诀：“表一换一解一回”，写出中长期复习计划（每日2道基础题）。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="may-week3" class="week-plan">
+        <div class="week-title collapsed">第3周：加减消元法与综合应用</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握加减消元法的适用条件与步骤<button class="star-btn">★</button></div>
+                        <div class="task-item">能根据方程组特征选择代入/加减消元法，解决实际应用题</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：加减消元基础</span><span class="duration">35分钟</span> 练习$\begin{cases}x+y=7\\x-y=3\end{cases}$（相加消y）、$\begin{cases}2x+3y=11\\2x-y=5\end{cases}$（相减消x）。</div>
+                        <div class="task-item"><span class="level-basic">Day2：系数化相同</span><span class="duration">35分钟</span> 用最小公倍数化系数，解$\begin{cases}3x+2y=14\\x-y=3\end{cases}$（给第二个方程×2后相加）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day3：消元法选择</span><span class="duration">40分钟</span> 对比同一方程组用代入/加减消元的优劣，如$\begin{cases}2x+5y=13\\3x-5y=7\end{cases}$优先加减，$\begin{cases}y=3x-2\\4x+y=5\end{cases}$优先代入。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day4：应用题综合</span><span class="duration">45分钟</span> 设计“购买文具：2支笔+3本本子=18元，3支笔+2本本子=17元”的题目，列方程组并求解。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">总结消元法“三步走”：判特征→选方法→验结果。</div>
+                        <div class="task-item">检索网课或课外资料，补充“含小数/分数系数的方程组解法”难点。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="may-week4" class="week-plan">
+        <div class="week-title collapsed">第4周：复习与综合应用</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">回顾二元一次方程组全章知识，熟练选择消元方法解题<button class="star-btn">★</button></div>
+                        <div class="task-item">完成综合卷并进行错题分析，提升应用题列式能力<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：章节复习</span><span class="duration">30分钟</span> 归纳“概念→解的验证→代入消元→加减消元→应用题”全流程步骤。</div>
+                        <div class="task-item"><span class="level-basic">Day2：模拟测验</span><span class="duration">45分钟</span> 练习10道混合题（5道基础计算+5道简单应用）。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day3：能力拓展</span><span class="duration">35分钟</span> 研究方程组在行程问题（相遇/追及）中的应用，如“甲乙相距100km，相向而行2小时相遇，同向而行甲5小时追上乙，求速度”。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day4：名校题</span><span class="duration">45分钟</span> 练习名校真题：“某工厂用A、B两种原料生产甲、乙产品，已知生产1件甲需A3kg、B2kg，生产1件乙需A2kg、B3kg，现有A120kg、B100kg，列方程组求生产方案”。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">制作“二元一次方程组复习卡片”，记录消元方法选择技巧、应用题列式关键（找等量关系）。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        </div>
+
+        <!-- 6月内容：立体几何与空间思维 -->
+        <div id="june" class="month-content">
+    <div class="plan-desc">
+        <h3>6月学习重点说明</h3>
+        <ul>
+            <li>核心模块：不等式、不等式的性质、一元一次不等式、一元一次不等式组、不等式的应用</li>
+            <li>重点难点：不等式性质的应用、解不等式时不等号方向的改变、不等式组的解集</li>
+            <li>能力目标：理解不等式的概念，掌握解不等式的方法，培养不等式思想</li>
+            <li>衔接要点：从方程过渡到不等式，拓展解决问题的思路</li>
+        </ul>
+    </div>
+    <div id="june-week1" class="week-plan">
+        <div class="week-title">第1周：不等式的概念与基本性质</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">理解不等式的定义及不等号（＞、＜、≥、≤）的含义<button class="star-btn">★</button></div>
+                        <div class="task-item">掌握不等式的3条基本性质，能判断不等号方向是否改变<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：不等式概念</span><span class="duration">30分钟</span> 用不等式表示实际情境（如“x的2倍大于5”“y与3的差不小于0”），标注不等号含义<button class="star-btn">★</button></div>
+                        <div class="task-item"><span class="level-basic">Day2：不等式性质1</span><span class="duration">30分钟</span> 验证“不等式两边加/减同一个数，不等号方向不变”，完成不等式性质相关习题（1-5题）<button class="star-btn">★</button></div>
+                        <div class="task-item"><span class="level-basic">Day3-4：不等式性质2-3</span><span class="duration">35分钟</span> 对比乘/除正数（方向不变）与乘/除负数（方向改变）的区别，举例：若a＞b，判断-2a与-2b的大小<button class="star-btn">★</button></div>
+                        <div class="tips">Tips：记忆口诀“加减不变，乘除看号，乘除负数要变号”，每日练习5道性质判断小题</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day5：性质综合应用</span><span class="duration">35分钟</span> 已知-3＜a＜2，化简|a+3|+|a-2|，结合不等式性质判断绝对值内符号<button class="star-btn">★</button></div>
+                        <div class="task-item"><span class="level-improve">Day6：易错题整理</span><span class="duration">30分钟</span> 收集“忘变号”“漏乘负数”类错题，标注错误原因<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day7：性质推理题</span><span class="duration">40分钟</span> 名校真题：若a＜b＜0，比较a²、ab、b²的大小（提示：分步乘a/b，注意符号）<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">1. 绘制“不等式性质”思维导图，区分加减/乘除/乘除负数的不同规则<span class="duration">25分钟</span><button class="star-btn">★</button></div>
+                        <div class="task-item">2. 完成10道性质判断题，限时15分钟，重点检查符号错误<span class="duration">15分钟</span><button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="june-week2" class="week-plan">
+        <div class="week-title collapsed">第2周：一元一次不等式的解法</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握一元一次不等式的解题步骤（去分母、去括号、移项、合并同类项、系数化为1）<button class="star-btn">★</button></div>
+                        <div class="task-item">能在数轴上表示不等式的解集，理解空心/实心点的含义<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：解不含分母的不等式</span><span class="duration">35分钟</span> 例：解2(x+1)＞3x-5，规范书写步骤，标注每一步依据（如“移项，依据不等式性质1”）<button class="star-btn">★</button></div>
+                        <div class="task-item"><span class="level-basic">Day2：解含分母的不等式</span><span class="duration">35分钟</span> 例：解(2x-1)/3 ≤ (x+2)/2，重点练习去分母时“每一项都乘最小公倍数”<button class="star-btn">★</button></div>
+                        <div class="task-item"><span class="level-basic">Day3：数轴表示解集</span><span class="duration">30分钟</span> 区分“＞/＜（空心点）”与“≥/≤（实心点）”，在数轴上表示x＞3、x≤-2等解集<button class="star-btn">★</button></div>
+                        <div class="tips">Tips：解不等式最后一步“系数化为1”时，先判断系数正负，再决定是否变号</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：含参数的简单不等式</span><span class="duration">35分钟</span> 已知ax＞b的解集是x＜b/a，判断a的符号并说明理由<button class="star-btn">★</button></div>
+                        <div class="task-item"><span class="level-improve">Day5：步骤纠错</span><span class="duration">30分钟</span> 找出错题“解3-2x＞5”的错误步骤（如移项忘变号、系数化为1忘变号）<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：复杂不等式求解</span><span class="duration">40分钟</span> 名校题：解(1+x)/2 - (2x-1)/3 ＞1，要求写出每一步依据，并在数轴上表示解集<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">1. 整理“解一元一次不等式五步口诀”：去分母、去括号、移项、合并、化1（变号看系数）<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                        <div class="task-item">2. 完成8道不同类型的不等式求解，每题均在数轴上表示解集<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="june-week3" class="week-plan">
+        <div class="week-title collapsed">第3周：一元一次不等式组的解法与应用</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">掌握一元一次不等式组的解法，能确定不等式组的解集（找公共部分）<button class="star-btn">★</button></div>
+                        <div class="task-item">学会用不等式组解决简单的实际问题（如取值范围、方案设计）<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1：解不等式组</span><span class="duration">35分钟</span> 例：解$\begin{cases} x+1＞2 \\ 2x-3＜5 \end{cases}$，分别解每个不等式，在数轴上找公共部分确定解集<button class="star-btn">★</button></div>
+                        <div class="task-item"><span class="level-basic">Day2：解集类型判断</span><span class="duration">30分钟</span> 识别“有解、无解、解集为全体实数”三种情况，例：判断$\begin{cases} x＞3 \\ x＜1 \end{cases}$的解集（无解）<button class="star-btn">★</button></div>
+                        <div class="task-item"><span class="level-basic">Day3：简单应用题</span><span class="duration">40分钟</span> 实际问题：“某班同学去春游，租船时每条船坐6人则余2人，每条船坐8人则空1条船，求船的数量范围”，列不等式组求解<button class="star-btn">★</button></div>
+                        <div class="tips">Tips：解不等式组口诀“同大取大，同小取小，大小小大中间找，大大小小找不到”</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：含参数的不等式组</span><span class="duration">35分钟</span> 已知$\begin{cases} x＞a \\ x＜2 \end{cases}$有解，求a的取值范围<button class="star-btn">★</button></div>
+                        <div class="task-item"><span class="level-improve">Day5：方案设计题</span><span class="duration">40分钟</span> “购买笔记本，单价3元的笔记本买x本，单价5元的买y本，总费用不超过50元，且x+y≥12，求可行的购买方案”<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：综合应用题</span><span class="duration">45分钟</span> 名校真题：“工厂生产零件，每天生产x个，若每天生产100个则提前2天完成，若每天生产80个则延迟1天完成，求零件总数的范围”，列不等式组求解<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">1. 制作“不等式组解集类型”对照表，包含数轴图示+口诀+例题<span class="duration">25分钟</span><button class="star-btn">★</button></div>
+                        <div class="task-item">2. 完成2道不等式组应用题，规范书写“设未知数→列不等式组→求解→检验实际意义”步骤<span class="duration">35分钟</span><button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="june-week4" class="week-plan">
+        <div class="week-title collapsed">第4周：不等式单元复习与综合检测</div>
+        <div class="week-content">
+            <table class="table">
+                <tr>
+                    <th>学习维度</th>
+                    <th>具体内容</th>
+                </tr>
+                <tr>
+                    <td>核心目标</td>
+                    <td>
+                        <div class="task-item">整合不等式全章知识，形成“性质→解法→应用”的完整逻辑链<button class="star-btn">★</button></div>
+                        <div class="task-item">完成综合检测，掌握不等式与方程的区别，提升实际应用能力<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基础层（必学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-basic">Day1-2：知识梳理</span><span class="duration">40分钟</span> 对比“解方程”与“解不等式”的异同点，整理易错点（如不等式乘除负数忘变号）<button class="star-btn">★</button></div>
+                        <div class="task-item"><span class="level-basic">Day3：基础检测</span><span class="duration">45分钟</span> 完成15道基础题（性质判断5道、解不等式/组5道、简单应用5道），限时40分钟<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>提升层（选学）</td>
+                    <td>
+                        <div class="task-item"><span class="level-improve">Day4：错题复盘</span><span class="duration">35分钟</span> 将本周错题按“概念错误、符号错误、计算错误、应用错误”分类，写出修正思路<button class="star-btn">★</button></div>
+                        <div class="task-item"><span class="level-improve">Day5：综合应用题</span><span class="duration">40分钟</span> 解决“租车/购物/生产”类综合应用题，重点训练“从实际情境抽象不等式”的能力<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>拓展层（名校导向）</td>
+                    <td>
+                        <div class="task-item"><span class="level-expand">Day6：名校模拟卷</span><span class="duration">45分钟</span> 完成一套名校不等式单元测试卷，包含选填、解答、应用三类题型，标注难题解题思路<button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>周末总结</td>
+                    <td>
+                        <div class="task-item">1. 绘制“不等式单元知识图谱”，涵盖概念、性质、解法、应用四大模块<span class="duration">30分钟</span><button class="star-btn">★</button></div>
+                        <div class="task-item">2. 总结“不等式思想”应用场景：取值范围、方案筛选、最值分析等<span class="duration">20分钟</span><button class="star-btn">★</button></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        </div>
+
+
+        </div>
+        </div>
+
+        <div id="footer" class="footer">
+            <p>7年级数学分层递进学习大纲 | 版权所有 © 2025 初中数学教学研究室</p>
+        </div>
+    </div>
+
+    <script>
+        const monthHighlights = {
+            september: {
+                focus: '理解有理数的概念，掌握有理数的加减乘除运算，培养数感和运算能力。',
+                knowledge: '正数和负数、有理数的分类、数轴、相反数和绝对值、有理数的加减乘除运算。',
+                difficulty: '有理数加减法的符号处理、乘除法的符号法则、绝对值的理解与应用。',
+                advice: '通过数轴理解有理数的意义，强化符号法则的训练，培养运算能力和数感。'
+            },
+            october: {
+                focus: '理解整式的概念，掌握整式的加减运算，培养代数思维。',
+                knowledge: '单项式、多项式、同类项、合并同类项、去括号与添括号、整式的加减。',
+                difficulty: '同类项的识别、去括号时符号的处理、整式加减的运算顺序。',
+                advice: '通过实际例子理解整式的意义，强化同类项合并的训练，培养代数思维。'
+            },
+            november: {
+                focus: '理解一元一次方程的概念，掌握解一元一次方程的方法，培养方程思想。',
+                knowledge: '方程的概念、等式的性质、一元一次方程的解法、方程的应用。',
+                difficulty: '移项时符号的处理、去分母时最小公倍数的确定、方程应用题的列式。',
+                advice: '通过实际情境理解方程的意义，强化解方程步骤的训练，培养方程思想。'
+            },
+            december: {
+                focus: '认识几何图形，理解点、线、面的关系，培养空间观念。',
+                knowledge: '几何图形、点、线、面、体、立体图形与平面图形、展开图。',
+                difficulty: '立体图形与平面图形的区分、展开图的识别、空间想象能力的培养。',
+                advice: '通过实物观察认识几何图形，动手操作理解展开图，培养空间观念。'
+            },
+            january: {
+                focus: '理解相交线与平行线的概念，掌握平行线的判定与性质，培养推理能力。',
+                knowledge: '相交线、对顶角、邻补角、垂线、平行线、平行线的判定与性质。',
+                difficulty: '平行线判定与性质的区别、推理过程的规范书写、辅助线的添加。',
+                advice: '通过图形理解相交线与平行线，强化推理过程的训练，培养推理能力。'
+            },
+            march: {
+                focus: '理解实数的概念，掌握实数的运算，培养数感。',
+                knowledge: '平方根、算术平方根、立方根、无理数、实数、实数的运算。',
+                difficulty: '平方根与算术平方根的区别、无理数的理解、实数运算的准确性。',
+                advice: '通过实际例子理解实数的意义，强化实数运算的训练，培养数感。'
+            },
+            april: {
+                focus: '理解平面直角坐标系的概念，掌握点的坐标表示，培养数形结合思想。',
+                knowledge: '平面直角坐标系、点的坐标、坐标的表示、坐标的应用。',
+                difficulty: '坐标的表示方法、坐标与图形的关系、数形结合思想的应用。',
+                advice: '通过图形理解平面直角坐标系，强化坐标表示的训练，培养数形结合思想。'
+            },
+            may: {
+                focus: '理解二元一次方程组的概念，掌握解二元一次方程组的方法，培养方程思想。',
+                knowledge: '二元一次方程、二元一次方程组、代入消元法、加减消元法、方程组的应用。',
+                difficulty: '消元方法的选择、运算的准确性、方程组应用题的列式。',
+                advice: '通过实际情境理解方程组的意义，强化解方程组步骤的训练，培养方程思想。'
+            },
+            june: {
+                focus: '理解不等式的概念，掌握解不等式的方法，培养不等式思想。',
+                knowledge: '不等式、不等式的性质、一元一次不等式、一元一次不等式组、不等式的应用。',
+                difficulty: '不等式性质的应用、解不等式时不等号方向的改变、不等式组的解集。',
+                advice: '通过实际情境理解不等式的意义，强化解不等式步骤的训练，培养不等式思想。'
+            }
+        };
+        const detailFocus = document.getElementById('detail-focus');
+        const detailKnowledge = document.getElementById('detail-knowledge');
+        const detailDifficulty = document.getElementById('detail-difficulty');
+        const detailAdvice = document.getElementById('detail-advice');
+        const detailMonthTitle = document.getElementById('detail-month-title');
+
+        function updateMonthDetailPanel(month) {
+            const info = monthHighlights[month];
+            if (!info) return;
+            detailFocus.textContent = `核心聚焦：${info.focus}`;
+            detailKnowledge.textContent = `重点：${info.knowledge}`;
+            detailDifficulty.textContent = `难点：${info.difficulty}`;
+            detailAdvice.textContent = `建议：${info.advice}`;
+            detailMonthTitle.textContent = thisMonthLabel(month);
+        }
+        function thisMonthLabel(month) {
+            const monthMap = {
+                september: '9月',
+                october: '10月',
+                november: '11月',
+                december: '12月',
+                january: '1月',
+                march: '3月',
+                april: '4月',
+                may: '5月',
+                june: '6月'
+            };
+            return monthMap[month] || '';
+        }
+
+        // 月份切换功能
+        document.querySelectorAll('.month-link').forEach(link => {
+            link.addEventListener('click', function() {
+                // 移除所有月份的active类
+                document.querySelectorAll('.month-link').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('.month-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // 给当前点击的月份添加active类
+                this.classList.add('active');
+                const month = this.getAttribute('data-month');
+                document.getElementById(month).classList.add('active');
+                updateMonthDetailPanel(month);
+            });
+        });
+
+        // 周计划折叠/展开功能
+        document.querySelectorAll('.week-title').forEach(title => {
+            title.addEventListener('click', function() {
+                this.classList.toggle('collapsed');
+            });
+        });
+
+        // 主题切换功能
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            this.innerHTML = isDark ? '☀️ 亮色模式' : '🌙 暗黑模式';
+        });
+
+        // 重点标记功能
+        document.querySelectorAll('.star-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+
+        updateMonthDetailPanel('september');
+    </script>
+    <script>
+        // 本地版本：已跳过登录验证
+    </script>
+</body>
+</html>

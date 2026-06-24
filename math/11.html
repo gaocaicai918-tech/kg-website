@@ -1,0 +1,4485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <script src="../auth-check.js"></script>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 缓存控制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+	<title>第十一年数学分层递进学习大纲</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="base.css" />
+	<script src="./../checkLogin.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="header-content">
+				<h1>第十一年数学分层递进学习大纲</h1>
+				<p>
+					按月份系统学习：极限与连续→导数基础→导数进阶→导数应用→极坐标与参数方程→积分基础→积分进阶
+				</p>
+			</div>
+			<div class="header-actions">
+				<a href="javascript:window.print()" class="print-btn">📄 打印学习大纲</a>
+				<button class="theme-toggle">🌙 暗黑模式</button>
+			</div>
+		</div>
+
+		<div class="layout">
+			<aside class="sidebar">
+				<div class="sidebar-title">章节目录</div>
+				<div class="month-nav">
+					<div class="month-link active" data-month="september">
+						9月：极限与连续
+					</div>
+					<div class="month-link" data-month="october">
+						10月：导数与变化率（基础）
+					</div>
+					<div class="month-link" data-month="november">
+						11月：导数与变化率（进阶） + 导数应用（基础）
+					</div>
+					<div class="month-link" data-month="december">
+						12月：导数应用（进阶）
+					</div>
+					<div class="month-link" data-month="january">
+						1月：圆锥曲线（椭圆、双曲线、抛物线）
+					</div>
+					<div class="month-link" data-month="march">
+						3月：极坐标与参数方程
+					</div>
+					<div class="month-link" data-month="april">4月：积分（基础）</div>
+					<div class="month-link" data-month="may">
+						5月：证明 + 全册综合复习（一）
+					</div>
+					<div class="month-link" data-month="june">
+						6月：全册综合复习（二） + 模拟测试
+					</div>
+				</div>
+			</aside>
+			<div class="content-area">
+				<div class="month-detail-panel" id="month-detail-panel">
+					<h3>月度知识图谱 • <span id="detail-month-title">9月</span></h3>
+					<p id="detail-focus">核心聚焦：</p>
+					<ul class="detail-list">
+						<li id="detail-knowledge">重点：</li>
+						<li id="detail-difficulty">难点：</li>
+						<li id="detail-advice">教学建议：</li>
+					</ul>
+				</div>
+
+				<!-- 9月内容 -->
+				<div id="september" class="month-content active">
+					<div class="plan-desc">
+						<h3>9月学习重点说明</h3>
+						<ul>
+							<li>
+								<strong>月度目标：</strong>理解极限的概念（数列极限、函数极限），掌握极限的运算法则，能运用极限思想解决简单问题，建立微积分入门思维
+							</li>
+							<li>
+								<strong>核心内容：</strong>极限的概念、数列极限、函数极限、极限的运算、函数连续性、无穷小量
+							</li>
+							<li>
+								<strong>学习建议：</strong>通过极限概念理解、极限运算练习、函数连续性分析等方式，系统掌握极限理论基础，注重极限思想的培养
+							</li>
+						</ul>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title">第1周：极限的概念 + 数列极限</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">理解极限的直观含义</div>
+										<div class="task-item">掌握数列极限的定义与简单判断</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：极限概念</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 阅读教材，理解极限的直观含义
+										</div>
+										<div class="task-item">2. 完成极限概念基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：数列极限</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习数列极限的定义</div>
+										<div class="task-item">2. 完成数列极限判断题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：综合练习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 完成数列极限基础题6道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：极限概念提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限概念综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：数列极限提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成数列极限综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限与数列综合题2道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：极限概念拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限概念创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：数列极限拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成数列极限创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限与数列创新题2道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"极限概念"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">第2周：函数极限</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">
+											区分自变量趋于定值与无穷大时的函数极限
+										</div>
+										<div class="task-item">掌握极限存在的条件</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：函数极限概念</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习自变量趋于定值时的函数极限
+										</div>
+										<div class="task-item">2. 完成函数极限基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：无穷大极限</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习自变量趋于无穷大时的函数极限
+										</div>
+										<div class="task-item">2. 完成无穷大极限基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：极限存在条件</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习极限存在的条件</div>
+										<div class="task-item">2. 完成极限存在条件判断题6道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：函数极限提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成函数极限综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：无穷大极限提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成无穷大极限综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成函数极限综合题2道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：函数极限拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成函数极限创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：无穷大极限拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成无穷大极限创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成函数极限创新题2道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"函数极限"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">第3周：极限的运算</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">熟练运用四则运算法则计算极限</div>
+										<div class="task-item">掌握复合函数极限法则</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：四则运算法则</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习极限四则运算法则</div>
+										<div class="task-item">2. 完成四则运算基础题8道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：复合函数极限</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习复合函数极限法则</div>
+										<div class="task-item">2. 完成复合函数极限基础题8道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：综合练习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限运算综合题8道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：四则运算提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成四则运算综合题4道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：复合函数极限提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成复合函数极限综合题4道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限运算综合题3道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：四则运算拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成四则运算创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：复合函数极限拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成复合函数极限创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限运算创新题2道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"极限运算"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第4周：极限思想应用 + 章节复盘
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">运用极限解决函数连续性问题</div>
+										<div class="task-item">识别无穷小量与无穷大量</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：函数连续性</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习函数连续性的定义</div>
+										<div class="task-item">2. 完成函数连续性基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：无穷小量与无穷大量</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习无穷小量与无穷大量的概念
+										</div>
+										<div class="task-item">2. 完成相关基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：综合应用</span><span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限思想应用题2道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：函数连续性提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成函数连续性综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：无穷小量与无穷大量提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成相关综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限思想综合应用题2道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：函数连续性拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成函数连续性创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：无穷小量与无穷大量拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成相关创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限思想创新应用题2道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"极限应用"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+										<div class="task-item">
+											4. 章节复盘：梳理极限章节核心知识点<span class="duration">30分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- 10月 -->
+				<div id="october" class="month-content">
+					<div class="plan-desc">
+						<h3>10月学习重点说明</h3>
+						<ul>
+							<li>
+								<strong>月度目标：</strong>理解导数的定义，掌握基本求导法则、复合函数与反函数求导方法，能进行多项式函数求导，理解导数的几何意义
+							</li>
+							<li>
+								<strong>核心内容：</strong>导数定义、基本求导法则、复合函数求导、反函数求导、多项式函数求导、导数的几何意义
+							</li>
+							<li>
+								<strong>学习建议：</strong>通过瞬时变化率理解导数概念，熟记基本初等函数导数公式，掌握链式法则进行复杂函数求导，强化多项式求导练习，理解导数与切线斜率的关系
+							</li>
+						</ul>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title">第1周：导数定义 + 基本求导法则</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">
+											通过瞬时变化率理解导数的直观含义
+										</div>
+										<div class="task-item">掌握导数的定义与简单判断方法</div>
+										<div class="task-item">熟记基本初等函数导数公式</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：导数定义基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习导数的定义，通过瞬时变化率理解导数
+										</div>
+										<div class="task-item">2. 完成导数定义基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：基本求导法则基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习基本求导法则，熟记基本初等函数导数公式
+										</div>
+										<div class="task-item">2. 完成基本求导法则基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：导数定义与基本法则综合</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成导数定义与基本法则综合题6道
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：导数定义提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数定义综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：基本求导法则提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成基本求导法则综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成导数定义与基本法则综合应用题3道
+										</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：导数定义拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数定义创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：基本求导法则拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成基本求导法则创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成导数定义与基本法则综合创新题2道
+										</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"导数定义与基本求导法则"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第2周：复合函数求导 + 反函数求导
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">掌握复合函数求导的"链式法则"</div>
+										<div class="task-item">理解反函数求导的方法</div>
+										<div class="task-item">熟练进行复杂函数求导</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：复合函数求导基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习复合函数求导的"链式法则"
+										</div>
+										<div class="task-item">2. 完成复合函数求导基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：反函数求导基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习反函数求导的方法</div>
+										<div class="task-item">2. 完成反函数求导基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：复合函数与反函数求导综合</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成复合函数与反函数求导综合题6道
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：复合函数求导提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成复合函数求导综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：反函数求导提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成反函数求导综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成复合函数与反函数求导综合应用题3道
+										</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：复合函数求导拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成复合函数求导创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：反函数求导拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成反函数求导创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成复合函数与反函数求导综合创新题2道
+										</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"复合函数与反函数求导"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第3周：多项式函数求导 + 导数的几何解释
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">强化多项式函数求导练习</div>
+										<div class="task-item">理解导数的几何意义</div>
+										<div class="task-item">掌握导数与切线斜率的关系</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：多项式函数求导基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 强化多项式函数求导练习</div>
+										<div class="task-item">
+											2. 完成多项式函数求导基础题6道
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：导数几何意义基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习导数的几何意义，理解导数与切线斜率的关系
+										</div>
+										<div class="task-item">2. 完成导数几何意义基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：多项式求导与几何意义综合</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成多项式求导与几何意义综合题6道
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：多项式函数求导提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成多项式函数求导综合题3道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：导数几何意义提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数几何意义综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成多项式求导与几何意义综合应用题3道
+										</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：多项式函数求导拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成多项式函数求导创新题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：导数几何意义拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数几何意义创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成多项式求导与几何意义综合创新题2道
+										</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"多项式函数求导与导数几何意义"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第4周：导数计算综合练习 + 模块复盘
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">整合各类求导方法</div>
+										<div class="task-item">解决多层复合函数求导问题</div>
+										<div class="task-item">
+											通过模块复盘完善知识体系，强化综合解题能力
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：导数计算综合基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 整合各类求导方法进行练习</div>
+										<div class="task-item">2. 完成导数计算综合基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：多层复合函数求导基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 解决多层复合函数求导问题</div>
+										<div class="task-item">
+											2. 完成多层复合函数求导基础题6道
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：模块复盘</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 复盘导数模块核心知识，整理知识体系
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：导数计算综合提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数计算综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：多层复合函数求导提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成多层复合函数求导综合题3道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数计算综合应用题3道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：导数计算综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数计算创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：多层复合函数求导拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成多层复合函数求导创新题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数计算综合创新题2道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"导数与变化率"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本月错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成12道综合题（基础7道、提升4道、拓展1道）<span class="duration">50分钟</span>
+										</div>
+										<div class="task-item">
+											4. 完成本月复习Checklist<span class="duration">15分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- 11月 -->
+				<div id="november" class="month-content">
+					<div class="plan-desc">
+						<h3>11月学习重点说明</h3>
+						<ul>
+							<li>
+								<strong>月度目标：</strong>深化导数计算能力，掌握导数在函数单调性、极值判断中的应用，理解函数凹凸性，建立导数应用思维
+							</li>
+							<li>
+								<strong>核心内容：</strong>复杂复合函数求导、隐函数求导、函数单调性、函数极值、函数凹凸性、函数草图绘制、实际变化率问题
+							</li>
+							<li>
+								<strong>学习建议：</strong>突破多层复合函数、含参数函数求导，掌握导数符号与函数单调性的关系，理解函数凹凸性的定义，能根据导数信息绘制函数草图，运用导数解决实际变化率问题
+							</li>
+						</ul>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title">
+							第1周：复杂复合函数求导进阶 + 隐函数求导入门
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">
+											突破多层复合函数、含参数函数求导
+										</div>
+										<div class="task-item">初步掌握隐函数求导的方法</div>
+										<div class="task-item">强化复杂函数求导技巧</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：复杂复合函数求导基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习多层复合函数求导方法，突破含参数函数求导
+										</div>
+										<div class="task-item">
+											2. 完成复杂复合函数求导基础题6道
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：隐函数求导基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习隐函数求导的基本方法</div>
+										<div class="task-item">2. 完成隐函数求导基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：综合求导练习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成复杂复合函数与隐函数求导综合题6道
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：复杂复合函数求导提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成复杂复合函数求导综合题3道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：隐函数求导提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成隐函数求导综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成复杂函数求导综合应用题3道
+										</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：复杂复合函数求导拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成复杂复合函数求导创新题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：隐函数求导拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成隐函数求导创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成复杂函数求导综合创新题2道
+										</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"复杂函数求导"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第2周：导数应用（单调性与极值）
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">
+											掌握导数符号与函数单调性的关系
+										</div>
+										<div class="task-item">能求函数的极值点与极值</div>
+										<div class="task-item">
+											理解函数单调性与极值的判断方法
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：函数单调性基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习导数符号与函数单调性的关系
+										</div>
+										<div class="task-item">
+											2. 完成函数单调性判断基础题6道
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：函数极值基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习函数极值的求解方法</div>
+										<div class="task-item">2. 完成函数极值求解基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：单调性与极值综合</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成函数单调性与极值综合题6道
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：函数单调性提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成函数单调性判断综合题3道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：函数极值提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成函数极值求解综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成函数单调性与极值综合应用题3道
+										</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：函数单调性拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成函数单调性判断创新题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：函数极值拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成函数极值求解创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成函数单调性与极值综合创新题2道
+										</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"函数单调性与极值"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第3周：导数应用（凹凸性 + 曲线的草图）
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">理解函数凹凸性的定义</div>
+										<div class="task-item">能判断函数的凹凸性，找到拐点</div>
+										<div class="task-item">
+											能根据导数信息绘制函数大致草图
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：函数凹凸性基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习函数凹凸性的定义与判断方法
+										</div>
+										<div class="task-item">
+											2. 完成函数凹凸性判断基础题6道
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：拐点基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习拐点的定义与求解方法</div>
+										<div class="task-item">2. 完成拐点求解基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：函数草图绘制基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习根据导数信息绘制函数草图的方法
+										</div>
+										<div class="task-item">2. 完成函数草图绘制基础题6道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：函数凹凸性提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成函数凹凸性判断综合题3道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：拐点提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成拐点求解综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：函数草图绘制提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成函数草图绘制综合题3道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：函数凹凸性拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成函数凹凸性判断创新题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：拐点拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成拐点求解创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成函数凹凸性、拐点与草图绘制综合创新题2道
+										</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"函数凹凸性与草图绘制"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第4周：导数应用（变化率）+ 模块复盘
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">运用导数解决实际变化率问题</div>
+										<div class="task-item">
+											通过模块复盘完善知识体系，强化综合解题能力
+										</div>
+										<div class="task-item">
+											掌握实际应用问题的建模与求解方法
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：变化率问题基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习运用导数解决实际变化率问题的方法
+										</div>
+										<div class="task-item">2. 完成变化率问题基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：实际应用问题基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习实际应用问题的建模与求解方法
+										</div>
+										<div class="task-item">2. 完成实际应用问题基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：模块复盘</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 复盘导数应用模块核心知识，整理知识体系
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：变化率问题提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成变化率问题综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：实际应用问题提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成实际应用问题综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数应用综合题3道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：变化率问题拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成变化率问题创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：实际应用问题拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成实际应用问题创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数应用综合创新题2道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"导数应用"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本月错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成12道综合题（基础7道、提升4道、拓展1道）<span class="duration">50分钟</span>
+										</div>
+										<div class="task-item">
+											4. 完成本月复习Checklist<span class="duration">15分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- 12月 -->
+				<div id="december" class="month-content">
+					<div class="plan-desc">
+						<h3>12月学习重点说明</h3>
+						<ul>
+							<li>
+								<strong>月度目标：</strong>掌握函数最值与优化问题的解法，强化导数的实际应用，能解决经济、工程等场景的优化问题，提升综合应用能力
+							</li>
+							<li>
+								<strong>核心内容：</strong>函数最值求解、优化问题、经济优化、工程优化、生活优化、导数与不等式方程结合
+							</li>
+							<li>
+								<strong>学习建议：</strong>区分极值与最值，掌握闭区间上函数最值的求解方法，解决成本、利润、产量等经济问题，解决用料最省、效率最高等工程与生活优化问题，整合导数计算与应用解决复杂综合题
+							</li>
+						</ul>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title">第1周：最值与优化问题</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">区分极值与最值的概念</div>
+										<div class="task-item">
+											掌握闭区间上函数最值的求解方法
+										</div>
+										<div class="task-item">理解最值问题的解题思路</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：最值问题基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习区分极值与最值，掌握闭区间上函数最值的求解方法
+										</div>
+										<div class="task-item">2. 完成最值问题基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：含参数函数最值基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习含参数函数最值的求解方法
+										</div>
+										<div class="task-item">
+											2. 完成含参数函数最值基础题6道
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：最值综合练习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 完成最值问题综合题6道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：最值问题提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成最值问题综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：含参数函数最值提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成含参数函数最值综合题3道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成最值问题综合应用题3道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：最值问题拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成最值问题创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：含参数函数最值拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成含参数函数最值创新题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成最值问题综合创新题2道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"最值与优化问题"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第2周：导数的实际应用（经济优化）
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">
+											解决成本、利润、产量等经济优化问题
+										</div>
+										<div class="task-item">掌握经济优化问题的建模方法</div>
+										<div class="task-item">理解经济优化问题的解题思路</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：成本优化基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习成本优化问题的解题方法</div>
+										<div class="task-item">2. 完成成本优化基础题3道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：利润优化基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习利润优化问题的解题方法</div>
+										<div class="task-item">2. 完成利润优化基础题3道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：产量优化基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习产量优化问题的解题方法</div>
+										<div class="task-item">2. 完成产量优化基础题3道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：经济优化提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成经济优化综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：经济优化提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成经济优化综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成经济优化综合应用题3道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：经济优化拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成经济优化创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：经济优化拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成经济优化创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成经济优化综合创新题2道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"经济优化问题"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第3周：导数的实际应用（工程与生活优化）
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">
+											解决用料最省、效率最高等工程优化问题
+										</div>
+										<div class="task-item">解决生活中的优化问题</div>
+										<div class="task-item">
+											掌握工程与生活优化问题的建模方法
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：工程优化基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习用料最省、效率最高等工程优化问题的解题方法
+										</div>
+										<div class="task-item">2. 完成工程优化基础题3道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：生活优化基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习生活优化问题的解题方法</div>
+										<div class="task-item">2. 完成生活优化基础题3道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：综合优化基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成工程与生活优化综合题3道
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：工程优化提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成工程优化综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：生活优化提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成生活优化综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成工程与生活优化综合应用题3道
+										</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：工程优化拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成工程优化创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：生活优化拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成生活优化创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成工程与生活优化综合创新题2道
+										</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"工程与生活优化问题"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第4周：导数应用综合练习 + 章节复盘
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">
+											整合导数计算与应用，解决复杂综合题
+										</div>
+										<div class="task-item">
+											通过章节复盘完善知识体系，强化综合解题能力
+										</div>
+										<div class="task-item">
+											掌握导数与不等式、方程结合的综合题解法
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：导数应用综合基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 整合导数计算与应用进行综合练习
+										</div>
+										<div class="task-item">2. 完成导数应用综合基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：导数与不等式方程结合基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习导数与不等式、方程结合的综合题解法
+										</div>
+										<div class="task-item">
+											2. 完成导数与不等式方程结合基础题6道
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：章节复盘</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 复盘导数应用章节核心知识，整理知识体系
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：导数应用综合提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数应用综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：导数与不等式方程结合提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成导数与不等式方程结合综合题3道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数应用综合应用题3道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：导数应用综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数应用创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：导数与不等式方程结合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成导数与不等式方程结合创新题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数应用综合创新题2道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"导数应用进阶"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本月错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成12道综合题（基础7道、提升4道、拓展1道）<span class="duration">50分钟</span>
+										</div>
+										<div class="task-item">
+											4. 完成本月复习Checklist<span class="duration">15分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- 1月内容 -->
+					<div id="january" class="month-content">
+						<div class="plan-desc">
+							<h3>1月学习重点说明</h3>
+							<ul>
+								<li>
+									<strong>月度目标：</strong>掌握圆锥曲线的基本概念和性质，包括椭圆、双曲线和抛物线的定义、标准方程、几何性质及应用，为后续学习极坐标与参数方程奠定基础
+								</li>
+								<li>
+									<strong>核心内容：</strong>椭圆的定义、标准方程与几何性质，双曲线的定义、标准方程与几何性质，抛物线的定义、标准方程与几何性质，圆锥曲线的综合应用
+								</li>
+								<li>
+									<strong>学习建议：</strong>理解圆锥曲线的定义，掌握标准方程的推导方法，熟练运用几何性质解决问题，通过综合练习提高分析和解决问题的能力
+								</li>
+							</ul>
+						</div>
+
+						<div class="week-plan">
+							<div class="week-title">第1周：椭圆</div>
+							<div class="week-content">
+								<table class="table">
+									<tr>
+										<th>学习维度</th>
+										<th>具体内容</th>
+									</tr>
+									<tr>
+										<td>核心目标</td>
+										<td>
+											<div class="task-item">理解椭圆的定义</div>
+											<div class="task-item">掌握椭圆的标准方程</div>
+											<div class="task-item">掌握椭圆的几何性质</div>
+										</td>
+									</tr>
+									<tr>
+										<td>基础层（必学）</td>
+										<td>
+											<div class="task-item">
+												<span class="level-basic">Day1-2：椭圆定义与标准方程基础</span><span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">1. 学习椭圆的定义和标准方程推导</div>
+											<div class="task-item">2. 完成椭圆定义与标准方程基础题6道</div>
+
+											<div class="task-item">
+												<span class="level-basic">Day3-4：椭圆几何性质基础</span><span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">1. 学习椭圆的几何性质（顶点、焦点、离心率等）</div>
+											<div class="task-item">2. 完成椭圆几何性质基础题6道</div>
+
+											<div class="task-item">
+												<span class="level-basic">Day5：椭圆综合练习</span><span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">1. 完成椭圆综合题6道</div>
+
+											<div class="tips">
+												Tips：每日学习后整理10分钟笔记，标注关键概念
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>提升层（选学）</td>
+										<td>
+											<div class="task-item">
+												<span class="level-improve">Day1-2：椭圆定义与标准方程提升</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成椭圆定义与标准方程综合题3道</div>
+
+											<div class="task-item">
+												<span class="level-improve">Day3-4：椭圆几何性质提升</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成椭圆几何性质综合题3道</div>
+
+											<div class="task-item">
+												<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成椭圆综合应用题3道</div>
+
+											<div class="tips">
+												Tips：提升层题目建议先独立思考，记录解题思路
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>拓展层（名校导向）</td>
+										<td>
+											<div class="task-item">
+												<span class="level-expand">Day1-2：椭圆定义与标准方程拓展</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成椭圆定义与标准方程创新题2道</div>
+
+											<div class="task-item">
+												<span class="level-expand">Day3-4：椭圆几何性质拓展</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成椭圆几何性质创新题2道</div>
+
+											<div class="task-item">
+												<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成椭圆综合创新题2道</div>
+
+											<div class="tips">
+												Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>周末总结</td>
+										<td>
+											<div class="task-item">
+												1. 绘制"椭圆"思维导图<span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">
+												2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+											</div>
+											<div class="task-item">
+												3.
+												限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+
+						<div class="week-plan">
+							<div class="week-title collapsed">
+								第2周：双曲线
+							</div>
+							<div class="week-content">
+								<table class="table">
+									<tr>
+										<th>学习维度</th>
+										<th>具体内容</th>
+									</tr>
+									<tr>
+										<td>核心目标</td>
+										<td>
+											<div class="task-item">理解双曲线的定义</div>
+											<div class="task-item">掌握双曲线的标准方程</div>
+											<div class="task-item">掌握双曲线的几何性质</div>
+										</td>
+									</tr>
+									<tr>
+										<td>基础层（必学）</td>
+										<td>
+											<div class="task-item">
+												<span class="level-basic">Day1-2：双曲线定义与标准方程基础</span><span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">1. 学习双曲线的定义和标准方程推导</div>
+											<div class="task-item">2. 完成双曲线定义与标准方程基础题6道</div>
+
+											<div class="task-item">
+												<span class="level-basic">Day3-4：双曲线几何性质基础</span><span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">1. 学习双曲线的几何性质（顶点、焦点、渐近线等）</div>
+											<div class="task-item">2. 完成双曲线几何性质基础题6道</div>
+
+											<div class="task-item">
+												<span class="level-basic">Day5：双曲线综合练习</span><span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">1. 完成双曲线综合题6道</div>
+
+											<div class="tips">
+												Tips：每日学习后整理10分钟笔记，标注关键概念
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>提升层（选学）</td>
+										<td>
+											<div class="task-item">
+												<span class="level-improve">Day1-2：双曲线定义与标准方程提升</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成双曲线定义与标准方程综合题3道</div>
+
+											<div class="task-item">
+												<span class="level-improve">Day3-4：双曲线几何性质提升</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成双曲线几何性质综合题3道</div>
+
+											<div class="task-item">
+												<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成双曲线综合应用题3道</div>
+
+											<div class="tips">
+												Tips：提升层题目建议先独立思考，记录解题思路
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>拓展层（名校导向）</td>
+										<td>
+											<div class="task-item">
+												<span class="level-expand">Day1-2：双曲线定义与标准方程拓展</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成双曲线定义与标准方程创新题2道</div>
+
+											<div class="task-item">
+												<span class="level-expand">Day3-4：双曲线几何性质拓展</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成双曲线几何性质创新题2道</div>
+
+											<div class="task-item">
+												<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成双曲线综合创新题2道</div>
+
+											<div class="tips">
+												Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>周末总结</td>
+										<td>
+											<div class="task-item">
+												1. 绘制"双曲线"思维导图<span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">
+												2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+											</div>
+											<div class="task-item">
+												3.
+												限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+
+						<div class="week-plan">
+							<div class="week-title collapsed">
+								第3周：抛物线
+							</div>
+							<div class="week-content">
+								<table class="table">
+									<tr>
+										<th>学习维度</th>
+										<th>具体内容</th>
+									</tr>
+									<tr>
+										<td>核心目标</td>
+										<td>
+											<div class="task-item">理解抛物线的定义</div>
+											<div class="task-item">掌握抛物线的标准方程</div>
+											<div class="task-item">掌握抛物线的几何性质</div>
+										</td>
+									</tr>
+									<tr>
+										<td>基础层（必学）</td>
+										<td>
+											<div class="task-item">
+												<span class="level-basic">Day1-2：抛物线定义与标准方程基础</span><span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">1. 学习抛物线的定义和标准方程推导</div>
+											<div class="task-item">2. 完成抛物线定义与标准方程基础题6道</div>
+
+											<div class="task-item">
+												<span class="level-basic">Day3-4：抛物线几何性质基础</span><span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">1. 学习抛物线的几何性质（顶点、焦点、准线等）</div>
+											<div class="task-item">2. 完成抛物线几何性质基础题6道</div>
+
+											<div class="task-item">
+												<span class="level-basic">Day5：抛物线综合练习</span><span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">1. 完成抛物线综合题6道</div>
+
+											<div class="tips">
+												Tips：每日学习后整理10分钟笔记，标注关键概念
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>提升层（选学）</td>
+										<td>
+											<div class="task-item">
+												<span class="level-improve">Day1-2：抛物线定义与标准方程提升</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成抛物线定义与标准方程综合题3道</div>
+
+											<div class="task-item">
+												<span class="level-improve">Day3-4：抛物线几何性质提升</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成抛物线几何性质综合题3道</div>
+
+											<div class="task-item">
+												<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成抛物线综合应用题3道</div>
+
+											<div class="tips">
+												Tips：提升层题目建议先独立思考，记录解题思路
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>拓展层（名校导向）</td>
+										<td>
+											<div class="task-item">
+												<span class="level-expand">Day1-2：抛物线定义与标准方程拓展</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成抛物线定义与标准方程创新题2道</div>
+
+											<div class="task-item">
+												<span class="level-expand">Day3-4：抛物线几何性质拓展</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成抛物线几何性质创新题2道</div>
+
+											<div class="task-item">
+												<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成抛物线综合创新题2道</div>
+
+											<div class="tips">
+												Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>周末总结</td>
+										<td>
+											<div class="task-item">
+												1. 绘制"抛物线"思维导图<span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">
+												2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+											</div>
+											<div class="task-item">
+												3.
+												限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+
+						<div class="week-plan">
+							<div class="week-title collapsed">
+								第4周：圆锥曲线综合应用
+							</div>
+							<div class="week-content">
+								<table class="table">
+									<tr>
+										<th>学习维度</th>
+										<th>具体内容</th>
+									</tr>
+									<tr>
+										<td>核心目标</td>
+										<td>
+											<div class="task-item">综合应用圆锥曲线的定义和性质</div>
+											<div class="task-item">掌握圆锥曲线的综合解题方法</div>
+											<div class="task-item">提高分析和解决问题的能力</div>
+										</td>
+									</tr>
+									<tr>
+										<td>基础层（必学）</td>
+										<td>
+											<div class="task-item">
+												<span class="level-basic">Day1-2：圆锥曲线综合基础</span><span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">1. 完成圆锥曲线综合基础题6道</div>
+
+											<div class="task-item">
+												<span class="level-basic">Day3-4：圆锥曲线综合提升</span><span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">1. 完成圆锥曲线综合题6道</div>
+
+											<div class="task-item">
+												<span class="level-basic">Day5：章节复盘</span><span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">1. 复盘圆锥曲线章节核心知识，整理知识体系</div>
+
+											<div class="tips">
+												Tips：每日学习后整理10分钟笔记，标注关键概念
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>提升层（选学）</td>
+										<td>
+											<div class="task-item">
+												<span class="level-improve">Day1-2：圆锥曲线综合提升</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成圆锥曲线综合题3道</div>
+
+											<div class="task-item">
+												<span class="level-improve">Day3-4：圆锥曲线综合应用题</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成圆锥曲线综合应用题3道</div>
+
+											<div class="task-item">
+												<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成圆锥曲线综合创新题2道</div>
+
+											<div class="tips">
+												Tips：提升层题目建议先独立思考，记录解题思路
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>拓展层（名校导向）</td>
+										<td>
+											<div class="task-item">
+												<span class="level-expand">Day1-2：圆锥曲线综合拓展</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成圆锥曲线综合创新题2道</div>
+
+											<div class="task-item">
+												<span class="level-expand">Day3-4：圆锥曲线综合应用题拓展</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成圆锥曲线综合应用题2道</div>
+
+											<div class="task-item">
+												<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+											</div>
+											<div class="task-item">1. 完成圆锥曲线综合创新题2道</div>
+
+											<div class="tips">
+												Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>周末总结</td>
+										<td>
+											<div class="task-item">
+												1. 绘制"圆锥曲线综合应用"思维导图<span class="duration">30分钟</span>
+											</div>
+											<div class="task-item">
+												2. 整理本月错题，分类标注<span class="duration">25分钟</span>
+											</div>
+											<div class="task-item">
+												3.
+												限时测试：完成12道综合题（基础7道、提升4道、拓展1道）<span class="duration">50分钟</span>
+											</div>
+											<div class="task-item">
+												4. 完成本月复习Checklist<span class="duration">15分钟</span>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+
+				<!-- 3月内容 -->
+				<div id="march" class="month-content">
+					<div class="plan-desc">
+						<h3>3月学习重点说明</h3>
+						<ul>
+							<li>
+								<strong>月度目标：</strong>理解极坐标的概念，掌握极坐标与直角坐标的互化，熟悉圆锥曲线、直线与圆的极坐标及参数方程表示，拓展解析几何解题方法
+							</li>
+							<li>
+								<strong>核心内容：</strong>极坐标、极坐标与直角坐标互化、圆锥曲线的极坐标方程、参数方程、直线与圆的参数方程、轨迹问题、最值问题
+							</li>
+							<li>
+								<strong>学习建议：</strong>理解极径、极角的定义，掌握极坐标与直角坐标的互化方法，掌握椭圆、双曲线、抛物线的极坐标方程，理解参数方程的意义，掌握直线、圆的参数方程，运用参数方程解决最值、轨迹问题
+							</li>
+						</ul>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title">第1周：极坐标</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">理解极径、极角的定义</div>
+										<div class="task-item">
+											掌握极坐标与直角坐标的互化方法
+										</div>
+										<div class="task-item">理解极坐标的基本概念</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：极坐标基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习极径、极角的定义，理解极坐标的概念
+										</div>
+										<div class="task-item">2. 完成极坐标基础题6道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：极坐标与直角坐标互化基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习极坐标与直角坐标的互化方法
+										</div>
+										<div class="task-item">
+											2. 完成极坐标与直角坐标互化基础题6道
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：极坐标综合练习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 完成极坐标综合题6道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：极坐标提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极坐标综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：极坐标与直角坐标互化提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成极坐标与直角坐标互化综合题3道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极坐标综合应用题3道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：极坐标拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极坐标创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：极坐标与直角坐标互化拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成极坐标与直角坐标互化创新题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极坐标综合创新题2道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"极坐标"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第2周：圆锥曲线的极坐标表示
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">
+											掌握椭圆、双曲线、抛物线的极坐标方程
+										</div>
+										<div class="task-item">理解离心率与方程的关系</div>
+										<div class="task-item">掌握圆锥曲线极坐标方程的应用</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：椭圆极坐标方程基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习椭圆的极坐标方程，理解离心率与方程的关系
+										</div>
+										<div class="task-item">
+											2. 完成椭圆极坐标方程基础题4道
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：双曲线与抛物线极坐标方程基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习双曲线与抛物线的极坐标方程
+										</div>
+										<div class="task-item">
+											2. 完成双曲线与抛物线极坐标方程基础题4道
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：圆锥曲线极坐标方程综合</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成圆锥曲线极坐标方程综合题4道
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：圆锥曲线极坐标方程提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成圆锥曲线极坐标方程综合题3道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：离心率与方程关系提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成离心率与方程关系综合题3道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成圆锥曲线极坐标方程综合应用题3道
+										</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：圆锥曲线极坐标方程拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成圆锥曲线极坐标方程创新题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：离心率与方程关系拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成离心率与方程关系创新题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成圆锥曲线极坐标方程综合创新题2道
+										</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"圆锥曲线的极坐标表示"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第3周：参数方程 + 直线与圆的参数方程表示
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">理解参数方程的意义</div>
+										<div class="task-item">掌握直线、圆的参数方程</div>
+										<div class="task-item">理解参数的几何意义</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：参数方程基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习参数方程的意义和基本概念
+										</div>
+										<div class="task-item">2. 完成参数方程基础题4道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：直线参数方程基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习直线的参数方程，理解参数的几何意义
+										</div>
+										<div class="task-item">2. 完成直线参数方程基础题3道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：圆的参数方程基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习圆的参数方程，理解参数的几何意义
+										</div>
+										<div class="task-item">2. 完成圆的参数方程基础题3道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：参数方程提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成参数方程综合题3道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：直线与圆参数方程提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成直线与圆参数方程综合题3道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成参数方程综合应用题3道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：参数方程拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成参数方程创新题2道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：直线与圆参数方程拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成直线与圆参数方程创新题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成参数方程综合创新题2道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"参数方程"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第4周：极坐标与参数方程综合练习 + 章节复盘
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">
+											运用参数方程解决最值、轨迹问题
+										</div>
+										<div class="task-item">
+											通过章节复盘完善知识体系，强化综合解题能力
+										</div>
+										<div class="task-item">
+											灵活选择直角坐标方程或极坐标/参数方程解决解析几何问题
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：轨迹问题基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习运用参数方程求轨迹方程的方法
+										</div>
+										<div class="task-item">2. 完成轨迹问题基础题3道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：最值问题基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习运用参数方程解决解析几何中的最值问题
+										</div>
+										<div class="task-item">2. 完成最值问题基础题3道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：章节复盘</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 复盘极坐标与参数方程章节核心知识，整理知识体系
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：轨迹问题提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成轨迹问题综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：最值问题提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成最值问题综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成极坐标与参数方程综合应用题3道
+										</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：轨迹问题拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成轨迹问题创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：最值问题拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成最值问题创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成极坐标与参数方程综合创新题2道
+										</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"极坐标与参数方程"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本月错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成12道综合题（基础7道、提升4道、拓展1道）<span class="duration">50分钟</span>
+										</div>
+										<div class="task-item">
+											4. 完成本月复习Checklist<span class="duration">15分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- 4月内容 -->
+				<div id="april" class="month-content">
+					<div class="plan-desc">
+						<h3>4月学习重点说明</h3>
+						<ul>
+							<li>
+								<strong>月度目标：</strong>理解原函数与不定积分的概念，掌握基本积分公式与不定积分的计算方法，初步认识定积分的定义与几何意义
+							</li>
+							<li>
+								<strong>核心内容：</strong>原函数、不定积分、基本积分公式、直接积分法、换元积分法、定积分概念、牛顿-莱布尼茨公式、曲边梯形面积
+							</li>
+							<li>
+								<strong>学习建议：</strong>理解原函数与不定积分的关系，熟记基本积分公式，熟练进行不定积分计算，理解定积分的几何意义，掌握牛顿-莱布尼茨公式的核心计算方法
+							</li>
+						</ul>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title">第1周：原函数 + 不定积分</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">理解原函数与不定积分的关系</div>
+										<div class="task-item">熟记基本积分公式</div>
+										<div class="task-item">掌握不定积分的基本概念</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：原函数基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习原函数的概念，理解原函数与不定积分的关系
+										</div>
+										<div class="task-item">2. 完成原函数基础题4道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：基本积分公式基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 熟记基本积分公式</div>
+										<div class="task-item">2. 完成基本积分公式基础题4道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：不定积分综合练习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 完成不定积分综合题4道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：原函数提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成原函数综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：基本积分公式提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成基本积分公式综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成不定积分综合应用题2道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：原函数拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成原函数创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：基本积分公式拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成基本积分公式创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成不定积分综合创新题1道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"原函数与不定积分"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第2周：不定积分的基本计算方法
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">掌握直接积分法</div>
+										<div class="task-item">掌握换元积分法</div>
+										<div class="task-item">熟练进行不定积分计算</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：直接积分法基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习直接积分法的基本方法</div>
+										<div class="task-item">2. 完成直接积分法基础题4道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：换元积分法基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习换元积分法的基本方法</div>
+										<div class="task-item">2. 完成换元积分法基础题4道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：不定积分计算综合</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 完成不定积分计算综合题4道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：直接积分法提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成直接积分法综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：换元积分法提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成换元积分法综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成不定积分计算综合应用题2道
+										</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：直接积分法拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成直接积分法创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：换元积分法拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成换元积分法创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成不定积分计算综合创新题1道
+										</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"不定积分计算方法"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第3周：定积分的概念 + 基本积分公式
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">理解定积分的定义</div>
+										<div class="task-item">
+											理解定积分的几何意义（曲边梯形面积）
+										</div>
+										<div class="task-item">掌握定积分的基本计算方法</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：定积分概念基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习定积分的定义，理解定积分的概念
+										</div>
+										<div class="task-item">2. 完成定积分概念基础题3道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：定积分几何意义基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习定积分的几何意义（曲边梯形面积）
+										</div>
+										<div class="task-item">
+											2. 完成定积分几何意义基础题3道
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：定积分基本公式综合</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成定积分基本公式综合题4道
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：定积分概念提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成定积分概念综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：定积分几何意义提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成定积分几何意义综合题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成定积分综合应用题2道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：定积分概念拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成定积分概念创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：定积分几何意义拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成定积分几何意义创新题1道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成定积分综合创新题1道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"定积分概念与几何意义"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第4周：定积分的计算 + 模块复盘
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">
+											掌握定积分核心计算方法（牛顿-莱布尼茨公式）
+										</div>
+										<div class="task-item">
+											通过模块复盘完善知识体系，强化综合解题能力
+										</div>
+										<div class="task-item">掌握定积分的应用方法</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：牛顿-莱布尼茨公式基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 学习牛顿-莱布尼茨公式，掌握定积分核心计算方法
+										</div>
+										<div class="task-item">
+											2. 完成牛顿-莱布尼茨公式基础题4道
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：定积分应用基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习定积分的应用方法</div>
+										<div class="task-item">2. 完成定积分应用基础题4道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：模块复盘</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 复盘积分模块核心知识，整理知识体系
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：牛顿-莱布尼茨公式提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成牛顿-莱布尼茨公式综合题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：定积分应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成定积分应用综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成积分综合应用题2道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：牛顿-莱布尼茨公式拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成牛顿-莱布尼茨公式创新题1道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：定积分应用拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成定积分应用创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成积分综合创新题1道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"积分基础"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本月错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成12道综合题（基础7道、提升4道、拓展1道）<span class="duration">50分钟</span>
+										</div>
+										<div class="task-item">
+											4. 完成本月复习Checklist<span class="duration">15分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- 5月内容 -->
+				<div id="may" class="month-content">
+					<div class="plan-desc">
+						<h3>5月学习重点说明</h3>
+						<ul>
+							<li>
+								<strong>月度目标：</strong>理解反证法、数学归纳法、枚举法的逻辑，系统复习极限与导数模块
+							</li>
+							<li>
+								<strong>核心内容：</strong>反证法、枚举法、数学归纳法、极限模块复习、导数模块复习
+							</li>
+							<li>
+								<strong>学习建议：</strong>理解反证法、枚举法、数学归纳法的逻辑，掌握数学归纳法证明步骤，系统复习极限与导数模块核心知识，强化导数计算与应用的综合解题能力
+							</li>
+						</ul>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title">第1周：证明方法（反证法 + 枚举法）</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">理解反证法、枚举法的逻辑</div>
+										<div class="task-item">掌握两种证明方法的应用</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：反证法基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习反证法的逻辑和应用</div>
+										<div class="task-item">2. 完成反证法基础题4道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：枚举法基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习枚举法的逻辑和应用</div>
+										<div class="task-item">2. 完成枚举法基础题4道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：证明方法综合练习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 完成证明方法综合题4道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：反证法提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成反证法综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：枚举法提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成枚举法综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成证明方法综合应用题2道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：反证法拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成反证法创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：枚举法拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成枚举法创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成证明方法综合创新题1道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"证明方法"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第2周：证明（数学归纳法）+ 综合复习（极限模块）
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">掌握数学归纳法证明步骤</div>
+										<div class="task-item">复盘极限模块核心知识</div>
+										<div class="task-item">系统复习极限模块内容</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：数学归纳法基础</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 学习数学归纳法的证明步骤</div>
+										<div class="task-item">2. 完成数学归纳法基础题3道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：极限模块基础复习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 复习极限模块核心知识</div>
+										<div class="task-item">2. 完成极限模块基础题3道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：极限模块综合复习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限模块综合题3道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：数学归纳法提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成数学归纳法综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：极限模块提升复习</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限模块综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限模块综合应用题2道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：数学归纳法拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成数学归纳法创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：极限模块拓展复习</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限模块创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成极限模块综合创新题1道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"数学归纳法与极限模块复习"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第3周：综合复习（导数模块）
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">
+											强化导数计算与应用的综合解题能力
+										</div>
+										<div class="task-item">系统复习导数模块核心知识</div>
+										<div class="task-item">提升导数模块综合应用水平</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：导数计算基础复习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 复习导数计算核心知识</div>
+										<div class="task-item">2. 完成导数计算基础题4道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：导数应用基础复习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 复习导数应用核心知识</div>
+										<div class="task-item">2. 完成导数应用基础题4道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：导数模块综合复习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数模块综合题4道</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：导数计算提升复习</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数计算综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：导数应用提升复习</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数应用综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数模块综合应用题2道</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：导数计算拓展复习</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数计算创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：导数应用拓展复习</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数应用创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成导数模块综合创新题1道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"导数模块复习"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本月错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成12道综合题（基础7道、提升4道、拓展1道）<span class="duration">50分钟</span>
+										</div>
+										<div class="task-item">
+											4. 完成本月复习Checklist<span class="duration">15分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- 6月内容 -->
+				<div id="june" class="month-content">
+					<div class="plan-desc">
+						<h3>6月学习重点说明</h3>
+						<ul>
+							<li>
+								<strong>月度目标：</strong>系统复盘极坐标与参数方程、积分、证明模块，整合全册6大模块知识，通过多轮模拟测试查漏补缺，强化高考应试技巧与综合解题能力
+							</li>
+							<li>
+								<strong>核心内容：</strong>极坐标与参数方程模块复习、积分模块复习、证明模块复习、跨模块综合练习、全册模拟测试、错题复盘、应试技巧
+							</li>
+							<li>
+								<strong>学习建议：</strong>强化解析几何与微积分综合应用，提升逻辑证明能力，分析测试漏洞，突破微积分与解析几何、证明的综合题型，适配高考节奏与难度，全面适配高考要求
+							</li>
+						</ul>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title">
+							第1周：综合复习（极坐标与参数方程 + 积分模块）
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">强化解析几何与微积分综合应用</div>
+										<div class="task-item">系统复习极坐标与参数方程模块</div>
+										<div class="task-item">系统复习积分模块</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：极坐标与参数方程复习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 复习极坐标与参数方程核心知识
+										</div>
+										<div class="task-item">
+											2. 完成极坐标与参数方程基础题4道
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：积分模块复习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 复习积分模块核心知识</div>
+										<div class="task-item">2. 完成积分模块基础题4道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：综合应用练习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成极坐标与参数方程、积分模块综合题2道
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：极坐标与参数方程提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成极坐标与参数方程综合题2道
+										</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：积分模块提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成积分模块综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：综合应用提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成极坐标与参数方程、积分模块综合应用题2道
+										</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：极坐标与参数方程拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成极坐标与参数方程创新题1道
+										</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：积分模块拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成积分模块创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成极坐标与参数方程、积分模块综合创新题1道
+										</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"极坐标与参数方程、积分模块复习"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3.
+											限时测试：完成10道综合题（基础6道、提升3道、拓展1道）<span class="duration">40分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第2周：综合复习（证明模块）+ 第一次全册模拟测试
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">提升逻辑证明能力</div>
+										<div class="task-item">分析测试漏洞</div>
+										<div class="task-item">系统复习证明模块</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：证明模块复习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 复习证明模块核心知识</div>
+										<div class="task-item">2. 完成证明模块基础题4道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：逻辑证明能力训练</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 完成逻辑证明能力训练题3道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：第一次全册模拟测试</span><span class="duration">60分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成第一次全册模拟测试（12道选择/填空+3道解答题）
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：证明模块提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成证明模块综合题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：逻辑证明能力提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成逻辑证明能力提升题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：测试漏洞分析</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 分析第一次全册模拟测试漏洞，整理错题
+										</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：证明模块拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成证明模块创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：逻辑证明能力拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成逻辑证明能力创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成证明模块综合创新题1道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"证明模块复习与第一次模拟测试"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3. 分析第一次全册模拟测试结果，制定改进计划<span class="duration">30分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第3周：跨模块综合练习 + 第二次全册模拟测试
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">
+											突破微积分与解析几何、证明的综合题型
+										</div>
+										<div class="task-item">强化跨模块综合解题能力</div>
+										<div class="task-item">提升综合应用水平</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：跨模块综合练习</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 完成跨模块综合练习题3道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：综合题型训练</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 完成综合题型训练题3道</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：第二次全册模拟测试</span><span class="duration">60分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成第二次全册模拟测试（12道选择/填空+3道解答题）
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：跨模块综合提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成跨模块综合提升题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：综合题型提升</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成综合题型提升题2道</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：测试漏洞分析</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 分析第二次全册模拟测试漏洞，整理错题
+										</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：跨模块综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成跨模块综合创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：综合题型拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成综合题型创新题1道</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：综合拓展</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 完成跨模块综合创新题1道</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"跨模块综合练习与第二次模拟测试"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本周错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3. 分析第二次全册模拟测试结果，制定改进计划<span class="duration">30分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="week-plan">
+						<div class="week-title collapsed">
+							第4周：第三次全册模拟测试 + 错题集中复盘 + 考前调整
+						</div>
+						<div class="week-content">
+							<table class="table">
+								<tr>
+									<th>学习维度</th>
+									<th>具体内容</th>
+								</tr>
+								<tr>
+									<td>核心目标</td>
+									<td>
+										<div class="task-item">适配高考节奏与难度</div>
+										<div class="task-item">错题集中复盘</div>
+										<div class="task-item">考前调整与准备</div>
+									</td>
+								</tr>
+								<tr>
+									<td>基础层（必学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-basic">Day1-2：核心公式、定理、证明方法快速梳理</span><span class="duration">10分钟</span>
+										</div>
+										<div class="task-item">
+											1. 快速梳理核心公式、定理、证明方法
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day3-4：综合模拟题练习</span><span class="duration">55分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成综合模拟题（12道选择/填空+3道解答题）
+										</div>
+
+										<div class="task-item">
+											<span class="level-basic">Day5：第三次全册模拟测试</span><span class="duration">60分钟</span>
+										</div>
+										<div class="task-item">
+											1. 完成第三次全册模拟测试（12道选择/填空+3道解答题）
+										</div>
+
+										<div class="tips">
+											Tips：每日学习后整理10分钟笔记，标注关键概念
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>提升层（选学）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-improve">Day1-2：核心知识点强化</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 强化核心知识点理解和应用</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day3-4：错题深度复盘</span><span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">1. 深度复盘错题，分析错误原因</div>
+
+										<div class="task-item">
+											<span class="level-improve">Day5：测试结果分析</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 分析第三次全册模拟测试结果</div>
+
+										<div class="tips">
+											Tips：提升层题目建议先独立思考，记录解题思路
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>拓展层（名校导向）</td>
+									<td>
+										<div class="task-item">
+											<span class="level-expand">Day1-2：薄弱环节专项突破</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 针对薄弱环节进行专项突破</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day3-4：应试策略优化</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">1. 优化应试策略，提升解题效率</div>
+
+										<div class="task-item">
+											<span class="level-expand">Day5：考前心理调整</span><span class="duration">20分钟</span>
+										</div>
+										<div class="task-item">
+											1. 进行考前心理调整，保持良好状态
+										</div>
+
+										<div class="tips">
+											Tips：拓展层题目注重逻辑推理，建议画图标注已知条件
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>周末总结</td>
+									<td>
+										<div class="task-item">
+											1. 绘制"全册综合复习与模拟测试"思维导图<span class="duration">30分钟</span>
+										</div>
+										<div class="task-item">
+											2. 整理本月错题，分类标注<span class="duration">25分钟</span>
+										</div>
+										<div class="task-item">
+											3. 完成本月复习Checklist<span class="duration">15分钟</span>
+										</div>
+										<div class="task-item">
+											4. 制定暑假学习计划<span class="duration">20分钟</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer" class="footer">
+			<p>
+				第十一年数学分层递进学习大纲 | 版权所有 © 2025
+				高中数学教学研究室
+			</p>
+			<p>
+				学习建议：循序渐进掌握微积分基础概念，重视极限与导数的几何直观理解，加强复合函数求导训练，注重理论与实际应用结合，定期复习巩固知识体系
+			</p>
+		</div>
+	</div>
+
+	<script>
+		const monthHighlights = {
+			september: {
+				focus:
+					'理解极限的概念（数列极限、函数极限），掌握极限的运算法则，能运用极限思想解决简单问题，建立微积分入门思维。',
+				knowledge:
+					'极限的概念、数列极限、函数极限、极限的运算法则、极限思想应用。',
+				difficulty:
+					'极限的直观含义理解、数列极限的定义与判断、函数极限的区分、极限运算法则的运用。',
+				advice:
+					'通过极限概念图示理解极限的直观含义，掌握极限运算法则公式，运用极限解决函数连续性、无穷小量等问题。',
+			},
+			october: {
+				focus:
+					'理解导数的定义，掌握基本求导法则、复合函数与反函数求导方法，能进行多项式函数求导，理解导数的几何意义。',
+				knowledge:
+					'导数定义、基本求导法则、复合函数求导、反函数求导、多项式函数求导、导数的几何意义。',
+				difficulty:
+					'导数定义的理解、复合函数求导的链式法则应用、反函数求导方法、导数几何意义的应用。',
+				advice:
+					'通过瞬时变化率理解导数概念，熟记基本初等函数导数公式，掌握链式法则进行复杂函数求导，强化多项式求导练习，理解导数与切线斜率的关系。',
+			},
+			november: {
+				focus:
+					'深化导数计算能力，掌握导数在函数单调性、极值判断中的应用，理解函数凹凸性，建立导数应用思维。',
+				knowledge:
+					'复杂复合函数求导、隐函数求导、函数单调性、函数极值、函数凹凸性、函数草图绘制、实际变化率问题。',
+				difficulty:
+					'多层复合函数求导、含参数函数求导、隐函数求导方法、函数单调性与极值判断、函数凹凸性理解与应用。',
+				advice:
+					'突破多层复合函数、含参数函数求导，掌握导数符号与函数单调性的关系，理解函数凹凸性的定义，能根据导数信息绘制函数草图，运用导数解决实际变化率问题。',
+			},
+			december: {
+				focus:
+					'掌握函数最值与优化问题的解法，强化导数的实际应用，能解决经济、工程等场景的优化问题，提升综合应用能力。',
+				knowledge:
+					'函数最值求解、优化问题、经济优化、工程优化、生活优化、导数与不等式方程结合。',
+				difficulty:
+					'闭区间上函数最值的求解、含参数函数最值问题、经济优化问题建模、工程与生活优化问题解决、导数与不等式方程结合的综合题。',
+				advice:
+					'区分极值与最值，掌握闭区间上函数最值的求解方法，解决成本、利润、产量等经济问题，解决用料最省、效率最高等工程与生活优化问题，整合导数计算与应用解决复杂综合题。',
+			},
+			january: {
+				focus:
+					'掌握圆锥曲线的基本概念和性质，包括椭圆、双曲线和抛物线的定义、标准方程、几何性质及应用，为后续学习极坐标与参数方程奠定基础。',
+				knowledge:
+					'椭圆的定义与标准方程、椭圆的几何性质、双曲线的定义与标准方程、双曲线的几何性质、抛物线的定义与标准方程、抛物线的几何性质、圆锥曲线综合应用。',
+				difficulty:
+					'椭圆标准方程的推导与应用、双曲线渐近线的理解、抛物线焦点与准线的关系、圆锥曲线综合问题的解决。',
+				advice:
+					'理解圆锥曲线的定义，掌握标准方程的推导方法，熟练运用几何性质解决问题，通过综合练习提高分析和解决问题的能力。',
+			},
+			march: {
+				focus:
+					'理解极坐标的概念，掌握极坐标与直角坐标的互化，熟悉圆锥曲线、直线与圆的极坐标及参数方程表示，拓展解析几何解题方法。',
+				knowledge:
+					'极坐标、极坐标与直角坐标互化、圆锥曲线的极坐标方程、参数方程、直线与圆的参数方程、轨迹问题、最值问题。',
+				difficulty:
+					'极坐标与直角坐标的互化、圆锥曲线极坐标方程的掌握、参数方程的理解与应用、轨迹问题与最值问题的解决。',
+				advice:
+					'理解极径、极角的定义，掌握极坐标与直角坐标的互化方法，掌握椭圆、双曲线、抛物线的极坐标方程，理解参数方程的意义，掌握直线、圆的参数方程，运用参数方程解决最值、轨迹问题。',
+			},
+			april: {
+				focus:
+					'理解原函数与不定积分的概念，掌握基本积分公式与不定积分的计算方法，初步认识定积分的定义与几何意义。',
+				knowledge:
+					'原函数、不定积分、基本积分公式、直接积分法、换元积分法、定积分概念、牛顿-莱布尼茨公式、曲边梯形面积。',
+				difficulty:
+					'原函数与不定积分关系的理解、基本积分公式的掌握、不定积分计算方法的应用、定积分概念与几何意义的理解、牛顿-莱布尼茨公式的掌握。',
+				advice:
+					'理解原函数与不定积分的关系，熟记基本积分公式，熟练进行不定积分计算，理解定积分的几何意义，掌握牛顿-莱布尼茨公式的核心计算方法。',
+			},
+			may: {
+				focus:
+					'理解反证法、数学归纳法、枚举法的逻辑，系统复习极限与导数模块。',
+				knowledge:
+					'反证法、枚举法、数学归纳法、极限模块复习、导数模块复习。',
+				difficulty:
+					'反证法与枚举法的理解、数学归纳法的应用、极限与导数模块的系统复习。',
+				advice:
+					'理解反证法、枚举法、数学归纳法的逻辑，掌握数学归纳法证明步骤，系统复习极限与导数模块核心知识，强化导数计算与应用的综合解题能力。',
+			},
+			june: {
+				focus:
+					'系统复盘极坐标与参数方程、积分、证明模块，整合全册6大模块知识，通过多轮模拟测试查漏补缺，强化高考应试技巧与综合解题能力。',
+				knowledge:
+					'极坐标与参数方程模块复习、积分模块复习、证明模块复习、跨模块综合练习、全册模拟测试、错题复盘、应试技巧。',
+				difficulty:
+					'解析几何与微积分综合应用、逻辑证明能力提升、跨模块综合题型突破、高考节奏与难度适配。',
+				advice:
+					'强化解析几何与微积分综合应用，提升逻辑证明能力，分析测试漏洞，突破微积分与解析几何、证明的综合题型，适配高考节奏与难度，全面适配高考要求。',
+			},
+		};
+		const detailFocus = document.getElementById('detail-focus');
+		const detailKnowledge = document.getElementById('detail-knowledge');
+		const detailDifficulty = document.getElementById('detail-difficulty');
+		const detailAdvice = document.getElementById('detail-advice');
+		const detailMonthTitle = document.getElementById('detail-month-title');
+
+		function updateMonthDetailPanel(month) {
+			const info = monthHighlights[month];
+			if (!info) return;
+			detailFocus.textContent = `核心聚焦：${info.focus}`;
+			detailKnowledge.textContent = `重点：${info.knowledge}`;
+			detailDifficulty.textContent = `难点：${info.difficulty}`;
+			detailAdvice.textContent = `建议：${info.advice}`;
+			detailMonthTitle.textContent = thisMonthLabel(month);
+		}
+		function thisMonthLabel(month) {
+			const monthMap = {
+				september: '9月',
+				october: '10月',
+				november: '11月',
+				december: '12月',
+				january: '1月',
+				march: '3月',
+				april: '4月',
+				may: '5月',
+				june: '6月',
+			};
+			return monthMap[month] || '';
+		}
+
+		// 月份切换功能
+		document.querySelectorAll('.month-link').forEach((link) => {
+			link.addEventListener('click', function () {
+				// 移除所有月份的active类
+				document.querySelectorAll('.month-link').forEach((item) => {
+					item.classList.remove('active');
+				});
+				document.querySelectorAll('.month-content').forEach((content) => {
+					content.classList.remove('active');
+				});
+
+				// 给当前点击的月份添加active类
+				this.classList.add('active');
+				const month = this.getAttribute('data-month');
+				document.getElementById(month).classList.add('active');
+				updateMonthDetailPanel(month);
+			});
+		});
+
+		// 周计划折叠/展开功能
+		document.querySelectorAll('.week-title').forEach((title) => {
+			title.addEventListener('click', function () {
+				this.classList.toggle('collapsed');
+			});
+		});
+
+		// 主题切换功能
+		const themeToggle = document.querySelector('.theme-toggle');
+		themeToggle.addEventListener('click', function () {
+			document.body.classList.toggle('dark');
+			const isDark = document.body.classList.contains('dark');
+			this.innerHTML = isDark ? '☀️ 亮色模式' : '🌙 暗黑模式';
+		});
+
+		// 重点标记功能
+		document.querySelectorAll('.star-btn').forEach((btn) => {
+			btn.addEventListener('click', function () {
+				this.classList.toggle('active');
+			});
+		});
+
+		updateMonthDetailPanel('september');
+	</script>
+	<!-- <script>
+        // 本地版本：已跳过登录验证
+    </script> -->
+</body>
+
+</html>
