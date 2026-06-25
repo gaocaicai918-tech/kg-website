@@ -1565,100 +1565,11 @@ var DiagnoseUI = {
     this.currentQuestions = topic.questions;
     this.currentAnswers = [];
     this.currentTimeSpent = [];
+    this.currentResults = [];
     this.currentQuestionIdx = 0;
+    this.isQuickScan = false;
 
     this.renderQuestion();
-  },
-
-  /**
-   * 渲染当前题目
-   */
-  renderQuestion: function() {
-    var container = document.getElementById('diagnoseContent');
-    if (!container) return;
-
-    var idx = this.currentQuestionIdx;
-    var qs = this.currentQuestions;
-    if (idx >= qs.length) {
-      this.finishDiagnose();
-      return;
-    }
-
-    var q = qs[idx];
-    var levelMap = {1: '基础探测', 2: '变式探测', 3: '迁移探测'};
-    var levelColors = {1: '#34C759', 2: '#FF9500', 3: '#FF3B30'};
-
-    // Start timer
-    this.questionStartTime = Date.now();
-
-    var html = '<div style="padding:20px 16px;">';
-
-    // Progress bar
-    html += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">';
-    html += '<div style="flex:1;height:4px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;">';
-    html += '<div style="height:100%;width:' + Math.round((idx+1)/qs.length*100) + '%;background:var(--accent);border-radius:2px;transition:width 0.3s;"></div></div>';
-    html += '<span style="font-size:12px;color:var(--text-muted);flex-shrink:0;">' + (idx+1) + '/' + qs.length + '</span>';
-    html += '</div>';
-
-    // Level badge
-    html += '<div style="display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:600;color:#fff;background:' + levelColors[q.level] + ';margin-bottom:10px;">' + levelMap[q.level] + '</div>';
-
-    // Question stem
-    html += '<div style="font-size:16px;font-weight:500;color:var(--text-primary);line-height:1.7;margin-bottom:16px;">' + q.stem + '</div>';
-
-    // Options
-    html += '<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">';
-    for (var o = 0; o < q.options.length; o++) {
-      html += '<div id="diagOpt' + o + '" onclick="DiagnoseUI.selectAnswer(' + o + ')" style="padding:12px 14px;background:var(--card-bg);border:1.5px solid rgba(255,255,255,0.06);border-radius:10px;cursor:pointer;font-size:14px;color:var(--text-primary);line-height:1.5;transition:all 0.15s;">';
-      html += q.options[o];
-      html += '</div>';
-    }
-    html += '</div>';
-
-    // Hint (collapsible)
-    html += '<div onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display===\'block\'?\'none\':\'block\'" style="font-size:12px;color:var(--text-muted);cursor:pointer;padding:6px 0;">💡 看提示</div>';
-    html += '<div style="display:none;padding:10px 14px;background:rgba(var(--accent-rgb),0.06);border-radius:8px;font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:12px;">' + q.hint + '</div>';
-
-    html += '</div>';
-    container.innerHTML = html;
-  },
-
-  /**
-   * 选择答案
-   */
-  selectAnswer: function(optIdx) {
-    var idx = this.currentQuestionIdx;
-    var elapsed = Math.round((Date.now() - this.questionStartTime) / 1000);
-
-    // Save answer
-    this.currentAnswers[idx] = optIdx;
-    this.currentTimeSpent[idx] = elapsed;
-
-    // Highlight selected
-    for (var o = 0; o < 4; o++) {
-      var el = document.getElementById('diagOpt' + o);
-      if (el) {
-        el.style.borderColor = o === optIdx ? 'var(--accent)' : 'rgba(255,255,255,0.06)';
-        el.style.background = o === optIdx ? 'rgba(var(--accent-rgb),0.08)' : 'var(--card-bg)';
-      }
-    }
-
-    // Auto-advance after short delay
-    var self = this;
-    setTimeout(function() {
-      self.currentQuestionIdx++;
-      self.renderQuestion();
-    }, 400);
-  },
-
-  /**
-   * 完成诊断，生成报告
-   */
-  finishDiagnose: function() {
-    var report = DIAGNOSE.diagnose(this.currentTopic, this.currentAnswers, this.currentTimeSpent);
-    if (!report) return;
-
-    this.renderReport(report);
   },
 
   /**
@@ -1884,13 +1795,17 @@ var DiagnoseUI = {
     html += '</div>';
 
     // ── 9. 操作按钮 ──
-    html += '<div style="display:flex;gap:10px;">';
+    html += '<div style="display:flex;gap:10px;margin-bottom:10px;">';
     html += '<button onclick="DiagnoseUI.retry()" style="flex:1;padding:14px;border-radius:12px;border:0.5px solid rgba(255,149,0,0.3);background:transparent;color:#FF9500;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;">重新诊断</button>';
     html += '<button onclick="DiagnoseUI.saveReport()" style="flex:1;padding:14px;border-radius:12px;border:none;background:#FF9500;color:#FFFFFF;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;">保存报告</button>';
     html += '</div>';
+    html += '<button onclick="DiagnoseUI.renderTextbookRecommendation(DiagnoseUI._lastReport)" style="width:100%;padding:14px;border-radius:12px;border:0.5px solid rgba(255,255,255,0.1);background:var(--card-bg);color:var(--text-secondary);font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;">📚 查看完整教材推荐与学习路径</button>';
 
     html += '</div>';
     container.innerHTML = html;
+
+    // Store last report for textbook recommendation page
+    this._lastReport = report;
 
     // Auto-save report
     try {
@@ -1940,6 +1855,222 @@ var DiagnoseUI = {
       };
       setTimeout(tryOpen, 100);
     }
+  },
+
+  /* ── 教材推荐页 — UI基线 v1.0 (Step 7) ── */
+  renderTextbookRecommendation: function(report) {
+    var container = document.getElementById('diagnoseContent');
+    if (!container || !report) return;
+
+    var topicKey = report.topicKey;
+    var topic = DIAGNOSE.questions[topicKey];
+    if (!topic) return;
+
+    var kpGrade = topic.grade;
+    var tls = topic.textbookLessons || [];
+    var score = report.score;
+    var weakCats = report.errorCategoryStats || {};
+    var dataKey = 'TEXTBOOK_' + kpGrade;
+    var lessons = (typeof TEXTBOOK_DATA !== 'undefined' && TEXTBOOK_DATA[dataKey]) ? TEXTBOOK_DATA[dataKey] : [];
+
+    var html = '<div style="padding:0 0 80px;">';
+
+    // ── 导航栏 (5.1) ──
+    html += '<div style="display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--card-bg);position:sticky;top:0;z-index:10;">';
+    html += '<div onclick="DiagnoseUI.renderReport(DiagnoseUI._lastReport)" style="width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:var(--text-secondary);font-size:18px;cursor:pointer;">\u2039</div>';
+    html += '<div style="flex:1;"><div style="font-size:17px;font-weight:500;color:#FFFFFF;">教材推荐</div>';
+    html += '<div style="font-size:11px;color:var(--text-muted);">' + topic.name + ' \u00b7 ' + kpGrade + '</div></div>';
+    html += '</div>';
+
+    html += '<div style="padding:20px 16px;">';
+
+    // ── 摘要卡片 ──
+    var scoreColor = score >= 80 ? '#34C759' : score >= 60 ? '#FF9500' : '#FF3B30';
+    html += '<div style="background:var(--card-bg);border-radius:14px;padding:16px;margin-bottom:20px;">';
+    html += '<div style="display:flex;align-items:center;gap:16px;">';
+    // 小分数圆环 (5.7: 80×80px, 环宽12px)
+    var circumference = 2 * Math.PI * 28;
+    var dashOffset = circumference * (1 - score / 100);
+    html += '<svg width="80" height="80" viewBox="0 0 80 80" style="flex-shrink:0;">';
+    html += '<circle cx="40" cy="40" r="28" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="12"/>';
+    html += '<circle cx="40" cy="40" r="28" fill="none" stroke="' + scoreColor + '" stroke-width="12" stroke-linecap="round" stroke-dasharray="' + circumference + '" stroke-dashoffset="' + dashOffset + '" transform="rotate(-90 40 40)"/>';
+    html += '<text x="40" y="46" text-anchor="middle" font-size="22" font-weight="500" fill="' + scoreColor + '" font-family="-apple-system,sans-serif">' + score + '</text>';
+    html += '</svg>';
+    html += '<div style="flex:1;">';
+    html += '<div style="font-size:15px;font-weight:500;color:#FFFFFF;margin-bottom:4px;">' + topic.name + '</div>';
+    var weakList = [];
+    if (weakCats) { for (var k in weakCats) { if (weakCats[k] > 0) weakList.push(k); } }
+    html += '<div style="font-size:13px;color:var(--text-muted);line-height:1.5;">薄弱环节：' + (weakList.length > 0 ? weakList.join(' / ') : '无明显薄弱') + '</div>';
+    html += '</div>';
+    html += '</div>';
+    html += '</div>';
+
+    // ── 强烈推荐课时 (5.9) ──
+    html += '<div style="font-size:15px;font-weight:500;color:#FFFFFF;margin-bottom:12px;">🎯 重点复习</div>';
+    html += '<div id="recPrimaryLessons" style="margin-bottom:24px;">';
+    if (lessons.length > 0) {
+      html += this._renderLessonCard(lessons, tls, kpGrade, true);
+    } else {
+      html += '<div id="recLoading" style="padding:14px;text-align:center;color:#FF9500;font-size:13px;">\u23f3 正在加载教材...</div>';
+      if (typeof TEXTBOOK_READER !== 'undefined' && TEXTBOOK_READER._loadGradeData) {
+        TEXTBOOK_READER._loadGradeData(kpGrade, function() {
+          var dk = 'TEXTBOOK_' + kpGrade;
+          var ls = (typeof TEXTBOOK_DATA !== 'undefined' && TEXTBOOK_DATA[dk]) ? TEXTBOOK_DATA[dk] : [];
+          var el = document.getElementById('recLoading');
+          if (el && ls.length > 0) {
+            el.outerHTML = DiagnoseUI._renderLessonCard(ls, tls, kpGrade, true);
+            var supEl = document.getElementById('recSupplementaryLessons');
+            if (supEl) supEl.innerHTML = DiagnoseUI._renderLessonCard(ls, tls, kpGrade, false);
+          } else if (el) {
+            el.innerHTML = '<div style="color:#8E8E93;font-size:12px;text-align:center;">该年级教材暂无内容</div>';
+          }
+        });
+      }
+    }
+    html += '</div>';
+
+    // ── 补充推荐课时 (5.9) ──
+    html += '<div style="font-size:15px;font-weight:500;color:#FFFFFF;margin-bottom:12px;">📖 拓展提升</div>';
+    html += '<div id="recSupplementaryLessons" style="margin-bottom:24px;">';
+    if (lessons.length > 0) {
+      html += this._renderLessonCard(lessons, tls, kpGrade, false);
+    }
+    html += '</div>';
+
+    // ── 学习路径 (5.10) ──
+    html += '<div style="font-size:15px;font-weight:500;color:#FFFFFF;margin-bottom:16px;">🗺️ 学习路径</div>';
+    html += '<div style="background:var(--card-bg);border-radius:14px;padding:20px 16px;margin-bottom:20px;">';
+
+    var pathSteps = this._buildLearningPath(report, tls);
+    for (var pi = 0; pi < pathSteps.length; pi++) {
+      var step = pathSteps[pi];
+      var stepBg, stepColor, stepLabel;
+      if (step.status === 'done') { stepBg = 'rgba(52,199,89,0.15)'; stepColor = '#34C759'; stepLabel = '\u2713'; }
+      else if (step.status === 'current') { stepBg = 'rgba(255,149,0,0.15)'; stepColor = '#FF9500'; stepLabel = (pi + 1) + ''; }
+      else { stepBg = 'rgba(255,255,255,0.06)'; stepColor = '#8E8E93'; stepLabel = (pi + 1) + ''; }
+
+      var textColor = step.status === 'done' ? '#EBEBF5' : step.status === 'current' ? '#FF9500' : '#8E8E93';
+      var fontWeight = step.status === 'current' ? '500' : '400';
+
+      html += '<div style="display:flex;align-items:flex-start;gap:12px;">';
+      // 步骤圆点 (5.10: 24×24)
+      html += '<div style="width:24px;height:24px;border-radius:50%;background:' + stepBg + ';display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:' + stepColor + ';flex-shrink:0;">' + stepLabel + '</div>';
+      html += '<div style="flex:1;padding-bottom:' + (pi < pathSteps.length - 1 ? '20px' : '0') + ';">';
+      html += '<div style="font-size:12px;font-weight:' + fontWeight + ';color:' + textColor + ';margin-bottom:2px;">' + step.title + '</div>';
+      if (step.desc) {
+        html += '<div style="font-size:11px;color:var(--text-muted);line-height:1.4;">' + step.desc + '</div>';
+      }
+      html += '</div>';
+      html += '</div>';
+      // 连线 (5.10: 1px, 高12px)
+      if (pi < pathSteps.length - 1) {
+        html += '<div style="width:1px;height:12px;background:rgba(255,255,255,0.08);margin-left:11px;margin-top:-4px;margin-bottom:-4px;"></div>';
+      }
+    }
+    html += '</div>';
+
+    // ── 底部操作 ──
+    html += '<button onclick="DiagnoseUI.renderReport(DiagnoseUI._lastReport)" style="width:100%;padding:14px;border-radius:14px;border:0.5px solid rgba(255,149,0,0.3);background:transparent;color:#FF9500;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;">返回报告</button>';
+
+    html += '</div>';
+    container.innerHTML = html;
+    container.scrollTop = 0;
+  },
+
+  /* ── 渲染课时卡片 (5.9) ── */
+  _renderLessonCard: function(lessons, tls, grade, isPrimary) {
+    var html = '';
+    var startIdx = isPrimary ? 0 : Math.min(2, tls.length);
+    var endIdx = isPrimary ? Math.min(2, tls.length) : tls.length;
+
+    for (var ti = startIdx; ti < endIdx; ti++) {
+      var lessonIdx = tls[ti];
+      if (lessons[lessonIdx]) {
+        if (isPrimary) {
+          // 强烈推荐 (5.9: 渐变背景, 左侧条, 胶囊标签)
+          html += '<div onclick="DiagnoseUI.goToTextbook(\'' + grade + '\',' + lessonIdx + ')" style="position:relative;padding:16px;background:linear-gradient(135deg,rgba(255,149,0,0.12),rgba(255,149,0,0.02));border:1px solid rgba(255,149,0,0.2);border-radius:14px;margin-bottom:10px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;overflow:hidden;">';
+          html += '<div style="position:absolute;top:0;left:0;width:3px;height:100%;background:#FF9500;"></div>';
+          html += '<div style="padding-left:8px;flex:1;">';
+          html += '<div style="font-size:15px;font-weight:500;color:#FFFFFF;margin-bottom:4px;">' + lessons[lessonIdx].title + '</div>';
+          html += '<div style="display:inline-block;padding:1px 8px;border-radius:10px;background:rgba(255,149,0,0.15);font-size:10px;font-weight:500;color:#FF9500;">强烈推荐</div>';
+          html += '<span style="font-size:11px;color:var(--text-muted);margin-left:8px;">' + grade + ' \u00b7 第' + (lessonIdx + 1) + '课时</span>';
+          html += '</div>';
+          html += '<span style="font-size:12px;color:#FF9500;flex-shrink:0;margin-left:12px;font-weight:500;">去学习 \u2192</span>';
+          html += '</div>';
+        } else {
+          // 补充推荐 (5.9: 普通卡片)
+          html += '<div onclick="DiagnoseUI.goToTextbook(\'' + grade + '\',' + lessonIdx + ')" style="position:relative;padding:14px;background:var(--card-bg);border:0.5px solid rgba(255,255,255,0.06);border-radius:14px;margin-bottom:8px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;overflow:hidden;">';
+          html += '<div style="position:absolute;top:0;left:0;width:3px;height:100%;background:rgba(255,149,0,0.3);"></div>';
+          html += '<div style="padding-left:8px;flex:1;">';
+          html += '<div style="font-size:14px;font-weight:500;color:#EBEBF5;margin-bottom:2px;">' + lessons[lessonIdx].title + '</div>';
+          html += '<div style="font-size:11px;color:var(--text-muted);">' + grade + ' \u00b7 第' + (lessonIdx + 1) + '课时</div>';
+          html += '</div>';
+          html += '<span style="font-size:12px;color:var(--text-muted);flex-shrink:0;margin-left:12px;">去学习 \u2192</span>';
+          html += '</div>';
+        }
+      }
+    }
+    if (isPrimary && startIdx >= endIdx) {
+      html = '<div style="color:var(--text-muted);font-size:12px;text-align:center;padding:14px;">暂无重点推荐课时</div>';
+    }
+    if (!isPrimary && startIdx >= endIdx) {
+      html = '<div style="color:var(--text-muted);font-size:12px;text-align:center;padding:14px;">暂无拓展课时</div>';
+    }
+    return html;
+  },
+
+  /* ── 构建学习路径 (5.10) ── */
+  _buildLearningPath: function(report, tls) {
+    var score = report.score;
+    var steps = [];
+
+    // Step 1: 基础复习 (已完成 if score > 0 and first lesson studied)
+    steps.push({
+      title: '基础复习 — 阅读知识梳理',
+      desc: '打开第' + (tls[0] + 1) + '课时，重点阅读"知识梳理"部分',
+      status: score > 0 ? 'done' : 'current'
+    });
+
+    // Step 2: 例题学习
+    steps.push({
+      title: '例题学习 — 理解解题思路',
+      desc: '学习教材中的例题讲解，掌握标准解法',
+      status: score > 40 ? 'done' : (score > 0 ? 'current' : 'pending')
+    });
+
+    // Step 3: 配套练习
+    steps.push({
+      title: '配套练习 — 巩固基础',
+      desc: '完成教材配套练习题，标记不会的题目',
+      status: score >= 60 ? 'done' : (score > 40 ? 'current' : 'pending')
+    });
+
+    // Step 4: 错题回顾
+    steps.push({
+      title: '错题回顾 — 针对性复习',
+      desc: '回顾诊断中的错题，对照教材重新理解',
+      status: score >= 80 ? 'done' : (score >= 60 ? 'current' : 'pending')
+    });
+
+    // Step 5: 迁移挑战
+    steps.push({
+      title: '迁移挑战 — 综合应用',
+      desc: '尝试教材中的综合应用题（标注★的题）',
+      status: score >= 80 ? 'current' : 'pending'
+    });
+
+    // Ensure at least one "current"
+    var hasCurrent = false;
+    for (var i = 0; i < steps.length; i++) {
+      if (steps[i].status === 'current') { hasCurrent = true; break; }
+    }
+    if (!hasCurrent) {
+      for (var j = steps.length - 1; j >= 0; j--) {
+        if (steps[j].status === 'pending') { steps[j].status = 'current'; break; }
+      }
+    }
+
+    return steps;
   },
 
   saveReport: function() {
@@ -2017,13 +2148,14 @@ var DiagnoseUI = {
     this.currentQuestions = scanQuestions;
     this.currentAnswers = [];
     this.currentTimeSpent = [];
+    this.currentResults = [];
     this.currentQuestionIdx = 0;
     this.isQuickScan = true;
     this.quickScanGrade = grade;
     this.renderQuestion();
   },
 
-  /* ── 重写renderQuestion支持快速扫描 ── */
+  /* ── 渲染当前题目 — UI基线 v1.0 ── */
   renderQuestion: function() {
     var container = document.getElementById('diagnoseContent');
     if (!container) return;
@@ -2036,54 +2168,168 @@ var DiagnoseUI = {
     }
 
     var q = qs[idx];
+    var levelMap = {1: '基础探测', 2: '变式探测', 3: '迁移探测'};
     var levelColors = {1: '#34C759', 2: '#FF9500', 3: '#FF3B30'};
     this.questionStartTime = Date.now();
+    this.answered = false;
 
-    var html = '<div style="padding:20px 16px;">';
+    var html = '<div style="padding:20px 16px 80px;">';
 
-    // Progress bar
-    html += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">';
-    html += '<div style="flex:1;height:4px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;">';
-    html += '<div style="height:100%;width:' + Math.round((idx+1)/qs.length*100) + '%;background:var(--accent);border-radius:2px;transition:width 0.3s;"></div></div>';
-    html += '<span style="font-size:12px;color:var(--text-muted);flex-shrink:0;">' + (idx+1) + '/' + qs.length + '</span>';
+    // ── 分段进度条 (5.2) ──
+    html += '<div style="display:flex;align-items:center;gap:3px;margin-bottom:16px;">';
+    for (var s = 0; s < qs.length; s++) {
+      var segColor = 'rgba(255,255,255,0.08)';
+      if (s < idx) {
+        segColor = this.currentResults[s] ? '#34C759' : '#FF3B30';
+      } else if (s === idx) {
+        segColor = '#FF9500';
+      }
+      html += '<div style="flex:1;height:4px;background:' + segColor + ';border-radius:2px;transition:background 0.3s;"></div>';
+    }
+    html += '<span style="font-size:12px;color:var(--text-muted);flex-shrink:0;margin-left:8px;font-variant-numeric:tabular-nums;">' + (idx + 1) + '/' + qs.length + '</span>';
     html += '</div>';
 
-    // Topic name + level
-    if (q._topicName) {
-      html += '<div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;">' + q._topicName + ' · <span style="color:' + levelColors[q.level] + ';">基础探测</span></div>';
+    // ── 知识点 + 难度标签 ──
+    var topicName = q._topicName || (DIAGNOSE.questions[this.currentTopic] && DIAGNOSE.questions[this.currentTopic].name) || '';
+    if (topicName) {
+      html += '<div style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">' + topicName + '</div>';
     }
+    html += '<div style="display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:500;color:#fff;background:' + levelColors[q.level] + ';margin-bottom:14px;">' + levelMap[q.level] + '</div>';
 
-    // Question stem
-    html += '<div style="font-size:16px;font-weight:500;color:var(--text-primary);line-height:1.7;margin-bottom:16px;">' + q.stem + '</div>';
+    // ── 题干卡片 (16px radius, #1C1C1E) ──
+    html += '<div style="background:var(--card-bg);border-radius:16px;padding:16px;margin-bottom:20px;">';
+    html += '<div style="font-size:18px;font-weight:500;color:var(--text-primary);line-height:1.7;">' + q.stem + '</div>';
+    html += '</div>';
 
-    // Options
-    html += '<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">';
+    // ── 选项卡片 (5.3: 28×28单选圆点, 14px radius, 16px padding, 10px gap) ──
+    html += '<div id="diagOptions" style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">';
     for (var o = 0; o < q.options.length; o++) {
-      html += '<div id="diagOpt' + o + '" onclick="DiagnoseUI.selectAnswer(' + o + ')" style="padding:12px 14px;background:var(--card-bg);border:1.5px solid rgba(255,255,255,0.06);border-radius:10px;cursor:pointer;font-size:14px;color:var(--text-primary);line-height:1.5;transition:all 0.15s;">' + q.options[o] + '</div>';
+      html += '<div id="diagOpt' + o + '" onclick="DiagnoseUI.selectAnswer(' + o + ')" style="display:flex;align-items:center;gap:12px;padding:16px;background:var(--card-bg);border:1.5px solid rgba(255,255,255,0.08);border-radius:14px;cursor:pointer;font-size:15px;font-weight:500;color:var(--text-primary);line-height:1.5;transition:all 0.2s;">';
+      // 28×28 单选圆点
+      html += '<div id="diagRadio' + o + '" style="width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.15);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.2s;"></div>';
+      html += '<span style="flex:1;">' + q.options[o] + '</span>';
+      html += '</div>';
     }
     html += '</div>';
 
-    // Hint
-    html += '<div onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display===\'block\'?\'none\':\'block\'" style="font-size:12px;color:var(--text-muted);cursor:pointer;padding:6px 0;">💡 看提示</div>';
-    html += '<div style="display:none;padding:10px 14px;background:rgba(var(--accent-rgb),0.06);border-radius:8px;font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:12px;">' + q.hint + '</div>';
+    // ── AI引导思考卡片 (5.8: 可折叠, 苏格拉底式) ──
+    html += '<div onclick="var c=this.nextElementSibling; c.style.display=c.style.display===\'block\'?\'none\':\'block\';" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:8px 0;">';
+    html += '<div style="width:20px;height:20px;border-radius:6px;background:rgba(255,149,0,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;color:#FF9500;font-weight:500;">?</div>';
+    html += '<span style="font-size:13px;font-weight:500;color:#FF9500;">AI引导思考</span>';
+    html += '<span style="font-size:11px;color:var(--text-muted);">▾</span>';
+    html += '</div>';
+    html += '<div style="display:none;padding:16px;background:rgba(255,149,0,0.06);border:0.5px solid rgba(255,149,0,0.15);border-radius:14px;margin-bottom:16px;">';
+    html += '<div style="font-size:13px;color:var(--text-secondary);line-height:1.6;">' + q.hint + '</div>';
+    html += '</div>';
+
+    // ── 反馈区域 (答题后动态填充) ──
+    html += '<div id="diagFeedback" style="margin-bottom:16px;"></div>';
+
+    // ── 底部操作区 (答题后显示"下一题"按钮) ──
+    html += '<div id="diagNextBtn" style="display:none;padding:0 0 0 0;">';
+    var isLast = (idx >= qs.length - 1);
+    html += '<button onclick="DiagnoseUI.nextQuestion()" style="width:100%;padding:16px;border-radius:14px;border:none;background:#FF9500;color:#FFFFFF;font-size:16px;font-weight:500;cursor:pointer;font-family:inherit;">' + (isLast ? '查看报告 →' : '下一题 →') + '</button>';
+    html += '</div>';
 
     html += '</div>';
     container.innerHTML = html;
+    container.scrollTop = 0;
   },
 
-  /* ── 选择答案 ── */
+  /* ── 选择答案 — 带反馈 ── */
   selectAnswer: function(optIdx) {
+    if (this.answered) return;
+    this.answered = true;
+
     var idx = this.currentQuestionIdx;
+    var q = this.currentQuestions[idx];
     var elapsed = Math.round((Date.now() - this.questionStartTime) / 1000);
+    var isCorrect = (optIdx === q.answer);
+
     this.currentAnswers[idx] = optIdx;
     this.currentTimeSpent[idx] = elapsed;
+    this.currentResults[idx] = isCorrect;
 
-    for (var o = 0; o < 4; o++) {
+    // ── 更新选项样式 ──
+    for (var o = 0; o < q.options.length; o++) {
       var el = document.getElementById('diagOpt' + o);
-      if (el) { el.style.borderColor = o === optIdx ? 'var(--accent)' : 'rgba(255,255,255,0.06)'; el.style.background = o === optIdx ? 'rgba(var(--accent-rgb),0.08)' : 'var(--card-bg)'; }
+      var radio = document.getElementById('diagRadio' + o);
+      if (!el) continue;
+
+      el.style.cursor = 'default';
+      el.removeAttribute('onclick');
+
+      if (o === q.answer) {
+        // 正确答案 — 绿色边框
+        el.style.borderColor = '#34C759';
+        el.style.background = 'rgba(52,199,89,0.06)';
+        if (radio) { radio.style.borderColor = '#34C759'; radio.style.background = '#34C759'; radio.innerHTML = '<span style="color:#fff;font-size:14px;font-weight:500;">✓</span>'; }
+      } else if (o === optIdx && !isCorrect) {
+        // 选错的选项 — 红色边框
+        el.style.borderColor = '#FF3B30';
+        el.style.background = 'rgba(255,59,48,0.06)';
+        if (radio) { radio.style.borderColor = '#FF3B30'; radio.style.background = '#FF3B30'; radio.innerHTML = '<span style="color:#fff;font-size:14px;font-weight:500;">✕</span>'; }
+      } else {
+        // 其他选项 — 降低透明度
+        el.style.opacity = '0.5';
+      }
     }
-    var self = this;
-    setTimeout(function() { self.currentQuestionIdx++; self.renderQuestion(); }, 400);
+
+    // ── 显示反馈 ──
+    var fb = document.getElementById('diagFeedback');
+    if (fb) {
+      if (isCorrect) {
+        // 答对 — 绿色提示
+        fb.innerHTML = '<div style="padding:14px 16px;background:rgba(52,199,89,0.08);border-radius:14px;display:flex;align-items:center;gap:10px;">' +
+          '<div style="width:24px;height:24px;border-radius:50%;background:#34C759;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;font-weight:500;">✓</div>' +
+          '<span style="font-size:15px;font-weight:500;color:#34C759;">漂亮！继续加油</span>' +
+          '</div>';
+      } else {
+        // 答错 — 苏格拉底引导卡片 (5.8)
+        var socraticHint = this._getSocraticPrompt(q, optIdx);
+        fb.innerHTML = '<div style="padding:16px;background:rgba(255,149,0,0.06);border:0.5px solid rgba(255,149,0,0.15);border-radius:14px;">' +
+          '<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">' +
+          '<div style="width:20px;height:20px;border-radius:6px;background:rgba(255,149,0,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;color:#FF9500;font-weight:500;">!</div>' +
+          '<span style="font-size:13px;font-weight:500;color:#FF9500;">AI引导思考</span>' +
+          '</div>' +
+          '<div style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:12px;">' + socraticHint + '</div>' +
+          '<div style="display:flex;gap:8px;">' +
+          '<button onclick="DiagnoseUI._showFullHint()" style="flex:1;padding:10px;border-radius:10px;border:0.5px solid rgba(255,149,0,0.3);background:transparent;color:#FF9500;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;">我来想想</button>' +
+          '<button onclick="DiagnoseUI._showFullHint()" style="flex:1;padding:10px;border-radius:10px;border:0.5px solid rgba(255,255,255,0.1);background:transparent;color:var(--text-muted);font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;">看完整解析</button>' +
+          '</div>' +
+          '<div id="diagFullHint" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,0.04);border-radius:10px;font-size:13px;color:var(--text-secondary);line-height:1.6;">' + q.hint + '</div>' +
+          '</div>';
+      }
+    }
+
+    // ── 显示"下一题"按钮 ──
+    var btn = document.getElementById('diagNextBtn');
+    if (btn) btn.style.display = 'block';
+  },
+
+  /* ── 跳转下一题 ── */
+  nextQuestion: function() {
+    this.currentQuestionIdx++;
+    this.renderQuestion();
+  },
+
+  /* ── 苏格拉底式提示生成 ── */
+  _getSocraticPrompt: function(q, selectedIdx) {
+    var prompts = {
+      'K': '这个知识点你似乎还有些模糊。让我们回顾一下核心概念——' + (q.tags && q.tags.knowledge ? q.tags.knowledge : '') + '的本质是什么？',
+      'M': '解题方法上似乎可以换个思路。想一想：这类题通常用什么方法？有没有更直接的路径？',
+      'C': '计算过程中可能出了差错。不妨重新检查每一步的运算，特别注意符号和进位。',
+      'R': '审题时可能有信息遗漏。请再读一遍题目，找出所有已知条件和它们之间的关系。',
+      'E': '表达格式上需要更规范。数学语言的严谨性体现在每一步都要有理有据。'
+    };
+    var cat = q.tags && q.tags.error_category ? q.tags.error_category : 'K';
+    return prompts[cat] || '这题答错了，别灰心！看看提示，想一想哪里出了问题。';
+  },
+
+  /* ── 显示完整解析 ── */
+  _showFullHint: function() {
+    var el = document.getElementById('diagFullHint');
+    if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
   },
 
   /* ── 完成诊断 ── */
