@@ -907,8 +907,7 @@ const DIAGNOSE = {
 {id:'l3-thk-08',level:2,type:'变式探测',stem:'周期:按"红黄蓝绿"重复排列,第25个是什么颜色?',options:['A.红','B.黄','C.蓝','D.绿'],answer:0,tags:{knowledge:'周期问题',skill_level:'应用',error_type: '余数算错', error_category: 'C',cognitive_load:'中',trap_type:'25÷4=6余1'},hint:'25÷4=6余1,第1个是红。'},
 {id:'l3-thk-09',level:3,type:'迁移探测',stem:'一根绳子对折3次,这时每段2米,绳子原长?',options:['A.16米','B.8米','C.12米','D.24米'],answer:0,tags:{knowledge:'对折问题',skill_level:'分析',error_type: '对折理解错', error_category: 'K',cognitive_load:'高',trap_type:'对折3次分成8段'},hint:'2×2×2×2=16米'},
 {id:'l3-thk-10',level:3,type:'迁移探测',stem:'用火柴棒摆正方形:1个要4根,2个要7根,3个要10根,摆10个要几根?',options:['A.31根','B.40根','C.22根','D.34根'],answer:0,tags:{knowledge:'图形规律',skill_level:'分析',error_type: '规律归纳错', error_category: 'K',cognitive_load:'高',trap_type:'3n+1=31'},hint:'每次加3,4+3×(10-1)=31根。'}
-]}
-  },
+]},
 
 
     /* -------- 初三（L7）· 全新增 -------- */
@@ -1201,6 +1200,7 @@ const DIAGNOSE = {
         { id: 'l12-sq-10', level: 3, type: '迁移探测', stem: '某企业第一年利润100万元，此后每年增长10%。第3年利润是？', options: ['A. 121万元', 'B. 130万元', 'C. 110万元', 'D. 133.1万元'], answer: 0, tags: { knowledge: '数列应用', skill_level: '分析', error_type: '增长模型', error_category: 'K', cognitive_load: '高', trap_type: '等比增长' }, hint: '100×1.1²=121万元' }
       ]
     },
+  },
   /* ═══════════ 诊断算法 ═══════════ */
   /**
    * 对指定知识点运行诊断
