@@ -3933,18 +3933,18 @@ function loadMinePage() {
   html += '      <div class="mine-row-trail"><span class="mine-row-badge highlight" id="mineReportCount">加载中</span><svg class="mine-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>';
   html += '    </div>';
 
-  // 我的作业
+  // 拍照诊断(原"我的作业")
   html += '    <div class="mine-row" onclick="handleHomeworkUpload()">';
   html += '      <div class="mine-row-icon homework">📸</div>';
-  html += '      <div class="mine-row-text"><div class="mine-row-title">我的作业</div><div class="mine-row-sub">拍照上传作业/试卷图片</div></div>';
-  html += '      <div class="mine-row-trail"><svg class="mine-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>';
+  html += '      <div class="mine-row-text"><div class="mine-row-title">拍照诊断</div><div class="mine-row-sub">拍照上传试卷，AI自动批改</div></div>';
+  html += '      <div class="mine-row-trail"><span class="mine-row-badge">即将上线</span><svg class="mine-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>';
   html += '    </div>';
 
-  // 知识库
-  html += '    <div class="mine-row" onclick="handleKnowledgeBase()">';
+  // 错题本(原"知识库")
+  html += '    <div class="mine-row" onclick="if(!isLoggedIn()){showLoginModal();return;}switchTabState(\'mine-error-log\')">';
   html += '      <div class="mine-row-icon knowledge">📚</div>';
-  html += '      <div class="mine-row-text"><div class="mine-row-title">知识库</div><div class="mine-row-sub">知识卡标记易错将自动收集到这里</div></div>';
-  html += '      <div class="mine-row-trail"><span class="mine-row-badge">即将上线</span><svg class="mine-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>';
+  html += '      <div class="mine-row-text"><div class="mine-row-title">错题本</div><div class="mine-row-sub">所有错题按错因分类，精准复习</div></div>';
+  html += '      <div class="mine-row-trail"><span class="mine-row-badge" id="mineErrorLogCount">0题</span><svg class="mine-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>';
   html += '    </div>';
 
   html += '  </div>';
@@ -6430,6 +6430,8 @@ function switchTabState(view) {
     showMineQuizList();
   } else if (view === 'mine-report-list') {
     showMineReportList();
+  } else if (view === 'mine-error-log') {
+    showErrorLogBook();
   }
 }
 
@@ -6438,9 +6440,279 @@ function showMineMain() {
   loadMinePage();
 }
 
+/* ═══════════ 错题本 ERROR LOG BOOK ═══════════
+   渲染统一错题本页面：顶部统计+筛选栏+错题列表+操作
+   数据源：ERROR_LOG (diagnose-engine.js)
+   挂载点：mineContent */
+let errorLogFilter = { error_label: '', source: '', grade: '', hide_mastered: false };
+
+function showErrorLogBook() {
+  const container = document.getElementById('mineContent');
+  if (!container) return;
+  if (typeof ERROR_LOG === 'undefined') {
+    container.innerHTML = '<div style="padding:40px 20px;text-align:center;color:var(--text-muted);font-size:14px;">错题本模块加载失败</div>';
+    return;
+  }
+
+  // 应用筛选
+  var filterOpts = {};
+  if (errorLogFilter.error_label) filterOpts.error_label = errorLogFilter.error_label;
+  if (errorLogFilter.source) filterOpts.source = errorLogFilter.source;
+  if (errorLogFilter.grade) filterOpts.grade = errorLogFilter.grade;
+  var allErrors = ERROR_LOG.filter(filterOpts);
+  if (errorLogFilter.hide_mastered) {
+    allErrors = allErrors.filter(function(e){ return !e.is_mastered; });
+  }
+
+  var catStats = ERROR_LOG.getCategoryStats();
+  var srcStats = ERROR_LOG.getSourceStats();
+  var mastered = ERROR_LOG.getMasteredCount();
+  var total = catStats.total;
+
+  // 反向排序(最新的在前)
+  allErrors.sort(function(a, b){ return (b.timestamp || '').localeCompare(a.timestamp || ''); });
+
+  var html = '';
+
+  // ── 顶部导航 ──
+  html += '<div style="display:flex;align-items:center;padding:14px 16px;gap:12px;">';
+  html += '<button onclick="showMineMain()" style="width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.04);border:none;color:var(--text-secondary);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">←</button>';
+  html += '<span style="font-size:17px;font-weight:700;color:var(--text-primary);">错题本</span>';
+  html += '<span style="font-size:12px;color:var(--text-muted);">' + total + '题</span>';
+  html += '</div>';
+
+  // ── 空状态 ──
+  if (total === 0) {
+    html += '<div style="padding:60px 20px;text-align:center;">';
+    html += '<div style="width:64px;height:64px;border-radius:50%;background:rgba(var(--accent-rgb),0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">';
+    html += '<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" style="width:28px;height:28px;"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>';
+    html += '</div>';
+    html += '<div style="font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:6px;">还没有错题</div>';
+    html += '<div style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:20px;">做一次AI失分诊断，<br>错题会自动收集到这里</div>';
+    html += '<button onclick="goToDiagnose()" style="padding:10px 24px;border-radius:12px;background:var(--accent);color:#fff;border:none;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;">去诊断</button>';
+    html += '</div>';
+    container.innerHTML = html;
+    return;
+  }
+
+  // ── 顶部统计卡 ──
+  html += '<div style="padding:0 16px 12px;">';
+  html += '<div style="background:var(--card-bg);border-radius:14px;padding:14px;">';
+  // 总数 + 已掌握
+  html += '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;">';
+  html += '<div><span style="font-size:24px;font-weight:700;color:var(--text-primary);">' + total + '</span><span style="font-size:12px;color:var(--text-muted);margin-left:4px;">题错题</span></div>';
+  html += '<div style="font-size:12px;color:#34C759;">已掌握 ' + mastered + '题</div>';
+  html += '</div>';
+  // K/M/C/R/E/B 占比条
+  var cats = ['K','M','C','R','E','B'];
+  html += '<div style="display:flex;height:8px;border-radius:4px;overflow:hidden;background:rgba(255,255,255,0.06);margin-bottom:10px;">';
+  for (var ci = 0; ci < cats.length; ci++) {
+    var n = catStats[cats[ci]] || 0;
+    if (n === 0) continue;
+    var pct = (n / total * 100).toFixed(1);
+    var color = ERROR_LOG.CATEGORY_META[cats[ci]].color;
+    html += '<div style="width:' + pct + '%;background:' + color + ';" title="' + ERROR_LOG.CATEGORY_META[cats[ci]].name + ': ' + n + '题"></div>';
+  }
+  html += '</div>';
+  // 各类标签
+  html += '<div style="display:flex;flex-wrap:wrap;gap:6px;">';
+  for (var cj = 0; cj < cats.length; cj++) {
+    var nn = catStats[cats[cj]] || 0;
+    if (nn === 0) continue;
+    var meta = ERROR_LOG.CATEGORY_META[cats[cj]];
+    var isActive = errorLogFilter.error_label === cats[cj];
+    html += '<div onclick="toggleErrorLogFilter(\'error_label\', \'' + (isActive ? '' : cats[cj]) + '\')" style="display:flex;align-items:center;gap:4px;padding:4px 8px;border-radius:8px;background:' + (isActive ? meta.color : 'rgba(255,255,255,0.04)') + ';color:' + (isActive ? '#fff' : 'var(--text-secondary)') + ';font-size:11px;cursor:pointer;">';
+    html += '<span style="width:8px;height:8px;border-radius:2px;background:' + meta.color + ';"></span>';
+    html += meta.name + ' ' + nn;
+    html += '</div>';
+  }
+  html += '</div>';
+  html += '</div>';
+  html += '</div>';
+
+  // ── 筛选栏 ──
+  html += '<div style="padding:0 16px 12px;display:flex;gap:8px;flex-wrap:wrap;">';
+  // 来源筛选
+  var sources = [['','全部来源'],['diagnose','AI诊断'],['photo','拍照上传']];
+  for (var si = 0; si < sources.length; si++) {
+    var active = errorLogFilter.source === sources[si][0];
+    html += '<button onclick="toggleErrorLogFilter(\'source\', \'' + sources[si][0] + '\')" style="padding:5px 10px;border-radius:14px;border:0.5px solid ' + (active ? 'var(--accent)' : 'rgba(255,255,255,0.1)') + ';background:' + (active ? 'rgba(var(--accent-rgb),0.12)' : 'transparent') + ';color:' + (active ? 'var(--accent)' : 'var(--text-muted)') + ';font-size:11px;cursor:pointer;font-family:inherit;">' + sources[si][1] + '</button>';
+  }
+  // 隐藏已掌握
+  var hideActive = errorLogFilter.hide_mastered;
+  html += '<button onclick="toggleErrorLogFilter(\'hide_mastered\', ' + (!hideActive) + ')" style="padding:5px 10px;border-radius:14px;border:0.5px solid ' + (hideActive ? 'var(--accent)' : 'rgba(255,255,255,0.1)') + ';background:' + (hideActive ? 'rgba(var(--accent-rgb),0.12)' : 'transparent') + ';color:' + (hideActive ? 'var(--accent)' : 'var(--text-muted)') + ';font-size:11px;cursor:pointer;font-family:inherit;margin-left:auto;">' + (hideActive ? '✓ ' : '') + '未掌握</button>';
+  html += '</div>';
+
+  // 当前筛选为空时
+  if (allErrors.length === 0) {
+    html += '<div style="padding:40px 20px;text-align:center;color:var(--text-muted);font-size:13px;">当前筛选下没有错题<br><span onclick="resetErrorLogFilter()" style="color:var(--accent);cursor:pointer;">重置筛选</span></div>';
+    container.innerHTML = html;
+    return;
+  }
+
+  // ── 错题列表 ──
+  html += '<div style="padding:0 16px 20px;">';
+  for (var i = 0; i < allErrors.length; i++) {
+    html += renderErrorCard(allErrors[i], i);
+  }
+  html += '</div>';
+
+  container.innerHTML = html;
+}
+
+/* 渲染单条错题卡片 */
+function renderErrorCard(err, idx) {
+  var cat = err.error_label ? err.error_label.charAt(0) : 'K';
+  var meta = ERROR_LOG.CATEGORY_META[cat] || ERROR_LOG.CATEGORY_META.K;
+  var srcMeta = ERROR_LOG.SOURCE_META[err.source] || ERROR_LOG.SOURCE_META.manual;
+  var mastered = err.is_mastered;
+
+  var card = '';
+  card += '<div id="errCard_' + idx + '" style="background:var(--card-bg);border-radius:14px;padding:14px;margin-bottom:10px;border:0.5px solid rgba(255,255,255,0.04);' + (mastered ? 'opacity:0.6;' : '') + '">';
+
+  // 顶部：错因标签 + 来源 + 时间
+  card += '<div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;flex-wrap:wrap;">';
+  card += '<span style="padding:2px 8px;border-radius:6px;background:' + meta.color + ';color:#fff;font-size:11px;font-weight:600;">' + meta.name + '-错</span>';
+  card += '<span style="padding:2px 6px;border-radius:4px;background:rgba(255,255,255,0.04);color:' + srcMeta.color + ';font-size:10px;">' + srcMeta.name + '</span>';
+  if (err.grade) card += '<span style="font-size:10px;color:var(--text-muted);">' + err.grade + '</span>';
+  if (mastered) card += '<span style="padding:2px 6px;border-radius:4px;background:rgba(52,199,89,0.12);color:#34C759;font-size:10px;">已掌握</span>';
+  card += '<span style="margin-left:auto;font-size:10px;color:var(--text-muted);">' + formatErrDate(err.timestamp) + '</span>';
+  card += '</div>';
+
+  // 题干
+  card += '<div style="font-size:13px;color:var(--text-primary);line-height:1.6;margin-bottom:10px;">' + (err.stem || '(无题干)') + '</div>';
+
+  // 答案对比
+  if (err.options && err.options.length > 0) {
+    card += '<div style="display:flex;gap:8px;margin-bottom:10px;">';
+    card += '<div style="flex:1;padding:8px 10px;background:rgba(255,59,48,0.06);border-radius:8px;border:0.5px solid rgba(255,59,48,0.15);">';
+    card += '<div style="font-size:10px;color:#FF3B30;margin-bottom:2px;">你的答案</div>';
+    card += '<div style="font-size:12px;color:var(--text-primary);">' + (err.student_answer_text || err.options[err.student_answer] || '未作答') + '</div>';
+    card += '</div>';
+    card += '<div style="flex:1;padding:8px 10px;background:rgba(52,199,89,0.06);border-radius:8px;border:0.5px solid rgba(52,199,89,0.15);">';
+    card += '<div style="font-size:10px;color:#34C759;margin-bottom:2px;">正确答案</div>';
+    card += '<div style="font-size:12px;color:var(--text-primary);">' + (err.correct_answer_text || err.options[err.correct_answer] || '') + '</div>';
+    card += '</div>';
+    card += '</div>';
+  }
+
+  // 知识点
+  if (err.knowledge_point) {
+    card += '<div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;">📌 ' + err.knowledge_point + (err.error_type ? ' · ' + err.error_type : '') + '</div>';
+  }
+
+  // 操作按钮
+  card += '<div style="display:flex;gap:8px;">';
+  // 重做 → 跳诊断
+  if (err.topic_key && err.topic_key.indexOf('quick-scan') !== 0) {
+    card += '<button onclick="redoErrorQuestion(\'' + err.topic_key + '\')" style="flex:1;padding:8px;border-radius:8px;border:0.5px solid rgba(var(--accent-rgb),0.3);background:transparent;color:var(--accent);font-size:11px;font-weight:500;cursor:pointer;font-family:inherit;">重做</button>';
+  }
+  // 看教材
+  if (err.grade && err.topic_key && typeof TEXTBOOK_READER !== 'undefined' && TEXTBOOK_READER._lessonCount) {
+    card += '<button onclick="viewTextbookForError(\'' + (err.grade||'') + '\', \'' + (err.topic_key||'') + '\')" style="flex:1;padding:8px;border-radius:8px;border:0.5px solid rgba(255,255,255,0.1);background:transparent;color:var(--text-secondary);font-size:11px;font-weight:500;cursor:pointer;font-family:inherit;">看教材</button>';
+  }
+  // 标记已掌握/取消
+  card += '<button onclick="toggleErrorMastered(\'' + (err.id||'') + '\', \'' + (err.source||'') + '\', ' + idx + ')" style="flex:1;padding:8px;border-radius:8px;border:0.5px solid ' + (mastered ? 'rgba(52,199,89,0.3)' : 'rgba(255,255,255,0.1)') + ';background:transparent;color:' + (mastered ? '#34C759' : 'var(--text-muted)') + ';font-size:11px;font-weight:500;cursor:pointer;font-family:inherit;">' + (mastered ? '取消掌握' : '已掌握') + '</button>';
+  card += '</div>';
+
+  card += '</div>';
+  return card;
+}
+
+/* 错题本辅助函数 */
+function toggleErrorLogFilter(key, value) {
+  if (key === 'hide_mastered') {
+    errorLogFilter.hide_mastered = !!value;
+  } else {
+    // 单选 toggle: 再次点击同一个值则清空
+    if (errorLogFilter[key] === value) {
+      errorLogFilter[key] = '';
+    } else {
+      errorLogFilter[key] = value;
+    }
+  }
+  showErrorLogBook();
+}
+
+function resetErrorLogFilter() {
+  errorLogFilter = { error_label: '', source: '', grade: '', hide_mastered: false };
+  showErrorLogBook();
+}
+
+function toggleErrorMastered(id, source, idx) {
+  if (!id) return;
+  var all = ERROR_LOG.getAll();
+  var current = null;
+  for (var i = 0; i < all.length; i++) {
+    if (all[i].id === id && all[i].source === source) { current = all[i]; break; }
+  }
+  if (!current) return;
+  ERROR_LOG.markMastered(id, source, !current.is_mastered);
+  showToast(!current.is_mastered ? '已标记为掌握' : '已取消掌握', 'success');
+  showErrorLogBook();
+}
+
+function redoErrorQuestion(topicKey) {
+  if (!topicKey) return;
+  // 跳转到 AI 失分诊断，并选中该知识点
+  switchToDiagnose();
+  setTimeout(function() {
+    if (typeof DiagnoseUI !== 'undefined' && DiagnoseUI.startDiagnose) {
+      DiagnoseUI.startDiagnose(topicKey);
+    }
+  }, 200);
+}
+
+function viewTextbookForError(grade, topicKey) {
+  // 从诊断引擎查该知识点对应的教材课时
+  var lessons = [];
+  if (typeof DIAGNOSE !== 'undefined' && DIAGNOSE.questions && DIAGNOSE.questions[topicKey]) {
+    lessons = DIAGNOSE.questions[topicKey].textbookLessons || [];
+  }
+  if (lessons.length === 0) {
+    showToast('该知识点暂无关联教材', 'info');
+    return;
+  }
+  switchToTextbook();
+  setTimeout(function() {
+    if (typeof TEXTBOOK_READER !== 'undefined' && TEXTBOOK_READER.openLesson) {
+      TEXTBOOK_READER.openLesson(grade, lessons[0]);
+    }
+  }, 300);
+}
+
+function goToDiagnose() {
+  switchToDiagnose();
+}
+
+function formatErrDate(iso) {
+  if (!iso) return '';
+  try {
+    var d = new Date(iso);
+    var now = new Date();
+    var diff = (now - d) / 1000;
+    if (diff < 60) return '刚刚';
+    if (diff < 3600) return Math.floor(diff/60) + '分钟前';
+    if (diff < 86400) return Math.floor(diff/3600) + '小时前';
+    if (diff < 86400*7) return Math.floor(diff/86400) + '天前';
+    return (d.getMonth()+1) + '/' + d.getDate();
+  } catch(e) { return ''; }
+}
+
 async function fetchAssessmentCounts() {
   // 纯前端：用 authPhone 显示手机号，测评报告从 localStorage 计数
   const phone = localStorage.getItem('authPhone');
+
+  // 错题本计数(无论登录与否都更新)
+  try {
+    var errCount = (typeof ERROR_LOG !== 'undefined') ? ERROR_LOG.getAll().length : 0;
+    var errEl = document.getElementById('mineErrorLogCount');
+    if (errEl) {
+      errEl.textContent = errCount + '题';
+      if (errCount > 0) errEl.classList.add('highlight');
+    }
+  } catch(e2) {}
+
   if (!phone) {
     updateMinePhone('未登录');
     document.getElementById('mineReportCount') && (document.getElementById('mineReportCount').textContent = '0份');
@@ -6871,13 +7143,13 @@ async function downloadMineReportPDF(id) {
 }
 
 function handleHomeworkUpload() {
-  // Placeholder: future feature for camera upload
-  showToast('拍照上传功能即将上线', 'info');
+  // 拍照诊断 — 第一阶段仅占位(待接腾讯云OCR)
+  showToast('拍照诊断即将上线，先用AI失分诊断积累错题吧', 'info');
 }
 
 function handleKnowledgeBase() {
-  // Placeholder: future feature for knowledge base
-  showToast('知识库功能即将上线', 'info');
+  // 已废弃：原"知识库"入口改为"错题本"，统一由 switchTabState('mine-error-log') 进入
+  switchTabState('mine-error-log');
 }
 
 function handleServiceEntry() {

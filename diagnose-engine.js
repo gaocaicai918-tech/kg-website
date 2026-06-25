@@ -2338,9 +2338,59 @@ var DiagnoseUI = {
       this.finishQuickScan();
       return;
     }
+    // 写入统一错题本(普通诊断)
+    this._flushErrorsToLog(false);
     var report = DIAGNOSE.diagnose(this.currentTopic, this.currentAnswers, this.currentTimeSpent);
     if (report) this.renderReport(report);
   },
+
+  /* ── 把本次答题中的错题写入 ERROR_LOG ──
+     scanOnly=true: 快扫模式(题目带 _topicKey/_topicName)
+     scanOnly=false: 普通深度诊断(通过 this.currentTopic 找知识点) */
+  _flushErrorsToLog: function(scanOnly) {
+    if (!this.currentQuestions || !this.currentAnswers) return;
+    var now = new Date().toISOString();
+    var entries = [];
+    var topicObj = (!scanOnly && this.currentTopic) ? DIAGNOSE.questions[this.currentTopic] : null;
+    var topicName = topicObj ? topicObj.name : '';
+    var topicKey  = this.currentTopic || '';
+    var grade     = topicObj ? topicObj.grade : (scanOnly ? this.quickScanGrade : '');
+
+    for (var i = 0; i < this.currentQuestions.length; i++) {
+      var q = this.currentQuestions[i];
+      var ans = this.currentAnswers[i];
+      // 跳过未答(快扫可能没答完)
+      if (typeof ans === 'undefined' || ans === null) continue;
+      if (ans === q.answer) continue; // 答对的不入库
+
+      // 快扫题用自身带的 _topicKey/_topicName 覆盖
+      var kpKey  = scanOnly ? (q._topicKey  || topicKey)  : topicKey;
+      var kpName = scanOnly ? (q._topicName || topicName) : (q.tags && q.tags.knowledge ? q.tags.knowledge : topicName);
+      var qGrade = scanOnly ? (this.quickScanGrade || grade) : grade;
+
+      entries.push({
+        id: q.id || (kpKey + '-' + i),
+        source: 'diagnose',
+        stem: q.stem || '',
+        options: q.options || [],
+        student_answer: ans,
+        correct_answer: q.answer,
+        student_answer_text: q.options ? (q.options[ans] || '') : '',
+        correct_answer_text: q.options ? (q.options[q.answer] || '') : '',
+        error_label: (q.tags && q.tags.error_category) ? q.tags.error_category : 'K',
+        error_type: (q.tags && q.tags.error_type) ? q.tags.error_type : '',
+        knowledge_point: kpName,
+        topic_key: kpKey,
+        grade: qGrade,
+        time_spent: this.currentTimeSpent[i] || null,
+        retry_count: 1,
+        timestamp: now,
+        is_mastered: false
+      });
+    }
+    if (entries.length > 0) ERROR_LOG.addBatch(entries);
+  },
+
 
   /* ── 快速扫描完成 ── */
   finishQuickScan: function() {
@@ -2408,6 +2458,9 @@ var DiagnoseUI = {
     html += '</div>';
     container.innerHTML = html;
 
+    // 写入统一错题本(快扫)
+    this._flushErrorsToLog(true);
+
     // Auto-save
     try {
       var saved = JSON.parse(localStorage.getItem('diagnoseReports') || '[]');
@@ -2463,3 +2516,163 @@ function buildDiagnosePage() {
   if (!container) return;
   DiagnoseUI.renderTopicSelect(container);
 }
+
+/* ═══════════════════════════════════════════════════════════
+   统一错题本 ERROR_LOG v1.0
+   汇聚所有错题(诊断+拍照)，按 K/M/C/R/E/B 六级错因分类
+   localStorage key: 'errorLog'
+   ═══════════════════════════════════════════════════════════ */
+var ERROR_LOG = {
+  STORAGE_KEY: 'errorLog',
+  MAX_ENTRIES: 500,
+
+  /* 错因标签定义 */
+  CATEGORY_META: {
+    'K': { name: '知识', color: '#FF3B30', desc: '知识点未掌握' },
+    'M': { name: '方法', color: '#AF52DE', desc: '解题思路问题' },
+    'C': { name: '计算', color: '#FF9500', desc: '运算出错' },
+    'R': { name: '阅读', color: '#5AC8FA', desc: '审题不清' },
+    'E': { name: '表达', color: '#FF9F0A', desc: '表达格式问题' },
+    'B': { name: '行为', color: '#34C759', desc: '行为习惯推断' }
+  },
+
+  /* 来源定义 */
+  SOURCE_META: {
+    'diagnose': { name: 'AI诊断', color: '#5AC8FA' },
+    'photo':    { name: '拍照上传', color: '#FF9500' },
+    'manual':   { name: '手动录入', color: '#AF52DE' }
+  },
+
+  /* 读取全部错题 */
+  getAll: function() {
+    try {
+      return JSON.parse(localStorage.getItem(this.STORAGE_KEY) || '[]');
+    } catch (e) {
+      return [];
+    }
+  },
+
+  /* 写入一条错题(去重：同一id+source只保留最新一条) */
+  add: function(entry) {
+    if (!entry || !entry.stem) return false;
+    var all = this.getAll();
+
+    // 去重：相同 id + source → 覆盖旧的(保留 is_mastered 状态)
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].id === entry.id && all[i].source === entry.source) {
+        if (typeof entry.is_mastered === 'undefined' && typeof all[i].is_mastered !== 'undefined') {
+          entry.is_mastered = all[i].is_mastered;
+        }
+        entry.first_seen = all[i].first_seen || all[i].timestamp;
+        all[i] = entry;
+        this._save(all);
+        return true;
+      }
+    }
+
+    entry.first_seen = entry.timestamp;
+    entry.is_mastered = entry.is_mastered || false;
+    all.push(entry);
+
+    // 限制最大数量(先进先出)
+    if (all.length > this.MAX_ENTRIES) all = all.slice(all.length - this.MAX_ENTRIES);
+
+    this._save(all);
+    return true;
+  },
+
+  /* 批量写入(一次诊断结束统一入库) */
+  addBatch: function(entries) {
+    if (!entries || !entries.length) return;
+    for (var i = 0; i < entries.length; i++) this.add(entries[i]);
+  },
+
+  /* 按条件筛选 */
+  filter: function(opts) {
+    opts = opts || {};
+    var all = this.getAll();
+    return all.filter(function(e) {
+      if (opts.error_label && e.error_label !== opts.error_label) return false;
+      if (opts.source && e.source !== opts.source) return false;
+      if (opts.grade && e.grade !== opts.grade) return false;
+      if (opts.knowledge_point && e.knowledge_point !== opts.knowledge_point) return false;
+      if (typeof opts.is_mastered !== 'undefined' && e.is_mastered !== opts.is_mastered) return false;
+      return true;
+    });
+  },
+
+  /* 标记/取消标记已掌握 */
+  markMastered: function(id, source, mastered) {
+    var all = this.getAll();
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].id === id && all[i].source === source) {
+        all[i].is_mastered = !!mastered;
+        all[i].mastered_at = mastered ? new Date().toISOString() : null;
+        this._save(all);
+        return true;
+      }
+    }
+    return false;
+  },
+
+  /* 删除一条 */
+  remove: function(id, source) {
+    var all = this.getAll();
+    var filtered = all.filter(function(e) {
+      return !(e.id === id && e.source === source);
+    });
+    if (filtered.length !== all.length) {
+      this._save(filtered);
+      return true;
+    }
+    return false;
+  },
+
+  /* 清空 */
+  clear: function() {
+    localStorage.removeItem(this.STORAGE_KEY);
+  },
+
+  /* 统计：各类错因数量 */
+  getCategoryStats: function() {
+    var all = this.getAll();
+    var stats = { K: 0, M: 0, C: 0, R: 0, E: 0, B: 0, total: all.length };
+    for (var i = 0; i < all.length; i++) {
+      var lbl = all[i].error_label ? all[i].error_label.charAt(0) : 'K';
+      if (stats.hasOwnProperty(lbl)) stats[lbl]++;
+    }
+    return stats;
+  },
+
+  /* 统计：各来源数量 */
+  getSourceStats: function() {
+    var all = this.getAll();
+    var stats = { diagnose: 0, photo: 0, manual: 0, total: all.length };
+    for (var i = 0; i < all.length; i++) {
+      var s = all[i].source || 'manual';
+      if (stats.hasOwnProperty(s)) stats[s]++;
+    }
+    return stats;
+  },
+
+  /* 统计：已掌握数量 */
+  getMasteredCount: function() {
+    var all = this.getAll();
+    var n = 0;
+    for (var i = 0; i < all.length; i++) if (all[i].is_mastered) n++;
+    return n;
+  },
+
+  /* 内部：保存到 localStorage */
+  _save: function(arr) {
+    try {
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(arr));
+    } catch (e) {
+      // 配额超限时丢弃最旧的 50%
+      if (arr.length > 100) {
+        arr = arr.slice(Math.floor(arr.length / 2));
+        try { localStorage.setItem(this.STORAGE_KEY, JSON.stringify(arr)); } catch(e2) {}
+      }
+    }
+  }
+};
