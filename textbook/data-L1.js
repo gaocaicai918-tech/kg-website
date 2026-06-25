@@ -51,30 +51,6 @@
     ]
   },
   {
-    "title": "配套练习题答案及解析",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案及解析",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案及解析",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "数数与表示（二）",
     "lesson_time": "2课时",
     "knowledge": [
@@ -121,30 +97,6 @@
       "很久以前，人们发现用 “十” 来计数特别方便。比如数苹果，要是有 15 个苹果，不用一个一个数到 15，只要先数出 10 个装成一袋（1 个十），再数剩下的 5 个（5 个一），合起来就是 15 个，又快又不容易错。",
       "后来，人们还发明了计数器：计数器上右边第二档是十位，1 颗珠子就代表 1 个十；右边第一档是个位，几颗珠子就代表几个一。有了 “十” 的帮忙，我们就能轻松认识 11、12…… 一直到 20 这些数，以后还能认识更大的数呢！"
     ]
-  },
-  {
-    "title": "配套练习题答案及解析",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案及解析",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案及解析",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "个位与十位（一）",
@@ -195,30 +147,6 @@
     ]
   },
   {
-    "title": "配套练习题答案解析",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案解析",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业解析提示",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "个位与十位（二）",
     "lesson_time": "2课时",
     "knowledge": [
@@ -256,27 +184,7 @@
       "写出 11-20所有的数 ，分别写出每个数的 “组成”“读法”“写法”。",
       "用小棒摆出 17，先说一说它的组成，再写出它的读法和写法。",
       "观察家里的物品，找一个数量是两位数（11-20）的物品，说一说这个数的组成、读法和写法。",
-      "思考：11-20 这些数中，哪个数的个位数字比十位数字多2？",
-      "19可以拆成1个十和9个一。用小棒摆：摆1捆（10根一捆）和9根单独的小棒。",
-      "这个数是14。读作：十四。写作：14。",
-      "十位是1，个位是从1开始往后数的第3个数字，即1,2,3，所以个位是3。这个数是13。分解：1个十和3个一。",
-      "12：由1个十和2个一组成。读作：十二。写作：12。 17：由1个十和7个一组成。读作：十七。写作：17。 20：由2个十和0个一组成。读作：二十。写作：20。",
-      "糖果总数是15。（10颗一袋是1个十，5颗单独的是5个一，合起来是15。）",
-      "（一）选择题",
-      "（二）填空题",
-      "读作：十九，写作：19。",
-      "16：1个十和6个一；20：2个十和0个一。",
-      "这个数是18。它在17和19之间。",
-      "（三）解答题",
-      "这个数是16。读作：十六。",
-      "十位是1，最大的一位数是9，所以这个数是19。 用计数器表示：在十位上拨1颗珠子，在个位上拨9颗珠子。",
-      "11:1个十和1个一，读作十一，写作11。 12:1个十和2个一，读作十二，写作12。 13:1个十和3个一，读作十三，写作13。 14:1个十和4个一，读作十四，写作14。 15:1个十和5个一，读作十五，写作15。 16:1个十和6个一，读作十六，写作16。 17:1个十和7个一，读作十七，写作17。 18:1个十和8个一，读作十八，写作18。 19:1个十和9个一，读作十九，写作19。 20:2个十和0个一，读作二十，写作20。",
-      "用小棒摆17：先摆1捆（10根），再摆7根单独的小棒。它由1个十和7个一组成。读作：十七。写作：17。",
-      "（示例）例如：一盒铅笔有12支。",
-      "组成：1个十和2个一。",
-      "读法：十二。",
-      "写法：12。",
-      "这个数是13。 思考过程：在11-20中，十位数字都是1。要求个位数字比十位数字（1）多2，那么个位数字就是1+2=3。所以这个数是13。"
+      "思考：11-20 这些数中，哪个数的个位数字比十位数字多2？"
     ],
     "reading": [
       "在数的王国里，11-20 的两位数都会 “拆分与合成” 的魔法！比如 15，它能像变魔术一样，拆成 “1 个十” 和 “5 个一”，就像把 15 根小棒分成 1 捆和 5 根；反过来，它也能把 “1 个十” 和 “5 个一” 合成 15，就像把 1 捆小棒和 5 根单独小棒合在一起。",
@@ -319,24 +227,7 @@
       "写出 4 组 10 以内数的大小比较，每组都用 “=”“＞”“＜” 中的一种符号连接（如 2＜5）。",
       "画 5 个正方形和 7 个长方形，用 “一一对应法” 比较它们的数量，并用符号表示大小关系。",
       "把 1-10 这 10 个数按从小到大的顺序写下来，再按从大到小的顺序写下来。",
-      "思考：怎么快速判断 10 以内两个数的大小？除了一一对应法和数序法，还有别的方法吗？",
-      "（画图示意：画 5 个△代表 5，画 7 个□代表 7，一一对应后□剩余 2 个）；5 < 7，7 更大，因为一一对应后 7 的数量有剩余",
-      "9 > 4；理由：按数序 1、2、3、4、5、6、7、8、9，9 在 4 的后面，后面的数比前面的数大",
-      "＜、=、＞",
-      "1 < 3 < 7",
-      "杯子数量多；6 > 4",
-      "（一）选择题",
-      "（二）填空题",
-      "6；8；6；8",
-      "＜、＞、=、＜",
-      "示例：5；小（或 6；相等；或 7；大，答案不唯一）",
-      "（三）解答题",
-      "从小到大：1 < 4 < 9；从大到小：9 > 4 > 1",
-      "示例：6、7（答案不唯一，只要小于 8 的 10 以内数均可）",
-      "示例：3＞1、5=5、7＜9、2＜6（答案不唯一）",
-      "（画图：5 个□和 7 个▭一一对应后▭剩余 2 个）；5 < 7",
-      "从小到大：1 < 2 < 3 < 4 < 5 < 6 < 7 < 8 < 9 < 10；从大到小：10 > 9 > 8 > 7 > 6 > 5 > 4 > 3 > 2 > 1",
-      "快速判断方法：可看数序（后面的数比前面大）；其他方法：比如数的组成（如 9 由 9 个一组成，6 由 6 个一组成，9 个一多于 6 个一则 9＞6）、借助实物数量对比等"
+      "思考：怎么快速判断 10 以内两个数的大小？除了一一对应法和数序法，还有别的方法吗？"
     ],
     "reading": [
       "在数字王国里，住着三个符号朋友：等号 “=”、大于号 “＞” 和小于号 “＜”。有一天，它们为 “谁最有用” 吵了起来。",
@@ -390,24 +281,7 @@
       "写出 5 组 20 以内数的大小比较，包含 “一位数 和 两位数比较”“两位数和两位数比较” 两种类型，用符号连接。",
       "把 11-20 这 10 个数按从大到小的顺序写下来，再圈出其中个位是 5 的数。",
       "调查家里 3 种物品的数量，记录下来并比较它们的数量，说出哪个最多、哪个最少，用符号表示它们的大小关系。",
-      "思考：为什么比较两位数大小时，要先看十位再看个位？如果十位数字不一样，还需要比个位吗？",
-      "17 > 9；理由：两位数大于一位数",
-      "14 < 18；理由：十位相同，个位4 < 8",
-      ">、>、=、<",
-      "4 < 9 < 13 < 16",
-      "苹果数量最多；18 > 8（或8 < 18）",
-      "（一）选择题",
-      "（二）填空题",
-      "1.<、<、 >、<",
-      "2. >、<、=、>",
-      "3. 14；11（答案不唯一）",
-      "（三）解答题",
-      "两位数：11、18、13；排列：18 > 13 > 11",
-      "14、15",
-      "示例（答案不唯一）：6 < 11、9 < 15、12 > 10、17 < 19、14 = 14（需包含两种类型）",
-      "从大到小：20 > 19 > 18 > 17 > 16 > 15 > 14 > 13 > 12 > 11；圈出15",
-      "示例：杯子 3 个、牙刷 5 支、毛巾 2 条；5 > 3 > 2；牙刷最多，毛巾最少",
-      "理由：十位计数单位更大，先比十位能快速定大小；十位不同时，不用比个位，十位大的数就大"
+      "思考：为什么比较两位数大小时，要先看十位再看个位？如果十位数字不一样，还需要比个位吗？"
     ],
     "reading": [
       "小花在比较 15 和 12 的大小时，皱着眉头说：“它们都是两位数，都有 1 个十，怎么比呀？” 妈妈笑着给她递来两捆小棒。",
@@ -537,22 +411,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -568,30 +426,6 @@
       "6 带着小伙伴们分成了 3 对，顺利进了场； 7 凑出 3 对后还剩 1 个自己，只能站在奇数小队里。 0 一开始很忐忑，它发现自己能和自己配对，也成功加入了偶数小队。",
       "从此，数宝宝们都知道了配对的规则，再也不会认错自己的队伍啦！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "奇数与偶数（二）",
@@ -654,25 +488,8 @@
       "找规律填数：2、4、2、4、（ ），写出括号内的数并说明规律。",
       "找规律填数：5、1、3、5、1、3、5（ ）。",
       "观察下面图形序列，请在横线上画出下一个图形。",
-      "观察下面图形序列，请在横线上画出下一个图形。",
       "观察下面珠子的排列规律，确定没有涂色的一颗应该是什么颜色？"
     ],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
     "reading": []
   },
   {
@@ -694,30 +511,6 @@
     ]
   },
   {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "加法含义与运算（一）",
     "lesson_time": "2课时",
     "knowledge": [
@@ -737,22 +530,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -767,30 +544,6 @@
       "很久以前，人们还没有发明加法符号的时候，想要表示 “合起来”，只能用画图的方式。比如要表示 2 个石头和 3 个石头合起来，就先画 2 个石头，再画 3 个石头，特别麻烦。",
       "后来，有个数学家想了个好办法，用 “+” 这个符号表示 “合起来”，这样 2 个石头和 3 个石头合起来，就可以写成2+3，大家一下子就明白了意思。慢慢的，加法算式就变成了我们今天看到的样子，方便又清晰！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "加法含义与运算（二）",
@@ -811,22 +564,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -841,30 +578,6 @@
     "reading": [
       "小敏以前算加法总容易数错，速度还很慢。后来老师教了她一个小妙招，她算题的效率一下子提高了。比如算3+4，老师让她先找大一点的数 4 记在心里，再接着数 3 个数：5、6、7，很快就得出答案了。小敏还发现，就算把算式换成4+3，用同样的方法算出来的结果也一样，这让她对加法有了新的认识。学会这个小妙招后，小敏再也不怕算 10 以内的加法了！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "减法含义与运算（一）",
@@ -886,22 +599,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -916,30 +613,6 @@
       "很久以前，人们想表示 “从总数里去掉一部分” 时，只能通过画图划掉的方式，比如有 5 只羊，走了 2 只，就先画 5 只羊，再把 2 只羊涂黑，特别不方便。",
       "后来，有个数学家发明了减号 “-”，用它来表示 “去掉” 的意思。这样 5 只羊走了 2 只，就可以写成5-2，大家一看就明白是从总数里去掉一部分，慢慢的减法算式就流传开来，成了我们现在熟悉的样子。"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "减法含义与运算（二）",
@@ -960,22 +633,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -991,30 +648,6 @@
       "小宇之前算减法总出错，还特别慢，老师教了他一个 “大数记心里，小数往下数” 的小技巧。",
       "老师让他算8-3，先把大数 8 记在心里，再往下数 3 个：7、6、5，很快就得出答案。小宇试了好几次，发现这个方法比先数出 8 个再划掉 3 个的方式快多了，而且不容易数混。学会这个小技巧后，小宇算 10 以内减法又快又准，再也不怕做减法题了！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "加减互逆（一）",
@@ -1035,22 +668,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -1064,30 +681,6 @@
     "reading": [
       "数字王国里，加法和减法是一对形影不离的好朋友。有一次，加法算出2+5=7，减法马上就说：“我能根据你的结果写出两道算式！” 说着就写出了7−2=5和7−5=2。加法好奇地问：“你是怎么做到的？” 减法笑着说：“你把两部分合起来成了总数 7，我只要从总数里去掉其中一部分，就能得到另一部分呀！”从此，大家都知道了加减是好朋友，它们能互相帮忙解决问题。"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "加减互逆（二）",
@@ -1108,22 +701,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -1137,30 +714,6 @@
     "reading": [
       "小乐做含未知数的算式题时总卡壳，老师告诉他加减互逆是 “解题小帮手”。老师让他算□+4=9，小乐想：加法的和是 9，用 9 减已知加数 4，很快得出□=5。又算10-□=6，小乐用 10 减差 6，得到□=4。后来遇到生活题 “吃了 3 颗糖剩 5 颗，原来有几颗”，小乐用5+3=8算出答案，他开心地说：“加减互逆这个小帮手太好用了！”"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "连加连减（一）",
@@ -1182,22 +735,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -1211,30 +748,6 @@
     "reading": [
       "小方学会了普通加法后，遇到了要把三部分合起来的题目，有点犯难。老师告诉他这是连加，计算时要从左到右依次算。比如算2+3+4，先算2+3=5，再算5+4=9。小方试了试，很快就算出了答案。后来他遇到 “桌上 1 个苹果，妈妈放 2 个，爸爸放 3 个” 的问题，直接列出1+2+3=6，顺利求出总数，成了连加小能手！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "连加连减（二）",
@@ -1256,22 +769,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -1285,30 +782,6 @@
     "reading": [
       "小宇会算普通减法，但遇到要连续去掉两部分的题目就懵了。老师教他这是连减，要从左到右算。比如算10-2-3，先算10-2=8，再算8-3=5。小宇照着练了几遍，很快就掌握了。后来他遇到 “妈妈买 9 个梨，第一天吃 2 个，第二天吃 3 个” 的问题，直接列出9-2-3=4，轻松算出剩余数量，还总结出了连减的小妙招！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "有进位和退位的加减法（一）",
@@ -1330,14 +803,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -1351,30 +816,6 @@
     "reading": [
       "小浩以前算9+5总出错，老师教了他凑十法，他一下子就明白了。老师说：“9 离 10 只差 1，就把 5 拆成 1 和 4，先让 9 和 1 凑成 10，再用 10 加 4 就好算啦！” 小浩试了试，果然很快算出9+5=14。后来他发现，不管是 8 加几还是 7 加几，只要凑出 10，计算就变简单了，这就是凑十法的小秘密！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "有进位和退位的加减法（二）",
@@ -1396,22 +837,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -1425,30 +850,6 @@
     "reading": [
       "小琳算13−5时总卡壳，因为个位 3 不够减 5。老师教了她破十法，她一下子就学会了。老师说：“把 13 拆成 10 和 3，先用 10 去减 5 得 5，再用 5 加 3 就得出 8 啦！” 小琳试了好几道题，都顺利算出了答案。她发现，破十法把难算的退位减法变成了 10 以内的减法和加法，太好用了！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "有进位和退位的加减法（三）",
@@ -1469,22 +870,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -1498,30 +883,6 @@
     "reading": [
       "小宇学会了凑十法和破十法后，给自己封了个 “加减法小管家” 的称号。遇到9+4，他就用凑十法快速算出 13；遇到12−5，就用破十法得出 7；遇到8+5−7，他先算加法再算减法，也顺利算出结果。小宇发现，只要选对方法，再难的进退位加减法都能搞定！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "生活中的加减法（一）",
@@ -1545,22 +906,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -1574,30 +919,6 @@
     "reading": [
       "清晨的菜市场里，李阿姨的菜摊前摆着刚摘的青菜和萝卜。她数了数，青菜有 8 捆，萝卜有 6 捆，笑着念叨：“8 加 6 等于 14，今天一共带了 14 捆菜，够卖一上午了。”校门口的文具店，一年级的小宇攥着零花钱买文具。笔记本 5 元，铅笔 2 元，他在心里快速算出5+2=7，刚好够付账。放学路上，小朋友们凑在一起数卡片。小琪有 9 张动物卡，小浩有 7 张风景卡，他们想合起来办个 “卡片展”，算出9+7=16，开心地规划着展示的位置。其实加法从不是课本里冰冷的算式，它藏在菜市场的菜捆里、文具店的账单上、小朋友的卡片堆里，悄悄帮我们把零散的数量变成清晰的总数，让生活的每一份 “积累” 都有了明确的答案。"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "生活中的加减法（二）",
@@ -1618,22 +939,6 @@
       "一本漫画书有 16 页，小敏看了 7 页，还有多少页没看？",
       "小明带了 15 元去买零食，买薯片花了 4 元，买饮料花了 3 元，还剩多少钱？"
     ],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
     "reading": []
   },
   {
@@ -1679,22 +984,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -1703,7 +992,6 @@
       "图一下边的面是（ ）。",
       "A． B． C．",
       "下图中（ ）是长方体．",
-      "A． B． C．",
       "_____是正方体.",
       "A．B． C．D．",
       "思考：为什么圆柱既能立住又能滚动，而长方体只能立住不能滚动？"
@@ -1711,54 +999,6 @@
     "reading": [
       "立体图形大家庭里住着四位成员：长方体、正方体、圆柱和球。长方体是 “稳重的大哥”，带着 6 个长方形面，能稳稳待在原地；正方体是 “方正的小弟”，6 个面一模一样；圆柱是 “灵活的伙伴”，既能竖直站立，又能侧躺滚动；球是 “调皮的小不点”，最爱在地上到处滚。它们藏在生活的各个角落，装点着我们的空间。"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "A",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "C",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "B",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "认识基本图形（二）",
@@ -1786,22 +1026,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）操作题",
     "lesson_time": "",
     "knowledge": [],
@@ -1819,38 +1043,6 @@
     "reading": [
       "图形王国里住着四个可爱的图形宝宝：长方形、正方形、三角形和圆。长方形宝宝总是挺着长长的身子，它的家在课本封面；正方形宝宝方方正正，它的家在魔方的表面；三角形宝宝有三个尖尖的角，它的家在三角尺上；圆宝宝滚来滚去，它的家在餐盘里。一天，它们迷路了，小朋友们根据它们的样子，都帮它们找到了自己的家，图形宝宝们可开心啦！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "C",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "图形分类（一）",
@@ -1881,22 +1073,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -1914,54 +1090,6 @@
     "reading": [
       "小琪是班里的 “分类小达人”，老师让她整理图形卡片，她先按平面和立体分成两堆，又把平面卡片按边数细分，立体卡片按能否滚动整理。整理完后，杂乱的卡片变得整整齐齐，老师和同学都为她点赞！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（三）解答题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "图形分类（二）",
@@ -1989,22 +1117,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -2016,7 +1128,6 @@
       "（1）比少（ ）个。",
       "□－□＝□（个）",
       "（2）比多（ ）个。",
-      "□－□＝□（个）",
       "（3）和一共有（ ）个。",
       "□＋□＝□（个）",
       "思考：为什么分类计数时要遵循 “先分类、后计数” 的顺序？"
@@ -2024,54 +1135,6 @@
     "reading": [
       "小宇是家里的 “计数小能手”，妈妈让他统计玩具数量，他先按 “能否滚动” 分类，再逐一计数，很快得出能滚动的玩具有 5 个，不能滚动的有 8 个。妈妈说，按顺序分类计数能让统计更准确，小宇也牢牢记住了这个方法！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（三）解答题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "方向与位置（一）",
@@ -2095,30 +1158,6 @@
     "reading": []
   },
   {
-    "title": "A．B．",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -2135,38 +1174,6 @@
     "reading": [
       "图形学校里开课啦，老师教大家认识上下和前后。小长方形说 “我在小正方形上面”，小正方形立刻反驳 “不对，你在我上面，那我就在你下面呀”；小三角形说 “我在小圆形前面”，小圆形也笑着说 “我就在你后面啦”。大家这才明白，方位是相互的，描述时一定要说清谁在谁的什么方位！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "C",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "方向与位置（二）",
@@ -2197,22 +1204,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）操作题",
     "lesson_time": "",
     "knowledge": [],
@@ -2224,38 +1215,12 @@
       "A． B． C．",
       "看图填一填。",
       "在的（______）面；",
-      "在的（______）面；",
-      "在的（______）面；",
       "在的（______）面。",
       "思考：为什么面对面站立时，左右方位会 “颠倒”？"
     ],
     "reading": [
       "小宇一直分不清左右，老师教给他一个小妙招：记住写字的手是右手，右手边就是右边。后来小宇发现，和妈妈面对面时，自己的右手对着妈妈的左手，原来因为两个人的参照方向相反，左右才会 “颠倒”，这就是左右方位的小奥秘！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "初步的对称",
@@ -2278,22 +1243,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）操作题",
     "lesson_time": "",
     "knowledge": [],
@@ -2309,30 +1258,6 @@
     "reading": [
       "小梦在公园玩耍时发现，蜻蜓的翅膀左右对称，才能平稳飞行；花朵的花瓣大多对称排列，显得格外好看。回家后她又发现，家里的台灯、相框、餐盘也都是对称的。原来我们生活在一个充满对称美的小世界里，对称不仅带来视觉美感，还藏着很多实用的科学道理呢！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "简单的图形变换（一）",
@@ -2352,26 +1277,9 @@
       "下面（ ）属于平移现象。",
       "A． B． C． D．",
       "下面的（ ）可以通过平移与重合。",
-      "A. B. C.",
       "下面三幅图中，图( )是通过左图平移得到的。",
       "小鱼向( )平移了( )格。"
     ],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
     "reading": []
   },
   {
@@ -2401,30 +1309,6 @@
     ]
   },
   {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "图形拼搭",
     "lesson_time": "1课时",
     "knowledge": [
@@ -2449,22 +1333,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -2478,30 +1346,6 @@
     "reading": [
       "小科在家做图形拼搭实验，他用 2 个正方形拼出了长方形，用 4 个正方形拼出了大正方形，又用 2 个三角形拼出了大三角形。他发现，只要选对相同的图形，对齐边缘就能拼出有趣的新图形，这个实验让他对图形组合充满了兴趣！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "简单的图形变换（二）",
@@ -2535,22 +1379,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -2568,30 +1396,6 @@
     "reading": [
       "图形王国举办变换大赛，旋转小达人要展示本领。它先介绍规则：“绕着一个点转，形状不变方向变，就是旋转！”风车率先登场，绕轴心转了起来，叶片方向不断改变；钟表指针也从 12 转到 6，方向明显偏转。长方形想尝试，却直直向右平移出去，裁判说道：“你这是平移，不是旋转！” 大家这下彻底分清了两种图形变换。"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "图形中的规律（一）",
@@ -2621,22 +1425,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -2652,70 +1440,6 @@
     "reading": [
       "小安是班里的 “规律小侦探”，他发现不管是图形的形状、颜色还是数量，都藏着重复或递进的小秘密。比如教室的彩旗按 “红黄绿” 循环，花坛的花盆按 “1 盆月季、2 盆菊花” 重复，只要找到这个 “核心密码”，就能轻松猜出下一个物品的样子，小安觉得找规律特别有成就感！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（三）解答题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "C",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "A",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "图形中的规律（二）",
@@ -2741,22 +1465,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -2764,60 +1472,11 @@
     "exercises": [
       "“?”处应画什么图形?请你画一画。",
       "在下面空白的方格里，填上几号图形才恰当?",
-      "“?”处应画什么图形?请你画一画。",
       "思考：组合图形的叠加和拆分规律有什么异同？"
     ],
     "reading": [
       "小诺进入了 “规律大世界”，这里的图形有的会叠加新伙伴，有的会慢慢 “瘦身”，点阵会按行列慢慢变大。她发现叠加规律是 “新朋友排队来”，拆分规律是 “老朋友依次走”，点阵规律是 “行列同步长”，掌握了这些规律，她轻松闯过了所有关卡，成为了规律大世界的小赢家！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（三）解答题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "数组中的规律（一）",
@@ -2840,22 +1499,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -2869,54 +1512,6 @@
     "reading": [
       "小松鼠在树下发现了一排小石子，第 1 堆有 2 颗，第 2 堆有 4 颗，第 3 堆有 6 颗。它猜第 4 堆肯定有 8 颗，扒开落叶一看，果然没错！松鼠爷爷告诉它，这是老松鼠按 “每次加 2” 的递增规律摆的，用来标记松果的数量。小松鼠靠着这个规律，找到了藏在第 6 堆石子下的松果，开心极了！原来，简单的递增规律能帮我们解决生活里的小难题。"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（三）解答题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "数组中的规律（二）",
@@ -2962,30 +1557,6 @@
     ]
   },
   {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "数形结合的规律",
     "lesson_time": "2课时",
     "knowledge": [
@@ -2997,7 +1568,6 @@
     ],
     "examples": [],
     "exercises": [
-      "找规律,在“?”处填数。",
       "找规律,在“?”处填数。",
       "先找规律，再在空格里填上数。",
       "“?”处应该填什么?",
@@ -3032,30 +1602,6 @@
     ]
   },
   {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "逻辑推理初步（一）",
     "lesson_time": "2课时",
     "knowledge": [
@@ -3076,22 +1622,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -3105,30 +1635,6 @@
     "reading": [
       "数字王国的小数字们在比大小，可大家谁也不服谁。智慧爷爷说：“找个中间参照就能分清楚啦！”小 5 说 “我比小 3 大”，小 7 说 “我比小 5 大”，大家一下子就知道小 7＞小 5＞小 3；后来小 9 也加入了，说 “我比小 7 大”，大家马上就梳理出小 9＞小 7＞小 5＞小 3 的顺序。小矮个的小 2 说 “我比小 4 矮”，小 6 说 “我比小 4 高”，小 8 说 “我比小 6 高”，大家也立刻明白小 8＞小 6＞小 4＞小 2。学会找中间参照的小数字们，都成了比较推理小达人！"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "逻辑推理初步（二）",
@@ -3151,22 +1657,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -3181,54 +1671,6 @@
     "reading": [
       "推理小镇的小侦探们在学条件推理，老师先教三对象基础题：“三人分气球，甲拿黄的，乙不拿红的，谁拿红的？” 小侦探们很快算出是丙。后来老师加了难度，出了四对象题，小乐乐先锁定两个明确条件的对象，再用排除法推剩余的，轻松答对。老师夸他：“先抓明确条件，再用排除法，这就是推理秘诀！”"
     ]
-  },
-  {
-    "title": "配套练习题答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（三）解答题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "利用规律推理",
@@ -3335,20 +1777,11 @@
     "examples": [],
     "exercises": [
       "（二）填空题",
-      "5，5",
       "行，列（或：列，行）",
       "（三）解答题",
       "表格示例：",
       "建议：可以设计一个简单的表格，横排是星期（周一到周日），竖排是日期和杯数。或者用笔记本，每天画一个杯子图案，有几个杯子就画几个。也可以使用“正”字法，每天喝一杯就写一笔，一周结束后统计。关键是选择一种方便、不易忘记的方法，并坚持每天记录。"
     ],
-    "reading": []
-  },
-  {
-    "title": "课后作业答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
     "reading": []
   },
   {
@@ -3471,22 +1904,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -3529,22 +1946,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -3561,22 +1962,6 @@
     "reading": [
       "如果图书馆的书不按顺序乱放，如果班级成绩单上的名字随意排列，我们的世界会多么混乱！排序，是一种强大的整理魔法。 把数据从多到少排好，我们一眼就能认出冠军和最后一名，还能看出中间的差距。这就像赛跑后给选手排名次，公平又清晰。超市把卖得最好的商品放在最显眼的位置，音乐软件把本周最热的歌排在最前面，用的都是排序的智慧。 今天，你学会了给数据排排队。未来，你也许会用它来安排学习计划，或者分析比赛的胜负。排序，让隐藏的规律浮现，让明智的选择变得简单。"
     ]
-  },
-  {
-    "title": "根据实际情况排序",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "根据调查结果计算",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "数据变化（一）",
@@ -3601,22 +1986,6 @@
       "看“一周练字页数”记录：从周一到周五，依次是4页， 5页， 6页， 5页， 7页。整体上看，练字的页数是在增加还是在减少？哪一天和前一天相比，页数减少了？",
       "观察值日生擦黑板的记录（画“正”字）：周一（正），周二（正下），周三（正正）。哪一天擦黑板的次数最多？从周二到周三，次数是增加还是减少？"
     ],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
     "reading": []
   },
   {
@@ -3664,22 +2033,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -3697,22 +2050,6 @@
     "reading": [
       "古人仰望星空，观察星辰位置的变化，来预测季节和指导农耕。他们是在用过去的数据，推测未来的模样。 今天，天气预报通过分析气压、温度的变化趋势，告诉我们明天是否要带伞；储蓄罐里越来越重的硬币，让你对买到心仪玩具的日子充满期待。这都不是魔法，而是基于数据变化趋势的合理预测。 当你发现小苗每周都长高一点，你就能猜它下周会更高；当你发现每天多读一页书，月底就能读完一本厚书。数据变化的规律，就是我们手中最科学、最神奇的“水晶球”，它照亮了通往未来的一小段路。"
     ]
-  },
-  {
-    "title": "根据实际情况记录",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "B",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "生活中的应用（一）",
@@ -3738,22 +2075,6 @@
       "从“家庭一周晚餐主食”调查表中发现，吃米饭的次数最多。如果想均衡饮食，可以怎样调整下周的计划？（例如：适当减少…，增加…） 家庭晚餐主食调查表",
       "一个阅读小组的四位成员，本月读书页数如下表。小组平均目标为每人100页。请列出达到和未达到目标的成员，并计算未达标者与目标的差距。 小组成员阅读页数表"
     ],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
     "reading": []
   },
   {
@@ -3793,22 +2114,6 @@
       "学校要举办“才艺秀”，报名情况如下表。老师分别看了低年级和高年级同学的选择。老师这样做，可能是为了让节目安排更（ ）。 才艺秀报名情况表",
       "你和两个朋友想约一天一起去图书馆。如果只是口头问“哪天有空？”，很容易乱。请根据下面的“空闲时间调查表”，找出三个人都有空的一天。 空闲时间调查表 (√表示有空)"
     ],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
     "reading": []
   },
   {
@@ -3860,22 +2165,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -3890,22 +2179,6 @@
     "reading": [
       "我们每天用的人民币，可不只是一张能换东西的纸或一块金属哦！它就像我们国家的一张“小名片”。 仔细观察，你会发现人民币上印着美丽的风景，比如桂林山水、杭州西湖、北京人民大会堂。这些图案告诉人们我们祖国有多么美丽。上面还有伟人的头像，让我们记住那些为国家做出贡献的人。 更重要的是，每张人民币上都有国徽，这代表着国家的尊严。人民币上还有许多精细的图案和防伪线，就像给钱穿上了一件高科技的“防护衣”，防止坏人制造假钱。 所以，人民币不仅是买卖的工具，它还承载着文化、历史和国家的象征。我们要爱护人民币，不能乱涂乱画，更不能用假币。"
     ]
-  },
-  {
-    "title": "15元1角",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "(1)20 (2)3 (3)15",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "买卖问题（二）",
@@ -3932,22 +2205,6 @@
       "小芳带了20元去书店。一本故事书12元，一本漫画书9元。她带的钱够同时买这两本书吗？（够/不够）。如果只买一本故事书，还剩（）元。",
       "妈妈买的蔬菜：西红柿3元2角，黄瓜2元5角，土豆4元。妈妈说总共付了10元。请你帮忙算一下，妈妈算对了吗？正确的总价应该是（）元（）角。"
     ],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
     "reading": []
   },
   {
@@ -3997,62 +2254,6 @@
     "reading": []
   },
   {
-    "title": "看看下面的“零花钱计划表”，小明每周存3元。通过加法计算他坚持4周一共能存多少钱？如果他想买一个15元的笔记本，通过连续加3元，计算需要存几周？ 小明零花钱计划表",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "学校组织郊游，每人活动经费是25元。预计花费项目如下表。算一算，这三项预计花费是否在预算内？如果在预算内，午餐最多还能安排多少元？ 郊游预计花费表",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（三）解答题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "小强有15元，他想买一个9元的足球。他还想买些零食，价格如下表。在买了足球的前提下，他最多还能买哪几样零食？请列出一种满足预算的组合，并计算总花费是否超出？ 零食价格表",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "小兰的“储蓄目标表”如下。她每周新增储蓄4元。请通过连续加法计算，她还需要存几周才能买到画笔？ 小兰储蓄目标表",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "我的周末采购计划：假设你有25元，需要为周末的家庭聚会采购水果。请参考下面的“水果价格表”，设计一个购买方案（写明买什么、买多少、花多少钱），并确保总花费不超过25元。 水果价格表（每份）",
     "lesson_time": "",
     "knowledge": [],
@@ -4061,30 +2262,6 @@
     "reading": [
       "你知道吗？管理零花钱和储蓄，就像打理一个小小的花园。 “收入”就像浇水，“预算”就像规划哪里种花、哪里种草。“储蓄”就是把一些种子存起来，为了明年春天能开出更美的花，或者长成一棵大树。 聪明的园丁不会把水一下子全部浇光，他会留一些给明天。聪明的消费者也不会把钱一下子花光，他会留一些给未来的梦想。 省钱不等于不买，而是买得聪明——用同样的钱，买到更需要、更优质的东西，或者通过规划买到更多。这就是理财最初的智慧。 从小学习规划零花钱，管理自己的“小财富”，你就在学习一种非常重要的生活能力。这种能力，能让你未来的“花园”更加繁花似锦，硕果累累。"
     ]
-  },
-  {
-    "title": "配套练习题参考答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课堂练习参考答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "课后作业参考答案",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "时间与日历（一）",
@@ -4139,22 +2316,6 @@
     ]
   },
   {
-    "title": "略（根据实际情况记录）",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "略（根据当天实际情况回答）",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "时间与日历（二）",
     "lesson_time": "2课时",
     "knowledge": [
@@ -4183,22 +2344,6 @@
     "reading": []
   },
   {
-    "title": "（一）选择题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
-    "title": "（二）填空题",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
-  },
-  {
     "title": "（三）解答题",
     "lesson_time": "",
     "knowledge": [],
@@ -4215,14 +2360,6 @@
     "reading": [
       "你有没有觉得，玩得开心时时间过得飞快，而等待时却觉得特别慢？这是因为我们对时间的“感觉”是会变化的。但为了公平和有序，人们需要一种统一、精确的计量方式。 古代人用“一炷香”、“一盏茶”来粗略计时。后来，更精确的钟表出现了，人们开始用“小时”、“分钟”来规划工厂的工作和火车的运行。到了现代，科学家们甚至用“原子钟”来计时，几千万年才误差一秒，用于卫星导航和网络通讯。 我们学习认识钟表、日历，计算时间间隔，就是在掌握现代社会最基本的“时间语言”。它帮助我们准时赴约，合理安排学习和休息，理解历史的时间轴。学会管理时间，就是学会管理自己的生活。当你高效地完成学习后，剩下的时间不就可以自由地“感觉”它飞逝在快乐之中了吗？"
     ]
-  },
-  {
-    "title": "3小数",
-    "lesson_time": "",
-    "knowledge": [],
-    "examples": [],
-    "exercises": [],
-    "reading": []
   },
   {
     "title": "合理安排",
