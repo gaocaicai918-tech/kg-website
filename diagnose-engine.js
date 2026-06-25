@@ -1460,7 +1460,7 @@ var DiagnoseUI = {
 
     // Quick scan section
     var scanGrades = []; var allTopics = {};
-    var gradeList = ['L1','L2','L3','L4','L5','L6','L8','L9','L10'];
+    var gradeList = ['L1','L2','L3','L4','L5','L6','L7','L8','L9','L10','L11','L12'];
     for (var gi = 0; gi < gradeList.length; gi++) {
       var gk = gradeList[gi];
       var ts = DIAGNOSE.getTopics(gk);
@@ -1477,7 +1477,7 @@ var DiagnoseUI = {
 
     // Grade cards (L1-L12)
     html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">';
-    var gradeColors = ['#5AC8FA','#FF9500','#34C759','#AF52DE','#FF3B30','#FF9F0A','#00C7BE','#5AC8FA','#FF9500','#34C759'];
+    var gradeColors = ['#5AC8FA','#FF9500','#34C759','#AF52DE','#FF3B30','#FF9F0A','#00C7BE','#5AC8FA','#FF9500','#34C759','#AF52DE','#FF9F0A'];
     var gradeNames = ['一年级','二年级','三年级','四年级','五年级','六年级','初一','初二','初三','高一','高二','高三'];
     for (var g = 1; g <= 12; g++) {
       var gkey = 'L' + g;
