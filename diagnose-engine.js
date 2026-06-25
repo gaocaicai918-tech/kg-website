@@ -1688,19 +1688,55 @@ var DiagnoseUI = {
     html += '<div style="font-size:13px;color:var(--text-secondary);line-height:1.6;">' + report.suggestion + '</div>';
     html += '</div>';
 
-    // Textbook link (task 3)
+    // Textbook link — 根据知识点grade动态加载对应年级教材
     if (report.topicKey && DIAGNOSE.questions[report.topicKey] && DIAGNOSE.questions[report.topicKey].textbookLessons) {
       var tls = DIAGNOSE.questions[report.topicKey].textbookLessons;
+      var kpGrade = DIAGNOSE.questions[report.topicKey].grade;
+      var dataKey = 'TEXTBOOK_' + kpGrade;
+      var lessons = (typeof TEXTBOOK_DATA !== 'undefined' && TEXTBOOK_DATA[dataKey]) ? TEXTBOOK_DATA[dataKey] : [];
+
       html += '<div style="background:var(--card-bg);border-radius:12px;padding:14px;margin-bottom:16px;">';
       html += '<div style="font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:8px;">📖 去翻教材</div>';
       html += '<div style="font-size:12px;color:var(--text-secondary);margin-bottom:8px;">根据诊断结果，建议复习以下课时：</div>';
-      for (var ti = 0; ti < tls.length; ti++) {
-        var lessonIdx = tls[ti];
-        if (typeof TEXTBOOK_G7 !== 'undefined' && TEXTBOOK_G7[lessonIdx]) {
-          html += '<div onclick="switchToTextbook(' + lessonIdx + ')" style="padding:8px 12px;background:rgba(var(--accent-rgb),0.05);border-radius:8px;margin-bottom:6px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border:0.5px solid rgba(var(--accent-rgb),0.08);">';
-          html += '<span style="font-size:13px;color:var(--text-primary);font-weight:500;">' + TEXTBOOK_G7[lessonIdx].title + '</span>';
-          html += '<span style="font-size:11px;color:var(--accent);">去学习 →</span>';
-          html += '</div>';
+
+      if (lessons.length > 0) {
+        // 教材已加载，直接显示课时标题
+        for (var ti = 0; ti < tls.length; ti++) {
+          var lessonIdx = tls[ti];
+          if (lessons[lessonIdx]) {
+            html += '<div onclick="DiagnoseUI.goToTextbook(\'' + kpGrade + '\',' + lessonIdx + ')" style="padding:10px 12px;background:rgba(var(--accent-rgb),0.05);border-radius:10px;margin-bottom:6px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border:0.5px solid rgba(var(--accent-rgb),0.08);">';
+            html += '<div><div style="font-size:13px;color:var(--text-primary);font-weight:500;">' + lessons[lessonIdx].title + '</div>';
+            html += '<div style="font-size:11px;color:var(--text-muted);margin-top:2px;">' + kpGrade + ' · 第' + (lessonIdx+1) + '课时</div></div>';
+            html += '<span style="font-size:12px;color:var(--accent);flex-shrink:0;margin-left:12px;">去学习 →</span>';
+            html += '</div>';
+          }
+        }
+      } else {
+        // 教材未加载，先加载再显示
+        html += '<div id="diagnose-textbook-loading" style="padding:14px;text-align:center;color:var(--accent);font-size:13px;">⏳ 正在加载教材...</div>';
+        // 动态加载教材数据
+        if (typeof TEXTBOOK_READER !== 'undefined' && TEXTBOOK_READER._loadGradeData) {
+          TEXTBOOK_READER._loadGradeData(kpGrade, function() {
+            var dk = 'TEXTBOOK_' + kpGrade;
+            var ls = (typeof TEXTBOOK_DATA !== 'undefined' && TEXTBOOK_DATA[dk]) ? TEXTBOOK_DATA[dk] : [];
+            var loadingEl = document.getElementById('diagnose-textbook-loading');
+            if (loadingEl && ls.length > 0) {
+              var inner = '';
+              for (var ti2 = 0; ti2 < tls.length; ti2++) {
+                var li2 = tls[ti2];
+                if (ls[li2]) {
+                  inner += '<div onclick="DiagnoseUI.goToTextbook(\'' + kpGrade + '\',' + li2 + ')" style="padding:10px 12px;background:rgba(var(--accent-rgb),0.05);border-radius:10px;margin-bottom:6px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border:0.5px solid rgba(var(--accent-rgb),0.08);">';
+                  inner += '<div><div style="font-size:13px;color:var(--text-primary);font-weight:500;">' + ls[li2].title + '</div>';
+                  inner += '<div style="font-size:11px;color:var(--text-muted);margin-top:2px;">' + kpGrade + ' · 第' + (li2+1) + '课时</div></div>';
+                  inner += '<span style="font-size:12px;color:var(--accent);flex-shrink:0;margin-left:12px;">去学习 →</span>';
+                  inner += '</div>';
+                }
+              }
+              loadingEl.innerHTML = inner;
+            } else if (loadingEl) {
+              loadingEl.innerHTML = '<div style="color:var(--text-muted);font-size:12px;">该年级教材暂无内容</div>';
+            }
+          });
         }
       }
       html += '</div>';
@@ -1743,6 +1779,30 @@ var DiagnoseUI = {
     this.currentTimeSpent = [];
     this.currentQuestionIdx = 0;
     this.renderTopicSelect(document.getElementById('diagnoseContent'));
+  },
+
+  /* 跳转到教材阅读器，打开指定年级的指定课时 */
+  goToTextbook: function(grade, lessonIdx) {
+    if (typeof switchToTextbook === 'function') {
+      switchToTextbook();
+    }
+    // 等待教材加载后打开对应课时
+    if (typeof TEXTBOOK_READER !== 'undefined') {
+      var self = this;
+      var tryOpen = function() {
+        var dataKey = 'TEXTBOOK_' + grade;
+        if (TEXTBOOK_READER._loadedGrades[grade] && typeof TEXTBOOK_DATA !== 'undefined' && TEXTBOOK_DATA[dataKey]) {
+          TEXTBOOK_READER.currentGrade = grade;
+          TEXTBOOK_READER.openLesson(lessonIdx);
+        } else {
+          TEXTBOOK_READER._loadGradeData(grade, function() {
+            TEXTBOOK_READER.currentGrade = grade;
+            TEXTBOOK_READER.openLesson(lessonIdx);
+          });
+        }
+      };
+      setTimeout(tryOpen, 100);
+    }
   },
 
   saveReport: function() {
